@@ -1,14 +1,14 @@
-### Hello World!
+# Hello World!
 
 This project was a basic 'hello world' program to fill the space while other projects are in the works! Nothing complicated, but a fitting first sample before everything to come.
 
 
 [Demo Video](https://youtu.be/DwzT4Uk8iR8)
-# Development Environment
+## Development Environment
 
 For this small piece of code, I just used Python without any libraries or smaller strings attached.
 
-# Useful Websites
+## Useful Websites
 
 While learning Python, the most useful websites I've used have been the two below:
 
