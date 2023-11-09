@@ -1,0 +1,14 @@
+$background-color: #f3f3f3;
+$red-pantone: #bc1545;
+$anti-flash-white: #feffff;
+$cool-gray: #8dae9d;
+$space-cadet: #20212b;
+
+$sekiro_blue: #1435ab;
+
+$grid-height: 100vh;
+
+@mixin background-style {
+    background-color: $background-color;
+}
+

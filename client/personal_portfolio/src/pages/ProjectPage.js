@@ -5,33 +5,48 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 
 export const ProjectPage = () => {
-   const { projectId } = useParams();
-   console.log(projectId);
-   const [ project, setProject ] = useState([]);
+	const [project, setProject] = useState([]);
+	const { projectTitle } = useParams();
+	document.body.removeAttribute("class");
 
-    useEffect(() => {
-       const getProjectList = () => {
-          const options = {
-             method: 'GET',
-             url: `http://localhost:5500/projects/${projectId}`,
-             params: {id: projectId }, 
-             headers: {}
-          };
-          
-          
-          axios.request(options).then(function(response) {
-             setProject(response.data);
-             console.log(response.data)
-          }).catch(function (error) {
-             console.error(error);
-          })
-       } 
-       getProjectList()
-    }, [ projectId ])
+	//
+	useEffect(() => {
+		const getProjectList = () => {
+			const options = {
+				method: "GET",
+				url: `http://localhost:5500/projects/${projectTitle}`,
+				params: {},
+				headers: {},
+			};
 
-    return (
-        <div>
-            <p>{project.header_picture}</p>
-        </div>
-    )
-}
+			axios
+				.request(options)
+				.then(function (response) {
+					console.log(response.data);
+					setProject(response.data);
+				})
+				.catch(function (error) {
+					console.error(error);
+				});
+		};
+		getProjectList();
+	}, [projectTitle]);
+
+	// Update background color
+	useEffect(() => {
+		if (project.color == "any") {
+			document.body.style.backgroundColor = "#feffff";
+		} else {
+			document.body.style.backgroundColor = project.color;
+		}
+		}, [project.color]);
+	
+	document.body.classList.remove('outroBodyAnimation')
+
+	return (
+		
+		<div className="project-page">
+			<h1>{project.title}</h1>
+		</div>
+	);
+};

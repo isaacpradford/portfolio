@@ -8,8 +8,11 @@ const projectController = require('../controllers/projects');
 // Gets all data of all projects
 router.get('/', projectController.getAllProjects);
 
-// Get all data for single project
-router.get('/:id', projectController.getSingleProject);
+// Get all data for single project by searching for ID
+// router.get('/:id', projectController.getProjectById);
+
+// Get all data for single project by searching for Title
+router.get('/:title', projectController.getProjectByTitle)
 
 // Add project to Mongo
 router.post('/',projectController.addProject);

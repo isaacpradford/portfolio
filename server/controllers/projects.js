@@ -1,73 +1,95 @@
-const mongodb = require('mongodb');
-const db = require('../db/connect');
-const ObjectId = require('mongodb').ObjectId;
+const mongodb = require("mongodb");
+const db = require("../db/connect");
+const ObjectId = require("mongodb").ObjectId;
 
-const getAllProjects = async(req, res, next) => {
-    try {     
-        const result = await db
-        .getDb()
-        .collection('portfolio')
-        .find();
-    
-        result.toArray().then((lists) => {
-            res.status(200).json(lists);
-        })
-    } catch {
-        logger.error("Error getting projects.")
-        res.sendStatus(500);
-    }
-}
+const getAllProjects = async (req, res, next) => {
+	try {
+		const result = await db.getDb().collection("portfolio").find();
 
-const getSingleProject = async(req, res, next) => {
-    try {
-        const result = await db
-        .getDb()
-        .collection('portfolio')
-        .findOne({_id: new mongodb.ObjectId(req.params.id)});
-        res.send(result).status(200);
+		result.toArray().then((lists) => {
+			res.status(200).json(lists);
+		});
+	} catch {
+		logger.error("Error getting projects.");
+		res.sendStatus(500);
+	}
+};
 
-        if (!result) {
-            console.log('There was no result for that id.')
-            res.sendStatus(500);
-        } 
-    } catch {
-        console.log('Error getting project.')
-        res.sendStatus(500)
-    }
-}
+const getProjectById = async (req, res, next) => {
+	try {
+		const result = await db
+			.getDb()
+			.collection("portfolio")
+			.findOne({ _id: new mongodb.ObjectId(req.params.id) });
 
-const addProject = async(req, res) => {
-    try {
-        const project = {
-            title: req.body.title,
-            header_picture: req.body.header_picture,
-            color: req.body.color,
-            description: req.body.description,
-            tech_stack: req.body.tech_stack,
-            demo_link: req.body.demo_link,
-            demo_picture: req.body.demo_picture,
-            project_url: req.body.project_url
-        }
+		if (!result) {
+			console.log("There was no result for that id.");
+			res.sendStatus(500);
+		} else {
+			res.send(result).status(200);
+		}
+	} catch {
+		console.log("Error getting project.");
+		res.sendStatus(500);
+	}
+};
 
-        const response = await db
-            .getDb()
-            .collection('portfolio')
-            .insertOne(project);
+const getProjectByTitle = async (req, res, next) => {
+	try {
+		const result = await db
+			.getDb()
+			.collection("portfolio")
+			.findOne({ title: req.params.title });
 
-            if (response.acknowledged) {
-                res.status(201).json(response);
-            } else {
-                res.status(500).json(response.error || 'An error occurred while creating the Project.');
-            }
-        } catch(error) {
-            console.log(error)
-            res.sendStatus(500)
-        }
-}
+		if (!result) {
+			console.log("There was no result for that id.");
+			res.sendStatus(500);
+		} else {
+			res.send(result).status(200);
+		}
+	} catch {
+		console.log("Error getting project.");
+		res.sendStatus(500);
+	}
+};
 
+const addProject = async (req, res) => {
+	try {
+		const project = {
+			title: req.body.title,
+			header_picture: req.body.header_picture,
+			color: req.body.color,
+			description: req.body.description,
+			tech_stack: req.body.tech_stack,
+			demo_link: req.body.demo_link,
+			demo_picture: req.body.demo_picture,
+			project_url: req.body.project_url,
+			date_created: req.body.date_created,
+		};
 
+		const response = await db
+			.getDb()
+			.collection("portfolio")
+			.insertOne(project);
 
+		if (response.acknowledged) {
+			res.status(201).json(response);
+		} else {
+			res
+				.status(500)
+				.json(
+					response.error || "An error occurred while creating the Project."
+				);
+		}
+	} catch (error) {
+		console.log(error);
+		res.sendStatus(500);
+	}
+};
 
-module.exports = {  getAllProjects, 
-                    getSingleProject,
-                    addProject }
+module.exports = {
+	getAllProjects,
+	getProjectById,
+	addProject,
+	getProjectByTitle,
+};
