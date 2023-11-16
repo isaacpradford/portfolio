@@ -41,12 +41,12 @@ const getProjectByTitle = async (req, res, next) => {
 			.collection("portfolio")
 			.findOne({ title: req.params.title });
 
-		if (!result) {
-			console.log("There was no result for that id.");
-			res.sendStatus(500);
-		} else {
-			res.send(result).status(200);
-		}
+			if (!result) {
+				console.log("There was no result for that title.");
+				return res.status(404).json({ error: "Project not found" }); // Custom message for not found
+			} else {
+				res.send(result).status(200);
+			}
 	} catch {
 		console.log("Error getting project.");
 		res.sendStatus(500);

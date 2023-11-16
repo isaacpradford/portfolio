@@ -1,19 +1,20 @@
 import HeaderNav from "../components/HeaderNav";
 import HomeIntro from "../components/HomeIntro";
 import SocialLinks from "../components/SocialLinks";
-import { useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import axios from "axios";
 
 // Components
 import { ProjectNavList } from "../components/ProjectNavList";
-import { header } from "express-validator";
+// import { header } from "express-validator";
 
-// Home page should really be more about nav?
 export const HomePage = () => {
 	const [projects, setProjects] = useState([]);
+	const containerRef = useRef(null);
+
 	document.body.removeAttribute("class");
 	
-
+	// Makes call to backend to get the list of all projects
 	useEffect(() => {
 		const getProjectList = () => {
 			const options = {
@@ -34,16 +35,26 @@ export const HomePage = () => {
 		getProjectList();
 	}, []);
 
+
+	// Handles animations for when the screen is loaded by calling these items when the div is loaded
+
 	const onLoadNavAnimation = () => {
 		const projectLiElements = document.querySelectorAll(".projectLi");
+
 		projectLiElements.forEach((li, index) => {
+		  li.style.display = "grid"
+		  document.body.style.justifyContent = "flex-end";
+
 		  li.classList.add("animateNav");
 		  li.style.animationDelay = `${index * 0.3 }s`; // Apply staggered delay
 		});
 	}
 
 	const onLoadBodyAnimation = () => {
-		document.body.classList.add('homeBgColorAnimation');
+		const body = document.body;
+		if (getComputedStyle(body).backgroundColor !== 'rgb(188, 21, 69)') {
+		  body.classList.add('homeBgColorAnimation');
+		}
 	}
 
 	const onLoadIntroAnimation = () => {
@@ -66,17 +77,20 @@ export const HomePage = () => {
 		onLoadIntroAnimation();
 	  };
 
+	
 
 	return (
-		<div onLoad={LoadAnimations()}>
+		<div onLoad={LoadAnimations()} >
 			<HeaderNav />
 			{/* <SocialLinks /> */}
 			<HomeIntro />
-			<ul className="projects">
-				{projects.map((project, index) => {
-					return <ProjectNavList key={index} project={project}/>;
-				})}
-			</ul>
+			<div className="projectBox">
+				<ul className="projects">
+					{projects.map((project, index) => {
+						return <ProjectNavList key={index} project={project}/>;
+					})}
+				</ul>
+			</div>
 		</div>
 	);
-};
+}

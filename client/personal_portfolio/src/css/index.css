@@ -10,7 +10,26 @@ body {
   width: 100vw;
   max-height: 100%;
   max-width: 100%;
-  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #bc1545;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  background: #780f2c;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #780f2c;
 }
 
 .introBox {
@@ -32,18 +51,17 @@ body {
 }
 .introBox ul .introLi {
   font-size: 20px;
-  color: #20212b;
 }
 
 .headerNav {
   list-style: none;
   display: flex;
   position: absolute;
-  top: 5px;
+  top: 3vh;
   left: 20px;
 }
 .headerNav .headerLi {
-  padding: 10px;
+  padding: 0 2vw 0 2vw;
   font-size: 20px;
 }
 .headerNav .headerLi a {
@@ -52,21 +70,31 @@ body {
   text-decoration: none;
 }
 
+.projectBox {
+  margin-top: 10vh;
+  position: absolute;
+  right: 5vw;
+}
+
 .projects {
+  margin: 0;
   text-align: right;
   list-style: none;
-  margin: 0;
   perspective: 50vh; /* Set the perspective for the 3D effect */
   overflow-x: hidden;
-  overflow-y: scroll;
 }
 
 .projectLi {
+  display: none;
   font-family: "FSP DEMO - Integral CF Heavy";
   transform-style: preserve-3d;
-  padding-right: 40px;
   position: relative;
   transform-origin: 100% 50%;
+  transition: transform 0.2s ease-in-out;
+}
+
+.projectContainer {
+  margin: 2px;
 }
 
 .projectTitle {
@@ -76,11 +104,17 @@ body {
 .projectContainer {
   transform-origin: 100% 50%;
   transform: rotateY(-20deg);
+  transform-style: preserve-3d;
   transition: transform 0.2s ease-in-out;
   padding-right: 40px;
   position: relative;
   z-index: 1;
-  font-size: 30px;
+  font-size: 26px;
+}
+
+.projectContainer:hover {
+  transform-origin: 100% 50%;
+  color: #bc1545;
 }
 
 .projectContainer a {
@@ -90,9 +124,9 @@ body {
 }
 
 .projectContainer a:hover {
-  color: rgba(255, 255, 255, 0);
-  -webkit-text-stroke: 2px #feffff;
-  margin: 20px;
+  color: #feffff;
+  margin: 50px;
+  text-shadow: 20px 0px 1px rgba(120, 15, 45, 0.5882352941);
 }
 
 .homeBgColorAnimation {
@@ -121,7 +155,7 @@ body {
 .animateHomeIntro {
   opacity: 1;
   animation-name: opacityFill;
-  animation-duration: 0.2s;
+  animation-duration: 5s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: both;
 }
@@ -136,6 +170,13 @@ body {
   animation: bodyLeaveAnimation 1s ease forwards;
 }
 
+.errorMessage {
+  text-align: center;
+  max-width: 800px;
+  color: #feffff;
+  font-family: "Montserrat", sans-serif;
+}
+
 @keyframes homeBgColor {
   from {
     background-color: #feffff;
@@ -145,13 +186,16 @@ body {
   }
 }
 @keyframes fallAndRotate {
-  from {
+  0% {
     opacity: 0;
-    transform: translateY(-200vh) rotateY(-90deg); /* Start above the viewport with rotation */
+    transform: translateY(-200vh) rotateY(-180deg); /* Start above the viewport with rotation */
   }
-  to {
+  50% {
+    opacity: 0;
+  }
+  100% {
     opacity: 1;
-    transform: translateY(0) rotateY(-20deg); /* End at the original position with no rotation */
+    transform: translateY(0) rotateY(-25deg); /* End at the original position with no rotation */
   }
 }
 @keyframes riseAndRotate {
@@ -161,14 +205,14 @@ body {
   }
   to {
     opacity: 0;
-    transform: translateY(-200vh) rotateY(-90deg); /* End at the original position with no rotation */
+    transform: translateY(-200vh) rotateY(-180deg); /* End at the original position with no rotation */
   }
 }
 @keyframes opacityFill {
   0% {
     opacity: 0;
   }
-  50% {
+  80% {
     opacity: 0;
   }
   100% {
@@ -178,7 +222,7 @@ body {
 @keyframes leaveAnimation {
   to {
     opacity: 0;
-    transform: translateY(-100vh); /* Continue moving up */
+    transform: translateY(-100vh);
   }
 }
 @keyframes bodyLeaveAnimation {
