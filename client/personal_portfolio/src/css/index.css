@@ -1,41 +1,39 @@
 @import url("https://db.onlinewebfonts.com/c/1e400e1a7a0ff1e8abbdddf2e42beff1?family=FSP+DEMO+-+Integral+CF+Heavy");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Oswald:wght@900&display=swap");
 @import url("https://fonts.cdnfonts.com/css/cooper-hewitt-book");
+html {
+  min-width: 100%;
+}
+
 body {
   margin: 0;
-  display: flex;
-  justify-content: flex-end;
-  background-color: #bc1545;
+  background-color: var(--background-color);
   height: 100vh;
   width: 100vw;
   max-height: 100%;
   max-width: 100%;
+  min-width: 900px;
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 12px;
 }
 
-/* Track */
+/* Scrollbar gutter */
 ::-webkit-scrollbar-track {
-  background: #bc1545;
+  background-color: var(--scrollbar-gutter-color);
 }
 
-/* Handle */
+/* Scrollbar thumb */
 ::-webkit-scrollbar-thumb {
-  border-radius: 50px;
-  background: #780f2c;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #780f2c;
+  background-color: var(--scrollbar-thumb-color);
+  border-radius: 4px;
 }
 
 .introBox {
   position: absolute;
-  bottom: 50px;
-  left: 50px;
+  bottom: 3vh;
+  left: 8vw;
   font-family: "Cooper Hewitt Light", sans-serif;
   color: #feffff;
   margin: 0px;
@@ -56,16 +54,15 @@ body {
 .headerNav {
   list-style: none;
   display: flex;
-  position: absolute;
-  top: 3vh;
-  left: 20px;
+  z-index: 30;
+  transition: transform 1s ease-in-out;
 }
 .headerNav .headerLi {
   padding: 0 2vw 0 2vw;
   font-size: 20px;
 }
 .headerNav .headerLi a {
-  color: #feffff;
+  color: #20212b;
   font-family: "Cooper Hewitt Light", sans-serif;
   text-decoration: none;
 }
@@ -74,6 +71,10 @@ body {
   margin-top: 10vh;
   position: absolute;
   right: 5vw;
+}
+
+.projectTitle {
+  font-size: 140px;
 }
 
 .projects {
@@ -91,14 +92,6 @@ body {
   position: relative;
   transform-origin: 100% 50%;
   transition: transform 0.2s ease-in-out;
-}
-
-.projectContainer {
-  margin: 2px;
-}
-
-.projectTitle {
-  font-size: 80px;
 }
 
 .projectContainer {
@@ -129,9 +122,132 @@ body {
   text-shadow: 20px 0px 1px rgba(120, 15, 45, 0.5882352941);
 }
 
+.project-page {
+  z-index: 0;
+}
+
+.header-box {
+  width: 100%;
+  height: 10vh;
+  background-color: #feffff;
+  position: absolute;
+  z-index: 30;
+}
+
+.project {
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.project-body {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+.project-body a {
+  transition: 0.2s ease-in-out;
+}
+.project-body a:link {
+  font-size: 24px;
+  color: #20212b;
+  text-decoration: none;
+}
+.project-body a:visited {
+  color: #20212b;
+}
+.project-body a:hover {
+  font-size: 26px;
+}
+.project-body a:active {
+  color: #20212b;
+}
+
+.header-picture {
+  width: 100%;
+  height: auto;
+  z-index: 10;
+  margin-top: 11.8vh;
+  min-width: 100%;
+  max-height: 50vh;
+  object-fit: cover;
+}
+
+.project-title {
+  margin-top: 10vh;
+  font-family: "FSP DEMO - Integral CF Heavy";
+  z-index: 10;
+  font-size: 80px;
+  font-style: italic;
+}
+
+.demo-link {
+  font-family: "Oswald", sans-serif;
+}
+
+.video-container {
+  border: 0px solid white;
+  width: 100%;
+  height: 40vh;
+  margin: auto;
+}
+.video-container iframe {
+  border: none;
+}
+
+.bgSquare {
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  padding: 0;
+}
+
+.bgSquare li {
+  transform: translateY(-180vh);
+  margin: 0;
+  list-style-type: none;
+  width: 100%;
+  min-width: 100vw;
+}
+
+#bgSquare1 {
+  opacity: 1;
+  height: 60vh;
+}
+
+#bgSquare2 {
+  margin-top: -10vh;
+  opacity: 0.8;
+  height: 15vh;
+}
+
+#bgSquare3 {
+  margin-top: -9vh;
+  opacity: 0.75;
+  height: 15vh;
+}
+
+.animate-diamonds {
+  animation-name: projectBgAnimation;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.animate-project-picture {
+  animation-name: projectBgAnimation;
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
 .homeBgColorAnimation {
   animation-name: homeBgColor;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: both;
 }
@@ -139,7 +255,28 @@ body {
 .animateNav {
   opacity: 1;
   animation-name: fallAndRotate;
-  animation-duration: 2s;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+}
+
+.HeaderNavProjectLoad {
+  animation-name: headerNavProjectLoad;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+}
+
+.HeaderNavHomeLoad {
+  animation-name: headerNavHomeLoad;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+}
+
+.ProjectTitleLoad {
+  animation-name: ProjectTitleLoad;
+  animation-duration: 3s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: both;
 }
@@ -155,7 +292,7 @@ body {
 .animateHomeIntro {
   opacity: 1;
   animation-name: opacityFill;
-  animation-duration: 5s;
+  animation-duration: 3s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: both;
 }
@@ -185,6 +322,41 @@ body {
     background-color: #bc1545;
   }
 }
+@keyframes headerNavHomeLoad {
+  from {
+    left: 38vw;
+  }
+  to {
+    left: 8vw;
+  }
+}
+@keyframes headerNavProjectLoad {
+  from {
+    text-align: left;
+  }
+  to {
+    text-align: right;
+  }
+}
+@keyframes ProjectTitleLoad {
+  from {
+    transform: translateX(-100vw);
+  }
+  to {
+    transform: translateX(0vw);
+  }
+}
+@keyframes projectBgAnimation {
+  0% {
+    transform: translateY(-100vh);
+  }
+  70% {
+    transform: translateY(-2vh);
+  }
+  100% {
+    transform: translateY(-5vh);
+  }
+}
 @keyframes fallAndRotate {
   0% {
     opacity: 0;
@@ -200,11 +372,9 @@ body {
 }
 @keyframes riseAndRotate {
   from {
-    opacity: 1;
     transform: translateY(0) rotateY(-20deg); /* Start above the viewport with rotation */
   }
   to {
-    opacity: 0;
     transform: translateY(-200vh) rotateY(-180deg); /* End at the original position with no rotation */
   }
 }
@@ -220,6 +390,9 @@ body {
   }
 }
 @keyframes leaveAnimation {
+  from {
+    opacity: 1;
+  }
   to {
     opacity: 0;
     transform: translateY(-100vh);

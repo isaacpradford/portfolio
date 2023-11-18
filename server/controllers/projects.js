@@ -43,7 +43,7 @@ const getProjectByTitle = async (req, res, next) => {
 
 			if (!result) {
 				console.log("There was no result for that title.");
-				return res.status(404).json({ error: "Project not found" }); // Custom message for not found
+				return res.status(404).json({ error: "Project not found" });
 			} else {
 				res.send(result).status(200);
 			}
@@ -59,12 +59,15 @@ const addProject = async (req, res) => {
 			title: req.body.title,
 			header_picture: req.body.header_picture,
 			color: req.body.color,
-			description: req.body.description,
+			description1: req.body.description1,
+			description2: req.body.description2,
+			description3: req.body.description3,
 			tech_stack: req.body.tech_stack,
 			demo_link: req.body.demo_link,
 			demo_picture: req.body.demo_picture,
 			project_url: req.body.project_url,
 			date_created: req.body.date_created,
+			youtube_link: req.body.youtube_link,
 		};
 
 		const response = await db

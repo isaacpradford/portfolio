@@ -1,7 +1,7 @@
 import HeaderNav from "../components/HeaderNav";
 import HomeIntro from "../components/HomeIntro";
-import SocialLinks from "../components/SocialLinks";
-import { useRef, useState, useEffect } from "react";
+// import SocialLinks from "../components/SocialLinks";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 // Components
@@ -10,10 +10,13 @@ import { ProjectNavList } from "../components/ProjectNavList";
 
 export const HomePage = () => {
 	const [projects, setProjects] = useState([]);
-	const containerRef = useRef(null);
+	// const containerRef = useRef(null);
 
-	document.body.removeAttribute("class");
+	document.documentElement.style.setProperty('--background-color', "#bc1545");
+	document.documentElement.style.setProperty('--scrollbar-gutter-color', 'rgba(0, 0, 0, 0)');
+	document.documentElement.style.setProperty('--scrollbar-thumb-color', "#6e0c28");
 	
+
 	// Makes call to backend to get the list of all projects
 	useEffect(() => {
 		const getProjectList = () => {
@@ -35,10 +38,15 @@ export const HomePage = () => {
 		getProjectList();
 	}, []);
 
+	const LoadAnimations = () => {
+		// onLoadBodyAnimation();
+		onLoadNavAnimation();
+		// onLoadIntroAnimation();
+	  };
 
-	// Handles animations for when the screen is loaded by calling these items when the div is loaded
+	  
 
-	const onLoadNavAnimation = () => {
+	  const onLoadNavAnimation = () => {
 		const projectLiElements = document.querySelectorAll(".projectLi");
 
 		projectLiElements.forEach((li, index) => {
@@ -50,37 +58,43 @@ export const HomePage = () => {
 		});
 	}
 
-	const onLoadBodyAnimation = () => {
-		const body = document.body;
-		if (getComputedStyle(body).backgroundColor !== 'rgb(188, 21, 69)') {
-		  body.classList.add('homeBgColorAnimation');
-		}
-	}
-
 	const onLoadIntroAnimation = () => {
 		document.body.classList.remove('outroBodyAnimation')
 		const introElements = document.querySelectorAll(".introBox");
-		const headerLiElements = document.querySelectorAll(".headerLi");
+
+		// const headerNavItems = document.querySelector(".headerNav");
+		// headerNavItems.classList.add("HeaderNavHomeLoad");
+
+
+		// if (headerNavItems) {
+		// 	if (!headerNavItems.classList.contains("HeaderNavHomeLoad")){
+				
+		// 	}
+		// }
 
 		introElements.forEach((item, index) => {
 		  item.classList.add("animateHomeIntro");
 		});
 
-		headerLiElements.forEach((item, index) => {
-			item.classList.add("animateHomeIntro");
-		  });
+		// headerLiElements.forEach((item, index) => {
+		// 	item.classList.add("animateHomeIntro");
+		//   });
 	}
 
-	const LoadAnimations = () => {
-		onLoadBodyAnimation();
-		onLoadNavAnimation();
-		onLoadIntroAnimation();
-	  };
+	useEffect(() => {
+		
+		// const headerNav = document.querySelectorAll('.headerNav li a');
 
-	
+		// headerNav.forEach((item) => {
+		// 	item.style.color = "#f3f3f3";
+		// })
+
+		LoadAnimations();
+		
+	}, [LoadAnimations])
 
 	return (
-		<div onLoad={LoadAnimations()} >
+		<div className="homePage">
 			<HeaderNav />
 			{/* <SocialLinks /> */}
 			<HomeIntro />

@@ -1,15 +1,23 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+import YouTubeEmbed from "../components/youTubeEmbed";
+import HeaderNav from "../components/HeaderNav";
+
 // router
 import { useParams } from "react-router-dom";
 
 export const ProjectPage = () => {
 	const [project, setProject] = useState([]);
 	const { projectTitle } = useParams();
-	document.body.removeAttribute("class");
 
-	//
+	// Set CSS variables for scrollbar colors and body
+	document.documentElement.style.setProperty('--background-color', "#f3f3f3");
+	document.documentElement.style.setProperty('--scrollbar-gutter-color', 'rgba(0, 0, 0, 0)');
+	document.documentElement.style.setProperty('--scrollbar-thumb-color', project.color);
+	
+
+	// Make the call to retrieve the data of the project
 	useEffect(() => {
 		const getProjectList = () => {
 			const options = {
@@ -37,19 +45,33 @@ export const ProjectPage = () => {
 	}, [projectTitle]);
 
 
-	
-
-	// Update background color
+	// Add classes for animations
 	useEffect(() => {
-		if (project.color == "any") {
-			document.body.style.backgroundColor = "#feffff";
-		} else {
-			document.body.style.backgroundColor = project.color;
-		}
-		}, [project.color]);
-	
-	document.body.classList.remove('outroBodyAnimation')
-	document.body.style.justifyContent = "center";
+		
+		document.querySelector('.headerNav').classList.add("HeaderNavProjectLoad");
+
+		const headerNavA = document.querySelectorAll('.headerNav li a');
+		headerNavA.forEach((item) => {
+			item.style.color = project.color;
+		})
+
+		document.querySelector('.project-title ').classList.add("ProjectTitleLoad");
+		document.querySelector('.header-picture').classList.add("animate-project-picture");
+
+		const bgSquare = document.querySelector('.bgSquare');
+		const bgSquares = document.querySelectorAll('.bgSquare li');
+
+		setTimeout(() => {
+			bgSquare.style.display = "";
+			bgSquares.forEach((item, index) => {
+			  item.style.display = 'grid';
+			  item.classList.add('animate-diamonds');
+			  item.style.animationDelay = `${index * 0.1}s`;
+			  item.style.backgroundColor = project.color;
+			});
+		  }, 1000); 
+	  }, [project]);
+
 
 	if (project && project.error === "Project not found") {
 		return (
@@ -62,25 +84,48 @@ export const ProjectPage = () => {
 		const base64ToImageUrl = (base64String) => `data:image/jpeg;base64,${base64String}`;
 		const headerUrl = base64ToImageUrl(project.header_picture);
 
+
 		return (
 		<div className="project-page">
-			<img src={headerUrl} alt="Header Picture"/>
-			<h1>{project.title}</h1>
-			<ul>
-				<h3>Tech Stack:</h3>
-				{project.tech_stack && project.tech_stack.map((tech, index) => (
-					<li key={index}>
-					<h1>{tech}</h1>
-					</li>
-				))}
-			</ul>
-			<h1>{project.color}</h1>
-			<h1>{project.date_created}</h1>
-			{/* <img src={imageUrl} alt="Demo Picture" /> */}
-			<h1>{project.description}</h1>
+			<div className="header-box">
+				<HeaderNav />
+			</div>
 
-			<h1>{project.project_url}</h1>
+			<div className="project">
+					<ul className="bgSquare">
+						<li id="bgSquare1"></li>
+						<li id="bgSquare2"></li>
+						<li id="bgSquare3"></li>
+					</ul>	
+					<img className="header-picture"src={headerUrl} alt="Project header"/>
 
+				<div className="project-body">
+
+					<h1 className="project-title" style={{ color: project.color }}>{project.title}</h1>
+
+					<a href={project.demo_link} className="demo-link">{project.demo_link}</a>
+					<h1>{project.project_url}</h1>
+
+					<ul className="tech-stack">
+						<h3>Tech Stack:</h3>
+						{project.tech_stack && project.tech_stack.map((tech, index) => (
+							<li key={index}>
+							<h1>{tech}</h1>
+							</li>
+						))}
+					</ul>
+
+					<h1>{project.description1}</h1>
+					<h1>{project.description2}</h1>
+					<h1>{project.description3}</h1>
+
+					
+
+					<YouTubeEmbed youtubeLink = {project.youtube_link} />
+					
+
+				</div>
+			</div>
 		</div>
 		);
 	}
