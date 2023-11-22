@@ -4,18 +4,16 @@ import HomeIntro from "../components/HomeIntro";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+import {onLoadIntroAnimation, onLoadHomeProjectAnimation } from "../utilities/loadAnimations";
+
 // Components
 import { ProjectNavList } from "../components/ProjectNavList";
-// import { header } from "express-validator";
 
 export const HomePage = () => {
 	const [projects, setProjects] = useState([]);
-	// const containerRef = useRef(null);
 
-	document.documentElement.style.setProperty('--background-color', "#bc1545");
-	document.documentElement.style.setProperty('--scrollbar-gutter-color', 'rgba(0, 0, 0, 0)');
-	document.documentElement.style.setProperty('--scrollbar-thumb-color', "#6e0c28");
-	
+	// Remove previous body classes
+	document.body.classList = "";
 
 	// Makes call to backend to get the list of all projects
 	useEffect(() => {
@@ -39,58 +37,27 @@ export const HomePage = () => {
 	}, []);
 
 	const LoadAnimations = () => {
-		// onLoadBodyAnimation();
-		onLoadNavAnimation();
-		// onLoadIntroAnimation();
+		onLoadHomeProjectAnimation();
+		onLoadIntroAnimation();
+		
 	  };
 
-	  
-
-	  const onLoadNavAnimation = () => {
-		const projectLiElements = document.querySelectorAll(".projectLi");
-
-		projectLiElements.forEach((li, index) => {
-		  li.style.display = "grid"
-		  document.body.style.justifyContent = "flex-end";
-
-		  li.classList.add("animateNav");
-		  li.style.animationDelay = `${index * 0.3 }s`; // Apply staggered delay
-		});
-	}
-
-	const onLoadIntroAnimation = () => {
-		document.body.classList.remove('outroBodyAnimation')
-		const introElements = document.querySelectorAll(".introBox");
-
-		// const headerNavItems = document.querySelector(".headerNav");
-		// headerNavItems.classList.add("HeaderNavHomeLoad");
-
-
-		// if (headerNavItems) {
-		// 	if (!headerNavItems.classList.contains("HeaderNavHomeLoad")){
-				
-		// 	}
-		// }
-
-		introElements.forEach((item, index) => {
-		  item.classList.add("animateHomeIntro");
-		});
-
-		// headerLiElements.forEach((item, index) => {
-		// 	item.classList.add("animateHomeIntro");
-		//   });
-	}
 
 	useEffect(() => {
-		
-		// const headerNav = document.querySelectorAll('.headerNav li a');
+		// Make sure to remove previous classes
+		document.body.classList = "";
 
-		// headerNav.forEach((item) => {
-		// 	item.style.color = "#f3f3f3";
-		// })
+		document.documentElement.style.setProperty('--background-color', "#bc1545");
+		// document.documentElement.style.setProperty('--text-color-home', '#f3f3f3');
+		// document.documentElement.style.setProperty('--scrollbar-gutter-color', 'rgba(0, 0, 0, 0)');
+		// document.documentElement.style.setProperty('--scrollbar-thumb-color', "#6e0c28");
+		
+		const headerNavA = document.querySelectorAll('.headerNav li a');
+		headerNavA.forEach((item) => {
+			item.classList.add("HeaderNavHomeLoad");
+		})
 
 		LoadAnimations();
-		
 	}, [LoadAnimations])
 
 	return (

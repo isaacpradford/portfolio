@@ -11,10 +11,14 @@ export const ProjectPage = () => {
 	const [project, setProject] = useState([]);
 	const { projectTitle } = useParams();
 
+	// Dismount previous animation class
+	document.body.classList = "";
+
 	// Set CSS variables for scrollbar colors and body
 	document.documentElement.style.setProperty('--background-color', "#f3f3f3");
-	document.documentElement.style.setProperty('--scrollbar-gutter-color', 'rgba(0, 0, 0, 0)');
-	document.documentElement.style.setProperty('--scrollbar-thumb-color', project.color);
+	document.documentElement.style.setProperty('--text-color-project', project.color);
+	// document.documentElement.style.setProperty('--scrollbar-gutter-color', 'rgba(0, 0, 0, 0)');
+	// document.documentElement.style.setProperty('--scrollbar-thumb-color', project.color);
 	
 
 	// Make the call to retrieve the data of the project
@@ -47,12 +51,9 @@ export const ProjectPage = () => {
 
 	// Add classes for animations
 	useEffect(() => {
-		
-		document.querySelector('.headerNav').classList.add("HeaderNavProjectLoad");
-
-		const headerNavA = document.querySelectorAll('.headerNav li a');
+		const headerNavA = document.querySelectorAll('.headerNav');
 		headerNavA.forEach((item) => {
-			item.style.color = project.color;
+			item.classList.add("HeaderNavProjectLoad");
 		})
 
 		document.querySelector('.project-title ').classList.add("ProjectTitleLoad");
@@ -76,8 +77,8 @@ export const ProjectPage = () => {
 	if (project && project.error === "Project not found") {
 		return (
 			<div>
-				<h1 className="errorMessage">Looks like that project doesn't exist yet. </h1>
-				<h1 className="errorMessage"> Try looking for another one!</h1>
+				<h1 className="errorMessage">Looks like that project doesn't exist yet.</h1>
+				<h1 className="errorMessage">Try looking for another one!</h1>
 			</div>
 		)
 	} else {
@@ -97,33 +98,51 @@ export const ProjectPage = () => {
 						<li id="bgSquare2"></li>
 						<li id="bgSquare3"></li>
 					</ul>	
+
 					<img className="header-picture"src={headerUrl} alt="Project header"/>
-
-				<div className="project-body">
-
 					<h1 className="project-title" style={{ color: project.color }}>{project.title}</h1>
 
+				<div className="project-body">
 					<a href={project.demo_link} className="demo-link">{project.demo_link}</a>
-					<h1>{project.project_url}</h1>
+					<h1 className="github-link">{project.project_url}</h1>
+					<h1 className="description1">{project.description1}</h1>
 
-					<ul className="tech-stack">
-						<h3>Tech Stack:</h3>
-						{project.tech_stack && project.tech_stack.map((tech, index) => (
-							<li key={index}>
-							<h1>{tech}</h1>
-							</li>
-						))}
-					</ul>
+					<div className="tech-tables">
+						<table className="tech-stack">
+							<thead>
+								<tr>
+								<th colSpan="2">Frontend Stack:</th>
+								</tr>
+							</thead>
+							<tbody>
+								{project.frontend_stack && project.frontend_stack.map((tech, index) => (
+								<tr key={index} >
+									<td className="tech-cell">{tech}</td>
+								</tr>
+								))}
+							</tbody>
+						</table>
 
-					<h1>{project.description1}</h1>
+						<table className="tech-stack">
+							<thead>
+								<tr>
+								<th colSpan="2">Backend Stack:</th>
+								</tr>
+							</thead>
+							<tbody>
+								{project.backend_stack && project.backend_stack.map((tech, index) => (
+								<tr key={index} >
+									<td className="tech-cell">{tech}</td>
+								</tr>
+								))}
+							</tbody>
+						</table>
+					</div>
+
 					<h1>{project.description2}</h1>
 					<h1>{project.description3}</h1>
 
-					
-
 					<YouTubeEmbed youtubeLink = {project.youtube_link} />
-					
-
 				</div>
 			</div>
 		</div>

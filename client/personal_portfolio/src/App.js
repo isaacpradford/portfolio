@@ -7,12 +7,8 @@ import { ProjectPage } from "./pages/ProjectPage";
 
 function App() {
 
-	function load() {
-		setTimeout(() => {
-		  }, 20050);
-	}
 	return (
-		<div onLoad={load()}>
+		<div>
 			<Routes>
 				<Route path="/" element={<HomePage />}></Route>
 				<Route path="/:projectTitle" element={<ProjectPage />}></Route>
