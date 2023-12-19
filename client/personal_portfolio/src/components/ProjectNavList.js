@@ -20,7 +20,7 @@ export const ProjectNavList = ({ project }) => {
 
 		// Delay navigation to allow time for the animation to play
 		setTimeout(() => {
-		  navigate(`/${project.title}`); // Navigate to the new page
+		  navigate(`/Projects/${project.title}`); // Navigate to the new page
 		}, 1000);
 	  };
 
@@ -29,7 +29,7 @@ export const ProjectNavList = ({ project }) => {
 			<div className="projectContainer"> 
 			{project.date_created}
 			<Link className="projectTitle" 
-				  to={`/${project.title}`}
+				  to={`/Projects/${project.title}`}
 				  onClick={handleClick}>{project.title}</Link>
 			</div>
 		</li>

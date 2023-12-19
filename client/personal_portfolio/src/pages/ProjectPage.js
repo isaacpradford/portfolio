@@ -59,6 +59,7 @@ export const ProjectPage = () => {
 		document.querySelector('.project-title ').classList.add("ProjectTitleLoad");
 		document.querySelector('.header-picture').classList.add("animate-project-picture");
 
+		
 		const bgSquare = document.querySelector('.bgSquare');
 		const bgSquares = document.querySelectorAll('.bgSquare li');
 
@@ -71,7 +72,22 @@ export const ProjectPage = () => {
 			  item.style.backgroundColor = project.color;
 			});
 		  }, 1000); 
+		  
+		  const projectBody = document.querySelector('.project-body');
+		  projectBody.style.opacity = 1;
+		  const insideBody = projectBody.children;
+
+		  
+		  for (let i = 0; i < insideBody.length; i++) {
+			  const element = insideBody[i];
+			  setTimeout(() => {
+				  element.classList.add('ProjectBodyLoad');
+				}, i * 200);
+			}
+
+			// document.querySelector('.tech-tables').style.display = 'flex';
 	  }, [project]);
+
 
 
 	if (project && project.error === "Project not found") {

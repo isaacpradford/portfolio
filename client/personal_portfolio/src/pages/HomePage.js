@@ -39,7 +39,6 @@ export const HomePage = () => {
 	const LoadAnimations = () => {
 		onLoadHomeProjectAnimation();
 		onLoadIntroAnimation();
-		
 	  };
 
 
@@ -68,6 +67,7 @@ export const HomePage = () => {
 			<div className="projectBox">
 				<ul className="projects">
 					{projects.map((project, index) => {
+
 						return <ProjectNavList key={index} project={project}/>;
 					})}
 				</ul>
