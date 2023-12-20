@@ -1,85 +1,110 @@
-@import url("https://db.onlinewebfonts.com/c/1e400e1a7a0ff1e8abbdddf2e42beff1?family=FSP+DEMO+-+Integral+CF+Heavy");
+// sass --watch cards-style.scss cards.css
+@use 'variables';
+
+// Main: font-family: "FSP DEMO - Integral CF Heavy";
+@import url('https://db.onlinewebfonts.com/c/1e400e1a7a0ff1e8abbdddf2e42beff1?family=FSP+DEMO+-+Integral+CF+Heavy');
+
 /* // Header: font-family: 'Oswald', sans-serif;
 // Header 2: font-family: 'Montserrat', sans-serif; */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Oswald:wght@900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Oswald:wght@900&display=swap');
+
 /* //  P: font-family: 'Cooper Hewitt Light', sans-serif; */
-@import url("https://fonts.cdnfonts.com/css/cooper-hewitt-book");
+@import url('https://fonts.cdnfonts.com/css/cooper-hewitt-book');
+
+
 /* /////////////////////
 // ALL PROJECTS PAGE  // 
 //////////////////////// */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 .all-projects {
-  margin: auto;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 10% 80% 10%;
-  grid-template-rows: 30vh auto;
-  /* background-color: black; */
-  justify-items: center;
-}
-.all-projects .all-project-box {
-  grid-column: 2;
-  grid-row: 2;
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-.all-projects .all-project-box .project-card {
-  width: 30%;
-  height: 200px;
-  text-align: center;
-}
-.all-projects .all-project-box .project-card a {
-  transition: 0.1 ease-in-out;
-}
-.all-projects .all-project-box .project-card a:hover {
-  font-size: 35px;
-}
-.all-projects .all-project-box .project-card .card-title {
-  font-family: "FSP DEMO - Integral CF Heavy";
-  font-size: 30px;
-  text-decoration: none;
-  background-color: rgba(255, 255, 255, 0);
-  color: #feffff;
+    margin: auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 30vh auto;
+    /* background-color: black; */
+    justify-items: center;
+
+
+    .all-project-box {
+        grid-column: 2;
+        grid-row: 2;
+    
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+        .project-card {
+            width: 30%;
+            height: 200px;
+            text-align: center;
+
+            a {
+                transition: .1 ease-in-out;
+            }
+
+            a:hover {
+                font-size: 35px;
+            } 
+            .card-title {
+                font-family: "FSP DEMO - Integral CF Heavy";
+                font-size: 30px;
+                text-decoration: none;
+                background-color: #ffffff00;
+                color: variables.$anti-flash-white;
+
+            }
+        }
+    }   
 }
 
-.container {
+
+
+///////////////////////
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.container{
   position: relative;
   padding: 10px;
   filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.116));
-}
-.container .card:hover {
-  transition: 0.3s ease-in-out;
-  scale: 1.05;
-  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.116));
+
+  .card:hover {
+    transition: 0.3s ease-in-out;
+    scale: 1.05;
+
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.116));
+  }
 }
 
-.container .card {
+.container .card{
   position: relative;
   width: 320px;
   height: 450px;
-  background: #f3f3f3;
+  background: variables.$background-color;
   border-radius: 20px;
   overflow: hidden;
+
   transition: 0.3s ease-in-out;
 }
 
+
 .container .card:before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: #bc1545;
+  background: variables.$red-pantone;
   clip-path: circle(175px at 50% 10%);
   transition: 0.3s ease-in-out;
 }
 
 .container .card:hover:before {
-  clip-path: circle(300px at 50% 10%);
+    clip-path: circle(300px at 50% 10%);
 }
 
 .container .card:after {
@@ -89,12 +114,12 @@
   font-size: 6em;
   font-weight: 800;
   font-style: italic;
-  color: rgba(188, 21, 68, 0.0549019608);
+  color: #bc15440e;
   transform: rotate(30deg);
   font-family: "FSP DEMO - Integral CF Heavy";
 }
 
-.container .card .imgBx {
+.container .card .imgBx{
   position: absolute;
   top: 20%;
   transform: translateY(-50%);
@@ -104,12 +129,13 @@
   transition: 0.5s;
 }
 
-.container .card:hover .imgBx {
+.container .card:hover .imgBx{
   top: -40%;
   transform: translateY(0%);
+    
 }
 
-.container .card .imgBx img {
+.container .card .imgBx img{
   position: absolute;
   top: 50%;
   left: 50%;
@@ -117,7 +143,7 @@
   width: 270px;
 }
 
-.container .card .contentBx {
+.container .card .contentBx{
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -127,11 +153,11 @@
   z-index: 10;
 }
 
-.container .card:hover .contentBx {
+.container .card:hover .contentBx{
   height: 210px;
 }
 
-.container .card .contentBx h2 {
+.container .card .contentBx h2{
   position: relative;
   font-weight: 600;
   letter-spacing: 1px;
@@ -144,26 +170,25 @@
   justify-content: center;
   align-items: center;
   padding: 8px 20px;
-  transition: 0.5s;
-  opacity: 0;
+  transition: 0.5s;opacity: 0;
   visibility: hidden;
   padding-top: 0;
   padding-bottom: 0;
 }
 
-.container .card:hover .contentBx .size {
+.container .card:hover .contentBx .size{
   opacity: 1;
   visibility: visible;
   transition-delay: 0.5s;
 }
 
-.container .card:hover .contentBx .color {
+.container .card:hover .contentBx .color{
   opacity: 1;
   visibility: visible;
   transition-delay: 0.6s;
 }
 
-.container .card .contentBx .size h3, .container .card .contentBx .color h3 {
+.container .card .contentBx .size h3, .container .card .contentBx .color h3{
   color: #fff;
   font-weight: 300;
   font-size: 14px;
@@ -172,7 +197,7 @@
   margin-right: 10px;
 }
 
-.container .card .contentBx .size span {
+.container .card .contentBx .size span{
   width: 26px;
   height: 26px;
   text-align: center;
@@ -188,11 +213,11 @@
   cursor: pointer;
 }
 
-.container .card .contentBx .size span:hover {
+.container .card .contentBx .size span:hover{
   background: #9bdc28;
 }
 
-.container .card .contentBx .color span {
+.container .card .contentBx .color span{
   width: 20px;
   height: 20px;
   background: #ff0;
@@ -201,19 +226,19 @@
   cursor: pointer;
 }
 
-.container .card .contentBx .color span:nth-child(2) {
+.container .card .contentBx .color span:nth-child(2){
   background: #9bdc28;
 }
 
-.container .card .contentBx .color span:nth-child(3) {
+.container .card .contentBx .color span:nth-child(3){
   background: #03a9f4;
 }
 
-.container .card .contentBx .color span:nth-child(4) {
+.container .card .contentBx .color span:nth-child(4){
   background: #e91e63;
 }
 
-.container .card .contentBx a {
+.container .card .contentBx a{
   display: inline-block;
   padding: 10px 20px;
   background: #fff;
@@ -228,10 +253,9 @@
   margin-top: 0;
 }
 
-.container .card:hover .contentBx a {
+.container .card:hover .contentBx a{
   opacity: 1;
   transform: translateY(0px);
   transition-delay: 0.75s;
+  
 }
-
-/*# sourceMappingURL=cards.css.map */

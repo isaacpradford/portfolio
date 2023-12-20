@@ -2,6 +2,7 @@ import HeaderNav from "../components/HeaderNav";
 import HomeIntro from "../components/HomeIntro";
 // import SocialLinks from "../components/SocialLinks";
 import { useState, useEffect } from "react";
+
 import axios from "axios";
 
 import {onLoadIntroAnimation, onLoadHomeProjectAnimation } from "../utilities/loadAnimations";
