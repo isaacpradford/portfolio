@@ -11,23 +11,49 @@
 /* //  P: font-family: 'Cooper Hewitt Light', sans-serif; */
 @import url('https://fonts.cdnfonts.com/css/cooper-hewitt-book');
 
-
 /* /////////////////////
 // ALL PROJECTS PAGE  // 
 //////////////////////// */
+
+.content-wrapper {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: 80%;
+}
+
 .all-projects {
     margin: auto;
     width: 100%;
+
     display: grid;
-    grid-template-columns: 10% 80% 10%;
-    grid-template-rows: 30vh auto;
-    /* background-color: black; */
+    grid-template-columns: 6% 88% 6%;
+    grid-template-rows: 30vh 10vh auto;
+    display: relative;
+    z-index: 0;
     justify-items: center;
 
+    .page-title {
+      font-size: 80px;
+      font-family: "FSP DEMO - Integral CF Heavy";
+      grid-column: 2;
+      grid-row: 1;
+      color: variables.$red-pantone;
+
+      animation-name: allProjectTitleLoad;
+      animation-duration: 2s;
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: both;
+      transition: 0.3s ease-in-out;
+    }
+    
+    .language-input {
+      grid-column: 2;
+      grid-row: 2;
+    }
 
     .all-project-box {
         grid-column: 2;
-        grid-row: 2;
+        grid-row: 3;
     
         margin: auto;
         display: flex;
@@ -40,16 +66,25 @@
             height: 200px;
             text-align: center;
 
-            a {
-                transition: .1 ease-in-out;
+            .read-more {
+              font-size: 20px;
+              font-family: "FSP DEMO - Integral CF Heavy";
+              background-color: variables.$red-pantone;
+              color: variables.$anti-flash-white;
+              border-radius: 999em;
             }
 
-            a:hover {
-                font-size: 35px;
-            } 
+            a {
+                transition: .1s ease-in-out;
+            }
+
+            // a:hover {
+            //     font-size: 55px;
+            // } 
+
             .card-title {
                 font-family: "FSP DEMO - Integral CF Heavy";
-                font-size: 30px;
+                font-size: 35px;
                 text-decoration: none;
                 background-color: #ffffff00;
                 color: variables.$anti-flash-white;
@@ -61,6 +96,59 @@
 
 
 
+.all-projects-bg {
+  position: absolute;
+  bottom: -50vh;
+  z-index: -1;
+  transform: rotateZ(-10deg);
+}
+
+.all-projects-bg li {
+  z-index: -1;
+  margin: 0;
+  list-style-type: none;
+  width: 100%;
+  min-width: 200vw;
+  
+  background-color: variables.$red-pantone;
+}
+
+#all-projects-square1 {
+  opacity: 1;
+  height: 20vh;
+
+  animation-name: bgLoad;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  // animation-iteration-count: infinite;
+  animation-fill-mode: both;
+
+}
+
+#all-projects-square2 {
+  opacity: 0.85;
+  height: 15vh;
+
+  animation-name: bgLoad;
+  animation-duration: 5.3s;
+  animation-timing-function: ease-in-out;
+  // animation-iteration-count: infinite;
+  animation-fill-mode: both;
+
+}
+
+#all-projects-square3 {
+  opacity: 0.7;
+  height: 15vh;
+
+  animation-name: bgLoad;
+  animation-duration: 5.5s;
+  animation-timing-function: ease-in-out;
+  // animation-iteration-count: infinite;
+  animation-fill-mode: both;
+
+}
+
 ///////////////////////
 
 
@@ -70,7 +158,7 @@
   position: relative;
   padding: 10px;
   filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.116));
-
+  
   .card:hover {
     transition: 0.3s ease-in-out;
     scale: 1.05;
@@ -79,17 +167,25 @@
   }
 }
 
-.container .card{
+.card {
   position: relative;
   width: 320px;
   height: 450px;
   background: variables.$background-color;
   border-radius: 20px;
   overflow: hidden;
-
-  transition: 0.3s ease-in-out;
+  opacity: 0;
 }
 
+.card-animation {
+  animation-name: cardLoadAnimation;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+
+  opacity: 1;
+  transition: 0.3s ease-in-out;
+}
 
 .container .card:before {
   content: '';
@@ -103,6 +199,11 @@
   transition: 0.3s ease-in-out;
 }
 
+.date-created {
+  font-family: 'Oswald', sans-serif;
+  font-style: italic;
+}
+
 .container .card:hover:before {
     clip-path: circle(300px at 50% 10%);
 }
@@ -114,8 +215,8 @@
   font-size: 6em;
   font-weight: 800;
   font-style: italic;
-  color: #bc15440e;
-  transform: rotate(30deg);
+  color: #bc15447d;
+  transform: rotate(25deg);
   font-family: "FSP DEMO - Integral CF Heavy";
 }
 
@@ -130,9 +231,8 @@
 }
 
 .container .card:hover .imgBx{
-  top: -40%;
+  top: -30%;
   transform: translateY(0%);
-    
 }
 
 .container .card .imgBx img{
@@ -179,13 +279,13 @@
 .container .card:hover .contentBx .size{
   opacity: 1;
   visibility: visible;
-  transition-delay: 0.5s;
+  transition-delay: 0.3s;
 }
 
 .container .card:hover .contentBx .color{
   opacity: 1;
   visibility: visible;
-  transition-delay: 0.6s;
+  transition-delay: 0.3s;
 }
 
 .container .card .contentBx .size h3, .container .card .contentBx .color h3{
@@ -207,7 +307,7 @@
   color: #111;
   background: #fff;
   margin: 0 5px;
-  transition: 0.5s;
+  transition: 0.3s;
   color: #111;
   border-radius: 4px;
   cursor: pointer;
@@ -249,13 +349,150 @@
   color: #111;
   opacity: 0;
   transform: translateY(50px);
-  transition: 0.5s;
+  transition: 0.3s;
   margin-top: 0;
 }
 
 .container .card:hover .contentBx a{
   opacity: 1;
   transform: translateY(0px);
-  transition-delay: 0.75s;
+  transition-delay: 0.3s;
   
+}
+
+:root {
+  --accent: #bc1545;
+  --accent-2: #bc1545;
+  --text: #20212b;
+  --text-hover: var(--accent);
+  --text-active: #FFFFFF;
+  --border-width: 0.125em;
+}
+
+.hidden-toggles {
+	position: relative;
+
+  animation-name: allProjectTitleLoad;
+  animation-duration: 2.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+  transition: 0.3s ease-in-out;
+
+	height: 2.75em;
+	width: auto;
+
+	display: flex;
+	// flex-direction: row-reverse;
+
+	> * {
+		flex: 0 0 0 0;
+	}
+
+	&:after {
+		content: "";
+
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+
+		border: var(--border-width) solid var(--accent);
+		border-radius: 999em;
+		pointer-events: none;
+	}
+}
+
+.hidden-toggles__input {
+	display: none;
+  
+	&:checked + .hidden-toggles__label {
+		background-color: var(--accent);
+		color: var(--text-active);
+	}	
+}
+
+.hidden-toggles__label {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+  padding: 0 10vh 0 10vh;
+
+  font-family: 'Montserrat', sans-serif;
+
+	position: relative;
+	cursor: pointer;
+	transition: all 0.2s ease-out;
+  color: var(--text);
+
+	&:hover {
+		color: var(--text-hover);
+	}
+
+  &:first-of-type {
+    border-bottom-left-radius: 999em;
+    border-top-left-radius: 999em;
+    border-right: var(--border-width) solid var(--accent);
+  }
+
+  &:last-of-type {
+    border-bottom-right-radius: 999em;
+    border-top-right-radius: 999em;
+
+    border-left: var(--border-width) solid var(--accent);
+  }
+
+  &:nth-of-type(2) {
+		border-right: var(--border-width) solid var(--accent);
+	}
+  
+	&:nth-of-type(3) {
+		border-right: var(--border-width) solid var(--accent);
+	}
+}
+
+/////////////////////////////
+///    * Animations *    ////
+/////////////////////////////
+
+@keyframes allProjectTitleLoad {
+  from {
+    opacity: 0;
+    transform: translate(-100vh);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0vh);
+  }
+}
+
+@keyframes cardLoadAnimation {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px)
+  }
+  50% {
+    opacity: 0;
+    transform: translateX(-50px)
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px)
+  }
+}
+
+
+@keyframes bgLoad {
+  0% {
+    transform: translateY(-5vh);
+    // transform: rotateZ(0deg);
+  }
+  30% {
+    transform: translateY(5vh);
+    // transform: rotateZ(180deg);
+  }
+  100% {
+    transform: translateY(-5vh);
+    // transform: rotateZ(360deg);
+  }
 }

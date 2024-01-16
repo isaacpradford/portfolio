@@ -4,6 +4,8 @@ import axios from "axios";
 import YouTubeEmbed from "../components/youTubeEmbed";
 import HeaderNav from "../components/HeaderNav";
 
+import Logo from "../components/Logo";
+
 // router
 import { useParams } from "react-router-dom";
 
@@ -107,6 +109,8 @@ export const ProjectPage = () => {
 			<div className="header-box">
 				<HeaderNav />
 			</div>
+
+			<Logo loadAnimation={false}/>
 
 			<div className="project">
 					<ul className="bgSquare">

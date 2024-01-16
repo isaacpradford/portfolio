@@ -1,0 +1,16 @@
+.socials-list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+
+    li {
+        a{
+            img {
+                width: 64px;
+                height: auto;
+                max-width: 64px;
+            }
+        }
+    }
+}

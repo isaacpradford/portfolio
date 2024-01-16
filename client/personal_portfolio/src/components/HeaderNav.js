@@ -17,9 +17,9 @@ export default function HeaderNav( {pages = null} )
     } else {
         return (
         <ul className="headerNav">
-            <li className="headerLi"><Link to={`/Projects`}>All Projects</Link></li>
+            <li className="headerLi"><Link to={`/Projects`}>AllProjects</Link></li>
             <li className="headerLi"><Link to={`/Music`}>Music</Link></li>
-            <li className="headerLi"><Link to={`/About`}>About Me</Link></li>
+            <li className="headerLi"><Link to={`/AboutMe`}>AboutMe</Link></li>
             <li className="headerLi"><Link to={`/Contact`}>Contact</Link></li>
         </ul>
         )

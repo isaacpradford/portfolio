@@ -8,18 +8,41 @@
 // ALL PROJECTS PAGE  // 
 //////////////////////// */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+.content-wrapper {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: 80%;
+}
+
 .all-projects {
   margin: auto;
   width: 100%;
   display: grid;
-  grid-template-columns: 10% 80% 10%;
-  grid-template-rows: 30vh auto;
-  /* background-color: black; */
+  grid-template-columns: 6% 88% 6%;
+  grid-template-rows: 30vh 10vh auto;
+  display: relative;
+  z-index: 0;
   justify-items: center;
+}
+.all-projects .page-title {
+  font-size: 80px;
+  font-family: "FSP DEMO - Integral CF Heavy";
+  grid-column: 2;
+  grid-row: 1;
+  color: #bc1545;
+  animation-name: allProjectTitleLoad;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+  transition: 0.3s ease-in-out;
+}
+.all-projects .language-input {
+  grid-column: 2;
+  grid-row: 2;
 }
 .all-projects .all-project-box {
   grid-column: 2;
-  grid-row: 2;
+  grid-row: 3;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
@@ -31,18 +54,65 @@
   height: 200px;
   text-align: center;
 }
-.all-projects .all-project-box .project-card a {
-  transition: 0.1 ease-in-out;
+.all-projects .all-project-box .project-card .read-more {
+  font-size: 20px;
+  font-family: "FSP DEMO - Integral CF Heavy";
+  background-color: #bc1545;
+  color: #feffff;
+  border-radius: 999em;
 }
-.all-projects .all-project-box .project-card a:hover {
-  font-size: 35px;
+.all-projects .all-project-box .project-card a {
+  transition: 0.1s ease-in-out;
 }
 .all-projects .all-project-box .project-card .card-title {
   font-family: "FSP DEMO - Integral CF Heavy";
-  font-size: 30px;
+  font-size: 35px;
   text-decoration: none;
   background-color: rgba(255, 255, 255, 0);
   color: #feffff;
+}
+
+.all-projects-bg {
+  position: absolute;
+  bottom: -50vh;
+  z-index: -1;
+  transform: rotateZ(-10deg);
+}
+
+.all-projects-bg li {
+  z-index: -1;
+  margin: 0;
+  list-style-type: none;
+  width: 100%;
+  min-width: 200vw;
+  background-color: #bc1545;
+}
+
+#all-projects-square1 {
+  opacity: 1;
+  height: 20vh;
+  animation-name: bgLoad;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+}
+
+#all-projects-square2 {
+  opacity: 0.85;
+  height: 15vh;
+  animation-name: bgLoad;
+  animation-duration: 5.3s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+}
+
+#all-projects-square3 {
+  opacity: 0.7;
+  height: 15vh;
+  animation-name: bgLoad;
+  animation-duration: 5.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
 }
 
 .container {
@@ -56,13 +126,22 @@
   filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.116));
 }
 
-.container .card {
+.card {
   position: relative;
   width: 320px;
   height: 450px;
   background: #f3f3f3;
   border-radius: 20px;
   overflow: hidden;
+  opacity: 0;
+}
+
+.card-animation {
+  animation-name: cardLoadAnimation;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+  opacity: 1;
   transition: 0.3s ease-in-out;
 }
 
@@ -78,6 +157,11 @@
   transition: 0.3s ease-in-out;
 }
 
+.date-created {
+  font-family: "Oswald", sans-serif;
+  font-style: italic;
+}
+
 .container .card:hover:before {
   clip-path: circle(300px at 50% 10%);
 }
@@ -89,8 +173,8 @@
   font-size: 6em;
   font-weight: 800;
   font-style: italic;
-  color: rgba(188, 21, 68, 0.0549019608);
-  transform: rotate(30deg);
+  color: rgba(188, 21, 68, 0.4901960784);
+  transform: rotate(25deg);
   font-family: "FSP DEMO - Integral CF Heavy";
 }
 
@@ -105,7 +189,7 @@
 }
 
 .container .card:hover .imgBx {
-  top: -40%;
+  top: -30%;
   transform: translateY(0%);
 }
 
@@ -154,13 +238,13 @@
 .container .card:hover .contentBx .size {
   opacity: 1;
   visibility: visible;
-  transition-delay: 0.5s;
+  transition-delay: 0.3s;
 }
 
 .container .card:hover .contentBx .color {
   opacity: 1;
   visibility: visible;
-  transition-delay: 0.6s;
+  transition-delay: 0.3s;
 }
 
 .container .card .contentBx .size h3, .container .card .contentBx .color h3 {
@@ -182,7 +266,7 @@
   color: #111;
   background: #fff;
   margin: 0 5px;
-  transition: 0.5s;
+  transition: 0.3s;
   color: #111;
   border-radius: 4px;
   cursor: pointer;
@@ -224,14 +308,124 @@
   color: #111;
   opacity: 0;
   transform: translateY(50px);
-  transition: 0.5s;
+  transition: 0.3s;
   margin-top: 0;
 }
 
 .container .card:hover .contentBx a {
   opacity: 1;
   transform: translateY(0px);
-  transition-delay: 0.75s;
+  transition-delay: 0.3s;
+}
+
+:root {
+  --accent: #bc1545;
+  --accent-2: #bc1545;
+  --text: #20212b;
+  --text-hover: var(--accent);
+  --text-active: #FFFFFF;
+  --border-width: 0.125em;
+}
+
+.hidden-toggles {
+  position: relative;
+  animation-name: allProjectTitleLoad;
+  animation-duration: 2.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+  transition: 0.3s ease-in-out;
+  height: 2.75em;
+  width: auto;
+  display: flex;
+}
+.hidden-toggles > * {
+  flex: 0 0 0 0;
+}
+.hidden-toggles:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: var(--border-width) solid var(--accent);
+  border-radius: 999em;
+  pointer-events: none;
+}
+
+.hidden-toggles__input {
+  display: none;
+}
+.hidden-toggles__input:checked + .hidden-toggles__label {
+  background-color: var(--accent);
+  color: var(--text-active);
+}
+
+.hidden-toggles__label {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 10vh 0 10vh;
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  color: var(--text);
+}
+.hidden-toggles__label:hover {
+  color: var(--text-hover);
+}
+.hidden-toggles__label:first-of-type {
+  border-bottom-left-radius: 999em;
+  border-top-left-radius: 999em;
+  border-right: var(--border-width) solid var(--accent);
+}
+.hidden-toggles__label:last-of-type {
+  border-bottom-right-radius: 999em;
+  border-top-right-radius: 999em;
+  border-left: var(--border-width) solid var(--accent);
+}
+.hidden-toggles__label:nth-of-type(2) {
+  border-right: var(--border-width) solid var(--accent);
+}
+.hidden-toggles__label:nth-of-type(3) {
+  border-right: var(--border-width) solid var(--accent);
+}
+
+@keyframes allProjectTitleLoad {
+  from {
+    opacity: 0;
+    transform: translate(-100vh);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0vh);
+  }
+}
+@keyframes cardLoadAnimation {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  50% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes bgLoad {
+  0% {
+    transform: translateY(-5vh);
+  }
+  30% {
+    transform: translateY(5vh);
+  }
+  100% {
+    transform: translateY(-5vh);
+  }
 }
 
 /*# sourceMappingURL=cards.css.map */

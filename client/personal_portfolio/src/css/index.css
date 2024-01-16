@@ -13,7 +13,6 @@ body {
   max-height: 100%;
   max-width: 100%;
   min-width: 900px;
-  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -28,7 +27,6 @@ body {
 /* Scrollbar thumb */
 ::-webkit-scrollbar-thumb {
   background-color: var(--scrollbar-thumb-color);
-  border-radius: 4px;
 }
 
 .introBox {
@@ -36,7 +34,7 @@ body {
   bottom: 3vh;
   left: 8vw;
   font-family: "Cooper Hewitt Light", sans-serif;
-  color: #feffff;
+  color: #f3f3f3;
   margin: 0px;
 }
 .introBox .introName {
@@ -50,6 +48,33 @@ body {
 }
 .introBox ul .introLi {
   font-size: 20px;
+}
+
+.logo {
+  z-index: 40;
+  font-size: 60px;
+  color: #20212b;
+  font-family: "FSP DEMO - Integral CF Heavy";
+}
+
+.home-logo {
+  position: absolute;
+  bottom: 15vh;
+  font-size: 60px;
+  animation-name: homeLogoAnimation;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.page-logo {
+  position: absolute;
+  bottom: 89.5vh;
+  font-size: 60px;
+  animation-name: projectLogoAnimation;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
 }
 
 .headerNav {
@@ -298,6 +323,13 @@ body {
   animation-fill-mode: both;
 }
 
+.HeaderNavMusicLoad {
+  animation-name: headerNavMusicLoad;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+}
+
 .HeaderNavHomeLoad {
   animation-name: headerNavHomeLoad;
   animation-duration: 1.5s;
@@ -364,20 +396,46 @@ body {
     background-color: #bc1545;
   }
 }
-@keyframes headerNavHomeLoad {
+@keyframes homeLogoAnimation {
+  0% {
+    bottom: 82vh;
+  }
+  100% {
+    bottom: 10vh;
+  }
+}
+@keyframes projectLogoAnimation {
   from {
-    left: 38vw;
+    bottom: 15vh;
   }
   to {
-    left: 8vw;
+    bottom: 82vh;
+  }
+}
+@keyframes headerNavHomeLoad {
+  from {
+    left: 55vw;
+  }
+  to {
+    left: 5vw;
   }
 }
 @keyframes headerNavProjectLoad {
   from {
-    left: 8vw;
+    left: 5vw;
   }
   to {
-    left: 38vw;
+    left: 60vw;
+  }
+}
+@keyframes headerNavMusicLoad {
+  from {
+    color: hsl(235, 15%, 15%);
+    left: 5vw;
+  }
+  to {
+    color: #f3f3f3;
+    left: 60vw;
   }
 }
 @keyframes ProjectTitleLoad {
