@@ -27,7 +27,7 @@ export const ProjectNavList = ({ project }) => {
 	return (
 		<li className="projectLi">
 			<div className="projectContainer"> 
-			{project.date_created}
+			{project.date_created} 
 			<Link className="projectTitle" 
 				  to={`/Projects/${project.title}`}
 				  onClick={handleClick}>{project.title}</Link>

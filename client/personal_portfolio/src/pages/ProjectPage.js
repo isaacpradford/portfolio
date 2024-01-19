@@ -17,11 +17,14 @@ export const ProjectPage = () => {
 	document.body.classList = "";
 
 	// Set CSS variables for scrollbar colors and body
+	document.body.classList = "";
+	document.body.style.overflowY = 'scroll';
+	document.body.style.overflowX = 'hidden';
 	document.documentElement.style.setProperty('--background-color', "#f3f3f3");
 	document.documentElement.style.setProperty('--text-color-project', project.color);
-	// document.documentElement.style.setProperty('--scrollbar-gutter-color', 'rgba(0, 0, 0, 0)');
-	// document.documentElement.style.setProperty('--scrollbar-thumb-color', project.color);
-	
+	document.documentElement.style.setProperty('--scrollbar-gutter-color', 'rgba(0, 0, 0, 0)');
+	document.documentElement.style.setProperty('--scrollbar-thumb-color', project.color);
+	document.documentElement.style.setProperty('--logo-color', project.color);	
 
 	// Make the call to retrieve the data of the project
 	useEffect(() => {

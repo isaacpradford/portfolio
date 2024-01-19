@@ -17,6 +17,7 @@ html {
 
 body {
     margin: 0;
+    transition: .3s ease-in-out;
     background-color: var(--background-color);
 
     height: 100vh;
@@ -27,7 +28,8 @@ body {
 }
 
 ::-webkit-scrollbar {
-    width: 12px;
+    width: 8px;
+
   }
   
   /* Scrollbar gutter */
@@ -46,18 +48,24 @@ body {
     bottom: 3vh;
     left: 8vw;
     font-family: 'Cooper Hewitt Light', sans-serif;
-    color: variables.$background-color;
     margin: 0px;
 
     .introName {
-        font-family: "FSP DEMO - Integral CF Heavy";
+        font-family: 'Cooper Hewitt Light', sans-serif;
+
+        background: #ffffff00;
+        color: variables.$background-color;
+        mix-blend-mode: exclusion;
     }
     .introDegree {
         font-family: 'Cooper Hewitt Light', sans-serif;
+
+        background: #ffffff00;
+        color: variables.$background-color;
+        mix-blend-mode: exclusion;
     }
     ul {
         list-style: none;
-        
         .introLi {
             font-size: 20px;
         }
@@ -65,12 +73,22 @@ body {
 }
 
 .logo {
-    // width: 70px;
-    // height: auto;
-    z-index: 40;
+    z-index: 100;
     font-size: 60px;
     color: variables.$space-cadet;
     font-family: "FSP DEMO - Integral CF Heavy";
+    transition: 1s ease-in-out;
+    
+    background: #00000000;
+    color: var(--logo-color);
+    // mix-blend-mode: exclusion;
+}
+
+.page-logo:hover {
+    scale: 1.1;
+    color:rgba(255, 255, 255, 0);
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: var(--logo-color);
 }
 
 .home-logo {
@@ -93,6 +111,8 @@ body {
     animation-duration: 2s;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
+
+    transition: .1s ease-in-out;
 }
 
 .headerNav {
@@ -100,20 +120,24 @@ body {
     display: flex;
     // flex-direction: row-reverse;
 
+    background: #00000000;
+    color: variables.$background-color;
+    mix-blend-mode: exclusion;
+    
     position: absolute; 
     top: 1.5vh;
     left: 8vw;
 
-    z-index: 30;
+    z-index: 20;
     transition: .2s ease-in-out;
+    
 
     .headerLi {
         // min-width: 30px;
         padding: 0 2vw 0 2vw;
         font-size: 20px;
-
         a {
-            color: variables.$space-cadet;
+            color: white;
             font-family: 'Cooper Hewitt Light', sans-serif;
             text-decoration: none;            
         }
@@ -121,21 +145,28 @@ body {
 }
 
 .projectBox {
-    margin-top: 10vh;
+    margin-top: 15vh;
     position: absolute;
     right: 5vw;
 }
 
 .projectTitle {
-    font-size: 180px;
+    font-size: 95px;
 }
 
 .projects {
     margin: 0;
     text-align: right;
     list-style: none;
-    perspective: 50vh; /* Set the perspective for the 3D effect */
-    overflow-x: hidden;
+    perspective: 90vh;
+    // overflow-x: hidden;
+    letter-spacing: -3.5px;
+    // font-style: italic;
+    
+
+    background: #ffffff00;
+    color: variables.$background-color;
+    mix-blend-mode: exclusion;
   }
   
   .projectLi {
@@ -143,42 +174,205 @@ body {
     font-family: "FSP DEMO - Integral CF Heavy";
     transform-style: preserve-3d;
     position: relative;
-    transform-origin: 100% 50%;
-    transition: transform 0.2s ease-in-out;
+    // transform-origin: 100% 50%;
+    // transition: transform 0.2s ease-in-out;
+    
 }
 
 
 .projectContainer {
     transform-origin: 100% 50%;
-    transform: rotateY(-20deg);
+    transform: rotateY(0deg);
     transform-style: preserve-3d;
-    transition: transform 0.2s ease-in-out;
+    transition: .3s ease-in-out;
     padding-right: 40px;
-    position:relative;
+    position: relative;
     z-index: 1;
-    font-size: 26px;
+    font-size: 35px;
+    // letter-spacing: 1px;
 }
 
 .projectContainer:hover {
     transform-origin: 100% 50%;
-    color: variables.$red-pantone;
-    // transform: rotateY(20deg);
+    color: var(--background-color);
+    transform: rotateY(23deg);
 }
 
 .projectContainer a {
     text-decoration: none;
-    color: variables.$anti-flash-white;
-    transition: all 0.2s ease-in-out;
+    color: variables.$background-color;
+    transition: all .1s ease-in-out;
 }
 
 .projectContainer a:hover {
-    // color: rgba(255, 255, 255, 0);
-    color: variables.$anti-flash-white;
-    // -webkit-text-stroke: 2px variables.$red-pantone;
-    margin: 50px;
-    text-shadow: 20px 0px 1px #780f2d96;
+    scale: 1.15;
+    color: #ffffff00;
+    -webkit-text-stroke: 1.5px variables.$background-color;
+    margin: 10px;
+    // text-shadow: 20px 0px 1px #780f2d96;
 }
 
+
+/////////////////////////////////////////////////////////////
+/// Radio Buttons:                                        ///
+/// https://codepen.io/web-tiki/pen/JXwLGQ?editors=1000   ///
+/////////////////////////////////////////////////////////////
+#radios{
+    position: relative;
+    bottom: -1vh;
+    // right: -20vw;
+    width: 200px;
+    margin: 0 auto;
+  }
+
+.colorBox {
+    display: flex;
+    flex-direction: row;
+    justify-self: center;
+    position: absolute;
+    bottom: .5vh;
+    right: 28px;
+}
+.colorButtons input[type="radio"]{
+    position:absolute;
+    right:1000%;
+  }
+
+  .colorButtons label{
+    float:left;
+    width:15%; 
+    padding-bottom:15%;
+    margin:0 2.5%;
+
+    mix-blend-mode: exclusion;
+    background: var(--background-color);
+    
+    border-radius:50%;
+    cursor:pointer;
+  }
+
+.clickMe {
+    padding-right: 2px;
+    font-size: 20px;
+    font-family: 'Cooper Hewitt Light', sans-serif;
+    color: #fff;
+    background-color: black;
+    mix-blend-mode: exclusion;
+}
+
+#slider{
+    position:absolute;
+    left:0%; top:0;
+    width: 10%; padding-bottom:10%;
+    margin: 2.5% 0 0 5%;
+    background: var(--background-color);
+    transition: transform 1s;
+    border-radius:50%;
+    animation-timing-function: ease-in-out;
+    animation-duration:.3s;
+    animation-fill-mode: forwards;
+    transition: 0.2s left .05s ease-in-out;
+  }
+  #input1:checked  ~ #slider{ animation-name: input1; left:0; }
+  #input2:checked  ~ #slider{ animation-name: input2; left:20%; }
+  #input3:checked  ~ #slider{ animation-name: input3; left:40%; }
+  
+  @keyframes input1{ 30%, 70% { transform:scale(0.5); } }
+  @keyframes input2{ 30%, 70% { transform:scale(0.5); } }
+  @keyframes input3{ 30%, 70% { transform:scale(0.5); } }
+
+//////////////////////////////
+/// BG Animation + Objects /////
+//////////////////////////////
+.homeArea{
+    position: absolute;
+    bottom: -140vw;
+    z-index: -1;
+    opacity: 1;
+    width: 100vw;
+    height: 100vh;
+    transform: rotate(-45deg);
+    overflow:visible;
+}
+
+.homeCircles{
+    position: absolute;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    // overflow: hidden;
+
+}
+
+.homeCircles li {
+    bottom: 0;
+    display: block;
+    list-style: none;
+    background: var(--animation-color);
+    // animation: animateHomeSquares 25s linear infinite;
+    // border-radius: 100%;
+        
+}
+
+.homeCircles li:nth-child(1){
+    width: 200%;
+    height: 5vw;
+    animation: HomeSquare1 linear infinite;
+    animation-delay: 3s;
+    animation-duration: 7s;
+}
+
+.homeCircles li:nth-child(2){
+    width: 200%;
+    height: 4vw;
+    animation: HomeSquare1 linear infinite;
+    animation-delay: 3.2s;
+    animation-duration: 7s;
+}
+
+
+.homeCircles li:nth-child(3){
+    width: 200%;
+    height: 3vw;
+    animation: HomeSquare1 linear infinite;
+    animation-delay: 3.4s;
+    animation-duration: 7s;
+}
+
+.homeCircles li:nth-child(4){
+    width: 200%;
+    height: 3vw;
+    animation: HomeSquare1 linear infinite;
+    animation-delay: 3.6s;
+    animation-duration: 7s;
+}
+
+.homeCircles li:nth-child(5){
+    width: 200%;
+    height: 3vw;
+    animation: HomeSquare1 linear infinite;
+    animation-delay: 3.8s;
+    animation-duration: 7s;
+}
+
+@keyframes HomeSquare1 {
+    0%{
+        // opacity: 0;
+        transform: translateY(-200vw) scale(-1);
+        // border-radius: 0;
+    }
+    50%{
+        // opacity: 1;
+        transform: translateY(0vw) scale(6);
+        // border-radius: 0;
+    }
+    100%{
+        // opacity: 0;
+        transform: translateY(100vw) scale(-1);
+        // border-radius: 0;
+    }
+
+}
 
 
 //////////////////
@@ -229,7 +423,6 @@ body {
         color: variables.$space-cadet;
     }
     a:hover {
-        
         font-size: 26px;
     }
     a:active {
@@ -333,7 +526,6 @@ body {
 
 
 // ANIMATION CLASSES // 
-
 .animate-diamonds {
     animation-name: projectBgAnimation;
     animation-duration: 3s;
@@ -546,14 +738,15 @@ body {
 @keyframes fallAndRotate {
     0% {
         opacity: 0;
-        transform: translateY(-200vh) rotateY(-180deg); /* Start above the viewport with rotation */
+        transform: translateY(-200vh) rotateY(-100deg); /* Start above the viewport with rotation */
     }
     50% {
         opacity: 0;
     }
     100% {
         opacity: 1;
-        transform: translateY(0) rotateY(-25deg); /* End at the original position with no rotation */
+        transform: translateY(0) rotateY(-45deg); /* End at the original position with no rotation */
+        ;
     }
 }
 
@@ -592,7 +785,7 @@ body {
 
 @keyframes bodyLeaveAnimation {
     from {
-        background-color: variables.$red-pantone;
+        background-color: var(--background-color);
     }
     to {
        background-color: variables.$background-color;
@@ -609,3 +802,22 @@ body {
 }
 
 
+@media screen and (min-height: 800px) {
+    @keyframes homeLogoAnimation {
+        0% {
+            bottom: 84vh;     
+        }
+        100% {
+            bottom: 10vh;
+        }
+    }
+    
+    @keyframes projectLogoAnimation {
+        from {
+            bottom: 15vh;     
+        }
+        to {
+            bottom: 84vh;
+        }
+    }
+}

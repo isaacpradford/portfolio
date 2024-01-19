@@ -10,7 +10,13 @@
                 width: 64px;
                 height: auto;
                 max-width: 64px;
+
+                transition: .1s ease-in-out;
             }
         }
     }
+}
+
+.socials-list li a img:hover {
+    scale: 1.05;
 }

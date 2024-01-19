@@ -37,7 +37,8 @@
       font-family: "FSP DEMO - Integral CF Heavy";
       grid-column: 2;
       grid-row: 1;
-      color: variables.$red-pantone;
+      color: variables.$project-page;
+      padding-top: 5vh;
 
       animation-name: allProjectTitleLoad;
       animation-duration: 2s;
@@ -69,7 +70,7 @@
             .read-more {
               font-size: 20px;
               font-family: "FSP DEMO - Integral CF Heavy";
-              background-color: variables.$red-pantone;
+              background-color: variables.$project-page;
               color: variables.$anti-flash-white;
               border-radius: 999em;
             }
@@ -87,7 +88,7 @@
                 font-size: 35px;
                 text-decoration: none;
                 background-color: #ffffff00;
-                color: variables.$anti-flash-white;
+                color: variables.$project-page;
 
             }
         }
@@ -110,7 +111,7 @@
   width: 100%;
   min-width: 200vw;
   
-  background-color: variables.$red-pantone;
+  background-color: variables.$space-cadet
 }
 
 #all-projects-square1 {
@@ -163,7 +164,7 @@
     transition: 0.3s ease-in-out;
     scale: 1.05;
 
-    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.116));
+    filter: drop-shadow(100px 100px 100px rgba(0, 0, 0, 0.116));
   }
 }
 
@@ -179,7 +180,7 @@
 
 .card-animation {
   animation-name: cardLoadAnimation;
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: both;
 
@@ -194,7 +195,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: variables.$red-pantone;
+  background: variables.$project-page;
   clip-path: circle(175px at 50% 10%);
   transition: 0.3s ease-in-out;
 }
@@ -205,7 +206,8 @@
 }
 
 .container .card:hover:before {
-    clip-path: circle(300px at 50% 10%);
+  background: variables.$project-page2;
+  clip-path: circle(400px at 50% 10%);
 }
 
 .container .card:after {
@@ -215,7 +217,7 @@
   font-size: 6em;
   font-weight: 800;
   font-style: italic;
-  color: #bc15447d;
+  color: variables.$project-page2;
   transform: rotate(25deg);
   font-family: "FSP DEMO - Integral CF Heavy";
 }
@@ -223,7 +225,7 @@
 .container .card .imgBx{
   position: absolute;
   top: 20%;
-  transform: translateY(-50%);
+  transform: translateY(-60%);
   z-index: 10000;
   width: 100%;
   height: 220px;
@@ -231,8 +233,8 @@
 }
 
 .container .card:hover .imgBx{
-  top: -30%;
-  transform: translateY(0%);
+  top: -40%;
+  transform: translateY(10%);
 }
 
 .container .card .imgBx img{
@@ -361,8 +363,8 @@
 }
 
 :root {
-  --accent: #bc1545;
-  --accent-2: #bc1545;
+  --accent: #a0d6f0;
+  --accent-2: #a0d6f0;
   --text: #20212b;
   --text-hover: var(--accent);
   --text-active: #FFFFFF;
@@ -468,10 +470,6 @@
 
 @keyframes cardLoadAnimation {
   0% {
-    opacity: 0;
-    transform: translateX(-50px)
-  }
-  50% {
     opacity: 0;
     transform: translateX(-50px)
   }

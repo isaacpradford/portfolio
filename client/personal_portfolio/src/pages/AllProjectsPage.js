@@ -43,10 +43,10 @@ export const AllProjectsPage = () => {
     document.body.classList = "";
     document.body.style.overflowY = 'scroll';
     document.body.style.overflowX = 'hidden';
-
     document.documentElement.style.setProperty('--background-color', "#f3f3f3");
     document.documentElement.style.setProperty('--scrollbar-gutter-color', 'rgba(0, 0, 0, 0)');
-    document.documentElement.style.setProperty('--scrollbar-thumb-color', '#bc1545');
+    document.documentElement.style.setProperty('--scrollbar-thumb-color', '#211257');
+    document.documentElement.style.setProperty('--logo-color', '#211257');
 
     const filterProjects = (language) => {
         resetForm();
@@ -111,9 +111,9 @@ export const AllProjectsPage = () => {
         <div className="content-wrapper">
             <div className="all-projects">
                 <ul className="all-projects-bg">
-                    <li id="all-projects-square3"></li>
-                    <li id="all-projects-square2"></li>
-                    <li id="all-projects-square1"></li>
+                    {/* <li id="all-projects-square3"></li> */}
+                    {/* <li id="all-projects-square2"></li>
+                    <li id="all-projects-square1"></li> */}
                 </ul>
 
                 <Logo />

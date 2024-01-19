@@ -20,7 +20,7 @@ export const Socials = () => {
                 </a>
             </li>
             <li>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/isaacpradford/" target="_blank" rel="noopener noreferrer">
                     <img src={LinkedInIcon} alt="LinkedIn Logo" />
                 </a>
             </li>

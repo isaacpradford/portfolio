@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Route, Routes } from "react-router-dom";
+
+
 
 // Pages
 import { HomePage } from "./pages/HomePage";
@@ -21,6 +23,7 @@ function App() {
 				<Route path="/Contact" element={<ContactMe />}></Route>
 				<Route path="/Projects/:projectTitle" element={<ProjectPage />}></Route>
 			</Routes>
+
 		</div>
 	);
 }

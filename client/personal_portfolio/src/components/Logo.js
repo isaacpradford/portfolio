@@ -11,7 +11,7 @@ export default function Logo({loadAnimation})
                 {/* <img className={`logo ${logoClass}`} src={logo} alt="Logo for website"/> */}
                 <h1 className={`logo ${logoClass}`}>IR</h1>
                 <h1 className="introName">Isaac Radford</h1>
-                <h2 className="introDegree">Software Design / WebDev</h2>
+                <h2 className="introDegree">Web Development / Software Design</h2>
             </div>
         )
     } else {

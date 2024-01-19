@@ -15,6 +15,7 @@ export const MusicPage = () => {
     document.documentElement.style.setProperty('--background-color', "#f3f3f3");
     document.documentElement.style.setProperty('--scrollbar-gutter-color', 'rgba(0, 0, 0, 0)');
     document.documentElement.style.setProperty('--scrollbar-thumb-color', '#000000');
+    document.documentElement.style.setProperty('--logo-color', '#000000');
 
     // Load header nav animation
 	useEffect(() => {
@@ -39,6 +40,7 @@ export const MusicPage = () => {
                 <li id="music-bg-square2"></li>
                 <li id="music-bg-square1"></li>
             </ul>
+
             
             <div className="music-content">
                 <HeaderNav pages={["Projects", "AboutMe", "Contact"]}/>
@@ -68,9 +70,9 @@ export const MusicPage = () => {
                         </iframe>
                     </div>
 
-                    <p className="music-description2">I love music and its ability to tell subtle stories, and my interest in it eventually gave me my interest in programming through audio engineering.</p>
+                    {/* <p className="music-description2">I love music and its ability to tell subtle stories, and my interest in it eventually gave me my interest in programming through audio engineering.</p> */}
 
-                    {/* <p className="music-description3">I tend to be inspired by music from video games that have impacted me such as The Legend of Zelda: BOTW, Bloodborne, or Elden Ring.</p> */}
+                    <p className="music-description2">I tend to be inspired by music from video games that have impacted me such as The Legend of Zelda: BOTW, Bloodborne, or Elden Ring.</p>
                    
                     {/* <div className="soundcloud-2"> 
                         <iframe width="100%" 
@@ -83,7 +85,7 @@ export const MusicPage = () => {
                     </div> */}
 
                     <h1 className="demo-title">DEMOS</h1>
-                    <p className="music-description4">You can find a few of my favorite demos here or follow me at my soundcloud below: </p>
+                    <p className="music-description3">You can find a few of my favorite demos here or follow me at my soundcloud below:</p>
 
                     <div className="soundcloud-2"> 
                         <iframe width="100%" 

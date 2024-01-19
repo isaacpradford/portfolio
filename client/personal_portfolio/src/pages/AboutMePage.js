@@ -25,6 +25,7 @@ export const AboutMe = () => {
        document.documentElement.style.setProperty('--background-color', "#f3f3f3");
        document.documentElement.style.setProperty('--scrollbar-gutter-color', 'rgba(0, 0, 0, 0)');
        document.documentElement.style.setProperty('--scrollbar-thumb-color', '#24abea');
+       document.documentElement.style.setProperty('--logo-color', '#24abea');
 
     return (
         <div className="aboutContent">
@@ -54,6 +55,8 @@ export const AboutMe = () => {
                 </p>
                 <p>I'm currently looking for an internship, so if you're interested in my site or anything else on here, please reach out to me on my contact me page!</p>
             </div>
+
+            <Socials />
         </div>
     )
 }

@@ -52,6 +52,14 @@
   height: 1px;
   align-self: center;
 }
+.aboutContent .socials-list {
+  grid-row: 8;
+  grid-column: 1/9;
+  margin: auto;
+}
+.aboutContent .socials-list li {
+  padding: 4vw 3vw 5vw 0vw;
+}
 .aboutContent .aboutPicture {
   width: 100%;
   height: auto;
@@ -90,11 +98,6 @@
   100% {
     opacity: 1;
     transform: translateY(0vw);
-  }
-}
-@media screen and (max-width: 400px) {
-  .aboutPicture {
-    grid-row: 6;
   }
 }
 

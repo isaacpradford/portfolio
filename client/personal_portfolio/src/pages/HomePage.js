@@ -10,6 +10,8 @@ import { ProjectNavList } from "../components/ProjectNavList";
 
 export const HomePage = () => {
 	const [projects, setProjects] = useState([]);
+	const [backgroundColor, setBackgroundColor] = useState("#f3f3f3");
+	const [animationColor, setAnimationColor] = useState("#000");
 
 	// Remove previous body classes
 	document.body.classList = "";
@@ -46,10 +48,12 @@ export const HomePage = () => {
 		document.body.classList = "";
 
 		document.body.style.overflow = 'hidden';
-		document.documentElement.style.setProperty('--background-color', "#bc1545");
+		document.documentElement.style.setProperty("--background-color", backgroundColor);
+		document.documentElement.style.setProperty("--animation-color", animationColor);
 		document.documentElement.style.setProperty('--text-color-home', '#f3f3f3');
 		document.documentElement.style.setProperty('--scrollbar-gutter-color', 'rgba(0, 0, 0, 0)');
-		document.documentElement.style.setProperty('--scrollbar-thumb-color', "#6e0c28");
+		document.documentElement.style.setProperty('--scrollbar-thumb-color', "#15161d");
+		document.documentElement.style.setProperty('--logo-color', animationColor);
 		
 		const headerNavA = document.querySelectorAll('.headerNav li a');
 		headerNavA.forEach((item) => {
@@ -57,10 +61,29 @@ export const HomePage = () => {
 		})
 
 		LoadAnimations();
-	}, [LoadAnimations])
+	}, [backgroundColor, animationColor, LoadAnimations])
+
+	const handleColorChange = (newColor, newAnimationColor) => {
+		setBackgroundColor(newColor);
+		setAnimationColor(newAnimationColor);
+	  };
 
 	return (
 		<div className="homePage">
+			<div className="homeArea" >
+                <ul className="homeCircles">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                </ul>
+            </div >
 			<HeaderNav />
 			{/* <SocialLinks /> */}
 			<Logo loadAnimation={true}/>
@@ -70,6 +93,35 @@ export const HomePage = () => {
 						return <ProjectNavList key={index} project={project}/>;
 					})}
 				</ul>
+			</div>
+
+			<div className="colorBox">
+				<h1 className="clickMe">Click me:</h1>
+				<div className="colorButtons" id="radios">
+					<label for="input1"></label>
+					<input  className="colorButton1" 
+							id="input1"
+							defaultChecked
+							name="colorButton"
+							type="radio" 
+							onChange={() => handleColorChange("#f3f3f3", "#15161d")} />
+				
+					<label for="input2"></label>
+					<input  className="colorButton4" 
+							id="input2"
+							name="colorButton"
+							type="radio" 
+							onChange={() => handleColorChange("#1B4332", "#74C69D")} />
+
+					<label for="input3"></label>
+					<input  className="colorButton5" 
+							id="input3"
+							name="colorButton"
+							type="radio" 
+							onChange={() => handleColorChange("#15161d", "#f3f3f3")} />
+
+					<span id="slider"></span>
+				</div>
 			</div>
 		</div>
 	);

@@ -7,6 +7,7 @@ html {
 
 body {
   margin: 0;
+  transition: 0.3s ease-in-out;
   background-color: var(--background-color);
   height: 100vh;
   width: 100vw;
@@ -16,7 +17,7 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 8px;
 }
 
 /* Scrollbar gutter */
@@ -34,14 +35,19 @@ body {
   bottom: 3vh;
   left: 8vw;
   font-family: "Cooper Hewitt Light", sans-serif;
-  color: #f3f3f3;
   margin: 0px;
 }
 .introBox .introName {
-  font-family: "FSP DEMO - Integral CF Heavy";
+  font-family: "Cooper Hewitt Light", sans-serif;
+  background: rgba(255, 255, 255, 0);
+  color: #f3f3f3;
+  mix-blend-mode: exclusion;
 }
 .introBox .introDegree {
   font-family: "Cooper Hewitt Light", sans-serif;
+  background: rgba(255, 255, 255, 0);
+  color: #f3f3f3;
+  mix-blend-mode: exclusion;
 }
 .introBox ul {
   list-style: none;
@@ -51,10 +57,20 @@ body {
 }
 
 .logo {
-  z-index: 40;
+  z-index: 100;
   font-size: 60px;
-  color: #20212b;
+  color: #15161d;
   font-family: "FSP DEMO - Integral CF Heavy";
+  transition: 1s ease-in-out;
+  background: rgba(0, 0, 0, 0);
+  color: var(--logo-color);
+}
+
+.page-logo:hover {
+  scale: 1.1;
+  color: rgba(255, 255, 255, 0);
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: var(--logo-color);
 }
 
 .home-logo {
@@ -75,15 +91,19 @@ body {
   animation-duration: 2s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
+  transition: 0.1s ease-in-out;
 }
 
 .headerNav {
   list-style: none;
   display: flex;
+  background: rgba(0, 0, 0, 0);
+  color: #f3f3f3;
+  mix-blend-mode: exclusion;
   position: absolute;
   top: 1.5vh;
   left: 8vw;
-  z-index: 30;
+  z-index: 20;
   transition: 0.2s ease-in-out;
 }
 .headerNav .headerLi {
@@ -91,27 +111,30 @@ body {
   font-size: 20px;
 }
 .headerNav .headerLi a {
-  color: #20212b;
+  color: white;
   font-family: "Cooper Hewitt Light", sans-serif;
   text-decoration: none;
 }
 
 .projectBox {
-  margin-top: 10vh;
+  margin-top: 15vh;
   position: absolute;
   right: 5vw;
 }
 
 .projectTitle {
-  font-size: 180px;
+  font-size: 95px;
 }
 
 .projects {
   margin: 0;
   text-align: right;
   list-style: none;
-  perspective: 50vh; /* Set the perspective for the 3D effect */
-  overflow-x: hidden;
+  perspective: 90vh;
+  letter-spacing: -3.5px;
+  background: rgba(255, 255, 255, 0);
+  color: #f3f3f3;
+  mix-blend-mode: exclusion;
 }
 
 .projectLi {
@@ -119,38 +142,201 @@ body {
   font-family: "FSP DEMO - Integral CF Heavy";
   transform-style: preserve-3d;
   position: relative;
-  transform-origin: 100% 50%;
-  transition: transform 0.2s ease-in-out;
 }
 
 .projectContainer {
   transform-origin: 100% 50%;
-  transform: rotateY(-20deg);
+  transform: rotateY(0deg);
   transform-style: preserve-3d;
-  transition: transform 0.2s ease-in-out;
+  transition: 0.3s ease-in-out;
   padding-right: 40px;
   position: relative;
   z-index: 1;
-  font-size: 26px;
+  font-size: 35px;
 }
 
 .projectContainer:hover {
   transform-origin: 100% 50%;
-  color: #bc1545;
+  color: var(--background-color);
+  transform: rotateY(23deg);
 }
 
 .projectContainer a {
   text-decoration: none;
-  color: #feffff;
-  transition: all 0.2s ease-in-out;
+  color: #f3f3f3;
+  transition: all 0.1s ease-in-out;
 }
 
 .projectContainer a:hover {
-  color: #feffff;
-  margin: 50px;
-  text-shadow: 20px 0px 1px rgba(120, 15, 45, 0.5882352941);
+  scale: 1.15;
+  color: rgba(255, 255, 255, 0);
+  -webkit-text-stroke: 1.5px #f3f3f3;
+  margin: 10px;
 }
 
+#radios {
+  position: relative;
+  bottom: -1vh;
+  width: 200px;
+  margin: 0 auto;
+}
+
+.colorBox {
+  display: flex;
+  flex-direction: row;
+  justify-self: center;
+  position: absolute;
+  bottom: 0.5vh;
+  right: 28px;
+}
+
+.colorButtons input[type=radio] {
+  position: absolute;
+  right: 1000%;
+}
+
+.colorButtons label {
+  float: left;
+  width: 15%;
+  padding-bottom: 15%;
+  margin: 0 2.5%;
+  mix-blend-mode: exclusion;
+  background: var(--background-color);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.clickMe {
+  padding-right: 2px;
+  font-size: 20px;
+  font-family: "Cooper Hewitt Light", sans-serif;
+  color: #fff;
+  background-color: black;
+  mix-blend-mode: exclusion;
+}
+
+#slider {
+  position: absolute;
+  left: 0%;
+  top: 0;
+  width: 10%;
+  padding-bottom: 10%;
+  margin: 2.5% 0 0 5%;
+  background: var(--background-color);
+  transition: transform 1s;
+  border-radius: 50%;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  transition: 0.2s left 0.05s ease-in-out;
+}
+
+#input1:checked ~ #slider {
+  animation-name: input1;
+  left: 0;
+}
+
+#input2:checked ~ #slider {
+  animation-name: input2;
+  left: 20%;
+}
+
+#input3:checked ~ #slider {
+  animation-name: input3;
+  left: 40%;
+}
+
+@keyframes input1 {
+  30%, 70% {
+    transform: scale(0.5);
+  }
+}
+@keyframes input2 {
+  30%, 70% {
+    transform: scale(0.5);
+  }
+}
+@keyframes input3 {
+  30%, 70% {
+    transform: scale(0.5);
+  }
+}
+.homeArea {
+  position: absolute;
+  bottom: -140vw;
+  z-index: -1;
+  opacity: 1;
+  width: 100vw;
+  height: 100vh;
+  transform: rotate(-45deg);
+  overflow: visible;
+}
+
+.homeCircles {
+  position: absolute;
+  left: 0;
+  width: 200%;
+  height: 200%;
+}
+
+.homeCircles li {
+  bottom: 0;
+  display: block;
+  list-style: none;
+  background: var(--animation-color);
+}
+
+.homeCircles li:nth-child(1) {
+  width: 200%;
+  height: 5vw;
+  animation: HomeSquare1 linear infinite;
+  animation-delay: 3s;
+  animation-duration: 7s;
+}
+
+.homeCircles li:nth-child(2) {
+  width: 200%;
+  height: 4vw;
+  animation: HomeSquare1 linear infinite;
+  animation-delay: 3.2s;
+  animation-duration: 7s;
+}
+
+.homeCircles li:nth-child(3) {
+  width: 200%;
+  height: 3vw;
+  animation: HomeSquare1 linear infinite;
+  animation-delay: 3.4s;
+  animation-duration: 7s;
+}
+
+.homeCircles li:nth-child(4) {
+  width: 200%;
+  height: 3vw;
+  animation: HomeSquare1 linear infinite;
+  animation-delay: 3.6s;
+  animation-duration: 7s;
+}
+
+.homeCircles li:nth-child(5) {
+  width: 200%;
+  height: 3vw;
+  animation: HomeSquare1 linear infinite;
+  animation-delay: 3.8s;
+  animation-duration: 7s;
+}
+
+@keyframes HomeSquare1 {
+  0% {
+    transform: translateY(-200vw) scale(-1);
+  }
+  50% {
+    transform: translateY(0vw) scale(6);
+  }
+  100% {
+    transform: translateY(100vw) scale(-1);
+  }
+}
 .project-page {
   z-index: 0;
 }
@@ -184,17 +370,17 @@ body {
 }
 .project-body a:link {
   font-size: 24px;
-  color: #20212b;
+  color: #15161d;
   text-decoration: none;
 }
 .project-body a:visited {
-  color: #20212b;
+  color: #15161d;
 }
 .project-body a:hover {
   font-size: 26px;
 }
 .project-body a:active {
-  color: #20212b;
+  color: #15161d;
 }
 
 .header-picture {
@@ -245,7 +431,7 @@ body {
 }
 
 .tech-cell {
-  border: 1px solid #20212b;
+  border: 1px solid #15161d;
   max-width: 50px;
   height: 50px;
   text-align: center;
@@ -474,14 +660,14 @@ body {
 @keyframes fallAndRotate {
   0% {
     opacity: 0;
-    transform: translateY(-200vh) rotateY(-180deg); /* Start above the viewport with rotation */
+    transform: translateY(-200vh) rotateY(-100deg); /* Start above the viewport with rotation */
   }
   50% {
     opacity: 0;
   }
   100% {
     opacity: 1;
-    transform: translateY(0) rotateY(-25deg); /* End at the original position with no rotation */
+    transform: translateY(0) rotateY(-45deg); /* End at the original position with no rotation */
   }
 }
 @keyframes riseAndRotate {
@@ -514,7 +700,7 @@ body {
 }
 @keyframes bodyLeaveAnimation {
   from {
-    background-color: #bc1545;
+    background-color: var(--background-color);
   }
   to {
     background-color: #f3f3f3;
@@ -526,6 +712,24 @@ body {
   }
   to {
     background-color: #bc1545;
+  }
+}
+@media screen and (min-height: 800px) {
+  @keyframes homeLogoAnimation {
+    0% {
+      bottom: 84vh;
+    }
+    100% {
+      bottom: 10vh;
+    }
+  }
+  @keyframes projectLogoAnimation {
+    from {
+      bottom: 15vh;
+    }
+    to {
+      bottom: 84vh;
+    }
   }
 }
 
