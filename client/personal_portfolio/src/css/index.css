@@ -525,7 +525,7 @@ body {
 
 .ProjectTitleLoad {
   animation-name: ProjectTitleLoad;
-  animation-duration: 3s;
+  animation-duration: 2s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: both;
 }
@@ -540,9 +540,17 @@ body {
 
 .outroNav {
   animation-name: riseAndRotate;
-  animation-duration: 2s;
+  animation-duration: 1.5s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: both;
+}
+
+.clickedNav {
+  transition: 1.5s;
+  transform-origin: 100% 50%;
+  color: var(--background-color);
+  transform: rotateY(23deg);
+  transform: translateX(100vw);
 }
 
 .animateHomeIntro {
@@ -672,10 +680,20 @@ body {
 }
 @keyframes riseAndRotate {
   from {
-    transform: translateY(0) rotateY(-20deg); /* Start above the viewport with rotation */
+    opacity: 1;
+    transform: rotateY(0deg);
   }
   to {
-    transform: translateY(-200vh) rotateY(-180deg); /* End at the original position with no rotation */
+    opacity: 0;
+    transform: rotateY(-180deg);
+  }
+}
+@keyframes moveLeft {
+  from {
+    transform: translateX(0) rotateY(0deg); /* Start above the viewport with rotation */
+  }
+  to {
+    transform: translateX(100vw) rotateY(-45deg); /* End at the original position with no rotation */
   }
 }
 @keyframes opacityFill {

@@ -11,10 +11,13 @@ export const ProjectNavList = ({ project }) => {
 		const projectContainers = document.querySelectorAll(".projectContainer");
 
 		projectContainers.forEach((container) => {
-		  if (container !== containerRef.current) {
-			container.classList.add("outroNav");
-		  }
-		});
+			if (!container.contains(e.target)) {
+			  container.classList.add("outroNav");
+			} else {
+				console.log("test")
+			  container.classList.add("clickedNav");
+			}
+		  });
 
 		document.body.classList.add("outroBodyAnimation");
 
