@@ -3,6 +3,7 @@ import axios from "axios";
 
 import YouTubeEmbed from "../components/youTubeEmbed";
 import HeaderNav from "../components/HeaderNav";
+import { Socials } from "../components/Socials";
 
 import Logo from "../components/Logo";
 
@@ -90,7 +91,6 @@ export const ProjectPage = () => {
 				}, i * 200);
 			}
 
-			// document.querySelector('.tech-tables').style.display = 'flex';
 	  }, [project]);
 
 
@@ -123,49 +123,76 @@ export const ProjectPage = () => {
 					</ul>	
 
 					<img className="header-picture"src={headerUrl} alt="Project header"/>
-					<h1 className="project-title" style={{ color: project.color }}>{project.title}</h1>
 
 				<div className="project-body">
-					<a href={project.demo_link} className="demo-link">{project.demo_link}</a>
-					<h1 className="github-link">{project.project_url}</h1>
-					<h1 className="description1">{project.description1}</h1>
+					<h1 className="project-title" style={{ color: project.color }}>{project.title}</h1>
+					<a href={`https://${project.demo_link}`} className="demo-link">{project.demo_link}</a>
+					<h1 className="description description1">{project.description1}</h1>
 
 					<div className="tech-tables">
+						
+					{project.frontend_stack && project.frontend_stack.length > 0 && (
 						<table className="tech-stack">
 							<thead>
-								<tr>
+							<tr>
 								<th colSpan="2">Frontend Stack:</th>
-								</tr>
+							</tr>
 							</thead>
 							<tbody>
-								{project.frontend_stack && project.frontend_stack.map((tech, index) => (
-								<tr key={index} >
-									<td className="tech-cell">{tech}</td>
+							{project.frontend_stack.map((tech, index) => (
+								<tr key={index}>
+								<td className="tech-cell">{tech}</td>
 								</tr>
-								))}
+							))}
 							</tbody>
 						</table>
+						)}
 
-						<table className="tech-stack">
-							<thead>
-								<tr>
-								<th colSpan="2">Backend Stack:</th>
-								</tr>
-							</thead>
-							<tbody>
-								{project.backend_stack && project.backend_stack.map((tech, index) => (
-								<tr key={index} >
-									<td className="tech-cell">{tech}</td>
-								</tr>
-								))}
-							</tbody>
-						</table>
+					{project.backend_stack && project.backend_stack.length > 0 && (
+					<table className="tech-stack">
+						<thead>
+						<tr>
+							<th colSpan="2">Backend Stack:</th>
+						</tr>
+						</thead>
+						<tbody>
+						{project.backend_stack.map((tech, index) => (
+							<tr key={index}>
+							<td className="tech-cell">{tech}</td>
+							</tr>
+						))}
+						</tbody>
+					</table>
+					)}
+
+					{project.tech_stack && project.tech_stack.length > 0 && (
+					<table className="tech-stack">
+						<thead>
+						<tr>
+							<th colSpan="2">Tech Stack:</th>
+						</tr>
+						</thead>
+						<tbody>
+						{project.tech_stack.map((tech, index) => (
+							<tr key={index}>
+							<td className="tech-cell">{tech}</td>
+							</tr>
+						))}
+						</tbody>
+					</table>
+					)}
 					</div>
 
-					<h1>{project.description2}</h1>
-					<h1>{project.description3}</h1>
+					<h1 className="description description2">{project.description2}</h1>
+					<h1 className="github-link">{project.project_url}</h1>
+
+					<h1 className="description description3">{project.description3}</h1>
 
 					<YouTubeEmbed youtubeLink = {project.youtube_link} />
+
+					<div className="project-socials">
+						<Socials />
+					</div>
 				</div>
 			</div>
 		</div>

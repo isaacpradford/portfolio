@@ -10,12 +10,12 @@ export const Socials = () => {
     return (
         <ul className="socials-list">
             <li>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://twitter.com/IsaacRadford" target="_blank" rel="noopener noreferrer">
                     <img src={TwitterIcon} alt="Twitter Logo" />
                 </a>
             </li>
             <li>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.instagram.com/radford_isaac/" target="_blank" rel="noopener noreferrer">
                     <img src={InstagramIcon} alt="Instagram Logo" />
                 </a>
             </li>
@@ -25,7 +25,7 @@ export const Socials = () => {
                 </a>
             </li>
             <li>
-                <a href="https://soundcloud.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://soundcloud.com/isaacradford" target="_blank" rel="noopener noreferrer">
                     <img src={SoundCloudIcon} alt="SoundCloud Logo" />
                 </a>
             </li>

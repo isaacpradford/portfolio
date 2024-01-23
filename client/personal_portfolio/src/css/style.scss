@@ -396,15 +396,18 @@ body {
     max-width: 100%;
     margin: auto;
     overflow: hidden;
-
 }
 
 .project-body {
-    display: flex;
-    opacity: 0;
-    flex-direction: column;
-    text-align: center;
-    // justify-content: center;
+    // display: flex;
+    // opacity: 0;
+    // flex-direction: column;
+    // text-align: center;
+    justify-content: center;
+
+    display: grid;
+    grid-template-columns: 10vw 10vw 30vw 30vw 10vw 10vw;
+    grid-template-rows: 19vh 10vh 20vh auto 10vh 30vh 30vh 30vh 60vh 30vh;
 
     max-width: 800px;
     width: 100%;
@@ -435,7 +438,7 @@ body {
     width: 100%;
     height: auto;
     z-index: 10;
-    margin-top: 11.8vh;
+    margin-top: 13vh;
 
     min-width: 100%;
     // max-width: 900px;
@@ -444,7 +447,9 @@ body {
 }
 
 .project-title {
-    margin-top: 10vh;
+    grid-column: 3/5;
+    grid-row: 1;
+    margin-top: 0vh;
     font-family: "FSP DEMO - Integral CF Heavy";
     z-index: 10;
     font-size: 115px;
@@ -452,24 +457,55 @@ body {
     font-style: italic;
 }
 
+.demo-link {
+    grid-column: 3/5;
+    grid-row: 2;
+    text-align: center;
+    align-self: center;
+    background-color: var(--logo-color);
+    border-radius: 10px;
+    padding: 5px;
+    
+}
+
 .demo-link, .github-link {
+    font-style: italic;
     font-family: 'Oswald', sans-serif;
 }
+
+.socials-list {
+    li {
+        padding: 10px;
+    }
+}
+
+.project-socials {
+    grid-column: 2/6;
+    grid-row: 11;
+    justify-self: center;
+}
+
+
 
 .video-container {
     width: 100%;
     height: 40vh;
     margin: auto;
     padding-bottom: 200px;
+
+    grid-column: 3/5;
+    grid-row: 9;
     iframe {
         border: none;
     }
 }
 
 .tech-tables {
+    grid-column: 3/5;
+    grid-row: 4;
     // background-color: variables.$space-cadet;
     opacity: 0;
-    margin-top: 5vh;
+    margin: 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -488,10 +524,36 @@ body {
     text-align: center; 
 }
 
+.description {
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+}
 .description1 {
-    font-family: 'Cooper Hewitt Light', sans-serif;
+    grid-row: 3;
+    grid-column: 3/5;
+    text-align: center;
 }
 
+.description2 {
+    text-align: left;
+    // max-width: 50%;
+
+    grid-row: 6;
+    grid-column: 4/6;
+}
+
+.description3 {
+    text-align: center;
+    grid-row: 8;
+    grid-column: 3/5;
+}
+
+.github-link {
+    align-self: center;
+    text-align: center;
+    grid-row: 7;
+    grid-column: 3/5;
+}
 
 .bgSquare {
     position: absolute;

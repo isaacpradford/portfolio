@@ -9,7 +9,7 @@ import "../css/cards.css";
 
 const ProjectCard = ({ project, index }) => {
     const base64ToImageUrl = (base64String) => `data:image/jpeg;base64,${base64String}`;
-	const headerUrl = base64ToImageUrl(project.header_picture);
+	const headerUrl = base64ToImageUrl(project.ap_picture);
 
     const afterStyle = {
         content: `"${project.title}"`
