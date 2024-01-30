@@ -128,7 +128,7 @@ export const HomePage = () => {
 							id="input4"
 							name="colorButton"
 							type="radio" 
-							onChange={() => handleColorChange("#2B2D42", "#EF233C")} />
+							onChange={() => handleColorChange("#2B2D42", "#3543D4")} />
 
 					<span id="slider"></span>
 				</div>
