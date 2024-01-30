@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const projectController = require('../controllers/projects');
+const validatePassword = require('../middleware/passwordValidation');
 
 // Validator
-// const { projectValidation } = require('../validation/');
+router.use(validatePassword);
 
 // Gets all data of all projects
 router.get('/', projectController.getAllProjects);

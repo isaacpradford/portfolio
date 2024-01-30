@@ -38,6 +38,7 @@ const ProjectCard = ({ project, index }) => {
 export const AllProjectsPage = () => {
     const [projects, setProjects] = useState([]);
     const [allProjects, setAllProjects] = useState([]);
+    const api_password = process.env.REACT_APP_API_PASSWORD;
 
     // Reset classes, update bg color
     document.body.classList = "";
@@ -67,7 +68,9 @@ export const AllProjectsPage = () => {
 			const options = {
 				method: "GET",
 				url: "http://localhost:5500/projects",
-				headers: {},
+				headers: {
+					password: api_password
+				},
 			};
 			axios
 				.request(options)
