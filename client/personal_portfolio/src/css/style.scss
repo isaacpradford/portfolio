@@ -80,11 +80,12 @@ body {
     z-index: 100;
     font-size: 60px;
     color: variables.$space-cadet;
-    font-family: "FSP DEMO - Integral CF Heavy";
+
     transition: 1s ease-in-out;
     
     background: #00000000;
     color: var(--logo-color);
+    font-family: "FSP DEMO - Integral CF Heavy";
     // mix-blend-mode: exclusion;
 }
 
@@ -185,6 +186,7 @@ body {
     font-family: "FSP DEMO - Integral CF Heavy";
     transform-style: preserve-3d;
     position: relative;
+    font-family: "FSP DEMO - Integral CF Heavy";
     // transform-origin: 100% 50%;
     // transition: transform 0.2s ease-in-out;
     
@@ -486,6 +488,7 @@ body {
     font-size: 115px;
     text-align: center;
     font-style: italic;
+    font-family: "FSP DEMO - Integral CF Heavy";
 }
 
 .demo-link {
