@@ -137,7 +137,7 @@ body {
   grid-column: 2;
 }
 .music-page .music-content .music-description .demo-title {
-  font-family: "FSP DEMO - Integral CF Heavy" !important;
+  font-family: "FSP DEMO - Integral CF Heavy";
   color: #f3f3f3;
   font-size: 215px;
   font-style: italic;

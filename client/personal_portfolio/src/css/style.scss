@@ -85,7 +85,7 @@ body {
     
     background: #00000000;
     color: var(--logo-color);
-    font-family: "FSP DEMO - Integral CF Heavy" !important;
+    font-family: "FSP DEMO - Integral CF Heavy";
     // mix-blend-mode: exclusion;
 }
 
@@ -183,7 +183,7 @@ body {
   }
   .projectLi {
     display: none;
-    font-family: "FSP DEMO - Integral CF Heavy" !important;
+    font-family: "FSP DEMO - Integral CF Heavy";
     transform-style: preserve-3d;
     position: relative;
     // transform-origin: 100% 50%;
@@ -482,7 +482,7 @@ body {
     grid-column: 3/5;
     grid-row: 1;
     margin-top: 0vh;
-    font-family: "FSP DEMO - Integral CF Heavy" !important;
+    font-family: "FSP DEMO - Integral CF Heavy";
     z-index: 10;
     font-size: 115px;
     text-align: center;

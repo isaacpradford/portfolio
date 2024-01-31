@@ -26,7 +26,7 @@
 }
 .all-projects .page-title {
   font-size: 80px;
-  font-family: "FSP DEMO - Integral CF Heavy" !important;
+  font-family: "FSP DEMO - Integral CF Heavy";
   grid-column: 2;
   grid-row: 1;
   color: #211257;
@@ -57,7 +57,7 @@
 }
 .all-projects .all-project-box .project-card .read-more {
   font-size: 20px;
-  font-family: "FSP DEMO - Integral CF Heavy" !important;
+  font-family: "FSP DEMO - Integral CF Heavy";
   background-color: #211257;
   color: #feffff;
   border-radius: 999em;
@@ -69,7 +69,7 @@
   transition: 0.1s ease-in-out;
 }
 .all-projects .all-project-box .project-card .card-title {
-  font-family: "FSP DEMO - Integral CF Heavy" !important;
+  font-family: "FSP DEMO - Integral CF Heavy";
   font-size: 35px;
   text-decoration: none;
   background-color: rgba(255, 255, 255, 0);
@@ -180,7 +180,7 @@
   font-style: italic;
   color: #a0d6f0;
   transform: rotate(25deg);
-  font-family: "FSP DEMO - Integral CF Heavy" !important;
+  font-family: "FSP DEMO - Integral CF Heavy";
 }
 
 .container .card .imgBx {
