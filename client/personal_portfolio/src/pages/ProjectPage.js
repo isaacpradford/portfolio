@@ -13,6 +13,7 @@ import { useParams } from "react-router-dom";
 export const ProjectPage = () => {
 	const [project, setProject] = useState([]);
 	const { projectTitle } = useParams();
+	const api_password = process.env.REACT_APP_API_PASSWORD;
 
 	// Dismount previous animation class
 	document.body.classList = "";
@@ -34,7 +35,9 @@ export const ProjectPage = () => {
 				method: "GET",
 				url: `http://localhost:5500/projects/${projectTitle}`,
 				params: {},
-				headers: {},
+				headers: {
+					password: api_password
+				},
 			};
 
 			axios

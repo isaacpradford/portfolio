@@ -12,6 +12,7 @@ export const HomePage = () => {
 	const [projects, setProjects] = useState([]);
 	const [backgroundColor, setBackgroundColor] = useState("#f3f3f3");
 	const [animationColor, setAnimationColor] = useState("#000");
+	const api_password = process.env.REACT_APP_API_PASSWORD;
 
 	// Remove previous body classes
 	document.body.classList = "";
@@ -22,7 +23,9 @@ export const HomePage = () => {
 			const options = {
 				method: "GET",
 				url: "http://localhost:5500/projects",
-				headers: {},
+				headers: {
+					password: api_password
+				},
 			};
 
 			axios
@@ -107,18 +110,25 @@ export const HomePage = () => {
 							onChange={() => handleColorChange("#f3f3f3", "#15161d")} />
 				
 					<label for="input2"></label>
-					<input  className="colorButton4" 
+					<input  className="colorButton2" 
 							id="input2"
+							name="colorButton"
+							type="radio" 
+							onChange={() => handleColorChange("#15161d", "#f3f3f3")} />
+
+					<label for="input3"></label>
+					<input  className="colorButton3" 
+							id="input3"
 							name="colorButton"
 							type="radio" 
 							onChange={() => handleColorChange("#1B4332", "#74C69D")} />
 
-					<label for="input3"></label>
-					<input  className="colorButton5" 
-							id="input3"
+					<label for="input4"></label>
+					<input  className="colorButton4" 
+							id="input4"
 							name="colorButton"
 							type="radio" 
-							onChange={() => handleColorChange("#15161d", "#f3f3f3")} />
+							onChange={() => handleColorChange("#2B2D42", "#3543D4")} />
 
 					<span id="slider"></span>
 				</div>

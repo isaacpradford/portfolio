@@ -53,7 +53,7 @@ export const AboutMe = () => {
                     I'm 24 years old and I grew up in Idaho. I’m a Web Developer studying at Brigham Young University-Idaho,
                     where I’m a senior and about to graduate with a Bachelor of Science in Software Engineering, along with two certificates in Software Design and Web Development.
                 </p>
-                <p>I'm currently looking for an internship, so if you're interested in my site or anything else on here, please reach out to me on my contact me page!</p>
+                <p>I'm currently looking for an internship, so if you're interested in my site or anything else on here, please reach out to me on my contact page!</p>
             </div>
 
             <Socials />

@@ -280,10 +280,12 @@ body {
   #input1:checked  ~ #slider{ animation-name: input1; left:0; }
   #input2:checked  ~ #slider{ animation-name: input2; left:20%; }
   #input3:checked  ~ #slider{ animation-name: input3; left:40%; }
-  
+  #input4:checked  ~ #slider{ animation-name: input4; left:60%; }
+
   @keyframes input1{ 30%, 70% { transform:scale(0.5); } }
   @keyframes input2{ 30%, 70% { transform:scale(0.5); } }
   @keyframes input3{ 30%, 70% { transform:scale(0.5); } }
+  @keyframes input4{ 30%, 70% { transform:scale(0.5); } }
 
 //////////////////////////////
 /// BG Animation + Objects /////

@@ -38,6 +38,7 @@ const ProjectCard = ({ project, index }) => {
 export const AllProjectsPage = () => {
     const [projects, setProjects] = useState([]);
     const [allProjects, setAllProjects] = useState([]);
+    const api_password = process.env.REACT_APP_API_PASSWORD;
 
     // Reset classes, update bg color
     document.body.classList = "";
@@ -67,7 +68,9 @@ export const AllProjectsPage = () => {
 			const options = {
 				method: "GET",
 				url: "http://localhost:5500/projects",
-				headers: {},
+				headers: {
+					password: api_password
+				},
 			};
 			axios
 				.request(options)
@@ -137,7 +140,7 @@ export const AllProjectsPage = () => {
                         type="radio" 
                         id="coloration-medium-1" 
                         className="hidden-toggles__input" 
-                        onChange={() => filterProjects("ReactJS")}
+                        onChange={() => filterProjects("React")}
                         />
                     <label htmlFor="coloration-medium-1" className="hidden-toggles__label">React</label>
 
@@ -145,16 +148,16 @@ export const AllProjectsPage = () => {
                         type="radio" 
                         id="coloration-medium-2" 
                         className="hidden-toggles__input" 
-                        onChange={() => filterProjects("NextJS")}/>
-                    <label htmlFor="coloration-medium-2" className="hidden-toggles__label">Next</label>
+                        onChange={() => filterProjects("Node")}/>
+                    <label htmlFor="coloration-medium-2" className="hidden-toggles__label">Node</label>
 
                     <input name="coloration-level" 
                         type="radio" 
                         id="coloration-medium-3" 
                         className="hidden-toggles__input" 
-                        onChange={() => filterProjects("NodeJS")}
+                        onChange={() => filterProjects("Python")}
                         />
-                    <label htmlFor="coloration-medium-3" className="hidden-toggles__label">NodeJS</label>	
+                    <label htmlFor="coloration-medium-3" className="hidden-toggles__label">Python</label>	
 
                     <input name="coloration-level" 
                         type="radio" 

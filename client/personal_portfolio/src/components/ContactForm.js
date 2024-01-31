@@ -27,7 +27,6 @@ export const ContactForm = () => {
 
     emailjs.sendForm(SERVICE_ID, 'template_080jx5t', form.current, PUBLIC_KEY)
       .then((result) => {
-          console.log(result.text);
 
           sessionStorage.setItem('emailSent', 'true');
           setEmailSent(true);
