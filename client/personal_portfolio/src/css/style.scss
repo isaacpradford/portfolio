@@ -151,28 +151,34 @@ body {
     margin-top: 15vh;
     position: absolute;
     right: 5vw;
+    // overflow: scroll;
 }
 
 .projectTitle {
-    font-size: 95px;
+    font-size: 100px;
 }
 
+.projectStuffing {
+    opacity: 0;
+}
 
 .projects {
     margin: 0;
     text-align: right;
     list-style: none;
     perspective: 90vh;
-    // overflow-x: hidden;
     letter-spacing: -3.5px;
     // font-style: italic;
-    
+
 
     background: #ffffff00;
     color: variables.$background-color;
     mix-blend-mode: exclusion;
   }
   
+  .projects:last-child {
+    margin-bottom: 2000px;
+  }
   .projectLi {
     display: none;
     font-family: "FSP DEMO - Integral CF Heavy";
@@ -413,7 +419,7 @@ body {
 
     display: grid;
     grid-template-columns: 10vw 10vw 35vw 35vw 10vw 10vw;
-    grid-template-rows: 16vh auto auto auto 35vh 100px 40vh 200px;
+    grid-template-rows: 125px 80px auto auto 35vh 150px 40vh 200px;
 
     max-width: 800px;
     width: 100%;
@@ -426,7 +432,7 @@ body {
     }
     a:link {
         font-size: 24px;
-        color: variables.$space-cadet;
+        // color: variables.$space-cadet;
         text-decoration: none;
         
     }
@@ -486,7 +492,7 @@ body {
     grid-row: 2;
     text-align: center;
     align-self: center;
-    background-color: var(--logo-color);
+    color: var(--logo-color);
     border-radius: 10px;
     padding: 5px;
 }
@@ -541,7 +547,7 @@ body {
 .tech-stack {
     margin: 5vh 0 15vh 0;
     width: 50%;
-    height: 70%
+    // height: 70%
   }
   
 .tech-cell {
@@ -978,3 +984,11 @@ body {
         }
     }
 }
+
+// @media screen and (max-height: 700px) {
+    
+//     .projectBox {
+//         overflow: scroll;
+//         overflow-clip-margin: 200px;
+//     }
+// }

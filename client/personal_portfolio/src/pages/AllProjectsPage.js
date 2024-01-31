@@ -67,7 +67,7 @@ export const AllProjectsPage = () => {
 		const getProjectList = () => {
 			const options = {
 				method: "GET",
-				url: "http://localhost:5500/projects",
+				url: "https://portfolio-api-mjjt.onrender.com/projects",
 				headers: {
 					password: api_password
 				},

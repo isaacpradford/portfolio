@@ -33,7 +33,7 @@ export const ProjectPage = () => {
 		const getProjectList = () => {
 			const options = {
 				method: "GET",
-				url: `http://localhost:5500/projects/${projectTitle}`,
+				url: `https://portfolio-api-mjjt.onrender.com/projects/${projectTitle}`,
 				params: {},
 				headers: {
 					password: api_password

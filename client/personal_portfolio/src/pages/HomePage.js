@@ -22,7 +22,7 @@ export const HomePage = () => {
 		const getProjectList = () => {
 			const options = {
 				method: "GET",
-				url: "http://localhost:5500/projects",
+				url: "https://portfolio-api-mjjt.onrender.com/projects",
 				headers: {
 					password: api_password
 				},
@@ -92,9 +92,12 @@ export const HomePage = () => {
 			<Logo loadAnimation={true}/>
 			<div className="projectBox">
 				<ul className="projects">
+				{/* <li className="projectLi"><div className="projectContainer"><a className="projectTitle projectStuffing">a</a></div></li> */}
+
 					{projects.map((project, index) => {
 						return <ProjectNavList key={index} project={project}/>;
 					})}
+			
 				</ul>
 			</div>
 
