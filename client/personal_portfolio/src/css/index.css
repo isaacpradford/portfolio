@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
 @font-face {
   font-family: "FSP DEMO - Integral CF Heavy";
-  src: url("/client/personal_portfolio/src/css/fonts/Fontspring-DEMO-integralcf-heavy.otf");
+  src: url("/src/css/fonts/Fontspring-DEMO-integralcf-heavy.otf");
 }
 html {
   min-width: 100%;
