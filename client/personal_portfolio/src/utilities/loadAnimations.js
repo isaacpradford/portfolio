@@ -10,7 +10,7 @@ export const onLoadHomeProjectAnimation = () => {
       li.style.display = "grid"
       document.body.style.justifyContent = "flex-end";
 
-      li.classList.add("animateNav");
+      // li.classList.add("animateNav");
       li.style.animationDelay = `${index * 0.3 }s`; // Apply staggered delay
     })
 };

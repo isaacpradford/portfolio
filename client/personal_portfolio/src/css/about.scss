@@ -1,142 +1,107 @@
-// sass --watch about.scss about.css
-@use 'variables';
-
-// Main: font-family: "FSP DEMO - Integral CF Heavy";
-@import url('https://db.onlinewebfonts.com/c/1e400e1a7a0ff1e8abbdddf2e42beff1?family=FSP+DEMO+-+Integral+CF+Heavy');
-
-
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Oswald:wght@900&display=swap");
+@import url("https://fonts.cdnfonts.com/css/cooper-hewitt-book");
+@font-face {
+  font-family: "FSP DEMO - Integral CF Heavy";
+  src: url("./fonts/Fontspring-DEMO-integralcf-heavy.otf");
+}
 /* // Header: font-family: 'Oswald', sans-serif;
 // Header 2: font-family: 'Montserrat', sans-serif; */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Oswald:wght@900&display=swap');
-
 /* //  P: font-family: 'Cooper Hewitt Light', sans-serif; */
-@import url('https://fonts.cdnfonts.com/css/cooper-hewitt-book');
-
-
 .aboutContent {
-    display: grid;
-    grid-template-columns: 10vw 10vw 20vw 10vw 10vw 20vw 10vw 10vw;
-    grid-template-rows: 12vh 70vh 15vh 15vh 15vh 15vh 25vh 15vh 10vh;
-    z-index: 0;
-    
-    .titleContent {
-        grid-row: 2;
-        grid-column: 2 / 8;
-        z-index: 1;
-        font-family: 'Montserrat', sans-serif;
-        background: url("../images/about_banner.png") no-repeat center center;
-        background-size: cover;
-
-        display: flex;
-        justify-content: baseline;
-        align-items: center;
-        flex-direction: row;
-
-        height: 100%;
-        width: 100%;
-
-        animation-name: BannerPicLoad;
-        animation-duration: 2s;
-        animation-timing-function: ease-in-out;
-        animation-fill-mode: both;
-
-        
-        .aboutTitle {
-            animation-name: bannerLoad;
-            animation-duration: 4s;
-            animation-timing-function: ease-in-out;
-            animation-fill-mode: both;
-            margin: 0;
-        }
-
-        h1 {
-            background: variables.$background-color;
-            color: #24abea;
-            mix-blend-mode: screen;
-            font-size: 80px;
-            padding: 20px;
-            margin: 0;
-            min-width: 520px;
-        }
-    }
-
-    .divider {
-        background-color: black;
-        width: 100%;
-        grid-column: 2/8;
-        grid-row: 3;
-        height: 1px;
-        align-self:center ;
-    }
-
-    .socials-list {
-        grid-row: 8;
-        grid-column: 1/9;
-        margin: auto;
-
-        // display: flex;
-        // justify-content: space-between;
-        // align-items: center;
-        li {
-            padding: 4vw 3vw 5vw 0vw;
-        }
-    }
-
-    .aboutPicture {
-        width: 100%;
-        height: auto;
-        grid-row: 4;
-        grid-column: 2/4;
-    }
-
-    .introTitle {
-        grid-row: 4;
-        grid-column: 5/8;
-        min-width: 500px;
-        
-        font-size: 40px;
-        font-family: 'Montserrat', sans-serif;
-    }
-
-    .introDescription {
-        grid-row: 5;
-        grid-column: 5/8;
-        align-self: baseline;
-
-        min-width: 500px;
-
-        font-size: 24px;
-        font-family: 'Cooper Hewitt Light', sans-serif;
-    }
-    
+  display: grid;
+  grid-template-columns: 10vw 10vw 20vw 10vw 10vw 20vw 10vw 10vw;
+  grid-template-rows: 12vh 70vh 15vh 15vh 15vh 15vh 25vh 15vh 10vh;
+  z-index: 0;
 }
-
+.aboutContent .titleContent {
+  grid-row: 2;
+  grid-column: 2/8;
+  z-index: 1;
+  font-family: "FSP DEMO - Integral CF Heavy";
+  background: url("../images/about_banner.png") no-repeat center center;
+  background-size: cover;
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  animation-name: BannerPicLoad;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+}
+.aboutContent .titleContent .aboutTitle {
+  animation-name: bannerLoad;
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+  margin: 0;
+}
+.aboutContent .titleContent h1 {
+  background: #f3f3f3;
+  color: #24abea;
+  mix-blend-mode: screen;
+  font-size: 80px;
+  padding: 20px;
+  margin: 0;
+  min-width: 520px;
+}
+.aboutContent .divider {
+  background-color: black;
+  width: 100%;
+  grid-column: 2/8;
+  grid-row: 3;
+  height: 1px;
+  align-self: center;
+}
+.aboutContent .socials-list {
+  grid-row: 8;
+  grid-column: 1/9;
+  margin: auto;
+}
+.aboutContent .socials-list li {
+  padding: 4vw 3vw 5vw 0vw;
+}
+.aboutContent .aboutPicture {
+  width: 100%;
+  height: auto;
+  grid-row: 4;
+  grid-column: 2/4;
+}
+.aboutContent .introTitle {
+  grid-row: 4;
+  grid-column: 5/8;
+  min-width: 500px;
+  font-size: 40px;
+  font-family: "FSP DEMO - Integral CF Heavy";
+}
+.aboutContent .introDescription {
+  grid-row: 5;
+  grid-column: 5/8;
+  align-self: baseline;
+  min-width: 500px;
+  font-size: 24px;
+  font-family: "Cooper Hewitt Light", sans-serif;
+}
 
 @keyframes bannerLoad {
-    0% {
-      transform: translateX(100vw);
-      // transform: rotateZ(0deg);
-    }
-    100% {
-      transform: translateX(-51vw);
-      // transform: rotateZ(360deg);
-    }
+  0% {
+    transform: translateX(100vw);
   }
-
-  @keyframes BannerPicLoad {
-    0% {
-        opacity: 0;
-        transform: translateY(-10vh);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0vw);
-    }
+  100% {
+    transform: translateX(-51vw);
+  }
+}
+@keyframes BannerPicLoad {
+  0% {
+    opacity: 0;
+    transform: translateY(-10vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0vw);
+  }
 }
 
-
-// @media screen and (max-width: 400px) {
-//     .aboutPicture {
-//         grid-row: 6;
-//     }
-// }
+/*# sourceMappingURL=about.css.map */

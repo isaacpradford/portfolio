@@ -3,14 +3,18 @@
 @use 'variables';
 
 // Main: font-family: "FSP DEMO - Integral CF Heavy";
-@import url('https://db.onlinewebfonts.com/c/1e400e1a7a0ff1e8abbdddf2e42beff1?family=FSP+DEMO+-+Integral+CF+Heavy');
+// @import url('https://db.onlinewebfonts.com/c/1e400e1a7a0ff1e8abbdddf2e42beff1?family=FSP+DEMO+-+Integral+CF+Heavy');
+@font-face {
+    font-family: "FSP DEMO - Integral CF Heavy";
+    src: url('./fonts/Fontspring-DEMO-integralcf-heavy.otf')
+}
 
 
 // Header: font-family: 'Oswald', sans-serif;
 // Header 2: font-family: 'Montserrat', sans-serif;
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Oswald:wght@900&display=swap');
 
-//  P: font-family: 'Cooper Hewitt Light', sans-serif; 
+//  P: font-family: 'Cooper Hewitt Light', sans-serif;
 @import url('https://fonts.cdnfonts.com/css/cooper-hewitt-book');
 
 body {
@@ -115,7 +119,7 @@ body {
         .music-title {
             // justify-self: baseline;
             // font-size: 47px;
-            font-family: 'Montserrat', sans-serif;
+            font-family: "FSP DEMO - Integral CF Heavy";
             grid-column: 2;
             grid-row: 3;
 
@@ -185,7 +189,7 @@ body {
             }
 
             .demo-title {
-                font-family: 'Montserrat', sans-serif;
+                font-family: "FSP DEMO - Integral CF Heavy";
                 color: variables.$background-color;
                 font-size: 215px;
                 font-style: italic;
@@ -372,5 +376,4 @@ body {
         display: none;
     }
 }
-
 

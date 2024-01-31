@@ -1,9 +1,12 @@
-@import url("https://db.onlinewebfonts.com/c/1e400e1a7a0ff1e8abbdddf2e42beff1?family=FSP+DEMO+-+Integral+CF+Heavy");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Oswald:wght@900&display=swap");
+@import url("https://fonts.cdnfonts.com/css/cooper-hewitt-book");
+@font-face {
+  font-family: "FSP DEMO - Integral CF Heavy";
+  src: url("./fonts/Fontspring-DEMO-integralcf-heavy.otf");
+}
 /* // Header: font-family: 'Oswald', sans-serif;
 // Header 2: font-family: 'Montserrat', sans-serif; */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Oswald:wght@900&display=swap");
 /* //  P: font-family: 'Cooper Hewitt Light', sans-serif; */
-@import url("https://fonts.cdnfonts.com/css/cooper-hewitt-book");
 .contactPage {
   z-index: 0;
   display: grid;
@@ -19,6 +22,7 @@
   grid-template-rows: 12vh 7vh 10vh 50vh 10vh 10vh;
   z-index: 1;
 }
+
 .contactContent .contactForm {
   display: flex;
   flex-direction: column;
@@ -26,16 +30,18 @@
   grid-column: 5/8;
   padding: 30px;
 }
+
 .contactContent .contactForm label {
   text-align: left;
   padding-top: 30px;
   font-size: 30px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "FSP DEMO - Integral CF Heavy";
   font-style: italic;
   background: #000000;
   color: #f3f3f3;
   mix-blend-mode: exclusion;
 }
+
 .contactContent .contactTitle {
   font-weight: 800;
   letter-spacing: -2px;
@@ -45,6 +51,7 @@
   color: #f3f3f3;
   mix-blend-mode: exclusion;
 }
+
 .contactContent .contactDesc {
   font-family: "Cooper Hewitt Light", sans-serif;
   font-size: 20px;
@@ -55,11 +62,13 @@
   color: #f3f3f3;
   mix-blend-mode: exclusion;
 }
+
 .contactContent .socials-list {
   grid-row: 6;
   grid-column: 4/6;
   margin: auto;
 }
+
 .contactContent .socials-list li {
   padding: 4vw 3vw 5vw 0vw;
 }
@@ -330,5 +339,6 @@ textarea {
     transform: translateY(0);
   }
 }
+
 
 /*# sourceMappingURL=contact.css.map */

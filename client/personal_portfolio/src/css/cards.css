@@ -1,13 +1,16 @@
-@import url("https://db.onlinewebfonts.com/c/1e400e1a7a0ff1e8abbdddf2e42beff1?family=FSP+DEMO+-+Integral+CF+Heavy");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Oswald:wght@900&display=swap");
+@import url("https://fonts.cdnfonts.com/css/cooper-hewitt-book");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@font-face {
+  font-family: "FSP DEMO - Integral CF Heavy";
+  src: url("./fonts/Fontspring-DEMO-integralcf-heavy.otf");
+}
 /* // Header: font-family: 'Oswald', sans-serif;
 // Header 2: font-family: 'Montserrat', sans-serif; */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Oswald:wght@900&display=swap");
 /* //  P: font-family: 'Cooper Hewitt Light', sans-serif; */
-@import url("https://fonts.cdnfonts.com/css/cooper-hewitt-book");
 /* /////////////////////
 // ALL PROJECTS PAGE  // 
 //////////////////////// */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 .content-wrapper {
   overflow-x: hidden;
   overflow-y: hidden;
@@ -26,7 +29,7 @@
 }
 .all-projects .page-title {
   font-size: 80px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "FSP DEMO - Integral CF Heavy";
   grid-column: 2;
   grid-row: 1;
   color: #211257;
@@ -57,7 +60,7 @@
 }
 .all-projects .all-project-box .project-card .read-more {
   font-size: 20px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "FSP DEMO - Integral CF Heavy";
   background-color: #211257;
   color: #feffff;
   border-radius: 999em;
@@ -69,7 +72,7 @@
   transition: 0.1s ease-in-out;
 }
 .all-projects .all-project-box .project-card .card-title {
-  font-family: "Montserrat", sans-serif;
+  font-family: "FSP DEMO - Integral CF Heavy";
   font-size: 35px;
   text-decoration: none;
   background-color: rgba(255, 255, 255, 0);
@@ -180,7 +183,7 @@
   font-style: italic;
   color: #a0d6f0;
   transform: rotate(25deg);
-  font-family: "Montserrat", sans-serif;
+  font-family: "FSP DEMO - Integral CF Heavy";
 }
 
 .container .card .imgBx {

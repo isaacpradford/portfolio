@@ -1,7 +1,10 @@
-@import url("https://db.onlinewebfonts.com/c/1e400e1a7a0ff1e8abbdddf2e42beff1?family=FSP+DEMO+-+Integral+CF+Heavy");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Oswald:wght@900&display=swap");
 @import url("https://fonts.cdnfonts.com/css/cooper-hewitt-book");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+@font-face {
+  font-family: "FSP DEMO - Integral CF Heavy";
+  src: url("./fonts/Fontspring-DEMO-integralcf-heavy.otf");
+}
 html {
   min-width: 100%;
 }
@@ -61,10 +64,10 @@ body {
   z-index: 100;
   font-size: 60px;
   color: #15161d;
+  font-family: "FSP DEMO - Integral CF Heavy";
   transition: 1s ease-in-out;
   background: rgba(0, 0, 0, 0);
   color: var(--logo-color);
-  font-family: "Montserrat", sans-serif;
 }
 
 .page-logo:hover {
@@ -118,13 +121,13 @@ body {
 }
 
 .projectBox {
-  margin-top: 15vh;
+  margin-top: 100px;
   position: absolute;
   right: 5vw;
 }
 
 .projectTitle {
-  font-size: 100px;
+  font-size: 120px;
 }
 
 .projectStuffing {
@@ -148,14 +151,16 @@ body {
 
 .projectLi {
   display: none;
-  font-family: "Montserrat", sans-serif;
+  font-family: "FSP DEMO - Integral CF Heavy";
   transform-style: preserve-3d;
   position: relative;
 }
 
 .projectContainer {
   transform-origin: 100% 50%;
-  transform: rotateY(0deg);
+  -moz-transform: rotateY(-40deg);
+  -webkit-transform: rotateY(-40deg);
+  transform: rotateY(-45deg);
   transform-style: preserve-3d;
   transition: 0.3s ease-in-out;
   padding-right: 40px;
@@ -167,7 +172,9 @@ body {
 .projectContainer:hover {
   transform-origin: 100% 50%;
   color: var(--background-color);
-  transform: rotateY(23deg);
+  -moz-transform: rotateY(-20deg);
+  -webkit-transform: rotateY(-20deg);
+  transform: rotateY(-20deg);
 }
 
 .projectContainer a {
@@ -431,7 +438,7 @@ body {
   grid-column: 3/5;
   grid-row: 1;
   margin-top: 0vh;
-  font-family: "Montserrat", sans-serif;
+  font-family: "FSP DEMO - Integral CF Heavy";
   z-index: 10;
   font-size: 115px;
   text-align: center;
@@ -790,14 +797,14 @@ body {
 @keyframes fallAndRotate {
   0% {
     opacity: 0;
-    transform: translateY(-200vh) rotateY(-100deg); /* Start above the viewport with rotation */
+    transform: translateY(-200vh);
   }
   50% {
     opacity: 0;
   }
   100% {
     opacity: 1;
-    transform: translateY(0) rotateY(-45deg); /* End at the original position with no rotation */
+    transform: translateY(0);
   }
 }
 @keyframes riseAndRotate {
