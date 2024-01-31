@@ -14,7 +14,6 @@ export const ProjectNavList = ({ project }) => {
 			if (!container.contains(e.target)) {
 			  container.classList.add("outroNav");
 			} else {
-				console.log("test")
 			  container.classList.add("clickedNav");
 			}
 		  });

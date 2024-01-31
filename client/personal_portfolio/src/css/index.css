@@ -247,6 +247,11 @@ body {
   left: 40%;
 }
 
+#input4:checked ~ #slider {
+  animation-name: input4;
+  left: 60%;
+}
+
 @keyframes input1 {
   30%, 70% {
     transform: scale(0.5);
@@ -258,6 +263,11 @@ body {
   }
 }
 @keyframes input3 {
+  30%, 70% {
+    transform: scale(0.5);
+  }
+}
+@keyframes input4 {
   30%, 70% {
     transform: scale(0.5);
   }
