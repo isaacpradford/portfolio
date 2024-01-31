@@ -2,7 +2,7 @@
 @import url("https://fonts.cdnfonts.com/css/cooper-hewitt-book");
 @font-face {
   font-family: "FSP DEMO - Integral CF Heavy";
-  src: url("/src/css/fonts/Fontspring-DEMO-integralcf-heavy.otf");
+  src: url("fonts/Fontspring-DEMO-integralcf-heavy.otf");
 }
 /* // Header: font-family: 'Oswald', sans-serif;
 // Header 2: font-family: 'Montserrat', sans-serif; */
