@@ -1,11 +1,7 @@
+@import url("https://db.onlinewebfonts.com/c/1e400e1a7a0ff1e8abbdddf2e42beff1?family=FSP+DEMO+-+Integral+CF+Heavy");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Oswald:wght@900&display=swap");
 @import url("https://fonts.cdnfonts.com/css/cooper-hewitt-book");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
-@font-face {
-  font-family: "FSP DEMO - Integral CF Heavy";
-  font-weight: 900;
-  src: local("FSP DEMO - Integral CF Heavy"), url("./fonts/Fontspring-DEMO-integralcf-heavy.otf") format("opentype");
-}
 html {
   min-width: 100%;
 }

@@ -2,12 +2,8 @@
 @use 'variables';
 
 // Main: font-family: "FSP DEMO - Integral CF Heavy";
-// @import url('https://db.onlinewebfonts.com/c/1e400e1a7a0ff1e8abbdddf2e42beff1?family=FSP+DEMO+-+Integral+CF+Heavy');
-@font-face {
-  font-family: "FSP DEMO - Integral CF Heavy";
-  font-weight: 900;
-  src: local('FSP DEMO - Integral CF Heavy'), url('./fonts/Fontspring-DEMO-integralcf-heavy.otf') format('opentype');
-}
+@import url('https://db.onlinewebfonts.com/c/1e400e1a7a0ff1e8abbdddf2e42beff1?family=FSP+DEMO+-+Integral+CF+Heavy');
+
 
 
 /* // Header: font-family: 'Oswald', sans-serif;
