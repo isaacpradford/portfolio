@@ -3,7 +3,7 @@ import Logo from "../components/Logo";
 
 // import SocialLinks from "../components/SocialLinks";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+
 import axios from "axios";
 import {onLoadIntroAnimation, onLoadHomeProjectAnimation } from "../utilities/loadAnimations";
 
@@ -89,7 +89,7 @@ export const HomePage = () => {
                         <li></li>
                 </ul>
             </div >
-			<Link to="http://www.onlinewebfonts.com/fonts">Web Fonts</Link>
+
 			<HeaderNav />
 			{/* <SocialLinks /> */}
 			<Logo loadAnimation={true}/>
