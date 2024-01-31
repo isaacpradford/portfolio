@@ -1,7 +1,9 @@
 import HeaderNav from "../components/HeaderNav";
 import Logo from "../components/Logo";
+
 // import SocialLinks from "../components/SocialLinks";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import {onLoadIntroAnimation, onLoadHomeProjectAnimation } from "../utilities/loadAnimations";
 
