@@ -64,7 +64,7 @@ export const ProjectPage = () => {
 		})
 
 		document.querySelector('.project-title ').classList.add("ProjectTitleLoad");
-		document.querySelector('.header-picture').classList.add("animate-project-picture");
+		document.querySelector('.video-container').classList.add("animate-project-picture");
 
 		
 		const bgSquare = document.querySelector('.bgSquare');
@@ -116,6 +116,7 @@ export const ProjectPage = () => {
 
 			<Logo loadAnimation={false}/>
 
+			
 			<div className="project">
 					<ul className="bgSquare">
 						<li id="bgSquare1"></li>
@@ -123,11 +124,11 @@ export const ProjectPage = () => {
 						<li id="bgSquare3"></li>
 					</ul>	
 
-
-
-					<img className="header-picture"src={headerUrl} alt="Project header"/>
-
+				<div className="video-container">
+					<YouTubeEmbed youtubeLink = {project.youtube_link} />
+				</div>
 				<div className="project-body">
+
 					<h1 className="project-title" style={{ color: project.color }}>{project.title}</h1>
 					<a href={`https://${project.demo_link}`} className="demo-link">{project.demo_link}</a>
 					<h1 className="description description1">{project.description1}</h1>
@@ -189,23 +190,22 @@ export const ProjectPage = () => {
 					<h1 className="description description2">{project.description2}</h1>
 					<h1 className="github-link">{project.project_url}</h1>
 
-					{demoPictures.map((base64String, index) => (
+					{/* {demoPictures.map((base64String, index) => (
 						<img
 						key={index}
 						className="demo-picture"
 						src={base64ToImageUrl(base64String)}
 						alt={`Demo Picture ${index + 1}`}
 						/>
-					))}
+					))} */}
+					<img className="demo-picture"src={headerUrl} alt="Project header"/>
 
-					<ul className="bgAccentSquare">
-						<li id="bgAccentSquare1"></li>
-					</ul>
+					<div className="bgAccentSquare"></div>
 
 					<h1 className="description description3">{project.description3}</h1>
 
-					<YouTubeEmbed youtubeLink = {project.youtube_link} />
 
+					<div className="bgAccentSquare2"></div>
 					<div className="project-socials">
 						<Socials />
 					</div>

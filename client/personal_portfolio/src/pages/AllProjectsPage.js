@@ -23,7 +23,7 @@ const ProjectCard = ({ project, index }) => {
                 <img className="header-picture"src={headerUrl} alt="Project header"/>
             </div>
             <style>
-                {`.${cardClassName}:after { content: ${afterStyle.content}; }`}
+                {`.${cardClassName}:after { content: ${afterStyle.content}; } `}
             </style>
             <div className="project-card contentBx" key={project._id}>
                 <Link className="card-title" to={`/Projects/${project.title}`}>{project.title}</Link>
