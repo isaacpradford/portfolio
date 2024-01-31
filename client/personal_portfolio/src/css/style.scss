@@ -4,6 +4,10 @@
 // Main: font-family: "FSP DEMO - Integral CF Heavy";
 @import url('https://db.onlinewebfonts.com/c/1e400e1a7a0ff1e8abbdddf2e42beff1?family=FSP+DEMO+-+Integral+CF+Heavy');
 
+// font-family: 'Bebas Neue', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
 // Header: font-family: 'Oswald', sans-serif;
 // Header 2: font-family: 'Montserrat', sans-serif;
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Oswald:wght@900&display=swap');
@@ -79,7 +83,7 @@ body {
     z-index: 100;
     font-size: 60px;
     color: variables.$space-cadet;
-    font-family: "FSP DEMO - Integral CF Heavy";
+    font-family: 'Bebas Neue', sans-serif;
     transition: 1s ease-in-out;
     
     background: #00000000;
@@ -90,7 +94,7 @@ body {
 .page-logo:hover {
     scale: 1.1;
     color:rgba(255, 255, 255, 0);
-    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-width: 0.1px;
     -webkit-text-stroke-color: var(--logo-color);
 }
 
@@ -137,7 +141,7 @@ body {
 
     .headerLi {
         // min-width: 30px;
-        padding: 0 2vw 0 2vw;
+        padding: 0 40px 0 40px;
         font-size: 20px;
         a {
             color: white;
@@ -154,7 +158,7 @@ body {
 }
 
 .projectTitle {
-    font-size: 95px;
+    font-size: 100px;
 }
 
 
@@ -164,7 +168,7 @@ body {
     list-style: none;
     perspective: 90vh;
     // overflow-x: hidden;
-    letter-spacing: -3.5px;
+    letter-spacing: -2px;
     // font-style: italic;
     
 
@@ -175,18 +179,18 @@ body {
   
   .projectLi {
     display: none;
-    font-family: "FSP DEMO - Integral CF Heavy";
+    font-family: 'Bebas Neue', sans-serif;
+    // letter-spacing: -5px;
     transform-style: preserve-3d;
     position: relative;
     // transform-origin: 100% 50%;
     // transition: transform 0.2s ease-in-out;
-    
 }
 
 
 .projectContainer {
     transform-origin: 100% 50%;
-    transform: rotateY(0deg);
+    transform: rotateY(15deg);
     transform-style: preserve-3d;
     transition: .3s ease-in-out;
     padding-right: 40px;
@@ -199,7 +203,7 @@ body {
 .projectContainer:hover {
     transform-origin: 100% 50%;
     color: var(--background-color);
-    transform: rotateY(23deg);
+    transform: rotateY(40deg);
 }
 
 .projectContainer a {
@@ -457,7 +461,7 @@ body {
     margin-top: 0vh;
     font-family: "FSP DEMO - Integral CF Heavy";
     z-index: 10;
-    font-size: 115px;
+    font-size: 50px;
     text-align: center;
     font-style: italic;
 }
@@ -941,3 +945,26 @@ body {
         }
     }
 }
+@media screen and (max-height: 600px) {
+    .projectTitle {
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-height: 400px) {
+    .projectTitle {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .projectTitle {
+        font-size: 85px;
+    }
+}
+
+// @media screen and (max-width: 400px) {
+//     .projectTitle {
+//         font-size: 30px;
+//     }
+// }

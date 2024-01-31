@@ -1,4 +1,5 @@
 @import url("https://db.onlinewebfonts.com/c/1e400e1a7a0ff1e8abbdddf2e42beff1?family=FSP+DEMO+-+Integral+CF+Heavy");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 /* // Header: font-family: 'Oswald', sans-serif;
 // Header 2: font-family: 'Montserrat', sans-serif; */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Oswald:wght@900&display=swap");
@@ -30,7 +31,7 @@
   text-align: left;
   padding-top: 30px;
   font-size: 30px;
-  font-family: "FSP DEMO - Integral CF Heavy";
+  font-family: "Bebas Neue", sans-serif;
   font-style: italic;
   background: #000000;
   color: #f3f3f3;
