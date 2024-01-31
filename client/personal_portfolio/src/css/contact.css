@@ -30,7 +30,7 @@
   text-align: left;
   padding-top: 30px;
   font-size: 30px;
-  font-family: "FSP DEMO - Integral CF Heavy";
+  font-family: "FSP DEMO - Integral CF Heavy" !important;
   font-style: italic;
   background: #000000;
   color: #f3f3f3;

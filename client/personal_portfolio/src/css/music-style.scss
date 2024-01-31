@@ -115,7 +115,7 @@ body {
         .music-title {
             // justify-self: baseline;
             // font-size: 47px;
-            font-family: "FSP DEMO - Integral CF Heavy";
+            font-family: "FSP DEMO - Integral CF Heavy" !important;
             grid-column: 2;
             grid-row: 3;
 
@@ -185,7 +185,7 @@ body {
             }
 
             .demo-title {
-                font-family: "FSP DEMO - Integral CF Heavy";
+                font-family: "FSP DEMO - Integral CF Heavy" !important;
                 color: variables.$background-color;
                 font-size: 215px;
                 font-style: italic;
