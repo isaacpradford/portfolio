@@ -2,11 +2,10 @@
 @use 'variables';
 
 // Main: font-family: "FSP DEMO - Integral CF Heavy";
-// @import url('https://db.onlinewebfonts.com/c/1e400e1a7a0ff1e8abbdddf2e42beff1?family=FSP+DEMO+-+Integral+CF+Heavy');
-@font-face {
-    font-family: "FSP DEMO - Integral CF Heavy";
-    src: url('./fonts/Fontspring-DEMO-integralcf-heavy.otf')
-}
+@import url('https://db.onlinewebfonts.com/c/1e400e1a7a0ff1e8abbdddf2e42beff1?family=FSP+DEMO+-+Integral+CF+Heavy');
+
+// font-family: 'Bebas Neue', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 // Header: font-family: 'Oswald', sans-serif;
 // Header 2: font-family: 'Montserrat', sans-serif;
@@ -83,7 +82,7 @@ body {
     z-index: 100;
     font-size: 60px;
     color: variables.$space-cadet;
-    font-family: "FSP DEMO - Integral CF Heavy";
+    font-family: 'Bebas Neue', sans-serif;
     transition: 1s ease-in-out;
     
     background: #00000000;
@@ -185,7 +184,7 @@ body {
   }
   .projectLi {
     display: none;
-    font-family: "FSP DEMO - Integral CF Heavy";
+    font-family: 'Bebas Neue', sans-serif;
     transform-style: preserve-3d;
     position: relative;
     // transform-origin: 100% 50%;
@@ -250,7 +249,7 @@ body {
     justify-self: center;
     position: absolute;
     bottom: .5vh;
-    right: 28px;
+    right: 100px;
 }
 .colorButtons input[type="radio"]{
     position:absolute;
@@ -489,7 +488,7 @@ body {
     grid-column: 3/5;
     grid-row: 1;
     margin-top: 0vh;
-    font-family: "FSP DEMO - Integral CF Heavy";
+    font-family: 'Bebas Neue', sans-serif;
     z-index: 10;
     font-size: 115px;
     text-align: center;
@@ -916,7 +915,7 @@ body {
 @keyframes riseAndRotate {
     from {
         opacity: 1;
-        transform: rotateY(0deg)
+        transform: rotateY(-45deg)
     }
     to {
         opacity: 0;
@@ -991,5 +990,49 @@ body {
         to {
             bottom: 84vh;
         }
+    }
+}
+
+@media screen and (max-height: 600px) {
+    .projectTitle {
+        font-size: 90px;
+    }
+
+    .projectBox {
+        margin-top: 0px;
+    }
+
+
+    .introDegree {
+        display: none;
+    }
+
+
+}
+
+@media screen and (max-height: 400px) {
+    .projectTitle {
+        font-size: 70px;
+    }
+    .introDegree {
+        display: none;
+    }
+
+    body {
+        overflow: scroll;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .projectTitle {
+        font-size: 95px;
+    }
+
+    .introName {
+        display: none;
+    }
+
+    .introDegree {
+        display: none;
     }
 }

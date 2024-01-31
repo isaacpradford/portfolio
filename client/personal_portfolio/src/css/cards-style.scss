@@ -2,11 +2,11 @@
 @use 'variables';
 
 // Main: font-family: "FSP DEMO - Integral CF Heavy";
-// @import url('https://db.onlinewebfonts.com/c/1e400e1a7a0ff1e8abbdddf2e42beff1?family=FSP+DEMO+-+Integral+CF+Heavy');
-@font-face {
-  font-family: "FSP DEMO - Integral CF Heavy";
-  src: url('./fonts/Fontspring-DEMO-integralcf-heavy.otf')
-}
+@import url('https://db.onlinewebfonts.com/c/1e400e1a7a0ff1e8abbdddf2e42beff1?family=FSP+DEMO+-+Integral+CF+Heavy');
+
+// font-family: 'Bebas Neue', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 
 /* // Header: font-family: 'Oswald', sans-serif;
 // Header 2: font-family: 'Montserrat', sans-serif; */
@@ -38,7 +38,7 @@
 
     .page-title {
       font-size: 80px;
-      font-family: "FSP DEMO - Integral CF Heavy";
+      font-family: 'Bebas Neue', sans-serif;
       grid-column: 2;
       grid-row: 1;
       color: variables.$project-page;
@@ -73,7 +73,7 @@
 
             .read-more {
               font-size: 20px;
-              font-family: "FSP DEMO - Integral CF Heavy";
+              font-family: 'Bebas Neue', sans-serif;
               background-color: variables.$project-page;
               color: variables.$anti-flash-white;
               border-radius: 999em;
@@ -91,7 +91,7 @@
             // } 
 
             .card-title {
-                font-family: "FSP DEMO - Integral CF Heavy";
+              font-family: 'Bebas Neue', sans-serif;
                 font-size: 35px;
                 text-decoration: none;
                 background-color: #ffffff00;
@@ -226,7 +226,7 @@
   font-style: italic;
   color: variables.$project-page2;
   transform: rotate(25deg);
-  font-family: "FSP DEMO - Integral CF Heavy";
+  font-family: 'Bebas Neue', sans-serif;
 }
 
 .container .card .imgBx{

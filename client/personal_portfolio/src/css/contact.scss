@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Oswald:wght@900&display=swap");
 @import url("https://fonts.cdnfonts.com/css/cooper-hewitt-book");
-@font-face {
-  font-family: "FSP DEMO - Integral CF Heavy";
-  src: url("./fonts/Fontspring-DEMO-integralcf-heavy.otf");
-}
+// font-family: 'Bebas Neue', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
 /* // Header: font-family: 'Oswald', sans-serif;
 // Header 2: font-family: 'Montserrat', sans-serif; */
 /* //  P: font-family: 'Cooper Hewitt Light', sans-serif; */
@@ -35,7 +35,7 @@
   text-align: left;
   padding-top: 30px;
   font-size: 30px;
-  font-family: "FSP DEMO - Integral CF Heavy";
+  font-family: 'Bebas Neue', sans-serif;
   font-style: italic;
   background: #000000;
   color: #f3f3f3;
