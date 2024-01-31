@@ -6,7 +6,8 @@
 
 @font-face {
     font-family: "FSP DEMO - Integral CF Heavy";
-    src: local('FSP DEMO - Integral CF Heavy'), url('./fonts/Fontspring-DEMO-integralcf-heavy.otf');
+    font-weight: 900;
+    src: local('FSP DEMO - Integral CF Heavy'), url('./fonts/Fontspring-DEMO-integralcf-heavy.otf') format('opentype');
 }
 
 
