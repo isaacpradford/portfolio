@@ -140,7 +140,7 @@ export const AllProjectsPage = () => {
                         type="radio" 
                         id="coloration-medium-1" 
                         className="hidden-toggles__input" 
-                        onChange={() => filterProjects("ReactJS")}
+                        onChange={() => filterProjects("React")}
                         />
                     <label htmlFor="coloration-medium-1" className="hidden-toggles__label">React</label>
 
@@ -148,16 +148,16 @@ export const AllProjectsPage = () => {
                         type="radio" 
                         id="coloration-medium-2" 
                         className="hidden-toggles__input" 
-                        onChange={() => filterProjects("NextJS")}/>
-                    <label htmlFor="coloration-medium-2" className="hidden-toggles__label">Next</label>
+                        onChange={() => filterProjects("Node")}/>
+                    <label htmlFor="coloration-medium-2" className="hidden-toggles__label">Node</label>
 
                     <input name="coloration-level" 
                         type="radio" 
                         id="coloration-medium-3" 
                         className="hidden-toggles__input" 
-                        onChange={() => filterProjects("NodeJS")}
+                        onChange={() => filterProjects("Python")}
                         />
-                    <label htmlFor="coloration-medium-3" className="hidden-toggles__label">NodeJS</label>	
+                    <label htmlFor="coloration-medium-3" className="hidden-toggles__label">Python</label>	
 
                     <input name="coloration-level" 
                         type="radio" 
