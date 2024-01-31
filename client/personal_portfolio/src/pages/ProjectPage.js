@@ -44,6 +44,7 @@ export const ProjectPage = () => {
 				.request(options)
 				.then(function (response) {
 					setProject(response.data);
+					console.log(response.data);
 				})
 				.catch(function (error) {
 					if (error.response && error.response.status === 404) {
@@ -108,7 +109,7 @@ export const ProjectPage = () => {
 	} else {
 		const base64ToImageUrl = (base64String) => `data:image/jpeg;base64,${base64String}`;
 		const headerUrl = base64ToImageUrl(project.header_picture);
-
+		const demoPictures = project.demo_picture || [];
 
 		return (
 		<div className="project-page">
@@ -124,6 +125,8 @@ export const ProjectPage = () => {
 						<li id="bgSquare2"></li>
 						<li id="bgSquare3"></li>
 					</ul>	
+
+
 
 					<img className="header-picture"src={headerUrl} alt="Project header"/>
 
@@ -188,6 +191,19 @@ export const ProjectPage = () => {
 
 					<h1 className="description description2">{project.description2}</h1>
 					<h1 className="github-link">{project.project_url}</h1>
+
+					{demoPictures.map((base64String, index) => (
+						<img
+						key={index}
+						className="demo-picture"
+						src={base64ToImageUrl(base64String)}
+						alt={`Demo Picture ${index + 1}`}
+						/>
+					))}
+
+					<ul className="bgAccentSquare">
+						<li id="bgAccentSquare1"></li>
+					</ul>
 
 					<h1 className="description description3">{project.description3}</h1>
 
