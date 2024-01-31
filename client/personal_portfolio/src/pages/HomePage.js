@@ -89,7 +89,7 @@ export const HomePage = () => {
                         <li></li>
                 </ul>
             </div >
-			<Link href="http://www.onlinewebfonts.com/fonts">Web Fonts</Link>
+			<Link to="http://www.onlinewebfonts.com/fonts">Web Fonts</Link>
 			<HeaderNav />
 			{/* <SocialLinks /> */}
 			<Logo loadAnimation={true}/>
