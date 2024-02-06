@@ -91,14 +91,16 @@ body {
     
     background: #00000000;
     color: var(--background-color);
-    // mix-blend-mode: exclusion;
+    mix-blend-mode: exclusion;
 }
 
 .page-logo:hover {
     scale: 1.1;
     color:rgba(255, 255, 255, 0);
-    -webkit-text-stroke-width: 0.1px;
-    -webkit-text-stroke-color: var(--logo-color);
+    -webkit-text-stroke-width: 0.0001px;
+    -webkit-text-stroke-color: var(--background-color);
+    stroke-width: 0.1px;
+
 }
 
 .home-logo {
@@ -123,10 +125,10 @@ body {
 
     margin: 0;
 
-    animation-name: projectLogoAnimation;
-    animation-duration: 2s;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
+    // animation-name: projectLogoAnimation;
+    // animation-duration: 2s;
+    // animation-timing-function: ease-in-out;
+    // animation-fill-mode: forwards;
 
     transition: .1s ease-in-out;
 }

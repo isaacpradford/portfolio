@@ -53,6 +53,22 @@ const getProjectByTitle = async (req, res, next) => {
 	}
 };
 
+const getProjectTitles = async (req, res, next) => {
+    try {
+        const result = await db
+            .getDb()
+            .collection("portfolio")
+            .find({}, { projection: { _id: 0, title: 1 } });
+
+        result.toArray().then((titles) => {
+            res.status(200).json(titles);
+        });
+    } catch {
+        console.log("Error getting project titles.");
+        res.sendStatus(500);
+    }
+};
+
 const addProject = async (req, res) => {
 	try {
 		const project = {
@@ -96,4 +112,5 @@ module.exports = {
 	getProjectById,
 	addProject,
 	getProjectByTitle,
+	getProjectTitles
 };

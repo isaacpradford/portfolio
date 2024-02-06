@@ -13,7 +13,10 @@ router.get('/', projectController.getAllProjects);
 // router.get('/:id', projectController.getProjectById);
 
 // Get all data for single project by searching for Title
-router.get('/:title', projectController.getProjectByTitle)
+router.get('/:title', projectController.getProjectByTitle);
+
+// Get all project titles
+router.get('/titles', projectController.getProjectTitles);
 
 // Add project to Mongo
 router.post('/',projectController.addProject);

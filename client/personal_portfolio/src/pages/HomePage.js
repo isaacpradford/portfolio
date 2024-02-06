@@ -26,7 +26,8 @@ export const HomePage = () => {
 			setIsLoading(true);
 			const options = {
 				method: "GET",
-				url: "https://portfolio-api-mjjt.onrender.com/projects",
+				url: "https://portfolio-api-mjjt.onrender.com/projects/titles",
+                // url: "http://localhost:5500/projects/titles",
 				headers: {
 					password: api_password
 				},

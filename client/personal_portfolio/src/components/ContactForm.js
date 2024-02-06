@@ -31,7 +31,7 @@ export const ContactForm = () => {
           sessionStorage.setItem('emailSent', 'true');
           setEmailSent(true);
           form.current.reset();
-          alert('Thank you for the email! I usualy respond within one to two business days!')
+          alert('Thank you for the email! I usually respond within one to two business days!')
       }, (error) => {
           console.log(error.text);
       });
