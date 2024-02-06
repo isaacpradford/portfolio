@@ -9,35 +9,38 @@ html {
 
 body {
   margin: 0;
-  transition: 0.3s ease-in-out;
+  transition: 0.5s ease-in-out;
   background-color: var(--background-color);
   height: 100vh;
   width: 100vw;
   max-height: 100%;
   max-width: 100%;
   min-width: 900px;
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 15px;
 }
 
 /* Scrollbar gutter */
 ::-webkit-scrollbar-track {
-  background-color: var(--scrollbar-gutter-color);
+  background-color: var(--background-color);
 }
 
 /* Scrollbar thumb */
 ::-webkit-scrollbar-thumb {
-  background-color: var(--scrollbar-thumb-color);
+  background-color: var(--logo-color);
 }
 
 .introBox {
-  position: absolute;
+  position: fixed;
   bottom: 3vh;
   left: 8vw;
   font-family: "Cooper Hewitt Light", sans-serif;
   margin: 0px;
+  mix-blend-mode: exclusion;
+  z-index: 100;
 }
 .introBox .introName {
   font-family: "Cooper Hewitt Light", sans-serif;
@@ -61,11 +64,10 @@ body {
 .logo {
   z-index: 100;
   font-size: 60px;
-  color: #15161d;
   font-family: "Bebas Neue", sans-serif;
   transition: 1s ease-in-out;
   background: rgba(0, 0, 0, 0);
-  color: var(--logo-color);
+  color: var(--background-color);
 }
 
 .page-logo:hover {
@@ -76,19 +78,20 @@ body {
 }
 
 .home-logo {
-  position: absolute;
-  bottom: 15vh;
+  position: fixed;
+  top: -28px;
+  left: 25px;
   font-size: 60px;
-  animation-name: homeLogoAnimation;
-  animation-duration: 2s;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
 }
 
 .page-logo {
-  position: absolute;
-  bottom: 89.5vh;
+  color: var(--background-color);
+  position: fixed;
+  top: 10px;
+  left: 20px;
   font-size: 60px;
+  z-index: 100;
+  margin: 0;
   animation-name: projectLogoAnimation;
   animation-duration: 2s;
   animation-timing-function: ease-in-out;
@@ -102,8 +105,8 @@ body {
   background: rgba(0, 0, 0, 0);
   color: #f3f3f3;
   mix-blend-mode: exclusion;
-  position: absolute;
-  top: 1.5vh;
+  position: fixed;
+  top: 18px;
   left: 8vw;
   z-index: 20;
   transition: 0.2s ease-in-out;
@@ -119,9 +122,9 @@ body {
 }
 
 .projectBox {
-  margin-top: 100px;
   position: absolute;
-  right: 5vw;
+  right: 5%;
+  top: 2%;
 }
 
 .projectTitle {
@@ -141,10 +144,6 @@ body {
   background: rgba(255, 255, 255, 0);
   color: #f3f3f3;
   mix-blend-mode: exclusion;
-}
-
-.projects:last-child {
-  margin-bottom: 2000px;
 }
 
 .projectLi {
@@ -189,8 +188,9 @@ body {
 }
 
 #radios {
-  position: relative;
-  bottom: -1vh;
+  position: fixed;
+  bottom: 30px;
+  right: 1px;
   width: 200px;
   margin: 0 auto;
 }
@@ -215,12 +215,15 @@ body {
   padding-bottom: 15%;
   margin: 0 2.5%;
   mix-blend-mode: exclusion;
-  background: var(--background-color);
+  background: var(--logo-color);
   border-radius: 50%;
   cursor: pointer;
 }
 
 .clickMe {
+  position: fixed;
+  bottom: 18px;
+  right: 200px;
   padding-right: 2px;
   font-size: 20px;
   font-family: "Cooper Hewitt Light", sans-serif;
@@ -285,80 +288,196 @@ body {
     transform: scale(0.5);
   }
 }
-.homeArea {
+.lds-title {
+  position: fixed;
+  top: 38%;
+  left: 49.9%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  font-family: "Cooper Hewitt Light", sans-serif;
+  color: #fff;
+  background-color: black;
+  mix-blend-mode: exclusion;
+}
+
+.lds-ellipsis {
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 160px;
+  height: 160px;
+}
+
+.lds-ellipsis div {
   position: absolute;
-  bottom: -140vw;
-  z-index: -1;
-  opacity: 1;
-  width: 100vw;
-  height: 100vh;
-  transform: rotate(-45deg);
-  overflow: visible;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--logo-color);
+  mix-blend-mode: exclusion;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 
-.homeCircles {
-  position: absolute;
-  left: 0;
-  width: 200%;
-  height: 200%;
+.lds-ellipsis div:nth-child(1) {
+  left: 16px;
+  animation: lds-ellipsis1 0.6s infinite;
 }
 
-.homeCircles li {
-  bottom: 0;
-  display: block;
-  list-style: none;
-  background: var(--animation-color);
+.lds-ellipsis div:nth-child(2) {
+  left: 16px;
+  animation: lds-ellipsis2 0.6s infinite;
 }
 
-.homeCircles li:nth-child(1) {
-  width: 200%;
-  height: 5vw;
-  animation: HomeSquare1 linear infinite;
-  animation-delay: 3s;
-  animation-duration: 7s;
+.lds-ellipsis div:nth-child(3) {
+  left: 64px;
+  animation: lds-ellipsis2 0.6s infinite;
 }
 
-.homeCircles li:nth-child(2) {
-  width: 200%;
-  height: 4vw;
-  animation: HomeSquare1 linear infinite;
-  animation-delay: 3.2s;
-  animation-duration: 7s;
+.lds-ellipsis div:nth-child(4) {
+  left: 112px;
+  animation: lds-ellipsis3 0.6s infinite;
 }
 
-.homeCircles li:nth-child(3) {
-  width: 200%;
-  height: 3vw;
-  animation: HomeSquare1 linear infinite;
-  animation-delay: 3.4s;
-  animation-duration: 7s;
-}
-
-.homeCircles li:nth-child(4) {
-  width: 200%;
-  height: 3vw;
-  animation: HomeSquare1 linear infinite;
-  animation-delay: 3.6s;
-  animation-duration: 7s;
-}
-
-.homeCircles li:nth-child(5) {
-  width: 200%;
-  height: 3vw;
-  animation: HomeSquare1 linear infinite;
-  animation-delay: 3.8s;
-  animation-duration: 7s;
-}
-
-@keyframes HomeSquare1 {
+@keyframes lds-ellipsis1 {
   0% {
-    transform: translateY(-200vw) scale(-1);
-  }
-  50% {
-    transform: translateY(0vw) scale(6);
+    transform: scale(0);
   }
   100% {
-    transform: translateY(100vw) scale(-1);
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(48px, 0);
+  }
+}
+.animated-bg {
+  transition: 0.5s ease-in-out;
+  position: fixed;
+  top: -1500px;
+  height: 8000px;
+  width: 4000px;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: linear-gradient(var(--logo-color) 200px, transparent 200px);
+  transform: rotate(-45deg);
+  -webkit-animation: bg-scrolling-reverse 8s infinite; /* Safari 4+ */
+  -moz-animation: bg-scrolling-reverse 8s infinite; /* Fx 5+ */
+  -o-animation: bg-scrolling-reverse 8s infinite; /* Opera 12+ */
+  animation: bg-scrolling-reverse 8s infinite; /* IE 10+ */
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+.animated-bg2 {
+  transition: 0.5s ease-in-out;
+  position: fixed;
+  top: -1500px;
+  height: 8000px;
+  width: 4000px;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: linear-gradient(var(--logo-color) 150px, transparent 150px);
+  transform: rotate(-45deg);
+  -webkit-animation: bg-scrolling-reverse2 8s infinite; /* Safari 4+ */
+  -moz-animation: bg-scrolling-reverse2 8s infinite; /* Fx 5+ */
+  -o-animation: bg-scrolling-reverse2 8s infinite; /* Opera 12+ */
+  animation: bg-scrolling-reverse2 8s infinite; /* IE 10+ */
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+.animated-bg3 {
+  transition: 0.5s ease-in-out;
+  position: fixed;
+  top: -1500px;
+  height: 8000px;
+  width: 4000px;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: linear-gradient(var(--logo-color) 140px, transparent 140px);
+  transform: rotate(-45deg);
+  -webkit-animation: bg-scrolling-reverse3 8s infinite; /* Safari 4+ */
+  -moz-animation: bg-scrolling-reverse3 8s infinite; /* Fx 5+ */
+  -o-animation: bg-scrolling-reverse3 8s infinite; /* Opera 12+ */
+  animation: bg-scrolling-reverse3 8s infinite; /* IE 10+ */
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+@-webkit-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 450vw 540vh;
+  }
+}
+@-moz-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 450vw 540vh;
+  }
+}
+@-o-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 450vw 540vh;
+  }
+}
+@keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 450vw 540vh;
+  }
+}
+@-webkit-keyframes bg-scrolling-reverse2 {
+  100% {
+    background-position: 450vw 495vh;
+  }
+}
+@-moz-keyframes bg-scrolling-reverse2 {
+  100% {
+    background-position: 450vw 495vh;
+  }
+}
+@-o-keyframes bg-scrolling-reverse2 {
+  100% {
+    background-position: 450vw 495vh;
+  }
+}
+@keyframes bg-scrolling-reverse2 {
+  100% {
+    background-position: 450vw 495vh;
+  }
+}
+@-webkit-keyframes bg-scrolling-reverse3 {
+  100% {
+    background-position: 450vw 450vh;
+  }
+}
+@-moz-keyframes bg-scrolling-reverse3 {
+  100% {
+    background-position: 450vw 450vh;
+  }
+}
+@-o-keyframes bg-scrolling-reverse3 {
+  100% {
+    background-position: 450vw 450vh;
+  }
+}
+@keyframes bg-scrolling-reverse3 {
+  100% {
+    background-position: 450vw 450vh;
   }
 }
 .project-page {
@@ -366,17 +485,17 @@ body {
 }
 
 .header-box {
-  width: 100%;
+  width: 200%;
   height: 10vh;
   background-color: #f3f3f3;
-  position: absolute;
+  position: fixed;
+  top: 0;
   z-index: 20;
 }
 
 .project {
   max-width: 100%;
   margin: auto;
-  overflow: hidden;
   z-index: 0;
 }
 
@@ -719,10 +838,10 @@ body {
 }
 @keyframes homeLogoAnimation {
   0% {
-    bottom: 82vh;
+    top: 10px;
   }
   100% {
-    bottom: 10vh;
+    top: 800px;
   }
 }
 @keyframes projectLogoAnimation {
@@ -730,7 +849,7 @@ body {
     bottom: 15vh;
   }
   to {
-    bottom: 82vh;
+    bottom: 84vh;
   }
 }
 @keyframes headerNavHomeLoad {
@@ -894,9 +1013,6 @@ body {
   }
   .introDegree {
     display: none;
-  }
-  body {
-    overflow: scroll;
   }
 }
 @media screen and (max-width: 700px) {
