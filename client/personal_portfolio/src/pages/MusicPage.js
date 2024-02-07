@@ -38,7 +38,7 @@ export const MusicPage = () => {
             <ul className="music-bg">
                 <li id="music-bg-square3"></li>
                 <li id="music-bg-square2"></li>
-                <li id="music-bg-square1"></li>
+                {/* <li id="music-bg-square1"></li> */}
             </ul>
 
             
@@ -47,7 +47,7 @@ export const MusicPage = () => {
                 <Logo loadAnimation={false}/>
 
                 <div className="music-video-container">
-                    <iframe src="https://www.youtube.com/embed/q7JFvn6Bnuk?si=hYcBQ4uGPF_TSf1u" 
+                    <iframe src="https://www.youtube.com/embed/00QTIstD-lU?si=Luxr9lWOAPKZfQc-" 
                             title="YouTube video player"   
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -66,7 +66,7 @@ export const MusicPage = () => {
                                 scrolling="no" 
                                 frameBorder="no" 
                                 allow="autoplay" 
-                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1131659833&color=%230c0c0c&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1740075630&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
                         </iframe>
                     </div>
 
@@ -85,7 +85,7 @@ export const MusicPage = () => {
                     </div> */}
 
                     <h1 className="demo-title">DEMOS</h1>
-                    <p className="music-description3">You can find a few of my favorite demos here or follow me at my soundcloud below:</p>
+                    <p className="music-description3">You can find a few of my other favorites here or you can follow me at my soundcloud below!</p>
 
                     <div className="soundcloud-2"> 
                         <iframe width="100%" 
@@ -93,7 +93,7 @@ export const MusicPage = () => {
                                 scrolling="no" 
                                 frameBorder="no" 
                                 allow="autoplay" 
-                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1131659833&color=%230c0c0c&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1740066501&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
                         </iframe>
                     </div>
 
@@ -103,7 +103,7 @@ export const MusicPage = () => {
                                 scrolling="no" 
                                 frameBorder="no" 
                                 allow="autoplay" 
-                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1131659833&color=%230c0c0c&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1740081963%3Fsecret_token%3Ds-v0PA765bYlS&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
                         </iframe>
                     </div>
 
@@ -113,10 +113,9 @@ export const MusicPage = () => {
                                 scrolling="no" 
                                 frameBorder="no" 
                                 allow="autoplay" 
-                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1131659833&color=%230c0c0c&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1740087300%3Fsecret_token%3Ds-t7ydxIWv0D1&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
                         </iframe>
                     </div> 
-
                     <Socials />
                 </div>
 		</div>
