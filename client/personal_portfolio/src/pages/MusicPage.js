@@ -47,7 +47,7 @@ export const MusicPage = () => {
                 <Logo loadAnimation={false}/>
 
                 <div className="music-video-container">
-                    <iframe src="https://www.youtube.com/embed/00QTIstD-lU?si=Luxr9lWOAPKZfQc-" 
+                    <iframe src="https://www.youtube.com/embed/K3KPgcFTL6o?si=HsXa7juanm-NuQMP" 
                             title="YouTube video player"   
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -66,24 +66,13 @@ export const MusicPage = () => {
                                 scrolling="no" 
                                 frameBorder="no" 
                                 allow="autoplay" 
-                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1740075630&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1740830877&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
                         </iframe>
                     </div>
-
-                    {/* <p className="music-description2">I love music and its ability to tell subtle stories, and my interest in it eventually gave me my interest in programming through audio engineering.</p> */}
+{/* <p className="music-description2">I love music and its ability to tell subtle stories, and my interest in it eventually gave me my interest in programming through audio engineering.</p> */}
 
                     <p className="music-description2">I tend to be inspired by music from video games that have impacted me such as The Legend of Zelda: BOTW, Bloodborne, or Elden Ring.</p>
                    
-                    {/* <div className="soundcloud-2"> 
-                        <iframe width="100%" 
-                                height="120"   
-                                scrolling="no" 
-                                frameborder="no" 
-                                allow="autoplay" 
-                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1131659833&color=%230c0c0c&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
-                        </iframe>
-                    </div> */}
-
                     <h1 className="demo-title">DEMOS</h1>
                     <p className="music-description3">You can find a few of my other favorites here or you can follow me at my soundcloud below!</p>
 
