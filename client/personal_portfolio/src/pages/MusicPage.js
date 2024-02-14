@@ -74,7 +74,7 @@ export const MusicPage = () => {
                     <p className="music-description2">I tend to be inspired by music from video games that have impacted me such as The Legend of Zelda: BOTW, Bloodborne, or Elden Ring.</p>
                    
                     <h1 className="demo-title">DEMOS</h1>
-                    <p className="music-description3">You can find a few of my other favorites here or you can follow me at my soundcloud below!</p>
+                    <p className="music-description3">You can find a few of my other, recent favorites here or you can follow me at my soundcloud below!</p>
 
                     <div className="soundcloud-2"> 
                         <iframe width="100%" 

@@ -112,7 +112,7 @@ export const HomePage = () => {
 							<div></div>
 						</div>
 
-                        <p className="loading-disclaimer">This website is currently hosted using the free tiers for hosting, resulting in longer load times and some visual bugs. <br></br><br></br>Apologies in advance, and thank you for your patience!</p>
+                        <p className="loading-disclaimer">This website is currently hosted using the free tiers available on Render, resulting in longer load times and some visual bugs. <br></br><br></br>Apologies in advance, and thank you for your patience!</p>
 					</div>
 
 
