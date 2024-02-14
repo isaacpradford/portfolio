@@ -337,6 +337,16 @@ body {
   animation: lds-ellipsis3 0.6s infinite;
 }
 
+.loading-disclaimer {
+  position: fixed;
+  top: 62%;
+  left: 30%;
+  font-size: 20px;
+  font-family: "Cooper Hewitt Light", sans-serif;
+  max-width: 40vw;
+  text-align: center;
+}
+
 @keyframes lds-ellipsis1 {
   0% {
     transform: scale(0);
@@ -615,7 +625,7 @@ body {
 .demo-picture {
   grid-row: 5;
   grid-column: 2/4;
-  max-width: 800px;
+  max-width: 90%;
   height: auto;
   align-self: center;
   justify-self: center;
@@ -700,7 +710,7 @@ body {
 .bgAccentSquare {
   background-color: var(--logo-color);
   width: 50vw;
-  height: 125%;
+  height: 38vh;
   grid-row: 5/6;
   grid-column: 1/4;
   list-style: none;
