@@ -8,6 +8,7 @@ import NoPage from "./pages/NoPage";
 import AllProjectsPage from "./Project_Module/AllProjectsPage";
 
 function App() {
+  console.log("test");
   return (
     <>
       <HelmetProvider>
