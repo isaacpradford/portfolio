@@ -1,0 +1,339 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Oswald:wght@900&display=swap");
+@import url("https://fonts.cdnfonts.com/css/cooper-hewitt-book");
+// font-family: 'Bebas Neue', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+/* // Header: font-family: 'Oswald', sans-serif;
+// Header 2: font-family: 'Montserrat', sans-serif; */
+/* //  P: font-family: 'Cooper Hewitt Light', sans-serif; */
+
+
+.contactPage {
+  z-index: 0;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+}
+
+.contactContent {
+  grid-row: 1;
+  grid-column: 1;
+  display: grid;
+  grid-template-columns: 10vw 10vw 15vw 5vw 20vw 20vw 10vw 10vw;
+  grid-template-rows: 12vh 7vh 10vh 50vh 10vh 10vh;
+  z-index: 1;
+}
+.contactContent .contactForm {
+  display: flex;
+  flex-direction: column;
+  grid-row: 3/6;
+  grid-column: 5/8;
+  padding: 30px;
+}
+.contactContent .contactForm label {
+  text-align: left;
+  padding-top: 30px;
+  font-size: 30px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-style: italic;
+  background: #000000;
+  color: #f3f3f3;
+  mix-blend-mode: exclusion;
+}
+.contactContent .contactTitle {
+  font-weight: 800;
+  letter-spacing: -2px;
+  font-style: italic;
+  text-align: center;
+  background: #000000;
+  color: #f3f3f3;
+  mix-blend-mode: exclusion;
+}
+.contactContent .contactDesc {
+  font-family: "Cooper Hewitt Light", sans-serif;
+  font-size: 20px;
+  text-align: center;
+  grid-row: 4;
+  grid-column: 2/4;
+  background: #000000;
+  color: #f3f3f3;
+  mix-blend-mode: exclusion;
+}
+.contactContent .socials-list {
+  grid-row: 6;
+  grid-column: 4/6;
+  margin: auto;
+}
+.contactContent .socials-list li {
+  padding: 4vw 3vw 5vw 0vw;
+}
+
+.form-input {
+  min-width: 97.5%;
+  width: 97.5%;
+  max-width: 97.5%;
+  padding: 10px 0;
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 10px;
+  border-bottom: #15161d;
+  color: #15161d;
+  font-family: "Montserrat", sans-serif;
+  margin: 10px 0 10px 0;
+  padding-left: 20px;
+  margin-right: -10px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-input::placeholder {
+  opacity: 60%;
+  color: #15161d;
+}
+
+textarea {
+  min-width: 97.5%;
+  width: 97.5%;
+  max-width: 97.5%;
+}
+
+.formSend {
+  border: none;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  background-color: #15161d;
+  color: #f3f3f3;
+  border-radius: 10px;
+  transition: 0.2s ease-in-out;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  box-shadow: 5px 5px #c7c7c7;
+}
+
+.formSend:hover {
+  scale: 1.02;
+  border: 2px solid #15161d;
+  box-shadow: 10px 10px rgb(6, 221, 131);
+}
+
+.formSend:active {
+  background-color: #15161d;
+  color: #f3f3f3;
+  box-shadow: 5px 5px rgb(6, 221, 131);
+}
+
+.area {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 110vh;
+}
+
+.circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.circles li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background: rgb(6, 221, 131);
+  animation: animateSquares 25s linear infinite;
+  bottom: -300px;
+}
+
+.circles li:nth-child(1) {
+  left: 25%;
+  width: 130px;
+  height: 130px;
+  animation: animateSquares linear infinite;
+  animation-delay: 3s;
+  animation-duration: 14s;
+}
+
+.circles li:nth-child(2) {
+  left: 10%;
+  width: 20px;
+  height: 20px;
+  animation: animateSquares linear infinite;
+  animation-delay: 7s;
+  animation-duration: 19s;
+}
+
+.circles li:nth-child(3) {
+  left: 70%;
+  width: 20px;
+  height: 20px;
+  animation: animateSquares linear infinite;
+  animation-delay: 7s;
+  animation-duration: 14s;
+}
+
+.circles li:nth-child(4) {
+  left: 40%;
+  width: 60px;
+  height: 60px;
+  animation: animateSquares linear infinite;
+  animation-delay: 5s;
+  animation-duration: 15s;
+}
+
+.circles li:nth-child(5) {
+  left: 65%;
+  width: 20px;
+  height: 20px;
+  animation: animateSquares linear infinite;
+  animation-delay: 4s;
+  animation-duration: 19s;
+}
+
+.circles li:nth-child(6) {
+  left: 75%;
+  width: 110px;
+  height: 110px;
+  animation: animateSquares linear infinite;
+  animation-delay: 12s;
+}
+
+.circles li:nth-child(7) {
+  left: 35%;
+  width: 250px;
+  height: 250px;
+  animation: animateSquares linear infinite;
+  animation-delay: 11s;
+}
+
+.circles li:nth-child(8) {
+  left: 50%;
+  width: 25px;
+  height: 25px;
+  animation: animateSquares linear infinite;
+  animation-delay: 12s;
+  animation-duration: 25s;
+}
+
+.circles li:nth-child(9) {
+  left: 20%;
+  width: 150px;
+  height: 150px;
+  animation: animateSquares2 linear infinite;
+  animation-delay: 7s;
+  animation-duration: 30s;
+}
+
+.circles li:nth-child(10) {
+  left: 85%;
+  width: 150px;
+  height: 150px;
+  animation: animateSquares linear infinite;
+  animation-delay: 5s;
+  animation-duration: 20s;
+}
+
+.bars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.bars li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 400%;
+  height: 20px;
+  left: 1000px;
+  background: rgb(6, 221, 131);
+  opacity: 98%;
+  animation: leftToRight ease-in-out;
+  bottom: -200px;
+}
+
+.bars li:nth-child(1) {
+  rotate: -45deg;
+  height: 750px;
+  animation-delay: 0s;
+  animation-duration: 5s;
+}
+
+.bars li:nth-child(2) {
+  rotate: -45deg;
+  height: 150px;
+  animation-delay: 0.4s;
+  animation-duration: 5s;
+}
+
+.bars li:nth-child(3) {
+  rotate: -45deg;
+  height: 100px;
+  animation-delay: 0.6s;
+  animation-duration: 5s;
+}
+
+.bars li:nth-child(4) {
+  rotate: -45deg;
+  height: 80px;
+  animation-delay: 0.8s;
+  animation-duration: 5s;
+}
+
+.bars li:nth-child(5) {
+  rotate: -45deg;
+  height: 60px;
+  animation-delay: 1s;
+  animation-duration: 5s;
+}
+
+@keyframes animateSquares {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-1500px) rotate(720deg);
+    opacity: 0.8;
+  }
+}
+@keyframes animateSquares2 {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-1500px) rotate(-720deg);
+    opacity: 0.8;
+  }
+}
+@keyframes leftToRight {
+  0% {
+    left: -4000px;
+  }
+  100% {
+    left: 1000px;
+  }
+}
+@keyframes dropIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*# sourceMappingURL=contact.css.map */

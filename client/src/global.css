@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@keyframes increaseSize {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    scale: 1;
+  }
+}
+@keyframes moveUp {
+  0% {
+    transform: translateY(0vh);
+  }
+  100% {
+    transform: translateY(-450vh);
+  }
+}
+.b-home {
+  min-width: 100%;
+  min-height: 500px;
+  max-height: 100vh;
+  mix-blend-mode: exclusion;
+}
+.b-home__projects {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0;
+  align-items: start;
+  overflow-y: hidden;
+  list-style: none;
+  font-size: 100px;
+  overflow-y: hidden;
+}
+.b-home__projects__list {
+  height: 130px;
+  margin: -20px 0;
+  transform: translateY(0);
+  animation: 250s linear infinite moveUp;
+}
+.b-home__projects__list a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0);
+  -webkit-text-stroke: 1px #000c16;
+  font-family: "Bebas Neue", sans-serif;
+  transition: 0.1s ease-in-out;
+}
+.b-home__projects__list a:hover {
+  color: #000c16;
+  transform: translateX(100px);
+}
+
+* {
+  max-height: 100vh;
+  margin: 0;
+}/*# sourceMappingURL=global.css.map */

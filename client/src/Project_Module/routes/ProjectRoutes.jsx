@@ -8,8 +8,8 @@ export const ProjectRoutes = () => {
   return (
     // Home page
     <Routes>
-      <Route path="/" element={<ProjectPage />} />
       <Route path="*" element={<NoPage />} />
+      <Route path="/" element={<ProjectPage />} />
     </Routes>
   );
 };

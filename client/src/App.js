@@ -6,9 +6,9 @@ import { AboutRoutes } from "./About_Module/routes/AboutRoutes";
 import { ProjectRoutes } from "./Project_Module/routes/ProjectRoutes";
 import NoPage from "./pages/NoPage";
 import AllProjectsPage from "./Project_Module/AllProjectsPage";
+import "./global.css";
 
 function App() {
-  console.log("test");
   return (
     <>
       <HelmetProvider>

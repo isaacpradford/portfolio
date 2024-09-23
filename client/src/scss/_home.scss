@@ -1,0 +1,42 @@
+@use "./variables" as *;
+
+.b-home {
+  min-width: 100%;
+  min-height: 500px;
+  max-height: 100vh;
+
+  mix-blend-mode: exclusion;
+
+  &__projects {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0;
+    align-items: start;
+    overflow-y: hidden;
+    list-style: none;
+    font-size: $projectTitleSize;
+    overflow-y: hidden;
+    
+    &__list {
+      height: 130px;
+      margin: -20px 0;
+      transform: translateY(0);
+      animation: $repeatingList;
+
+      // animation: $increaseSize;
+
+      a {
+        text-decoration: none;
+        color: $invisible;
+        -webkit-text-stroke: 1px $fontColor;
+        font-family: $mainFont;
+        transition: .1s ease-in-out;
+
+        &:hover {
+          color: $fontColor;
+          transform: translateX(100px);
+        }
+      }
+    }
+  }
+}

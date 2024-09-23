@@ -1,0 +1,18 @@
+$background-color: #f3f3f3;
+$red-pantone: #bc1545;
+$anti-flash-white: #feffff;
+$cool-gray: #8dae9d;
+$space-cadet: #15161d;
+
+
+$sekiro_blue: #24abea;
+$project-page: #211257;
+$project-page2: #a0d6f0;
+
+
+$grid-height: 100vh;
+
+@mixin background-style {
+    background-color: $background-color;
+}
+

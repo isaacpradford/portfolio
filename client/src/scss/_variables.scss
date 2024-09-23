@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+// Colors
+$backgroundColor: #FDFFFC;
+$fontColor: #000c16;
+$invisible: #00000000;
+
+// Fonts
+$mainFont: "Bebas Neue", sans-serif;
+$projectTitleSize: 100px;
+
+// Animations
+$increaseSize: 10s linear infinite increaseSize;
+$repeatingList: 250s linear infinite moveUp;
+
+
+@keyframes increaseSize {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        scale: (1);
+    }
+}
+@keyframes moveUp {
+    0% {
+        transform: translateY(0vh);
+    }
+    100% {
+        transform: translateY(-450vh)
+    }
+}
