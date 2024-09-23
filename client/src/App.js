@@ -6,11 +6,13 @@ import { AboutRoutes } from "./About_Module/routes/AboutRoutes";
 import { ProjectRoutes } from "./Project_Module/routes/ProjectRoutes";
 import NoPage from "./pages/NoPage";
 import AllProjectsPage from "./Project_Module/AllProjectsPage";
+import Header from "./Components/Nav";
 import "./global.css";
 
 function App() {
   return (
     <>
+      <Header />
       <HelmetProvider>
         <Routes>
           <Route path="/" element={<HomeRoutes />} />

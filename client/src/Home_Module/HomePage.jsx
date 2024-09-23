@@ -11,7 +11,7 @@ const HomePage = () => {
     const getProjectList = async () => {
       try {
         const res = await getProjectNameList();
-        setProjects([...res, ...res, ...res]); //, ...res, ...res, ...res
+        setProjects([...res]); //, ...res, ...res, ...res
       } catch (err) {
         console.log(err);
       }
@@ -19,33 +19,61 @@ const HomePage = () => {
     getProjectList();
   }, []);
 
-  // Add from beginning to end of list
+  // Add ten items from beginning to end of list every 15 seconds
   useEffect(() => {
-    const interval = setInterval(() => {
+    const tenSecondInterval = setInterval(() => {
       if (projects.length) {
         setProjects((prevProjects) => {
-          const newIt = iterator + 1;
-          setIterator(newIt);
-          const newProject = prevProjects[iterator]; // Get the last item to re-add to the top of the list
-          return [...prevProjects, newProject]; // Add the new item at the top, remove the last one
+          const nextIterator = iterator + 6; // Iterate the first six cause there's six projects in the db
+
+          // Append the next 10 projects from the current list
+          const newProjects = prevProjects.slice(iterator, nextIterator);
+
+          // If we reach the end, loop the iterator
+          const newIterator =
+            nextIterator >= prevProjects.length ? 0 : nextIterator;
+
+          // Update the iterator and append the new projects
+          setIterator(newIterator);
+          return [...prevProjects, ...newProjects]; // Append new projects to the list
         });
       }
-    }, 1000); // Time interval for adding / deleting items
-    return () => clearInterval(interval); // Cleanup the interval on component unmount
-  }, [projects]);
+    }, 15000); // Every 15 seconds
+
+    return () => clearInterval(tenSecondInterval); // unmount
+  }, [projects, iterator]);
+
+  // Clear the entire list after 250 seconds / the length of the animation
+  useEffect(() => {
+    const interval = setInterval(() => {
+      projects.length = 6;
+      const newIt = iterator - iterator;
+      setIterator(newIt);
+    }, 250000);
+
+    return () => clearInterval(interval);
+  });
 
   return (
     <div className="b-home">
       <ul className="b-home__projects">
         {projects?.map((project, index) => (
           <li
-            key={`${project.title}-${index}`}
+            key={`${project?.title}-${index}`}
             className={`b-home__projects__list`}
           >
-            <Link to={`/projects/${project.title}`}>{project.title}</Link>
+            <Link to={`/projects/${project?.title}`}>{project?.title}</Link>
           </li>
         ))}
       </ul>
+
+      <div className="b-home__intro">
+        <h1 className="b-home__intro__name">Hi, my name's Isaac</h1>
+        <p className="b-home__intro__description">
+          I'm a Software Engineer with job experience and Web Development.
+        </p>
+        <p className="b-home__intro__about">Click ~ about ~ to learn more!</p>
+      </div>
     </div>
   );
 };

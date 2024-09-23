@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @keyframes increaseSize {
   0% {
-    transform: scale(0);
+    scale: 0;
   }
   100% {
     scale: 1;
@@ -12,21 +13,22 @@
     transform: translateY(0vh);
   }
   100% {
-    transform: translateY(-450vh);
+    transform: translateY(-550vh);
   }
 }
 .b-home {
   min-width: 100%;
   min-height: 500px;
+  height: 100vh;
   max-height: 100vh;
   mix-blend-mode: exclusion;
+  position: relative;
 }
 .b-home__projects {
   display: flex;
   flex-direction: column;
   row-gap: 0;
   align-items: start;
-  overflow-y: hidden;
   list-style: none;
   font-size: 100px;
   overflow-y: hidden;
@@ -47,6 +49,43 @@
 .b-home__projects__list a:hover {
   color: #000c16;
   transform: translateX(100px);
+}
+.b-home__intro {
+  position: absolute;
+  bottom: 100px;
+  right: 50px;
+  font-family: "Inter", sans-serif;
+  font-weight: 100;
+}
+
+.b-navbar {
+  padding: 10px 5vh 10px 0;
+  background-color: rgba(0, 0, 0, 0);
+}
+.b-navbar__wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.b-navbar__wrapper__link {
+  list-style: none;
+  font-size: xx-large;
+  font-family: "Inter", sans-serif;
+  color: #000c16;
+  padding: 0 10px;
+}
+.b-navbar__wrapper__link a {
+  text-decoration: none;
+  font-weight: bolder;
+}
+.b-navbar__wrapper__link a:visited {
+  color: #000c16;
+}
+
+#root {
+  overflow: hidden;
 }
 
 * {
