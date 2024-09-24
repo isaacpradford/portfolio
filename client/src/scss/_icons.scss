@@ -1,0 +1,16 @@
+@use "./variables" as *;
+
+.raft {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 60px;
+    padding: 0 12px;
+    margin: auto;
+    font-family: $subFont;
+    background-color: $fontColor;
+    color: $backgroundColor;
+    border-radius: 50%;
+}

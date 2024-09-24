@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { getProjectNameList } from "../functions/Projects";
 import { Link } from "react-router-dom";
+import { getProjectNameList } from "../functions/Projects";
+import Icons from "../Components/Icons";
 
 const HomePage = () => {
   const [projects, setProjects] = useState([]);
@@ -24,7 +25,7 @@ const HomePage = () => {
     const tenSecondInterval = setInterval(() => {
       if (projects.length) {
         setProjects((prevProjects) => {
-          const nextIterator = iterator + 6; // Iterate the first six cause there's six projects in the db
+          const nextIterator = iterator + 5; // Iterate the first six cause there's six projects in the db
 
           // Append the next 10 projects from the current list
           const newProjects = prevProjects.slice(iterator, nextIterator);
@@ -46,7 +47,7 @@ const HomePage = () => {
   // Clear the entire list after 250 seconds / the length of the animation
   useEffect(() => {
     const interval = setInterval(() => {
-      projects.length = 6;
+      projects.length = 5;
       const newIt = iterator - iterator;
       setIterator(newIt);
     }, 250000);
@@ -57,20 +58,18 @@ const HomePage = () => {
   return (
     <div className="b-home">
       <div className="b-home__banner">
-        <p className="b-home__banner__text">projects</p>
-        <p className="b-home__banner__text">projects</p>
-        <p className="b-home__banner__text">projects</p>
+        <p className="b-home__banner__text">projects&reg;</p>
+        <p className="b-home__banner__text">projects&reg;</p>
+        <p className="b-home__banner__text">projects&reg;</p>
+        <p className="b-home__banner__text">projects&reg;</p>
       </div>
       <div className="b-home__banner2">
-        <p className="b-home__banner2__text">projects</p>
-        <p className="b-home__banner2__text">projects</p>
-        <p className="b-home__banner2__text">projects</p>
+        <p className="b-home__banner2__text">projects&reg;</p>
+        <p className="b-home__banner2__text">projects&reg;</p>
+        <p className="b-home__banner2__text">projects&reg;</p>
+        <p className="b-home__banner2__text">projects&reg;</p>
       </div>
-      <div className="b-home__banner3">
-        <p className="b-home__banner3__text">projects</p>
-        <p className="b-home__banner3__text">projects</p>
-        <p className="b-home__banner3__text">projects</p>
-      </div>
+      {/* <div className="b-home__laser"></div> */}
 
       <ul className="b-home__projects">
         {projects?.map((project, index) => (
@@ -83,11 +82,11 @@ const HomePage = () => {
         ))}
       </ul>
 
-      <div className="b-home__intro">
-        {/* <span className="b-home__intro__title">
+      {/* <div className="b-home__intro">
+        <span className="b-home__intro__title">
           <h1 className="b-home__intro__name">Hi, my name's Isaac~</h1>
           <p className="b-home__intro__flicker">|</p>
-        </span> */}
+        </span>
         <p className="b-home__intro__description">
           I'm a Software Engineer with job experience in object oriented
           projects and WebDev.
@@ -96,6 +95,10 @@ const HomePage = () => {
         <p className="b-home__intro__about">
           Click <Link to={`/about`}>about</Link> to learn more about me!
         </p>
+      </div> */}
+
+      <div className="b-home__icons">
+        <Icons />
       </div>
     </div>
   );

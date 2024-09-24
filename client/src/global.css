@@ -54,15 +54,18 @@
 .b-home__banner {
   display: flex;
   flex-direction: column;
-  gap: 200px;
+  gap: 300px;
   height: 100vh;
-  width: 40vh;
+  width: 25vw;
+  min-width: 200px;
   font-family: "Bebas Neue", sans-serif;
   background-color: #000c16;
   position: absolute;
   left: 0;
 }
 .b-home__banner__text {
+  display: flex;
+  flex-direction: column;
   font-size: 89.5px;
   color: #fdfffc;
   rotate: 90deg;
@@ -72,40 +75,40 @@
 .b-home__banner2 {
   display: flex;
   flex-direction: column;
-  gap: 200px;
+  gap: 300px;
   height: 100vh;
-  width: 19vh;
+  width: 40vw;
+  min-width: 200px;
   font-family: "Bebas Neue", sans-serif;
   position: absolute;
   left: 0;
 }
 .b-home__banner2__text {
-  font-size: 89.5px;
-  color: #fdfffc;
-  rotate: 90deg;
-  animation: 20s linear infinite moveDown;
-}
-.b-home__banner3 {
   display: flex;
   flex-direction: column;
-  gap: 200px;
-  height: 100vh;
-  width: 57vh;
-  font-family: "Bebas Neue", sans-serif;
-  position: absolute;
-  left: 0;
-}
-.b-home__banner3__text {
   font-size: 89.5px;
   color: #fdfffc;
   rotate: 90deg;
-  animation: 40s linear infinite moveDown;
+  animation: 25s linear infinite moveDown;
+  margin-left: -12px;
+}
+.b-home__icons {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+}
+.b-home__laser {
+  position: absolute;
+  left: 25.5vw;
+  background-color: #be1414;
+  width: 10px;
+  height: 100vh;
 }
 .b-home__projects {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: 0 40vh;
+  margin: 0 25vw;
   list-style: none;
   font-size: 100px;
 }
@@ -209,10 +212,25 @@
 .b-navbar__wrapper__link a {
   color: #000c16;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 100;
 }
 .b-navbar__wrapper__link a:visited {
   color: #000c16;
+}
+
+.raft {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 60px;
+  padding: 0 12px;
+  margin: auto;
+  font-family: "Inter", sans-serif;
+  background-color: #000c16;
+  color: #fdfffc;
+  border-radius: 50%;
 }
 
 #root {
