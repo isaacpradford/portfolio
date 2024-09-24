@@ -29,7 +29,7 @@
 }
 @keyframes moveDown {
   0% {
-    transform: translateX(-100vh);
+    transform: translateX(-210vh);
   }
   100% {
     transform: translateX(200vh);
@@ -69,6 +69,38 @@
   animation: 30s linear infinite moveDown;
   margin-left: -12px;
 }
+.b-home__banner2 {
+  display: flex;
+  flex-direction: column;
+  gap: 200px;
+  height: 100vh;
+  width: 19vh;
+  font-family: "Bebas Neue", sans-serif;
+  position: absolute;
+  left: 0;
+}
+.b-home__banner2__text {
+  font-size: 89.5px;
+  color: #fdfffc;
+  rotate: 90deg;
+  animation: 20s linear infinite moveDown;
+}
+.b-home__banner3 {
+  display: flex;
+  flex-direction: column;
+  gap: 200px;
+  height: 100vh;
+  width: 57vh;
+  font-family: "Bebas Neue", sans-serif;
+  position: absolute;
+  left: 0;
+}
+.b-home__banner3__text {
+  font-size: 89.5px;
+  color: #fdfffc;
+  rotate: 90deg;
+  animation: 40s linear infinite moveDown;
+}
 .b-home__projects {
   display: flex;
   flex-direction: column;
@@ -93,8 +125,6 @@
   -webkit-text-stroke: 0.5px #be1414;
   color: rgba(0, 0, 0, 0);
   transform: translateX(100px);
-  padding: 10px;
-  font-size: 120px;
 }
 .b-home__intro {
   position: absolute;

@@ -12,10 +12,8 @@
     display: flex;
     flex-direction: column;
     gap: 200px;
-
     height: 100vh;
     width: 40vh;
-
     font-family: $mainFont;
     background-color: $fontColor;
     position: absolute;
@@ -27,6 +25,45 @@
       rotate: 90deg;
       animation: $moveDown;
       margin-left: -12px;
+    }
+  }
+
+  &__banner2 {
+    display: flex;
+    flex-direction: column;
+    gap: 200px;
+
+    height: 100vh;
+    width: 19vh;
+
+    font-family: $mainFont;
+    position: absolute;
+    left: 0;
+
+    &__text {
+      font-size: 89.5px;
+      color: $backgroundColor;
+      rotate: 90deg;
+      animation: $moveDown2;
+    }
+  }
+  &__banner3 {
+    display: flex;
+    flex-direction: column;
+    gap: 200px;
+
+    height: 100vh;
+    width: 57vh;
+
+    font-family: $mainFont;
+    position: absolute;
+    left: 0;
+
+    &__text {
+      font-size: 89.5px;
+      color: $backgroundColor;
+      rotate: 90deg;
+      animation: $moveDown3;
     }
   }
 
@@ -54,8 +91,6 @@
           -webkit-text-stroke: 0.5px $red;
           color: $invisible;
           transform: translateX(100px);
-          padding: 10px;
-          font-size: 120px;
         }
       }
     }

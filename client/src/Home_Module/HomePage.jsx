@@ -61,6 +61,16 @@ const HomePage = () => {
         <p className="b-home__banner__text">projects</p>
         <p className="b-home__banner__text">projects</p>
       </div>
+      <div className="b-home__banner2">
+        <p className="b-home__banner2__text">projects</p>
+        <p className="b-home__banner2__text">projects</p>
+        <p className="b-home__banner2__text">projects</p>
+      </div>
+      <div className="b-home__banner3">
+        <p className="b-home__banner3__text">projects</p>
+        <p className="b-home__banner3__text">projects</p>
+        <p className="b-home__banner3__text">projects</p>
+      </div>
 
       <ul className="b-home__projects">
         {projects?.map((project, index) => (
