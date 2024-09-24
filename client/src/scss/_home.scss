@@ -6,36 +6,56 @@
   height: 100vh;
   max-height: 100vh;
   mix-blend-mode: exclusion;
-
   position: relative;
+
+  &__banner {
+    display: flex;
+    flex-direction: column;
+    gap: 200px;
+
+    height: 100vh;
+    width: 40vh;
+
+    font-family: $mainFont;
+    background-color: $fontColor;
+    position: absolute;
+    left: 0;
+    
+    &__text {
+      font-size: 89.5px;
+      color: $backgroundColor;
+      rotate: 90deg;
+      animation: $moveDown;
+      margin-left: -12px;
+    }
+  }
 
   &__projects {
     display: flex;
     flex-direction: column;
-    row-gap: 0;
-    align-items: start;
-
+    align-items: flex-start;
+    margin: 0 40vh;
     list-style: none;
     font-size: $projectTitleSize;
-    overflow-y: hidden;
 
-    
     &__list {
       height: 130px;
       margin: -20px 0;
-      transform: translateY(0);
       animation: $repeatingList;
 
       a {
         text-decoration: none;
-        color: $invisible;
-        -webkit-text-stroke: 1px $fontColor;
+        color: $fontColor;
         font-family: $mainFont;
-        transition: .1s ease-in-out;
+        transition: 0.1s ease-in-out;
+        padding: 0;
 
         &:hover {
-          color: $fontColor;
+          -webkit-text-stroke: 0.5px $red;
+          color: $invisible;
           transform: translateX(100px);
+          padding: 10px;
+          font-size: 120px;
         }
       }
     }
@@ -43,9 +63,51 @@
 
   &__intro {
     position: absolute;
+    max-width: 500px;
     bottom: 100px;
     right: 50px;
     font-family: $subFont;
     font-weight: 100;
+
+    &__title {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    &__name {
+      // background-color: $fontColor;
+      color: $fontColor;
+      text-decoration: underline;
+      width: 320px;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: $typing;
+      // padding-left: 10px;
+    }
+
+    &__flicker {
+      font-size: xx-large;
+      font-weight: 400;
+      animation: $flickering;
+    }
+
+    &__description {
+      font-size: xx-large;
+      font-weight: 100;
+      padding: 10px 0;
+    }
+
+    &__about {
+      font-size: large;
+      font-weight: 300;
+      padding: 10px 0;
+
+      a {
+        color: $fontColor;
+        &:visited {
+          color: $fontColor;
+        }
+      }
+    }
   }
 }

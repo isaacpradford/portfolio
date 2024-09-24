@@ -1,33 +1,63 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 // Colors
-$backgroundColor: #FDFFFC;
+$backgroundColor: #fdfffc;
 $fontColor: #000c16;
+$red: #be1414;
 $invisible: #00000000;
 
 // Fonts
 $mainFont: "Bebas Neue", sans-serif;
-$subFont: "Inter", sans-serif;;
+$subFont: "Inter", sans-serif;
 $projectTitleSize: 100px;
 
 // Animations
 $increaseSize: 10s linear 1 increaseSize;
 $repeatingList: 250s linear infinite moveUp;
+$moveDown: 30s linear infinite moveDown;
+$flickering: 1.5s linear infinite flicker;
+$typing: typing 3.5s steps(20), blink 0.5s step-end infinite alternate;
 
-
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+@keyframes flicker {
+  0% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 @keyframes increaseSize {
-    0% {
-        scale: (0);
-    }
-    100% {
-        scale: (1);
-    }
+  0% {
+    scale: (0);
+  }
+  100% {
+    scale: (1);
+  }
+}
+@keyframes moveDown {
+  0% {
+    transform: translateX(-100vh);
+  }
+  100% {
+    transform: translateX(200vh);
+  }
 }
 @keyframes moveUp {
-    0% {
-        transform: translateY(0vh);
-    }
-    100% {
-        transform: translateY(-550vh)
-    }
+  0% {
+    transform: translateY(0vh);
+  }
+  100% {
+    transform: translateY(-550vh);
+  }
 }

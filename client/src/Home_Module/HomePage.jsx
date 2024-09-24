@@ -56,6 +56,12 @@ const HomePage = () => {
 
   return (
     <div className="b-home">
+      <div className="b-home__banner">
+        <p className="b-home__banner__text">projects</p>
+        <p className="b-home__banner__text">projects</p>
+        <p className="b-home__banner__text">projects</p>
+      </div>
+
       <ul className="b-home__projects">
         {projects?.map((project, index) => (
           <li
@@ -68,11 +74,18 @@ const HomePage = () => {
       </ul>
 
       <div className="b-home__intro">
-        <h1 className="b-home__intro__name">Hi, my name's Isaac</h1>
+        {/* <span className="b-home__intro__title">
+          <h1 className="b-home__intro__name">Hi, my name's Isaac~</h1>
+          <p className="b-home__intro__flicker">|</p>
+        </span> */}
         <p className="b-home__intro__description">
-          I'm a Software Engineer with job experience and Web Development.
+          I'm a Software Engineer with job experience in object oriented
+          projects and WebDev.
         </p>
-        <p className="b-home__intro__about">Click ~ about ~ to learn more!</p>
+
+        <p className="b-home__intro__about">
+          Click <Link to={`/about`}>about</Link> to learn more about me!
+        </p>
       </div>
     </div>
   );
