@@ -5,75 +5,47 @@
   min-height: 500px;
   height: 100vh;
   max-height: 100vh;
-  mix-blend-mode: exclusion;
   position: relative;
+  z-index: 1;
+  overflow-x: hidden;
+
+  &__background {
+    background-size: cover;
+    height: 50vh;
+    width: 50vw;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    // background-color: black;
+    z-index: 2;
+  }
 
   &__banner {
-    display: flex;
-    flex-direction: column;
-    gap: 300px;
-    height: 100vh;
-    width: 25vw;
-    min-width: 200px;
-    font-family: $mainFont;
-    background-color: $fontColor;
     position: absolute;
-    left: 0;
+    top: 40vh;
+
+    max-width: 100vw;
     
-    &__text {
-      display: flex;
-      flex-direction: column;
-      font-size: 89.5px;
-      color: $backgroundColor;
-      rotate: 90deg;
-      animation: $moveDown;
-      margin-left: -12px;
-    }
-  }
 
-  &__banner2 {
-    display: flex;
-    flex-direction: column;
-    gap: 300px;
-    height: 100vh;
-    width: 40vw;
-    min-width: 200px;
     font-family: $mainFont;
-    position: absolute;
-    left: 0;
-    
-    &__text {
-      display: flex;
-      flex-direction: column;
-      font-size: 89.5px;
-      color: $backgroundColor;
-      rotate: 90deg;
-      animation: $moveDown2;
-      margin-left: -12px;
-    }
-  }
-
-  &__icons {
-    position: absolute;
-    right: 20px;
-    bottom: 10px;
-  }
-
-  &__laser {
-    position: absolute;
-    left: 25.5vw;
-    background-color: $red;
-    width: 10px;
-    height: 100vh;
+    letter-spacing: -10px;
+    font-weight: bold;
+    font-size: 140px;
+    text-wrap: nowrap;
+    animation: $marquee;
+    color: black;
+    mix-blend-mode:hue;
+    z-index: 3;
   }
 
   &__projects {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: 0 25vw;
+    margin: 0 20vw;
     list-style: none;
     font-size: $projectTitleSize;
+    overflow-y: hidden;
 
     &__list {
       height: 130px;
@@ -95,56 +67,37 @@
       }
     }
   }
+  &__halftone {
+    max-height: 40vh;
+    width: 100vw;
+    --mask: linear-gradient(rgb(0 0 0), rgb(0 0 0 / 0.3));
+    --stop1: 0.06rem;
+    --stop2: 1.5rem;
+    --invert: 1;
+    --dotColor: white;
+    --bgColor: black;
+    --dottedBackground: radial-gradient(
+      circle at center,
+      var(--dotColor) var(--stop1),
+      transparent var(--stop2)
+    );
 
-  &__intro {
-    position: absolute;
-    max-width: 500px;
-    bottom: 100px;
-    right: 50px;
-    font-family: $subFont;
-    font-weight: 100;
+    aspect-ratio: 1;
+    position: relative;
+    background: var(--bgColor);
+    filter: contrast(50) invert(var(--invert, 0));
+    mix-blend-mode: exclusion;
+    isolation: isolate;
 
-    &__title {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-    }
-    &__name {
-      // background-color: $fontColor;
-      color: $fontColor;
-      text-decoration: underline;
-      width: 320px;
-      white-space: nowrap;
-      overflow: hidden;
-      animation: $typing;
-      // padding-left: 10px;
-    }
-
-    &__flicker {
-      font-size: xx-large;
-      font-weight: 400;
-      animation: $flickering;
-    }
-
-    &__description {
-      font-size: xx-large;
-      font-weight: 100;
-      padding: 10px 0;
-    }
-
-    &__about {
-      font-size: large;
-      font-weight: 300;
-      padding: 10px 0;
-
-      a {
-        color: $fontColor;
-        &:visited {
-          color: $fontColor;
-        }
-      }
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: var(--dottedBackground);
+      background-size: var(--bgSize, 1rem) var(--bgSize, 1rem);
+      background-repeat: round;
+      background-position: 0 0, var(--bgPosition) var(--bgPosition);
+      mask-image: var(--mask);
     }
   }
-
-
 }

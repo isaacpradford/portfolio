@@ -1,25 +1,72 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+// Fonts
+// @font-face {
+//   font-family: "Impact Regular";
+//   font-style: normal;
+//   font-weight: normal;
+//   src: local("Impact Regular"), url("../assets/fonts/impact.woff") format("woff");
+// }
+
+// @font-face {
+//   font-family: "Impact Regular";
+//   font-style: normal;
+//   font-weight: normal;
+//   src: local("Impact Regular"), url("../assets/fonts/unicode.impact.woff") format("woff");
+// }
+
+// @font-face {
+//   font-family: "Impacted Regular";
+//   font-style: normal;
+//   font-weight: normal;
+//   src: local("Impacted Regular"), url("../assets/fonts/Impacted.woff") format("woff");
+// }
+
+
 // Colors
 $backgroundColor: #fdfffc;
-$fontColor: #000c16;
+$fontColor: #000000;
 $red: #be1414;
+$yellow: #bfca27;
 $invisible: #00000000;
 
 // Fonts
-$mainFont: "Bebas Neue", sans-serif;
+$mainFont:"Impact Regular", sans-serif;
 $subFont: "Inter", sans-serif;
 $projectTitleSize: 100px;
 
 // Animations
+$marquee: 200s ease-out infinite marquee;
+
 $increaseSize: 10s linear 1 increaseSize;
-$repeatingList: 250s linear infinite moveUp;
+$repeatingList: 120s linear infinite moveUp;
 $moveDown: 30s linear infinite moveDown;
 $moveDown2: 25s linear infinite moveDown;
 
 $flickering: 1.5s linear infinite flicker;
 $typing: typing 3.5s steps(20), blink 0.5s step-end infinite alternate;
 
+
+
+
+
+
+// Animation Keyframes
+@keyframes marquee {
+  0% {
+    transform: translateX(-50vw);
+  }
+  48% {
+    transform: translateX(-250vw);
+  }
+  52% {
+    transform: translateX(-250vw);
+  }
+  100% {
+    transform: translateX(-50vw);
+  }
+}
 @keyframes typing {
   from {
     width: 0;
@@ -52,7 +99,7 @@ $typing: typing 3.5s steps(20), blink 0.5s step-end infinite alternate;
     transform: translateX(-210vh);
   }
   100% {
-    transform: translateX(200vh);
+    transform: translateX(150vh);
   }
 }
 @keyframes moveUp {
@@ -60,6 +107,6 @@ $typing: typing 3.5s steps(20), blink 0.5s step-end infinite alternate;
     transform: translateY(0vh);
   }
   100% {
-    transform: translateY(-550vh);
+    transform: translateY(-500vh);
   }
 }

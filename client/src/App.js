@@ -1,27 +1,37 @@
 import { Route, Routes } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
-import { HomeRoutes } from "./Home_Module/routes/HomeRoutes";
-import { ContactRoutes } from "./Contact_Module/routes/ContactRoutes";
-import { AboutRoutes } from "./About_Module/routes/AboutRoutes";
-import { ProjectRoutes } from "./Project_Module/routes/ProjectRoutes";
-import NoPage from "./pages/NoPage";
-import AllProjectsPage from "./Project_Module/AllProjectsPage";
-import Header from "./Components/Nav";
+import Header from "./Components/Header";
 import "./global.css";
+
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import SkillsPage from "./pages/SkillsPage";
+import ExperiencePage from "./pages/ExperiencePage";
+import ProjectPage from "./pages/ProjectPage";
+import TestimonialPage from "./pages/TestimonialsPage";
+import ContactPage from "./pages/ContactPage";
+import NoPage from "./pages/NoPage";
 
 function App() {
   return (
     <>
       <Header />
       <HelmetProvider>
+        <HomePage />
+        {/* <AboutPage /> Make this a popup  */}
+        <SkillsPage />
+        <ExperiencePage />
+        <ProjectPage />
+        <TestimonialPage />
+        <ContactPage />
         <Routes>
-          <Route path="/" element={<HomeRoutes />} />
-          <Route path="/contact" element={<ContactRoutes />} />
-          <Route path="/about" element={<AboutRoutes />} />
-
-          {/* Dynamic project route */}
-          <Route path="/projects/" element={<AllProjectsPage />} />
-          <Route path="/projects/:title" element={<ProjectRoutes />} />
+          {/* <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/skills" element={<SkillsPage />} />
+          <Route path="/experience" element={<ExperiencePage />} />
+          <Route path="/projects" element={<ProjectPage />} />
+          <Route path="/testimonials" element={<TestimonialPage />} />
+          <Route path="/contact" element={<ContactPage />} /> */}
 
           {/* For undefined URLS, we can put this to make a 404 page */}
           <Route path="*" element={<NoPage />} />

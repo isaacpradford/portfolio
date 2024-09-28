@@ -1,8 +1,27 @@
 @use "./variables" as *;
 
 .b-navbar {
-  z-index: 0;
+  position: fixed;  
+  top: 0;          
+  left: 0;          
+  right: 0;         
+  z-index: 100;
+  padding: 10px 20px; 
+
+  a {
+    cursor: pointer;
+  }
   
+  &__logo {
+    display: flex;
+    flex-direction: row;
+    font-family: $mainFont;
+    letter-spacing: -8px;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 40px;
+  }
+
   &__hamburger {
     position: absolute;
     right: 0;
@@ -31,7 +50,7 @@
 
     &__link {
       list-style: none;
-      font-size: xx-large;
+      font-size: 24px;
       font-family: $subFont;
       color: $fontColor;
       padding: 0 10px;
