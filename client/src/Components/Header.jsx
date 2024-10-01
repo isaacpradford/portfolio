@@ -51,6 +51,7 @@ const Header = () => {
                 onClick={() => {
                   isPopupOpen ? handlePopupClose() : handlePopupOpen();
                 }}
+                to=""
               >
                 About
               </Link>

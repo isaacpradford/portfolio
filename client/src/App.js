@@ -18,17 +18,16 @@ function App() {
       <Header />
       <HelmetProvider>
         <HomePage />
-        {/* <AboutPage /> Make this a popup  */}
         <SkillsPage />
         <ExperiencePage />
         <ProjectPage />
         <TestimonialPage />
         <ContactPage />
 
-        <Routes>
-          {/* For undefined URLS, we can put this to make a 404 page */}
+        {/* For undefined URLS, we can put this to make a 404 page */}
+        {/* <Routes>
           <Route path="*" element={<NoPage />} />
-        </Routes>
+        </Routes> */}
       </HelmetProvider>
     </>
   );

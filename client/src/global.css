@@ -59,7 +59,7 @@
   display: flex;
   flex-direction: row;
   font-family: "Inter", sans-serif;
-  letter-spacing: -8px;
+  letter-spacing: -7px;
   font-weight: bold;
   font-style: italic;
   font-size: 40px;
@@ -251,6 +251,38 @@
 
 .b-about__banner {
   animation: 200s ease-out infinite reverseMarquee;
+}
+
+.b-testimonials__swiper {
+  height: 300px;
+  width: 100%;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .b-skills {

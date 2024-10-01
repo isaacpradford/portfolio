@@ -61,14 +61,14 @@ const SkillsPage = () => {
             stroke="transparent"
           ></path>
 
-          <text text-anchor="start">
+          <text textAnchor="start">
             <textPath className="my-text" href="#squarepath" startOffset="0%">
               <animate
                 attributeName="startOffset"
-                from="-200%"
+                from="-600%"
                 to="100%"
                 begin="0s"
-                dur="200s"
+                dur="600s"
                 repeatCount="indefinite"
               ></animate>
               {/* ==================================================================
@@ -105,6 +105,14 @@ const SkillsPage = () => {
         <div className="b-skills__other__inside">
           <p>In addition to languages, I can also:</p>
         </div>
+      </div>
+
+      <div className="b-skills__asWell">
+        <FaArrowAltCircleRight size={40} />
+        <p>
+          Git/Github, Git/Github + version control systems, VS/VSC, XCode,
+          Rider, Jira, Trello, Adobe Cloud, Microsoft Suite
+        </p>
       </div>
     </div>
   );
