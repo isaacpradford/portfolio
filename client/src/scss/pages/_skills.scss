@@ -1,0 +1,103 @@
+@use "../variables" as *;
+
+.b-skills {
+    --gap: 20px;
+
+    &__languages {
+        display: flex;
+        flex-direction: column;
+        h1 {
+            font-family: $mainFont;
+            letter-spacing: $mediumLetterSpacing;
+            font-size: 80px;
+        }
+        ul {
+            display: flex;
+            flex-direction: row;
+            gap: var(--gap);
+            transition: .2s margin ease-in-out;
+            li {
+                min-width: 150px;
+                min-height: 24px;
+                list-style: none;
+                border: 1px solid $fontColor;
+                font-family: $mainFont;
+                font-weight: 800;
+                letter-spacing: $smallLetterSpacing;
+            }
+        }
+
+        &__databases {
+            font-family: $subFont;
+            font-size: 24px;
+            letter-spacing: $smallLetterSpacing;
+            font-weight: 200;
+            align-self: flex-end;
+            text-align: end;
+            max-width: 400px;
+            margin: -50px 3vw;
+        }
+    }
+
+    &__pillBox {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap);
+        margin-top: 20px;
+
+        .pill {
+            margin-top: auto;
+            text-align: center;
+            border-radius: 20px;
+            padding: 4px;
+            padding-top: 10px;
+            
+            transition: .2s ease-in-out;
+            box-shadow: 0px 1px 0px $fontColor;
+            
+            &:hover {
+                padding: 10px;
+                box-shadow: 0px 8px 0px $fontColor;
+            }
+        }
+
+        &--1, &--3, &--5{
+            margin-left: -100px;
+        }
+        &--2, &--4, &--6 {
+            margin-left: -170px;
+        }
+
+        svg {
+            transition: 0.2s ease-in-out;
+            &:hover {
+                scale: 1.05;
+            }
+        }
+    }
+
+    &__other {
+        position: relative;
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+        // padding-top: 23vh;
+        width: 80vw;
+        margin: 0 auto;
+
+        &__inside {
+            position: absolute;
+            top: 0;
+        }
+      }
+}
+
+svg.svgwave {
+    overflow: visible;
+}
+
+svg.svgwave text {
+    font-family: $subFont2;
+    letter-spacing: $mediumLetterSpacing;
+    font-size:100px;
+}

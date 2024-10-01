@@ -107,6 +107,53 @@
   color: #000000;
 }
 
+.socials ul {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  list-style-type: none;
+  font-family: "Inter", sans-serif;
+}
+.socials ul li a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(238, 137, 137, 0.9176470588);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.popup-content {
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.popup-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+#root {
+  background-color: #e5e5f7;
+  opacity: 0.8;
+}
+
 .b-home {
   min-width: 100%;
   min-height: 500px;
@@ -209,10 +256,20 @@
 .b-skills {
   --gap: 20px;
 }
+.b-skills__languages {
+  display: flex;
+  flex-direction: column;
+}
+.b-skills__languages h1 {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -7px;
+  font-size: 80px;
+}
 .b-skills__languages ul {
   display: flex;
   flex-direction: row;
   gap: var(--gap);
+  transition: 0.2s margin ease-in-out;
 }
 .b-skills__languages ul li {
   min-width: 150px;
@@ -223,10 +280,21 @@
   font-weight: 800;
   letter-spacing: -1px;
 }
+.b-skills__languages__databases {
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  letter-spacing: -1px;
+  font-weight: 200;
+  align-self: flex-end;
+  text-align: end;
+  max-width: 400px;
+  margin: -50px 3vw;
+}
 .b-skills__pillBox {
   display: flex;
   flex-direction: column;
   gap: var(--gap);
+  margin-top: 20px;
 }
 .b-skills__pillBox .pill {
   margin-top: auto;
@@ -234,51 +302,46 @@
   border-radius: 20px;
   padding: 4px;
   padding-top: 10px;
+  transition: 0.2s ease-in-out;
+  box-shadow: 0px 1px 0px #000000;
 }
-.b-skills__pillBox--1, .b-skills__pillBox--3 {
-  margin-left: -7.5vw;
+.b-skills__pillBox .pill:hover {
+  padding: 10px;
+  box-shadow: 0px 8px 0px #000000;
 }
-
-.socials ul {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  list-style-type: none;
-  font-family: "Inter", sans-serif;
+.b-skills__pillBox--1, .b-skills__pillBox--3, .b-skills__pillBox--5 {
+  margin-left: -100px;
 }
-.socials ul li a {
-  color: #000000;
-  text-decoration: none;
+.b-skills__pillBox--2, .b-skills__pillBox--4, .b-skills__pillBox--6 {
+  margin-left: -170px;
 }
-
-.popup-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(255, 255, 255, 0.9176470588);
+.b-skills__pillBox svg {
+  transition: 0.2s ease-in-out;
+}
+.b-skills__pillBox svg:hover {
+  scale: 1.05;
+}
+.b-skills__other {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 100;
+  width: 80vw;
+  margin: 0 auto;
 }
-
-.popup-content {
-  padding: 20px;
-  border-radius: 10px;
-  width: 100%;
-  text-align: center;
-}
-
-.popup-close {
-  background: none;
-  border: none;
-  font-size: 20px;
+.b-skills__other__inside {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
+  top: 0;
+}
+
+svg.svgwave {
+  overflow: visible;
+}
+
+svg.svgwave text {
+  font-family: "Impact", sans-serif;
+  letter-spacing: -7px;
+  font-size: 100px;
 }
 
 * {
@@ -309,7 +372,14 @@
 #root .b-contact {
   grid-area: contact;
 }
-#root .b-home, #root .b-about, #root .b-skills, #root .b-experience, #root .b-projects, #root .b-testimonials, #root .b-contact {
+#root .b-home,
+#root .b-about,
+#root .b-skills,
+#root .b-experience,
+#root .b-projects,
+#root .b-testimonials,
+#root .b-contact {
+  height: auto;
   min-height: 100vh;
   min-width: 100vw;
 }/*# sourceMappingURL=global.css.map */

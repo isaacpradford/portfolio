@@ -1,15 +1,14 @@
 @use "./scss/index";
 
 * {
-    margin: 0;
+  margin: 0;
 }
 
 #root {
-    // overflow: hidden;
-    display: grid;
-    grid-template-columns: 100vw;
-    grid-template-rows: auto auto auto auto auto auto;
-    grid-template-areas: 
+  display: grid;
+  grid-template-columns: 100vw;
+  grid-template-rows: auto auto auto auto auto auto;
+  grid-template-areas:
     "home"
     "skills"
     "experience"
@@ -17,28 +16,34 @@
     "testimonials"
     "contact";
 
-    .b-home {
-        grid-area: home;
-    }
-    .b-skills {
-        grid-area: skills;
-    }
-    .b-experience {
-        grid-area: experience;
-    }
-    .b-projects {
-        grid-area: projects;
-    }
-    .b-testimonials {
-        grid-area: testimonials;
-    }
-    .b-contact {
-        grid-area: contact;
-    }
+  .b-home {
+    grid-area: home;
+  }
+  .b-skills {
+    grid-area: skills;
+  }
+  .b-experience {
+    grid-area: experience;
+  }
+  .b-projects {
+    grid-area: projects;
+  }
+  .b-testimonials {
+    grid-area: testimonials;
+  }
+  .b-contact {
+    grid-area: contact;
+  }
 
-    .b-home, .b-about, .b-skills, .b-experience, .b-projects, .b-testimonials, .b-contact {
-        min-height: 100vh;
-        min-width: 100vw;
-    }
+  .b-home,
+  .b-about,
+  .b-skills,
+  .b-experience,
+  .b-projects,
+  .b-testimonials,
+  .b-contact {
+    height: auto;
+    min-height: 100vh;
+    min-width: 100vw;
+  }
 }
-

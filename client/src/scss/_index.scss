@@ -1,11 +1,16 @@
-@use "./navbar";
-@use "./home";
-@use "./contact";
-@use "./about";
-@use "./project";
-@use "./experience";
-@use "./testimonials";
-@use "./skills";
-@use "./socials";
-@use "./popup";
-@use "./noPage";
+// Components
+@use "./components/navbar";
+@use "./components/socials";
+@use "./components/popup";
+@use "./components/background";
+
+
+// Pages
+@use "./pages/home";
+@use "./pages/contact";
+@use "./pages/about";
+@use "./pages/project";
+@use "./pages/experience";
+@use "./pages/testimonials";
+@use "./pages/skills";
+@use "./pages/noPage";
