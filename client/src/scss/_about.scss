@@ -1,1 +1,8 @@
 @use "./variables" as *;
+
+.b-about {
+
+  &__banner {
+    animation: $reverseMarquee;
+  }
+}

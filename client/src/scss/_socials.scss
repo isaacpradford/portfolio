@@ -1,0 +1,19 @@
+@use "./variables" as *;
+
+.socials {
+    ul {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      list-style-type: none;
+      font-family: $mainFont;
+      
+      li {
+        a {
+          color: $fontColor;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  

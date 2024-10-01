@@ -24,15 +24,8 @@ function App() {
         <ProjectPage />
         <TestimonialPage />
         <ContactPage />
-        <Routes>
-          {/* <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/skills" element={<SkillsPage />} />
-          <Route path="/experience" element={<ExperiencePage />} />
-          <Route path="/projects" element={<ProjectPage />} />
-          <Route path="/testimonials" element={<TestimonialPage />} />
-          <Route path="/contact" element={<ContactPage />} /> */}
 
+        <Routes>
           {/* For undefined URLS, we can put this to make a 404 page */}
           <Route path="*" element={<NoPage />} />
         </Routes>
@@ -42,3 +35,13 @@ function App() {
 }
 
 export default App;
+
+{
+  /* <Route path="/" element={<HomePage />} />
+  <Route path="/about" element={<AboutPage />} />
+  <Route path="/skills" element={<SkillsPage />} />
+  <Route path="/experience" element={<ExperiencePage />} />
+  <Route path="/projects" element={<ProjectPage />} />
+  <Route path="/testimonials" element={<TestimonialPage />} />
+  <Route path="/contact" element={<ContactPage />} /> */
+}

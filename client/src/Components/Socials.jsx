@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Socials = () => {
   return (
-    <div className="bsocials">
+    <div className="socials">
       <ul>
         <li>
           <Link to={"https://github.com/isaacpradford"} target="_blank">

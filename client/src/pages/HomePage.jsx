@@ -20,7 +20,11 @@ const HomePage = () => {
         </p>
       </div>
 
-      <Socials />
+      <div className="b-home__socials">
+        {/* <Socials />
+        <Socials /> */}
+        <Socials />
+      </div>
       {/* <div className="b-home__halftone"></div> */}
     </div>
   );

@@ -23,21 +23,25 @@
 //   src: local("Impacted Regular"), url("../assets/fonts/Impacted.woff") format("woff");
 // }
 
-
 // Colors
 $backgroundColor: #fdfffc;
 $fontColor: #000000;
+$aboutBackground: #ffffffea;
 $red: #be1414;
 $yellow: #bfca27;
 $invisible: #00000000;
 
 // Fonts
-$mainFont:"Impact Regular", sans-serif;
+$mainFont: "Inter", sans-serif;
 $subFont: "Inter", sans-serif;
 $projectTitleSize: 100px;
 
+$largeLetterSpacing: -10px;
+$smallLetterSpacing: -1px;
+
 // Animations
 $marquee: 200s ease-out infinite marquee;
+$reverseMarquee: 200s ease-out infinite reverseMarquee;
 
 $increaseSize: 10s linear 1 increaseSize;
 $repeatingList: 120s linear infinite moveUp;
@@ -46,11 +50,6 @@ $moveDown2: 25s linear infinite moveDown;
 
 $flickering: 1.5s linear infinite flicker;
 $typing: typing 3.5s steps(20), blink 0.5s step-end infinite alternate;
-
-
-
-
-
 
 // Animation Keyframes
 @keyframes marquee {
@@ -67,33 +66,22 @@ $typing: typing 3.5s steps(20), blink 0.5s step-end infinite alternate;
     transform: translateX(-50vw);
   }
 }
-@keyframes typing {
-  from {
-    width: 0;
-  }
-}
-@keyframes flicker {
+
+@keyframes reverseMarquee {
   0% {
-    opacity: 1;
+    transform: translateX(-50vw);
   }
-  49% {
-    opacity: 1;
+  48% {
+    transform: translateX(250vw);
   }
-  50% {
-    opacity: 0;
+  52% {
+    transform: translateX(250vw);
   }
   100% {
-    opacity: 0;
+    transform: translateX(-50vw);
   }
 }
-@keyframes increaseSize {
-  0% {
-    scale: (0);
-  }
-  100% {
-    scale: (1);
-  }
-}
+
 @keyframes moveDown {
   0% {
     transform: translateX(-210vh);

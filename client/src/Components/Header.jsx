@@ -2,10 +2,17 @@ import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-scroll";
 import Hamburger from "hamburger-react";
+import Popup from "./Popup";
+import AboutPage from "../pages/AboutPage";
 
 const Header = () => {
   let location = useLocation();
   const [isOpen, setOpen] = useState(false);
+
+  // Set up about popup
+  const [isPopupOpen, setPopupOpen] = useState(false);
+  const handlePopupOpen = () => setPopupOpen(true);
+  const handlePopupClose = () => setPopupOpen(false);
 
   const [windowDimensions, setWindowDimensions] = useState({
     width: window.innerWidth,
@@ -39,22 +46,15 @@ const Header = () => {
 
         {(isOpen || windowDimensions.width > 768) && (
           <ul className="b-navbar__wrapper">
-            {/* <li className={`b-navbar__wrapper__link ${isOpen ? "open" : ""}`}>
-          <Link to="home" smooth={true} duration={500}>
-            Home
-          </Link>
-        </li> */}
-            {/* <li className={`b-navbar__wrapper__link ${isOpen ? "open" : ""}`}>
+            <li className={`b-navbar__wrapper__link ${isOpen ? "open" : ""}`}>
               <Link
-                to="about"
-                smooth={true}
-                duration={500}
-                onClick={() => setOpen(false)}
-                // Make this one a popup window
+                onClick={() => {
+                  isPopupOpen ? handlePopupClose() : handlePopupOpen();
+                }}
               >
                 About
               </Link>
-            </li> */}
+            </li>
             <li className={`b-navbar__wrapper__link ${isOpen ? "open" : ""}`}>
               <Link
                 to="projects"
@@ -78,6 +78,12 @@ const Header = () => {
           </ul>
         )}
       </nav>
+
+      <Popup
+        isOpen={isPopupOpen}
+        onClose={handlePopupClose}
+        component={AboutPage}
+      />
     </div>
   );
 };
