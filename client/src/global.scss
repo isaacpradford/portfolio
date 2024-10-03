@@ -10,14 +10,15 @@
   grid-template-rows: auto auto auto auto auto auto;
   grid-template-areas:
     "home"
-    "skills"
     "experience"
     "projects"
+    "skills"
     "testimonials"
     "contact";
 
   .b-home {
     grid-area: home;
+    // background-image: url("./assets/background.svg");
   }
   .b-skills {
     grid-area: skills;
@@ -37,13 +38,15 @@
 
   .b-home,
   .b-about,
-  .b-skills,
   .b-experience,
   .b-projects,
   .b-testimonials,
   .b-contact {
-    height: auto;
     min-height: 100vh;
     min-width: 100vw;
+  }
+
+  .b-skills {
+    min-height: 200vh;
   }
 }

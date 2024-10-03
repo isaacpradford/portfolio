@@ -1,103 +1,345 @@
 @use "../variables" as *;
 
 .b-skills {
-    --gap: 20px;
+  --gap: 1.5vw;
+  position: relative;
+  
+  // The first part of the pillbox
+  ul {
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap);
+    transition: 0.2s margin ease-in-out;
 
-    &__languages {
-        display: flex;
-        flex-direction: column;
-        h1 {
-            font-family: $mainFont;
-            letter-spacing: $mediumLetterSpacing;
-            font-size: 80px;
-        }
-        ul {
-            display: flex;
-            flex-direction: row;
-            gap: var(--gap);
-            transition: .2s margin ease-in-out;
-            li {
-                min-width: 150px;
-                min-height: 24px;
-                list-style: none;
-                border: 1px solid $fontColor;
-                font-family: $mainFont;
-                font-weight: 800;
-                letter-spacing: $smallLetterSpacing;
-            }
-        }
+    li {
+      min-width: 15vw;
+      min-height: 2vw;
+      list-style: none;
 
-        &__databases {
-            font-family: $subFont;
-            font-size: 24px;
-            letter-spacing: $smallLetterSpacing;
-            font-weight: 200;
-            align-self: flex-end;
-            text-align: end;
-            max-width: 400px;
-            margin: -50px 3vw;
-        }
+      border: 1px solid $fontColor;
+      box-shadow: 0px 1px 0px $fontColor;
+      font-size: 2.3vw;
+      font-family: $mainFont;
+      font-weight: 800;
+      letter-spacing: $smallLetterSpacing;
+    }
+  }
+  &__languages {
+    display: flex;
+    flex-direction: column;
+    max-width: 1100px;
+    margin: auto;
+
+    h1 {
+      font-family: $mainFont;
+      letter-spacing: $mediumLetterSpacing;
+      font-size: 8vw;
+      padding-left: 20px;
     }
 
-    &__pillBox {
+    &__databases {
+      font-family: $subFont;
+      font-size: 2.5vw;
+      letter-spacing: $smallLetterSpacing;
+      font-weight: 200;
+      align-self: flex-end;
+      text-align: end;
+      max-width: 30vw;
+      margin: -8vw 3vw 3vw 0px;
+    }
+  }
+
+  // The language pillbox on page
+  &__pillBox {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    margin-top: 2vh;
+
+    .pill {
+      text-align: center;
+      border-radius: 3vw;
+
+      padding: 1vh;
+      padding-top: 1.5vh;
+
+      transition: 0.2s ease-in-out;
+      box-shadow: 0px 1px 0px $fontColor;
+
+      &:hover {
+        padding: 10px;
+        box-shadow: 0px 8px 0px $fontColor;
+      }
+    }
+
+    &--1,
+    &--3,
+    &--5 {
+      margin-left: -10vw;
+    }
+    &--2,
+    &--4,
+    &--6 {
+      margin-left: -15vw;
+    }
+
+    svg {
+      transition: 0.2s ease-in-out;
+      &:hover {
+        scale: 1.05;
+      }
+    }
+  }
+
+  &__other {
+    position: relative;
+    border-radius: 75px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    max-width: 850px;
+    margin: 10vh auto;
+
+    &__background {
+      z-index: 5;
+      position: absolute;
+      left: 10vw;
+      border-radius: 7.5vw;
+      height: 75%;
+      width: 80%;
+      overflow-y:scroll ;
+    }
+
+    &__title {
+      font-family: $mainFont;
+      font-size: 5vw;
+      font-weight: 900;
+      font-style: italic;
+      letter-spacing: $smallLetterSpacing;
+
+      text-align: center;
+      margin-top: 5vh;
+    }
+
+    &__addition {
+      margin: auto;
+      max-width: 800px;
+
+      h3 {
+        text-align: center;
+        font-family: $mainFont;
+        font-weight: 200;
+        font-size: 2.5vw;
+        letter-spacing: $smallLetterSpacing;
+      }
+
+      p {
+        font-family: $subFont;
+        letter-spacing: $smallLetterSpacing;
+        font-weight: 200;
+        font-size: 2vw;
+
+        max-width: 70vw;
+
+        padding: 15px;
+        margin: auto;
+        text-align: center;
+      }
+
+      .pillbox {
+        z-index: 6;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: auto;
+        margin-top: 6vh;
+        padding: 5vh;
+
+        list-style-type: none;
         gap: var(--gap);
-        margin-top: 20px;
 
         .pill {
-            margin-top: auto;
-            text-align: center;
-            border-radius: 20px;
-            padding: 4px;
-            padding-top: 10px;
-            
-            transition: .2s ease-in-out;
-            box-shadow: 0px 1px 0px $fontColor;
-            
-            &:hover {
-                padding: 10px;
-                box-shadow: 0px 8px 0px $fontColor;
-            }
-        }
+          margin: auto;
+          text-align: center;
+          border-radius: 40px;
+          padding: 10px;
+          padding-top: 10px;
+          font-size: 2.5vw;
+          font-weight: 400;
+          letter-spacing: $smallLetterSpacing;
 
-        &--1, &--3, &--5{
-            margin-left: -100px;
-        }
-        &--2, &--4, &--6 {
-            margin-left: -170px;
-        }
+          transition: 0.2s ease-in-out;
 
-        svg {
-            transition: 0.2s ease-in-out;
-            &:hover {
-                scale: 1.05;
-            }
-        }
-    }
-
-    &__other {
-        position: relative;
-        display: flex;
-        justify-content: center; 
-        align-items: center;
-        // padding-top: 23vh;
-        width: 80vw;
-        margin: 0 auto;
-
-        &__inside {
-            position: absolute;
-            top: 0;
+          &:hover {
+            padding: 12px;
+            box-shadow: 0px 8px 0px $fontColor;
+          }
         }
       }
+    }
+
+    // &__inside {
+    //   position: absolute;
+    //   display: flex;
+    //   flex-direction: row;
+    //   justify-content: space-around;
+    //   width: 100%;
+
+    //   //   ul {
+    //   //     padding: 0;
+    //   //   }
+
+    //   .slider {
+    //     list-style: none;
+    //     -webkit-appearance: none;
+    //     appearance: none;
+    //     outline: none;
+    //     width: 35vw;
+    //     padding: 1vh;
+    //     color: $fontColor;
+
+    //     label {
+    //       font-family: $mainFont;
+    //       font-weight: 200;
+    //       display: block;
+    //       font-size: 2vw;
+    //       margin-bottom: 2px;
+    //     }
+
+    //     input[type="range"] {
+    //       -webkit-appearance: none;
+    //       appearance: none;
+    //       width: 100%;
+    //       height: 6px;
+    //       border-radius: 10px;
+    //       outline: none;
+
+    //       /* Track */
+    //       &::-webkit-slider-runnable-track {
+    //         height: 6px;
+    //         background: linear-gradient(90deg, $darkBlue, $lightBlue);
+    //         border-radius: 10px;
+    //       }
+
+    //       &::-moz-range-track {
+    //         height: 6px;
+    //         background: linear-gradient(
+    //           90deg,
+    //           $darkBlue,
+    //           $lightBlue,
+    //           $red,
+    //           $invisible
+    //         );
+    //         border-radius: 10px;
+    //       }
+
+    //       &::-ms-track {
+    //         height: 6px;
+    //         background: linear-gradient(
+    //           90deg,
+    //           $darkBlue,
+    //           $lightBlue,
+    //           $red,
+    //           $invisible
+    //         );
+    //         border-radius: 10px;
+    //         border: none;
+    //         color: transparent;
+    //       }
+
+    //       /* Thumb (handle) */
+    //       &::-webkit-slider-thumb {
+    //         -webkit-appearance: none;
+    //         appearance: none;
+    //         width: 25px; /* Customize size */
+    //         height: 25px;
+    //         border-radius: 50%;
+    //         background-color: $darkBlue;
+    //         cursor: pointer;
+    //         margin-top: -10px; /* To align the thumb with the track */
+    //         box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    //       }
+
+    //       &::-moz-range-thumb {
+    //         width: 25px;
+    //         height: 25px;
+    //         border-radius: 50%;
+    //         background-color: $darkBlue;
+    //         cursor: pointer;
+    //         box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    //       }
+
+    //       &::-ms-thumb {
+    //         width: 25px;
+    //         height: 25px;
+    //         border-radius: 50%;
+    //         background-color: $darkBlue;
+    //         cursor: pointer;
+    //         box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    //       }
+    //     }
+    //   }
+    // }
+  }
 }
 
-svg.svgwave {
-    overflow: visible;
+.b-otherSkills {
+  position: relative;
 }
 
-svg.svgwave text {
-    font-family: $subFont2;
-    letter-spacing: $mediumLetterSpacing;
-    font-size:100px;
+svg.svgsquare {
+  overflow: visible;
+}
+
+svg.svgsquare text {
+  font-family: $headerFont;
+  letter-spacing: $mediumLetterSpacing;
+  font-size: 100px;
+}
+
+@media only screen and (max-width: 800px) {
+  .b-skills {
+    &__other {
+      .slider {
+        display: none;
+      }
+      &__title {
+        display: none;
+      }
+
+      &__addition {
+        
+        h3 {
+          display: none;
+        }
+
+        h4 {
+          display: none;
+        }
+
+        ul {
+          li {
+            min-width: 70px;
+            min-height: 14px;
+          }
+        }
+
+        .pillbox {
+          margin-top: auto;
+        }
+      }
+
+      &__background {
+        // display: none;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .b-otherSkills {
+    display: none;
+  }
 }

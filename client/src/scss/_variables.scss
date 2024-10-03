@@ -24,19 +24,25 @@
 // }
 
 // Colors
-$backgroundColor: #ad9090;
+$backgroundColor: #e5ebf7;
 $backgroundColor2: #AF1B3F;
-$white: #CCB69B;
 $fontColor: #000000;
+$fontHighlights: #3879fb;
 
 $aboutBackground: #ee8989ea;
+
+// Basic Colors
+$darkBlue: #170f73;
+$lightBlue:#7b8dda;
 $red: #be1414;
 $yellow: #bfca27;
+$brown: #CCB69B;
+$white: #f0f0f0;
 $invisible: #00000000;
 
 // Fonts
 $mainFont: "Inter", sans-serif;
-$subFont2: "Impact", sans-serif;
+$headerFont: "Impact", sans-serif;
 $subFont: "Inter", sans-serif;
 $projectTitleSize: 100px;
 
@@ -45,8 +51,8 @@ $mediumLetterSpacing: -7px;
 $smallLetterSpacing: -1px;
 
 // Animations
-$marquee: 200s ease-out infinite marquee;
-$reverseMarquee: 200s ease-out infinite reverseMarquee;
+$marquee: 200s infinite marquee;
+$reverseMarquee: 200s infinite reverseMarquee;
 
 $increaseSize: 10s linear 1 increaseSize;
 $repeatingList: 120s linear infinite moveUp;
@@ -61,14 +67,8 @@ $typing: typing 3.5s steps(20), blink 0.5s step-end infinite alternate;
   0% {
     transform: translateX(-50vw);
   }
-  48% {
-    transform: translateX(-250vw);
-  }
-  52% {
-    transform: translateX(-250vw);
-  }
   100% {
-    transform: translateX(-50vw);
+    transform: translateX(-400vw);
   }
 }
 
