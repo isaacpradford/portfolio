@@ -9,11 +9,11 @@
   grid-template-columns: 100vw;
   grid-template-rows: auto auto auto auto auto auto;
   grid-template-areas:
-  "home"
-  "projects"
-  "experience"
-  "skills"
-  "testimonials"
+    "home"
+    "experience"
+    "skills"
+    "projects"
+    "testimonials"
     "contact";
 
   .b-home {

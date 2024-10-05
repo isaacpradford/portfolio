@@ -6,8 +6,9 @@ const ExperiencePage = () => {
       <h1 className="b-experience__title">Experience:</h1>
 
       <div className="b-experience__timeline">
-        <div className="b-experience__timeline__dot"></div>
-        <div className="b-experience__timeline__entry">
+        {/* <div className="b-experience__timeline__dot"></div> */}
+        <div className="b-experience__timeline__line"></div>
+        <div className="b-experience__timeline__entry --1">
           <div className="b-experience__timeline__entry__title">
             <p>Bachelors of Science in</p>
             <h2>Software Engineering</h2>
@@ -25,8 +26,7 @@ const ExperiencePage = () => {
           </div>
         </div>
 
-        <div className="b-experience__timeline__dot"></div>
-        <div className="b-experience__timeline__entry">
+        <div className="b-experience__timeline__entry --2">
           <div className="b-experience__timeline__entry__title">
             <p>Certificate in</p>
             <h2>Full Stack Web Development</h2>
@@ -41,8 +41,7 @@ const ExperiencePage = () => {
           </div>
         </div>
 
-        <div className="b-experience__timeline__dot"></div>
-        <div className="b-experience__timeline__entry">
+        <div className="b-experience__timeline__entry --3">
           <div className="b-experience__timeline__entry__title">
             <p>Certificate in</p>
             <h2>Software Design</h2>
@@ -57,8 +56,7 @@ const ExperiencePage = () => {
           </div>
         </div>
 
-        <div className="b-experience__timeline__dot"></div>
-        <div className="b-experience__timeline__entry">
+        <div className="b-experience__timeline__entry --4">
           <div className="b-experience__timeline__entry__title">
             <p>Full-Stack Web Developer</p>
             <h2>Subitt.io</h2>

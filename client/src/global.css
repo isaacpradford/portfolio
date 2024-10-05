@@ -230,13 +230,14 @@
   letter-spacing: -0.5vw;
   font-size: 8vw;
   padding-left: 2vw;
-  text-align: right;
+  text-align: left;
 }
 .b-projects__marquee {
   position: absolute;
+  right: 30px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
   list-style: none;
   animation: 50s linear infinite moveDown;
 }
@@ -249,7 +250,7 @@
   letter-spacing: -0.5vw;
   font-size: 8vw;
   padding-left: 2vw;
-  font-size: 8vw;
+  font-size: 6vw;
   font-weight: 800;
   text-decoration: none;
   -webkit-text-fill-color: transparent;
@@ -264,9 +265,7 @@
   -webkit-text-stroke: 1px;
 }
 .b-projects__cardList {
-  position: absolute;
-  right: 0;
-  margin-right: -20vw;
+  margin-left: -3vw;
 }
 .b-projects__cardList ul {
   display: flex;
@@ -277,30 +276,94 @@
   right: 10vw;
 }
 .b-projects__cardList .card {
+  z-index: 1;
+  position: relative;
   background-color: #22473d;
   border-radius: 15px;
+  border: 1px solid #22473d;
   list-style-type: none;
   margin: 5px;
-  min-width: 20vw;
-  min-height: 30vh;
+  min-width: 275px;
+  min-height: 200px;
   max-width: 275px;
   transition: 0.2s ease-in-out;
+  overflow: hidden;
 }
-.b-projects__cardList .card h3 {
+.b-projects__cardList .card__title, .b-projects__cardList .card__description, .b-projects__cardList .card__date, .b-projects__cardList .card__button {
+  z-index: 2;
+  position: relative;
+  transition: 0.2s ease-in-out;
+}
+.b-projects__cardList .card__bg {
+  z-index: 1;
+  position: absolute;
+  top: -50px;
+  left: 225px;
+  width: 100px;
+  height: 100px;
+  border-bottom-left-radius: 50%;
+  background-color: #EAE7DC;
+  transition: 0.2s ease-in-out;
+}
+.b-projects__cardList .card__title {
   font-family: "Inter", sans-serif;
   letter-spacing: -0.5vw;
   font-size: 8vw;
   padding-left: 2vw;
-  font-size: 5vw;
+  font-size: 3vw;
+  color: #EAE7DC;
+  padding: 4px 8px;
   margin-top: 8px;
-  letter-spacing: -4px;
+  letter-spacing: -2px;
+}
+.b-projects__cardList .card__description {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -1px;
+  font-size: 20px;
+  font-weight: 200;
+  padding-left: 2vw;
+  color: #22473d;
+  font-size: 18px;
+  padding: 4px 8px;
+  font-weight: 300;
+}
+.b-projects__cardList .card__date {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -1px;
+  font-size: 20px;
+  font-weight: 400;
+  padding-left: 2vw;
+  font-weight: 500;
+  padding: 4px 8px;
+  color: #22473d;
+}
+.b-projects__cardList .card__button {
+  background-color: #EAE7DC;
+  border: none;
+  position: absolute;
+  bottom: 5px;
+  font-family: "Inter", sans-serif;
+  letter-spacing: -1px;
+  font-size: 20px;
+  font-weight: 200;
+  padding-left: 2vw;
+  font-weight: 100;
+  font-size: medium;
+  padding: 6px;
+  margin-left: 5px;
+  color: #EAE7DC;
+  width: 30%;
+  border-radius: 14px;
+  text-align: center;
+}
+.b-projects__cardList .card__button:hover {
+  padding: 8px;
 }
 .b-projects__cardList .card:hover {
-  padding: 5px;
-  scale: 1.05;
+  padding: 2px;
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 800px) {
   .b-projects__title {
     text-align: left;
   }
@@ -317,8 +380,11 @@
     min-width: 45%;
     max-width: 225px;
   }
-  .b-projects__cardList .card h3 {
-    letter-spacing: -1px;
+  .b-projects__cardList .card__title {
+    font-size: 36px;
+  }
+  .b-projects__cardList .card__button {
+    width: 40%;
   }
   .b-projects__cardList .--1,
   .b-projects__cardList .--2,
@@ -330,14 +396,34 @@
   .b-projects__cardList .--2 {
     right: 0;
   }
-  .b-projects__cardList .--3 {
-    position: relative;
-    left: 23%;
-  }
   .b-projects .empty {
     display: none;
   }
 }
+.card:hover {
+  border: 1px solid #22473d;
+}
+
+.card:hover .card__bg {
+  width: 500px;
+  height: 500px;
+  top: -5px;
+  left: 0;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.card:hover .card__title {
+  color: #22473d;
+}
+
+.card:hover .card__button {
+  width: 95%;
+  background-color: #22473d;
+  color: #EAE7DC;
+  font-weight: 500;
+}
+
 .b-experience__title {
   font-family: "Inter", sans-serif;
   letter-spacing: -0.5vw;
@@ -346,11 +432,34 @@
   text-align: left;
 }
 .b-experience__timeline {
-  border-left: 2px solid #aaa99e;
-  width: 70vw;
-  max-width: 700px;
+  display: grid;
+  grid-template-columns: 45% 10% 45%;
+  grid-template-rows: 150px 200px 200px 150px;
+  width: 90vw;
+  max-width: 1100px;
   margin: auto;
   position: relative;
+}
+.b-experience__timeline__line {
+  grid-column: 2;
+  grid-row: 1/5;
+}
+.b-experience__timeline .--1 {
+  grid-column: 1;
+  grid-row: 1;
+}
+.b-experience__timeline .--2 {
+  grid-column: 3;
+  grid-row: 2;
+}
+.b-experience__timeline .--3 {
+  grid-column: 3;
+  grid-row: 3;
+}
+.b-experience__timeline .--4 {
+  grid-column: 1;
+  grid-row: 3;
+  margin-top: 100px;
 }
 .b-experience__timeline__dot {
   background-color: #aaa99e;
@@ -360,8 +469,11 @@
   position: absolute;
   left: -6px;
 }
-.b-experience__timeline__entry {
-  padding: 20px;
+.b-experience__timeline__line {
+  width: 10px;
+  height: 100%;
+  background-color: black;
+  margin: auto;
 }
 .b-experience__timeline__entry__title p {
   font-family: "Inter", sans-serif;
@@ -627,7 +739,7 @@ svg.svgsquare text {
   display: grid;
   grid-template-columns: 100vw;
   grid-template-rows: auto auto auto auto auto auto;
-  grid-template-areas: "home" "projects" "experience" "skills" "testimonials" "contact";
+  grid-template-areas: "home" "experience" "skills" "projects" "testimonials" "contact";
 }
 #root .b-home {
   grid-area: home;

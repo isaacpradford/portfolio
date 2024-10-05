@@ -25,7 +25,23 @@ const TestimonialsPage = () => {
           navigation={true}
           modules={[Pagination, Navigation]}
         >
-          <SwiperSlide>Slide 1</SwiperSlide>
+          <SwiperSlide>
+            <h1>Jae Hyun Kim</h1>
+            <p>
+              I had the pleasure of working with Isaac during his time as a
+              Full-Stack Developer at Subitt. Isaac excelled in collaborating
+              with a large team of developers to create products and solutions
+              for real-world problems, including those requiring immediate
+              attention. Isaac is a highly capable and competent problem-solver,
+              particularly with React.js and Node.js. He not only thinks
+              creatively and efficiently when tackling technical challenges but
+              also communicates effectively with non-technical stakeholders.
+              This ensures a smooth transition of projects from the development
+              teams to other associated teams. I strongly recommend Isaac to any
+              team looking for a candidate with the perfect blend of technical
+              and soft skills.
+            </p>
+          </SwiperSlide>
           <SwiperSlide>Slide 2</SwiperSlide>
           <SwiperSlide>Slide 3</SwiperSlide>
         </Swiper>

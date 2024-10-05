@@ -11,14 +11,15 @@
 
   &__title {
     @include pageTitle;
-    text-align: right;
+    text-align: left;
   }
 
   &__marquee {
     position: absolute;
+    right: 30px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
     list-style: none;
     animation: $moveDown;
 
@@ -28,7 +29,7 @@
 
       a {
         @include pageTitle;
-        font-size: 8vw;
+        font-size: 6vw;
         font-weight: 800;
         text-decoration: none;
 
@@ -49,9 +50,7 @@
   }
 
   &__cardList {
-    position: absolute;
-    right: 0;
-    margin-right: -20vw;
+    margin-left: -3vw;
 
     ul {
       @include flexRow;
@@ -63,31 +62,97 @@
     }
 
     .card {
+      z-index: 1;
+      position: relative;
       background-color: $fontHighlights;
       border-radius: 15px;
+      border: 1px solid $fontHighlights;
+
       list-style-type: none;
       margin: 5px;
-      min-width: 20vw;
-      min-height: 30vh;
+      min-width: 275px;
+      min-height: 200px;
       max-width: 275px;
       transition: 0.2s ease-in-out;
+      overflow: hidden;
 
-      h3 {
-        @include pageTitle;
-        font-size: 5vw;
-        margin-top: 8px;
-        letter-spacing: -4px;
+      // Set all the elements in front of the background
+      &__title, &__description, &__date, &__button {
+        z-index: 2;
+        position: relative;
+        transition: 0.2s ease-in-out;
+      }
+      
+      &__bg {
+        z-index: 1;
+        position: absolute;
+        top: -50px;
+        left: 225px;
+        width: 100px;
+        height: 100px;
+        border-bottom-left-radius: 50%;
+        background-color: $backgroundColor;
+        transition: 0.2s ease-in-out;
+        
       }
 
+      &__title {
+        @include pageTitle;
+        font-size: 3vw;
+        color: $backgroundColor;
+        padding: 4px 8px;
+
+        margin-top: 8px;
+        letter-spacing: -2px;
+      }
+
+      &__description {
+        @include mainBodyText;
+        color: $fontHighlights;
+        font-size: 18px;
+        padding: 4px 8px;
+        font-weight: 300;
+      }
+
+      &__date {
+        @include subTitle;
+        font-weight: 500;
+        padding: 4px 8px;
+        color: $fontHighlights;
+      }
+
+      &__button {
+        background-color: $backgroundColor;
+        border: none;
+        position: absolute;
+        bottom: 5px;
+        
+        @include mainBodyText;
+        font-weight: 100;
+        font-size: medium;
+        padding: 6px;
+        margin-left: 5px;
+        color: $backgroundColor;
+        width: 30%;
+        
+        border-radius: 14px;
+        text-align: center;
+
+        &:hover {
+          padding: 8px;
+        }
+      }
+
+      // BG hover is down below, wasn't working in SCSS for some reason
       &:hover {
-        padding: 5px;
-        scale: 1.05;
+        padding: 2px;
+        // scale: 1.05;
       }
     }
   }
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 800px) {
   .b-projects {
     &__title {
       text-align: left;
@@ -106,8 +171,11 @@
         min-width: 45%;
         max-width: 225px;
 
-        h3 {
-          letter-spacing: -1px;
+        &__title {
+          font-size: 36px;
+        }
+        &__button {
+          width: 40%;
         }
       }
 
@@ -124,14 +192,37 @@
       }
 
       .--3 {
-        position: relative;
-        left: 23%;
+        // position: relative;
+        // left: 23%;
       }
     }
     .empty {
       display: none;
     }
   }
+}
+
+.card:hover {
+  border: 1px solid $fontHighlights;
+}
+.card:hover .card__bg {
+  width: 500px;
+  height: 500px;
+  top: -5px;
+  left: 0;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.card:hover .card__title {
+  color: $fontHighlights;
+}
+
+.card:hover .card__button {
+  width: 95%;
+  background-color: $fontHighlights;
+  color: $backgroundColor;
+  font-weight: 500;
 }
 
 @media only screen and (min-width: 640px) {

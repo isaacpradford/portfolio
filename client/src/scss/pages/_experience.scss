@@ -2,55 +2,136 @@
 @use "../mixins" as *;
 
 .b-experience {
-    &__title {
-        @include pageTitle;
-        text-align: left;
+  &__title {
+    @include pageTitle;
+    text-align: left;
+  }
+
+  // All of the grid alignment is in the first __timeline section, all the decoration is in the second
+  &__timeline {
+    display: grid;
+    grid-template-columns: 45% 10% 45%;
+    grid-template-rows: 150px 200px 200px 150px;
+
+    width: 90vw;
+    max-width: 1100px;
+    margin: auto;
+    position: relative;
+
+    &__line {
+      grid-column: 2;
+      grid-row: 1/5;
     }
 
-    &__timeline {
-        border-left: 2px solid $gray;
-        width: 70vw;
-        max-width: 700px;
-        margin: auto;
-        position: relative;
-
-        &__dot {
-            background-color: $gray;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            position: absolute;
-            left: -6px;
-        }
-
-        &__entry {
-            padding: 20px;
-            &__title {
-
-                p {
-                    @include mainBodyText;
-                    font-style: italic;
-                    // font-size: 2.3vw;
-                }
-                h2 {
-                    @include sectionTitle;
-                }
-                h3 {
-                    @include subTitle;
-                    padding-top: 4px
-                }
-            }
-
-            &__body {
-                @include mainBodyText;
-
-                &__list {
-
-                }
-            }
-
-
-
-        }
+    .--1 {
+      grid-column: 1;
+      grid-row: 1;
     }
+    .--2 {
+      grid-column: 3;
+      grid-row: 2;
+    }
+    .--3 {
+      grid-column: 3;
+      grid-row: 3;
+    }
+    .--4 {
+      grid-column: 1;
+      grid-row: 3;
+      margin-top: 100px;
+    }
+  }
+
+  &__timeline {
+    &__dot {
+      background-color: $gray;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      position: absolute;
+      left: -6px;
+    }
+
+    &__line {
+      width: 10px;
+      height: 100%;
+      background-color: black;
+      margin: auto;
+    }
+    &__entry {
+      &__title {
+        p {
+          @include mainBodyText;
+          font-style: italic;
+          // font-size: 2.3vw;
+        }
+        h2 {
+          @include sectionTitle;
+        }
+        h3 {
+          @include subTitle;
+          padding-top: 4px;
+        }
+      }
+
+      &__body {
+        @include mainBodyText;
+
+        &__list {
+        }
+      }
+    }
+  }
 }
+
+// .b-experience {
+// &__title {
+//     @include pageTitle;
+//     text-align: left;
+// }
+
+// &__timeline {
+//     border-left: 2px solid $gray;
+//     width: 70vw;
+//     max-width: 700px;
+//     margin: auto;
+//     position: relative;
+
+//     &__dot {
+//         background-color: $gray;
+//         width: 10px;
+//         height: 10px;
+//         border-radius: 50%;
+//         position: absolute;
+//         left: -6px;
+//     }
+
+//     &__entry {
+//         padding: 20px;
+//         &__title {
+
+//             p {
+//                 @include mainBodyText;
+//                 font-style: italic;
+//                 // font-size: 2.3vw;
+//             }
+//             h2 {
+//                 @include sectionTitle;
+//             }
+//             h3 {
+//                 @include subTitle;
+//                 padding-top: 4px
+//             }
+//         }
+
+//         &__body {
+//             @include mainBodyText;
+
+//             &__list {
+
+//             }
+//         }
+
+//         }
+//     }
+// }
