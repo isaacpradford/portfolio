@@ -1,5 +1,7 @@
 @use "../variables" as *;
 
+// Make navbar color excluded from whats behind
+
 .b-navbar {
   position: fixed;  
   top: 0;          
@@ -17,6 +19,7 @@
     flex-direction: row;
     font-family: $mainFont;
     letter-spacing: $mediumLetterSpacing;
+    color: $fontHighlights;
     font-weight: bold;
     font-style: italic;
     font-size: 40px;

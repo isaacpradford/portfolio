@@ -9,11 +9,11 @@
   grid-template-columns: 100vw;
   grid-template-rows: auto auto auto auto auto auto;
   grid-template-areas:
-    "home"
-    "experience"
-    "projects"
-    "skills"
-    "testimonials"
+  "home"
+  "projects"
+  "experience"
+  "skills"
+  "testimonials"
     "contact";
 
   .b-home {
@@ -39,11 +39,14 @@
   .b-home,
   .b-about,
   .b-experience,
-  .b-projects,
   .b-testimonials,
   .b-contact {
     min-height: 100vh;
     min-width: 100vw;
+  }
+
+  .b-projects {
+    min-height: 125vh;
   }
 
   .b-skills {

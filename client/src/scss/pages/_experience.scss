@@ -1,1 +1,56 @@
 @use "../variables" as *;
+@use "../mixins" as *;
+
+.b-experience {
+    &__title {
+        @include pageTitle;
+        text-align: left;
+    }
+
+    &__timeline {
+        border-left: 2px solid $gray;
+        width: 70vw;
+        max-width: 700px;
+        margin: auto;
+        position: relative;
+
+        &__dot {
+            background-color: $gray;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            position: absolute;
+            left: -6px;
+        }
+
+        &__entry {
+            padding: 20px;
+            &__title {
+
+                p {
+                    @include mainBodyText;
+                    font-style: italic;
+                    // font-size: 2.3vw;
+                }
+                h2 {
+                    @include sectionTitle;
+                }
+                h3 {
+                    @include subTitle;
+                    padding-top: 4px
+                }
+            }
+
+            &__body {
+                @include mainBodyText;
+
+                &__list {
+
+                }
+            }
+
+
+
+        }
+    }
+}

@@ -3,57 +3,77 @@ import React from "react";
 const ExperiencePage = () => {
   return (
     <div id="experience" className="b-experience">
-      <h1>Experience:</h1>
+      <h1 className="b-experience__title">Experience:</h1>
 
       <div className="b-experience__timeline">
+        <div className="b-experience__timeline__dot"></div>
         <div className="b-experience__timeline__entry">
           <div className="b-experience__timeline__entry__title">
-            <h3>January 2020 - July 2024</h3>
-            <p>School of Physical Sciences, BYU-Idaho</p>
+            <p>Bachelors of Science in</p>
+            <h2>Software Engineering</h2>
+            <h3>BYU-Idaho | January 2020 - July 2024</h3>
           </div>
           <div className="b-experience__timeline__entry__body">
-            <h3>
-              Graduated college with a Bachelor of Science in Software
-              Engineering{" "}
-            </h3>
+            <p>
+              Graduated with a Bachelor of Science in Software Engineering from
+              BYU-Idaho
+            </p>
+            <ul className="b-experience__timeline__entry__body__list">
+              <li></li>
+              <li></li>
+            </ul>
           </div>
         </div>
 
+        <div className="b-experience__timeline__dot"></div>
         <div className="b-experience__timeline__entry">
           <div className="b-experience__timeline__entry__title">
-            <h3>July 2023</h3>
-            <p>School of Physical Sciences, BYU-Idaho</p>
+            <p>Certificate in</p>
+            <h2>Full Stack Web Development</h2>
+            <h3>BYU-Idaho | Fall 2023</h3>
           </div>
           <div className="b-experience__timeline__entry__body">
-            <h3>Earned a certificate in Full Stack Web Development</h3>
-            <p>Description description description</p>
+            <p>Earned a certificate in Full Stack Web Development</p>
+            <ul className="b-experience__timeline__entry__body__list">
+              <li></li>
+              <li></li>
+            </ul>
           </div>
         </div>
 
+        <div className="b-experience__timeline__dot"></div>
         <div className="b-experience__timeline__entry">
           <div className="b-experience__timeline__entry__title">
-            <h3>July 2024</h3>
-            <p>School of Physical Sciences, BYU-Idaho</p>
-            <p>Description description description</p>
+            <p>Certificate in</p>
+            <h2>Software Design</h2>
+            <h3>BYU-Idaho | Summer 2024</h3>
           </div>
           <div className="b-experience__timeline__entry__body">
-            <h3>Earned a certificate in Software Design</h3>
-            <p>Description description description</p>
+            <p>Earned a certificate in Full Stack Web Development</p>
+            <ul className="b-experience__timeline__entry__body__list">
+              <li></li>
+              <li></li>
+            </ul>
           </div>
         </div>
 
+        <div className="b-experience__timeline__dot"></div>
         <div className="b-experience__timeline__entry">
           <div className="b-experience__timeline__entry__title">
-            <h3>Jan. 2024 - Present</h3>
-            <p>Fullstack Web Developer, Subitt.io</p>
+            <p>Full-Stack Web Developer</p>
+            <h2>Subitt.io</h2>
+            <h3>2024 - Present</h3>
           </div>
           <div className="b-experience__timeline__entry__body">
-            <h3>
-              Developed in fast paced, start-up environment designing scalable
-              software for both administrators and business owners to manage
-              customers.
-            </h3>
-            <p>Description description description</p>
+            <p>Earned a certificate in Full Stack Web Development</p>
+            <ul className="b-experience__timeline__entry__body__list">
+              <li>
+                Developed in fast paced, start-up environment designing scalable
+                software for both administrators and business owners to manage
+                customers.
+              </li>
+              <li></li>
+            </ul>
           </div>
         </div>
       </div>

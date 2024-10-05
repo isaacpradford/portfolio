@@ -16,7 +16,9 @@
     position: absolute;
     top: 25%;
     left: 25%;
-    // background-color: black;
+    // background-color: #84c0b0;
+    // background-color: #40adfb;
+    // background-color: #ffa600;
     z-index: 2;
   }
 
@@ -31,7 +33,7 @@
     font-size: 170px;
     text-wrap: nowrap;
     animation: $marquee;
-    color: black;
+    color: $fontHighlights;
     mix-blend-mode:hue;
     z-index: 3;
   }
@@ -42,35 +44,6 @@
     right: 10px;
   }
 
-  &__projects {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin: 0 20vw;
-    list-style: none;
-    font-size: $projectTitleSize;
-    overflow-y: hidden;
-
-    &__list {
-      height: 130px;
-      margin: -20px 0;
-      animation: $repeatingList;
-
-      a {
-        text-decoration: none;
-        color: $fontColor;
-        font-family: $mainFont;
-        transition: 0.1s ease-in-out;
-        padding: 0;
-
-        &:hover {
-          -webkit-text-stroke: 0.5px $red;
-          color: $invisible;
-          transform: translateX(100px);
-        }
-      }
-    }
-  }
   &__halftone {
     max-height: 40vh;
     width: 100vw;

@@ -24,20 +24,22 @@
 // }
 
 // Colors
-$backgroundColor: #e5ebf7;
+$backgroundColor: #EAE7DC;
 $backgroundColor2: #AF1B3F;
-$fontColor: #000000;
-$fontHighlights: #3879fb;
 
+$fontColor: #000000;
+$fontHighlights: #22473d;
 $aboutBackground: #ee8989ea;
 
 // Basic Colors
+$lightGreen: #699abd;
 $darkBlue: #170f73;
-$lightBlue:#7b8dda;
+$lightBlue:#2B6254;
 $red: #be1414;
 $yellow: #bfca27;
 $brown: #CCB69B;
 $white: #f0f0f0;
+$gray: #aaa99e;
 $invisible: #00000000;
 
 // Fonts
@@ -47,16 +49,20 @@ $subFont: "Inter", sans-serif;
 $projectTitleSize: 100px;
 
 $largeLetterSpacing: -10px;
-$mediumLetterSpacing: -7px;
+$mediumLetterSpacing: -0.5vw;
 $smallLetterSpacing: -1px;
+
+// Padding and Margins
+$smallPadding: 2vw;
+$medPadding: 4vw;
+$lrgPadding: 10vw;
 
 // Animations
 $marquee: 200s infinite marquee;
 $reverseMarquee: 200s infinite reverseMarquee;
 
 $increaseSize: 10s linear 1 increaseSize;
-$repeatingList: 120s linear infinite moveUp;
-$moveDown: 30s linear infinite moveDown;
+$moveDown: 50s linear infinite moveDown;
 $moveDown2: 25s linear infinite moveDown;
 
 $flickering: 1.5s linear infinite flicker;
@@ -89,15 +95,15 @@ $typing: typing 3.5s steps(20), blink 0.5s step-end infinite alternate;
 
 @keyframes moveDown {
   0% {
-    transform: translateX(-210vh);
+    transform: translateY(-100vh);
   }
   100% {
-    transform: translateX(150vh);
+    transform: translateY(-10vh);
   }
 }
 @keyframes moveUp {
   0% {
-    transform: translateY(0vh);
+    transform: translateY(-200vh);
   }
   100% {
     transform: translateY(-500vh);

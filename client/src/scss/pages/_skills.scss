@@ -1,9 +1,10 @@
 @use "../variables" as *;
+@use "../mixins" as *;
 
 .b-skills {
   --gap: 1.5vw;
   position: relative;
-  
+
   // The first part of the pillbox
   ul {
     display: flex;
@@ -31,10 +32,7 @@
     margin: auto;
 
     h1 {
-      font-family: $mainFont;
-      letter-spacing: $mediumLetterSpacing;
-      font-size: 8vw;
-      padding-left: 20px;
+      @include pageTitle;
     }
 
     &__databases {
@@ -51,8 +49,7 @@
 
   // The language pillbox on page
   &__pillBox {
-    display: flex;
-    flex-direction: column;
+    @include flexStart;
     gap: var(--gap);
     margin-top: 2vh;
 
@@ -109,7 +106,7 @@
       border-radius: 7.5vw;
       height: 75%;
       width: 80%;
-      overflow-y:scroll ;
+      // overflow-y:scroll ;
     }
 
     &__title {
@@ -310,7 +307,6 @@ svg.svgsquare text {
       }
 
       &__addition {
-        
         h3 {
           display: none;
         }
@@ -327,13 +323,21 @@ svg.svgsquare text {
         }
 
         .pillbox {
-          margin-top: auto;
+          margin-top: 5vh;
         }
       }
 
       &__background {
         // display: none;
       }
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .b-skills {
+    .pillbox {
+      margin-top: 0vh;
     }
   }
 }

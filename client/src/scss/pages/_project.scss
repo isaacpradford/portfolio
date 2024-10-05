@@ -1,1 +1,138 @@
 @use "../variables" as *;
+@use "../mixins" as *;
+
+// https://codepen.io/wikyware-net/pen/dyKPRxQ
+
+.b-projects {
+  // background-color: $darkBlue;
+  // max-height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+  &__title {
+    @include pageTitle;
+    text-align: right;
+  }
+
+  &__marquee {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    list-style: none;
+    animation: $moveDown;
+
+    &__list {
+      min-height: 130px;
+      margin: -24px 0;
+
+      a {
+        @include pageTitle;
+        font-size: 8vw;
+        font-weight: 800;
+        text-decoration: none;
+
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 1px;
+        color: $fontHighlights;
+
+        transition: 0.1s ease-in-out;
+        padding: 0;
+
+        &:hover {
+          transform: translateX(10px);
+          -webkit-text-fill-color: $fontHighlights;
+          -webkit-text-stroke: 1px;
+        }
+      }
+    }
+  }
+
+  &__cardList {
+    position: absolute;
+    right: 0;
+    margin-right: -20vw;
+
+    ul {
+      @include flexRow;
+    }
+
+    .--2 {
+      position: relative;
+      right: 10vw;
+    }
+
+    .card {
+      background-color: $fontHighlights;
+      border-radius: 15px;
+      list-style-type: none;
+      margin: 5px;
+      min-width: 20vw;
+      min-height: 30vh;
+      max-width: 275px;
+      transition: 0.2s ease-in-out;
+
+      h3 {
+        @include pageTitle;
+        font-size: 5vw;
+        margin-top: 8px;
+        letter-spacing: -4px;
+      }
+
+      &:hover {
+        padding: 5px;
+        scale: 1.05;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .b-projects {
+    &__title {
+      text-align: left;
+    }
+    &__marquee {
+      display: none;
+    }
+
+    &__cardList {
+      position: relative;
+      margin: 0;
+      left: 2.7%;
+      padding: 0;
+
+      .card {
+        min-width: 45%;
+        max-width: 225px;
+
+        h3 {
+          letter-spacing: -1px;
+        }
+      }
+
+      .--1,
+      .--2,
+      .--3 {
+        display: flex;
+        margin: auto;
+        padding: 0;
+      }
+
+      .--2 {
+        right: 0;
+      }
+
+      .--3 {
+        position: relative;
+        left: 23%;
+      }
+    }
+    .empty {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (min-width: 640px) {
+}

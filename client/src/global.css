@@ -24,15 +24,15 @@
 }
 @keyframes moveDown {
   0% {
-    transform: translateX(-210vh);
+    transform: translateY(-100vh);
   }
   100% {
-    transform: translateX(150vh);
+    transform: translateY(-10vh);
   }
 }
 @keyframes moveUp {
   0% {
-    transform: translateY(0vh);
+    transform: translateY(-200vh);
   }
   100% {
     transform: translateY(-500vh);
@@ -53,7 +53,8 @@
   display: flex;
   flex-direction: row;
   font-family: "Inter", sans-serif;
-  letter-spacing: -7px;
+  letter-spacing: -0.5vw;
+  color: #22473d;
   font-weight: bold;
   font-style: italic;
   font-size: 40px;
@@ -109,7 +110,7 @@
   font-family: "Inter", sans-serif;
 }
 .socials ul li a {
-  color: #000000;
+  color: #22473d;
   text-decoration: none;
 }
 
@@ -144,8 +145,7 @@
 }
 
 #root {
-  background-color: #e5ebf7;
-  opacity: 0.8;
+  background-color: #EAE7DC;
 }
 
 .b-home {
@@ -176,7 +176,7 @@
   font-size: 170px;
   text-wrap: nowrap;
   animation: 200s infinite marquee;
-  color: black;
+  color: #22473d;
   mix-blend-mode: hue;
   z-index: 3;
 }
@@ -184,32 +184,6 @@
   position: absolute;
   bottom: 0;
   right: 10px;
-}
-.b-home__projects {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 0 20vw;
-  list-style: none;
-  font-size: 100px;
-  overflow-y: hidden;
-}
-.b-home__projects__list {
-  height: 130px;
-  margin: -20px 0;
-  animation: 120s linear infinite moveUp;
-}
-.b-home__projects__list a {
-  text-decoration: none;
-  color: #000000;
-  font-family: "Inter", sans-serif;
-  transition: 0.1s ease-in-out;
-  padding: 0;
-}
-.b-home__projects__list a:hover {
-  -webkit-text-stroke: 0.5px #be1414;
-  color: rgba(0, 0, 0, 0);
-  transform: translateX(100px);
 }
 .b-home__halftone {
   max-height: 40vh;
@@ -247,6 +221,178 @@
   animation: 200s infinite reverseMarquee;
 }
 
+.b-projects {
+  overflow: hidden;
+  position: relative;
+}
+.b-projects__title {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.5vw;
+  font-size: 8vw;
+  padding-left: 2vw;
+  text-align: right;
+}
+.b-projects__marquee {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  list-style: none;
+  animation: 50s linear infinite moveDown;
+}
+.b-projects__marquee__list {
+  min-height: 130px;
+  margin: -24px 0;
+}
+.b-projects__marquee__list a {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.5vw;
+  font-size: 8vw;
+  padding-left: 2vw;
+  font-size: 8vw;
+  font-weight: 800;
+  text-decoration: none;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px;
+  color: #22473d;
+  transition: 0.1s ease-in-out;
+  padding: 0;
+}
+.b-projects__marquee__list a:hover {
+  transform: translateX(10px);
+  -webkit-text-fill-color: #22473d;
+  -webkit-text-stroke: 1px;
+}
+.b-projects__cardList {
+  position: absolute;
+  right: 0;
+  margin-right: -20vw;
+}
+.b-projects__cardList ul {
+  display: flex;
+  flex-direction: row;
+}
+.b-projects__cardList .--2 {
+  position: relative;
+  right: 10vw;
+}
+.b-projects__cardList .card {
+  background-color: #22473d;
+  border-radius: 15px;
+  list-style-type: none;
+  margin: 5px;
+  min-width: 20vw;
+  min-height: 30vh;
+  max-width: 275px;
+  transition: 0.2s ease-in-out;
+}
+.b-projects__cardList .card h3 {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.5vw;
+  font-size: 8vw;
+  padding-left: 2vw;
+  font-size: 5vw;
+  margin-top: 8px;
+  letter-spacing: -4px;
+}
+.b-projects__cardList .card:hover {
+  padding: 5px;
+  scale: 1.05;
+}
+
+@media only screen and (max-width: 640px) {
+  .b-projects__title {
+    text-align: left;
+  }
+  .b-projects__marquee {
+    display: none;
+  }
+  .b-projects__cardList {
+    position: relative;
+    margin: 0;
+    left: 2.7%;
+    padding: 0;
+  }
+  .b-projects__cardList .card {
+    min-width: 45%;
+    max-width: 225px;
+  }
+  .b-projects__cardList .card h3 {
+    letter-spacing: -1px;
+  }
+  .b-projects__cardList .--1,
+  .b-projects__cardList .--2,
+  .b-projects__cardList .--3 {
+    display: flex;
+    margin: auto;
+    padding: 0;
+  }
+  .b-projects__cardList .--2 {
+    right: 0;
+  }
+  .b-projects__cardList .--3 {
+    position: relative;
+    left: 23%;
+  }
+  .b-projects .empty {
+    display: none;
+  }
+}
+.b-experience__title {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.5vw;
+  font-size: 8vw;
+  padding-left: 2vw;
+  text-align: left;
+}
+.b-experience__timeline {
+  border-left: 2px solid #aaa99e;
+  width: 70vw;
+  max-width: 700px;
+  margin: auto;
+  position: relative;
+}
+.b-experience__timeline__dot {
+  background-color: #aaa99e;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  left: -6px;
+}
+.b-experience__timeline__entry {
+  padding: 20px;
+}
+.b-experience__timeline__entry__title p {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -1px;
+  font-size: 20px;
+  font-weight: 200;
+  padding-left: 2vw;
+  font-style: italic;
+}
+.b-experience__timeline__entry__title h2 {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -1px;
+  font-size: 40px;
+  font-weight: 300;
+  padding-left: 2vw;
+}
+.b-experience__timeline__entry__title h3 {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -1px;
+  font-size: 20px;
+  font-weight: 400;
+  padding-left: 2vw;
+  padding-top: 4px;
+}
+.b-experience__timeline__entry__body {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -1px;
+  font-size: 20px;
+  font-weight: 200;
+  padding-left: 2vw;
+}
 .b-testimonials__swiper {
   height: 300px;
   width: 100%;
@@ -308,9 +454,9 @@
 }
 .b-skills__languages h1 {
   font-family: "Inter", sans-serif;
-  letter-spacing: -7px;
+  letter-spacing: -0.5vw;
   font-size: 8vw;
-  padding-left: 20px;
+  padding-left: 2vw;
 }
 .b-skills__languages__databases {
   font-family: "Inter", sans-serif;
@@ -325,6 +471,7 @@
 .b-skills__pillBox {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: var(--gap);
   margin-top: 2vh;
 }
@@ -369,7 +516,6 @@
   border-radius: 7.5vw;
   height: 75%;
   width: 80%;
-  overflow-y: scroll;
 }
 .b-skills__other__title {
   font-family: "Inter", sans-serif;
@@ -438,7 +584,7 @@ svg.svgsquare {
 
 svg.svgsquare text {
   font-family: "Impact", sans-serif;
-  letter-spacing: -7px;
+  letter-spacing: -0.5vw;
   font-size: 100px;
 }
 
@@ -460,7 +606,12 @@ svg.svgsquare text {
     min-height: 14px;
   }
   .b-skills__other__addition .pillbox {
-    margin-top: auto;
+    margin-top: 5vh;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .b-skills .pillbox {
+    margin-top: 0vh;
   }
 }
 @media only screen and (min-width: 1600px) {
@@ -476,7 +627,7 @@ svg.svgsquare text {
   display: grid;
   grid-template-columns: 100vw;
   grid-template-rows: auto auto auto auto auto auto;
-  grid-template-areas: "home" "experience" "projects" "skills" "testimonials" "contact";
+  grid-template-areas: "home" "projects" "experience" "skills" "testimonials" "contact";
 }
 #root .b-home {
   grid-area: home;
@@ -499,11 +650,13 @@ svg.svgsquare text {
 #root .b-home,
 #root .b-about,
 #root .b-experience,
-#root .b-projects,
 #root .b-testimonials,
 #root .b-contact {
   min-height: 100vh;
   min-width: 100vw;
+}
+#root .b-projects {
+  min-height: 125vh;
 }
 #root .b-skills {
   min-height: 200vh;

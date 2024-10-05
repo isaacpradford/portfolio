@@ -1,0 +1,54 @@
+@use "./variables" as *;
+
+@mixin pageTitle {
+    font-family: $mainFont;
+    letter-spacing: $mediumLetterSpacing;
+    font-size: 8vw;
+    padding-left: $smallPadding;
+}
+
+@mixin sectionTitle {
+    font-family: $subFont;
+    letter-spacing: $smallLetterSpacing;
+    font-size: 40px;
+    font-weight: 300;
+    padding-left: $smallPadding;
+}
+
+@mixin subTitle {
+    font-family: $subFont;
+    letter-spacing: $smallLetterSpacing;
+    font-size: 20px;
+    font-weight: 400;
+    padding-left: $smallPadding;
+}
+
+@mixin mainBodyText {
+    font-family: $subFont;
+    letter-spacing: $smallLetterSpacing;
+    font-size: 20px;
+    font-weight: 200;
+    padding-left: $smallPadding;
+}
+
+@mixin flexRow {
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin flexColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flexCenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin flexStart {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
