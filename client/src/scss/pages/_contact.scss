@@ -1,2 +1,135 @@
 @use "../variables" as *;
+@use "../mixins" as *;
 
+.b-contact {
+  --min-width: 80%;
+  --max-width: 100%;
+  --max-height: 200px;
+  --min-height: 100px;
+
+  &__content {
+    display: grid;
+    grid-template-columns: 45% 45%;
+    grid-template-rows: 90vh;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__title {
+    @include flexColumn;
+    @include pageTitle;
+    font-size: 6.5vw;
+    font-weight: 900;
+    letter-spacing: -1.5vw;
+    font-style: italic;
+
+    // background: #000000;
+    // color: $fontHighlights;
+    // mix-blend-mode: exclusion;
+
+    p {
+      @include mainBodyText;
+      letter-spacing: 0;
+      padding: 0 24px;
+    }
+
+    h1 {
+      margin: -2vh;
+    }
+
+    &--3 {
+      text-align: center;
+    }
+  }
+
+  &__form {
+    justify-self: center;
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+
+    min-width: var(--min-width);
+    width: 80%;
+  }
+
+  &__label {
+    text-align: left;
+    padding-top: 10px;
+
+    font-size: 20px;
+    font-family: "Bebas Neue", sans-serif;
+    font-style: italic;
+
+    background: #000000;
+    color: $backgroundColor;
+    mix-blend-mode: exclusion;
+  }
+
+  &__input {
+    max-width: var(--max-width);
+    width: 90%;
+    height: 36px;
+
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 10px;
+    border-bottom: $fontHighlights;
+    color: $fontHighlights;
+    font-family: "Montserrat", sans-serif;
+
+    margin: 10px 0 10px 0;
+    padding-left: 20px;
+    margin-right: -10px;
+
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s;
+
+    &:focus {
+      outline: 3px solid $secondaryColor;
+    }
+  }
+
+  &__textArea {
+    min-width: var(--min-width);
+    max-width: var(--max-width);
+    max-height: var(--max-height);
+    min-height: var(--min-height);
+    width: 90%;
+    padding: 10px;
+  }
+
+  &__send {
+    border: none;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    background-color: $fontHighlights;
+    color: $backgroundColor;
+    border-radius: 10px;
+
+    transition: 0.2s ease-in-out;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+
+    box-shadow: 5px 5px #c7c7c7;
+
+    &:hover {
+      scale: 1.02;
+      border: 2px solid $fontHighlights;
+      box-shadow: 10px 10px $secondaryColor;
+    }
+    &:active {
+      background-color: $fontHighlights;
+      color: $backgroundColor;
+      box-shadow: 5px 5px $secondaryColor;
+    }
+  }
+
+  .socials {
+    position: absolute;
+    right: 3vw;
+  }
+}

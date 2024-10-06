@@ -71,31 +71,35 @@ const ContactForm = () => {
   };
 
   return (
-    <form className="contactForm" ref={form} onSubmit={sendEmail}>
-      <label>Name</label>
+    <form className="b-contact__form" ref={form} onSubmit={sendEmail}>
+      <label className="b-contact__label">Name</label>
       <input
-        className="form-input"
+        className="form-input b-contact__input"
         type="text"
         name="user_name"
         required
         placeholder="Name"
       />
-      <label>Email</label>
+
+      <label className="b-contact__label">Email</label>
       <input
-        className="form-input"
+        className="b-contact__input"
         type="email"
         name="user_email"
         required
         placeholder="Email"
       />
-      <label>Message</label>
+
+      <label className="b-contact__label">Message</label>
+
       <textarea
-        className="form-input"
+        className="b-contact__input b-contact__textArea"
         name="message"
         required
         placeholder="Message"
       />
-      <input type="submit" value="Send" className="formSend" />
+
+      <input type="submit" value="Send" className="formSend b-contact__send" />
     </form>
   );
 };

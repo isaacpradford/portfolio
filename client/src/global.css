@@ -145,7 +145,7 @@
 }
 
 #root {
-  background-color: #EAE7DC;
+  background-color: #ffffff;
 }
 
 .b-home {
@@ -215,6 +215,121 @@
   background-repeat: round;
   background-position: 0 0, var(--bgPosition) var(--bgPosition);
   mask-image: var(--mask);
+}
+
+.b-contact {
+  --min-width: 80%;
+  --max-width: 100%;
+  --max-height: 200px;
+  --min-height: 100px;
+}
+.b-contact__content {
+  display: grid;
+  grid-template-columns: 45% 45%;
+  grid-template-rows: 90vh;
+  justify-content: center;
+  align-items: center;
+}
+.b-contact__title {
+  display: flex;
+  flex-direction: column;
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.5vw;
+  font-size: 8vw;
+  padding-left: 2vw;
+  font-size: 6.5vw;
+  font-weight: 900;
+  letter-spacing: -1.5vw;
+  font-style: italic;
+}
+.b-contact__title p {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -1px;
+  font-size: 20px;
+  font-weight: 200;
+  padding-left: 2vw;
+  letter-spacing: 0;
+  padding: 0 24px;
+}
+.b-contact__title h1 {
+  margin: -2vh;
+}
+.b-contact__title--3 {
+  text-align: center;
+}
+.b-contact__form {
+  justify-self: center;
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  min-width: var(--min-width);
+  width: 80%;
+}
+.b-contact__label {
+  text-align: left;
+  padding-top: 10px;
+  font-size: 20px;
+  font-family: "Bebas Neue", sans-serif;
+  font-style: italic;
+  background: #000000;
+  color: #ffffff;
+  mix-blend-mode: exclusion;
+}
+.b-contact__input {
+  max-width: var(--max-width);
+  width: 90%;
+  height: 36px;
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 10px;
+  border-bottom: #22473d;
+  color: #22473d;
+  font-family: "Montserrat", sans-serif;
+  margin: 10px 0 10px 0;
+  padding-left: 20px;
+  margin-right: -10px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.b-contact__input:focus {
+  outline: 3px solid #06dd83;
+}
+.b-contact__textArea {
+  min-width: var(--min-width);
+  max-width: var(--max-width);
+  max-height: var(--max-height);
+  min-height: var(--min-height);
+  width: 90%;
+  padding: 10px;
+}
+.b-contact__send {
+  border: none;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  background-color: #22473d;
+  color: #ffffff;
+  border-radius: 10px;
+  transition: 0.2s ease-in-out;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  box-shadow: 5px 5px #c7c7c7;
+}
+.b-contact__send:hover {
+  scale: 1.02;
+  border: 2px solid #22473d;
+  box-shadow: 10px 10px #06dd83;
+}
+.b-contact__send:active {
+  background-color: #22473d;
+  color: #ffffff;
+  box-shadow: 5px 5px #06dd83;
+}
+.b-contact .socials {
+  position: absolute;
+  right: 3vw;
 }
 
 .b-about__banner {
@@ -302,7 +417,7 @@
   width: 100px;
   height: 100px;
   border-bottom-left-radius: 50%;
-  background-color: #EAE7DC;
+  background-color: #ffffff;
   transition: 0.2s ease-in-out;
 }
 .b-projects__cardList .card__title {
@@ -311,7 +426,7 @@
   font-size: 8vw;
   padding-left: 2vw;
   font-size: 3vw;
-  color: #EAE7DC;
+  color: #ffffff;
   padding: 4px 8px;
   margin-top: 8px;
   letter-spacing: -2px;
@@ -338,7 +453,7 @@
   color: #22473d;
 }
 .b-projects__cardList .card__button {
-  background-color: #EAE7DC;
+  background-color: #ffffff;
   border: none;
   position: absolute;
   bottom: 5px;
@@ -351,7 +466,7 @@
   font-size: medium;
   padding: 6px;
   margin-left: 5px;
-  color: #EAE7DC;
+  color: #ffffff;
   width: 30%;
   border-radius: 14px;
   text-align: center;
@@ -420,7 +535,7 @@
 .card:hover .card__button {
   width: 95%;
   background-color: #22473d;
-  color: #EAE7DC;
+  color: #ffffff;
   font-weight: 500;
 }
 
@@ -433,77 +548,73 @@
 }
 .b-experience__timeline {
   display: grid;
-  grid-template-columns: 45% 10% 45%;
-  grid-template-rows: 150px 200px 200px 150px;
-  width: 90vw;
-  max-width: 1100px;
+  grid-template-columns: 25% 5% 70%;
+  grid-template-rows: 175px 175px 50px 200px;
+  max-width: 800px;
   margin: auto;
-  position: relative;
+  padding-top: 75px;
 }
 .b-experience__timeline__line {
-  grid-column: 2;
-  grid-row: 1/5;
-}
-.b-experience__timeline .--1 {
-  grid-column: 1;
-  grid-row: 1;
-}
-.b-experience__timeline .--2 {
-  grid-column: 3;
-  grid-row: 2;
-}
-.b-experience__timeline .--3 {
-  grid-column: 3;
-  grid-row: 3;
-}
-.b-experience__timeline .--4 {
-  grid-column: 1;
-  grid-row: 3;
-  margin-top: 100px;
-}
-.b-experience__timeline__dot {
-  background-color: #aaa99e;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  position: absolute;
-  left: -6px;
-}
-.b-experience__timeline__line {
-  width: 10px;
-  height: 100%;
+  grid-column: 1/5;
+  grid-row: 4;
+  width: 20%;
+  height: 1px;
   background-color: black;
   margin: auto;
 }
-.b-experience__timeline__entry__title p {
-  font-family: "Inter", sans-serif;
-  letter-spacing: -1px;
-  font-size: 20px;
-  font-weight: 200;
-  padding-left: 2vw;
-  font-style: italic;
-}
-.b-experience__timeline__entry__title h2 {
+.b-experience__timeline__title {
   font-family: "Inter", sans-serif;
   letter-spacing: -1px;
   font-size: 40px;
   font-weight: 300;
   padding-left: 2vw;
+  grid-column: 1;
 }
-.b-experience__timeline__entry__title h3 {
+.b-experience__timeline__entry {
+  display: flex;
+  flex-direction: row;
+  grid-column: 3;
+}
+.b-experience__timeline__entry__date {
+  min-width: 200px;
   font-family: "Inter", sans-serif;
   letter-spacing: -1px;
   font-size: 20px;
   font-weight: 400;
   padding-left: 2vw;
-  padding-top: 4px;
+  font-weight: 200;
 }
-.b-experience__timeline__entry__body {
+.b-experience__timeline__entry__role {
+  min-width: 400px;
+}
+.b-experience__timeline__entry__role h4 {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.5vw;
+  font-size: 8vw;
+  padding-left: 2vw;
+  padding: 0;
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: -1px;
+}
+.b-experience__timeline__entry__role h5 {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -1px;
+  font-size: 40px;
+  font-weight: 300;
+  padding-left: 2vw;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 200;
+}
+.b-experience__timeline__entry__role p {
   font-family: "Inter", sans-serif;
   letter-spacing: -1px;
   font-size: 20px;
   font-weight: 200;
   padding-left: 2vw;
+  padding: 10px 0;
+  font-size: 22px;
 }
 .b-testimonials__swiper {
   height: 300px;
@@ -768,8 +879,8 @@ svg.svgsquare text {
   min-width: 100vw;
 }
 #root .b-projects {
-  min-height: 125vh;
+  min-height: 100vh;
 }
 #root .b-skills {
-  min-height: 200vh;
+  max-height: 175vh;
 }/*# sourceMappingURL=global.css.map */

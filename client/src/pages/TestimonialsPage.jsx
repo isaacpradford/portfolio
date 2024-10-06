@@ -2,6 +2,8 @@ import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import { Autoplay } from "swiper/modules";
+
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -23,7 +25,11 @@ const TestimonialsPage = () => {
             clickable: true,
           }}
           navigation={true}
-          modules={[Pagination, Navigation]}
+          modules={[Autoplay, Pagination, Navigation]}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
         >
           <SwiperSlide>
             <h1>Jae Hyun Kim</h1>
@@ -32,7 +38,10 @@ const TestimonialsPage = () => {
               Full-Stack Developer at Subitt. Isaac excelled in collaborating
               with a large team of developers to create products and solutions
               for real-world problems, including those requiring immediate
-              attention. Isaac is a highly capable and competent problem-solver,
+              attention.
+            </p>
+            <p>
+              Isaac is a highly capable and competent problem-solver,
               particularly with React.js and Node.js. He not only thinks
               creatively and efficiently when tackling technical challenges but
               also communicates effectively with non-technical stakeholders.
