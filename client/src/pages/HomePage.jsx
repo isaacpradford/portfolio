@@ -7,7 +7,11 @@ const HomePage = () => {
   return (
     <div id="home" className="b-home">
       <div className="b-home__background"></div>
-      <div className="b-home__banner">
+      <div className="b-home__title">
+        <h1>FULL STACK WEB DEV</h1>
+        <p>Isaac Radford</p>
+      </div>
+      {/* <div className="b-home__banner">
         <p>
           FULL STACK WEBDEV | UI / UX | FULL STACK WEBDEV | UI / UX | FULL STACK
           WEBDEV | UI / UX | FULL STACK WEBDEV | UI / UX | FULL STACK WEBDEV |
@@ -17,7 +21,7 @@ const HomePage = () => {
           UI / UX | FULL STACK WEBDEV | UI / UX | FULL STACK WEBDEV | UI / UX |
           FULL STACK WEBDEV | UI / UX |
         </p>
-      </div>
+      </div> */}
 
       <div className="b-home__socials">
         <Socials />

@@ -48,76 +48,81 @@ const SkillsPage = () => {
           </p>
         </div>
       </div>
+    </div>
+  );
+};
 
-      <div className="b-otherSkills">
-        <h1 className="b-skills__other__background">
-          <h4 className="b-skills__other__title">But what else can I do?</h4>
-          <div className="b-skills__other__addition">
-            <h3>In addition to those languages, I can also use:</h3>
-            <ul className="pillbox">
-              <li className="pill">Unit and Integration Testing</li>
-              <li className="pill">Git/Github</li>
-              <li className="pill">Version Control Systems</li>
-              <li className="pill">VS/VSC</li>
-              <li className="pill">Xcode</li>
-              <li className="pill">Rider</li>
-              <li className="pill">Jira</li>
-              <li className="pill">Trello</li>
-              <li className="pill">Adobe Suite</li>
-              <li className="pill">Microsoft Suite</li>
-            </ul>
+export default SkillsPage;
 
-            {/* <h4>And I'm pretty good at...</h4> */}
-          </div>
-        </h1>
+<div className="b-otherSkills">
+  <h1 className="b-skills__other__background">
+    <h4 className="b-skills__other__title">But what else can I do?</h4>
+    <div className="b-skills__other__addition">
+      <h3>In addition to those languages, I can also use:</h3>
+      <ul className="pillbox">
+        <li className="pill">Unit and Integration Testing</li>
+        <li className="pill">Git/Github</li>
+        <li className="pill">Version Control Systems</li>
+        <li className="pill">VS/VSC</li>
+        <li className="pill">Xcode</li>
+        <li className="pill">Rider</li>
+        <li className="pill">Jira</li>
+        <li className="pill">Trello</li>
+        <li className="pill">Adobe Suite</li>
+        <li className="pill">Microsoft Suite</li>
+      </ul>
 
-        <div className="b-skills__other">
-          <svg
-            className="svgsquare"
-            viewBox="0 0 1000 1000"
-            preserveAspectRatio="xMidYMid meet"
-          >
-            <path
-              id="squarepath"
-              d="M0 675 V75 A100 100 0 0 1 100 0 H900 A100 100 0 0 1 1000 75 V675 A100 100 0 0 1 900 750 H100 A100 100 0 0 1 0 675 Z"
-              fill="none"
-              stroke="transparent"
-            />
+      {/* <h4>And I'm pretty good at...</h4> */}
+    </div>
+  </h1>
 
-            <text textAnchor="start">
-              <textPath className="my-text" href="#squarepath" startOffset="0%">
-                <animate
-                  attributeName="startOffset"
-                  from="-400%"
-                  to="100%"
-                  begin="0s"
-                  dur="600s"
-                  repeatCount="indefinite"
-                ></animate>
-                OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS
-                OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS
-                OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS
-                OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS
-                OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS
-                OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS
-                OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS
-                OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS
-                OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS
-                OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS
-                OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS
-                OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS
-                OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS
-                OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS
-                OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS
-                OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS
-                OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS
-                OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS
-                OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS
-                OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS
-              </textPath>
-            </text>
-          </svg>
-          {/* <div className="b-skills__other__inside">
+  <div className="b-skills__other">
+    <svg
+      className="svgsquare"
+      viewBox="0 0 1000 1000"
+      preserveAspectRatio="xMidYMid meet"
+    >
+      <path
+        id="squarepath"
+        d="M0 675 V75 A100 100 0 0 1 100 0 H900 A100 100 0 0 1 1000 75 V675 A100 100 0 0 1 900 750 H100 A100 100 0 0 1 0 675 Z"
+        fill="none"
+        stroke="transparent"
+      />
+
+      <text textAnchor="start">
+        <textPath className="my-text" href="#squarepath" startOffset="0%">
+          <animate
+            attributeName="startOffset"
+            from="-400%"
+            to="100%"
+            begin="0s"
+            dur="600s"
+            repeatCount="indefinite"
+          ></animate>
+          OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER
+          SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER
+          SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER
+          SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER
+          SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER
+          SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER
+          SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER
+          SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER
+          SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER
+          SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER
+          SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER
+          SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER
+          SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER
+          SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER
+          SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER
+          SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER
+          SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER
+          SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER
+          SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER
+          SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS
+        </textPath>
+      </text>
+    </svg>
+    {/* <div className="b-skills__other__inside">
             <ul>
               <li className="slider">
                 <label>FullStack Web Development</label>
@@ -152,10 +157,5 @@ const SkillsPage = () => {
               </li>
             </ul>
           </div> */}
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default SkillsPage;
+  </div>
+</div>;

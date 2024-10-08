@@ -1,6 +1,5 @@
 @use "../variables" as *;
 
-
 .popup-overlay {
   position: fixed;
   top: 0;
@@ -14,6 +13,22 @@
   z-index: 100;
 }
 
+
+// Hard coded to be in the same spot as the normal logo
+.popup-logo {
+  z-index: 150;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-family: $mainFont;
+  letter-spacing: $mediumLetterSpacing;
+  color: $fontHighlights;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 40px;
+  cursor: pointer;
+}
+
 .popup-content {
   padding: 20px;
   border-radius: 10px;
@@ -24,9 +39,10 @@
 .popup-close {
   background: none;
   border: none;
-  font-size: 20px;
+  font-size: 50px;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 8px;
+  right: 20px;
   cursor: pointer;
+  z-index: 150;
 }

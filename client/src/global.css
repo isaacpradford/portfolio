@@ -120,11 +120,25 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(238, 137, 137, 0.9176470588);
+  background: rgba(246, 246, 246, 0.9843137255);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 100;
+}
+
+.popup-logo {
+  z-index: 150;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.5vw;
+  color: #22473d;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 40px;
+  cursor: pointer;
 }
 
 .popup-content {
@@ -137,11 +151,12 @@
 .popup-close {
   background: none;
   border: none;
-  font-size: 20px;
+  font-size: 50px;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 8px;
+  right: 20px;
   cursor: pointer;
+  z-index: 150;
 }
 
 #root {
@@ -156,6 +171,8 @@
   position: relative;
   z-index: 1;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 }
 .b-home__background {
   background-size: cover;
@@ -165,6 +182,23 @@
   top: 25%;
   left: 25%;
   z-index: 2;
+}
+.b-home__title h1 {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.5vw;
+  font-size: 8vw;
+  padding-left: 2vw;
+  text-align: start;
+  font-size: 15vw;
+  color: #22473d;
+  padding: 0;
+}
+.b-home__title p {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -1px;
+  font-size: 20px;
+  font-weight: 200;
+  padding-left: 2vw;
 }
 .b-home__banner {
   position: absolute;
@@ -239,7 +273,7 @@
   padding-left: 2vw;
   font-size: 6.5vw;
   font-weight: 900;
-  letter-spacing: -1.5vw;
+  letter-spacing: -1vw;
   font-style: italic;
 }
 .b-contact__title p {
@@ -294,7 +328,7 @@
   transition: border-color 0.2s;
 }
 .b-contact__input:focus {
-  outline: 3px solid #06dd83;
+  outline: 3px solid #06c073;
 }
 .b-contact__textArea {
   min-width: var(--min-width);
@@ -320,20 +354,184 @@
 .b-contact__send:hover {
   scale: 1.02;
   border: 2px solid #22473d;
-  box-shadow: 10px 10px #06dd83;
+  box-shadow: 10px 10px #06c073;
 }
 .b-contact__send:active {
   background-color: #22473d;
   color: #ffffff;
-  box-shadow: 5px 5px #06dd83;
+  box-shadow: 5px 5px #06c073;
 }
 .b-contact .socials {
   position: absolute;
   right: 3vw;
 }
 
-.b-about__banner {
-  animation: 200s infinite reverseMarquee;
+.b-about__content {
+  display: grid;
+  grid-template-columns: 20% 25% 25% 20% 20%;
+  grid-template-rows: 10% 30% 15% 20% 20% 20% 5%;
+  min-height: 300px;
+}
+@media (max-width: 920px) {
+  .b-about__content {
+    grid-template-columns: 1fr;
+    grid-template-rows: 20% 20% 20% 20%;
+    gap: 20px;
+  }
+}
+.b-about__name {
+  margin-bottom: 30px;
+}
+.b-about__bold {
+  font-weight: 900;
+  letter-spacing: normal;
+  margin-bottom: 14px;
+}
+.b-about__title {
+  grid-column: 1/3;
+  grid-row: 3;
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.5vw;
+  font-size: 8vw;
+  padding-left: 2vw;
+  font-size: 42px;
+  letter-spacing: -0.2vw;
+  text-wrap: nowrap;
+  margin: auto;
+}
+@media (max-width: 920px) {
+  .b-about__title {
+    grid-column: 1;
+    grid-row: 2;
+    font-size: 32px;
+    margin: 0 auto;
+    border-top: 4px solid #06c073;
+  }
+}
+.b-about__description {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -1px;
+  font-size: 20px;
+  font-weight: 200;
+  padding-left: 2vw;
+  letter-spacing: normal;
+  grid-column: 1/4;
+  grid-row: 5/6;
+  margin: auto;
+  max-width: 600px;
+  text-align: left;
+  border-right: 4px solid black;
+  min-height: 200px;
+}
+@media (max-width: 920px) {
+  .b-about__description {
+    grid-column: 1;
+    grid-row: 3;
+    border-right: none;
+  }
+}
+.b-about__description p {
+  padding: 4px 36px;
+}
+@media (max-width: 920px) {
+  .b-about__description p {
+    padding: 4px 20px;
+  }
+}
+.b-about__right {
+  grid-row: 5/6;
+  grid-column: 4/5;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  text-wrap: nowrap;
+}
+@media (max-width: 920px) {
+  .b-about__right {
+    grid-column: 1;
+    grid-row: 5;
+    margin: auto;
+    margin-top: 10px;
+    flex-direction: row;
+    text-align: center;
+  }
+}
+.b-about__right h3,
+.b-about__right h5,
+.b-about__right p,
+.b-about__right li {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -1px;
+  font-size: 40px;
+  font-weight: 300;
+  padding-left: 2vw;
+  padding: 0;
+  font-weight: 800;
+}
+.b-about__right h3 {
+  font-size: 24px;
+}
+.b-about__right h5 {
+  font-size: 14px;
+  letter-spacing: -0.4px;
+}
+.b-about__right p,
+.b-about__right li {
+  padding: 0 14px;
+  font-size: 18px;
+  font-weight: 300;
+}
+@media (max-width: 920px) {
+  .b-about__availability {
+    padding-top: 0;
+    padding: 14px;
+  }
+}
+.b-about__services {
+  padding-top: 20px;
+}
+@media (max-width: 920px) {
+  .b-about__services {
+    padding-top: 0;
+    padding: 14px;
+  }
+}
+.b-about__services ul {
+  text-align: left;
+  list-style-type: none;
+}
+.b-about__contact {
+  margin-top: 30vh;
+  text-align: center;
+}
+.b-about__contact h2 {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.5vw;
+  font-size: 8vw;
+  padding-left: 2vw;
+  font-size: 24px;
+  letter-spacing: -1.4px;
+}
+.b-about__contact p {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -1px;
+  font-size: 20px;
+  font-weight: 200;
+  padding-left: 2vw;
+  letter-spacing: normal;
+}
+.b-about__contact a {
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
+}
+.b-about__contact a:hover {
+  padding: 5px;
+  box-shadow: 4px 4px 0 #06c073;
+}
+@media (max-width: 920px) {
+  .b-about__contact {
+    display: none;
+  }
 }
 
 .b-projects {
@@ -616,36 +814,85 @@
   padding: 10px 0;
   font-size: 22px;
 }
+.b-testimonials {
+  display: grid;
+  grid-template-columns: 90%;
+  grid-template-rows: 30% 70%;
+  justify-content: center;
+  align-items: center;
+}
+.b-testimonials__header {
+  display: flex;
+  flex-direction: row;
+  grid-row: 1;
+  padding: 0;
+}
+.b-testimonials__header h1 {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -1px;
+  font-size: 40px;
+  font-weight: 300;
+  padding-left: 2vw;
+  color: #06c073;
+  font-size: 4vw;
+  font-weight: 500;
+}
+.b-testimonials__header svg {
+  margin-top: 1vh;
+  margin-left: 50vw;
+}
 .b-testimonials__swiper {
-  height: 300px;
+  height: 100%;
   width: 100%;
+  grid-row: 2;
+}
+.b-testimonials__content {
+  display: flex;
+  flex-direction: column;
+  font-family: "Inter", sans-serif;
+  letter-spacing: -1px;
+  font-size: 20px;
+  font-weight: 200;
+  padding-left: 2vw;
+  letter-spacing: 0;
+}
+.b-testimonials__content p {
+  padding: 15px 15%;
+}
+.b-testimonials__name {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -1px;
+  font-size: 40px;
+  font-weight: 300;
+  padding-left: 2vw;
+  text-align: center;
+  width: 120%;
+}
+.b-testimonials__name h1 {
+  font-size: 32px;
+  padding: 0;
+}
+.b-testimonials__name h4 {
+  font-size: 24px;
+  padding: 0;
 }
 
 .swiper {
   width: 100%;
   height: 100%;
-}
-
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  /* Center slide text vertically */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .swiper {
   margin-left: auto;
   margin-right: auto;
+}
+
+.swiper-slide {
+  font-size: 18px;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .b-skills {
@@ -666,7 +913,7 @@
   box-shadow: 0px 1px 0px #000000;
   font-size: 2.3vw;
   font-family: "Inter", sans-serif;
-  font-weight: 800;
+  font-weight: 400;
   letter-spacing: -1px;
 }
 .b-skills__languages {
@@ -850,7 +1097,7 @@ svg.svgsquare text {
   display: grid;
   grid-template-columns: 100vw;
   grid-template-rows: auto auto auto auto auto auto;
-  grid-template-areas: "home" "experience" "skills" "projects" "testimonials" "contact";
+  grid-template-areas: "home" "skills" "projects" "experience" "testimonials" "contact";
 }
 #root .b-home {
   grid-area: home;
@@ -882,5 +1129,20 @@ svg.svgsquare text {
   min-height: 100vh;
 }
 #root .b-skills {
-  max-height: 175vh;
+  max-height: 160vh;
+}
+@media (min-width: 1024px) {
+  #root .b-skills {
+    max-height: 215vh;
+  }
+}
+@media (max-width: 800px) {
+  #root .b-testimonials {
+    min-height: 120vh;
+  }
+}
+@media (max-width: 500px) {
+  #root .b-testimonials {
+    min-height: 145vh;
+  }
 }/*# sourceMappingURL=global.css.map */

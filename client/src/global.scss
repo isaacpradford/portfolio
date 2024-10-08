@@ -10,9 +10,9 @@
   grid-template-rows: auto auto auto auto auto auto;
   grid-template-areas:
     "home"
-    "experience"
     "skills"
     "projects"
+    "experience"
     "testimonials"
     "contact";
 
@@ -50,6 +50,20 @@
   }
 
   .b-skills {
-    max-height: 175vh;
+    max-height: 160vh;
+
+    @media (min-width: 1024px) {
+      max-height: 215vh;
+    }
+  }
+
+  .b-testimonials {
+    @media (max-width: 800px) {
+      min-height: 120vh;
+    }
+
+    @media (max-width: 500px) {
+      min-height: 145vh;
+    }
   }
 }
