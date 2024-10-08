@@ -11,20 +11,20 @@
   // background-color: $darkBlue;
 
   &__header {
-    @include flexRow;
+    @include flexColumn;
     grid-row: 1;
     padding: 0;
 
     h1 {
       @include sectionTitle;
       color: $secondaryColor;
-      font-size: 4vw;
+      font-size: 50px;
       font-weight: 500;
+      text-wrap: nowrap;
     }
-
     svg {
       margin-top: 1vh;
-      margin-left: 50vw;
+      margin-left: 80vw;
     }
   }
 

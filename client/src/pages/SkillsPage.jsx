@@ -48,31 +48,99 @@ const SkillsPage = () => {
           </p>
         </div>
       </div>
+
+      <h4 className="b-skills__subtitle">But what else can I do?</h4>
+      <div className="b-skills__other">
+        {/* <h3>In addition to those languages, I can also use:</h3> */}
+        <div className="b-skills__other__sliders">
+          <ul>
+            <li className="slider">
+              <label>FullStack Web Development</label>
+              <input type="range" min="1" max="100" value="90" id="myRange" />
+            </li>
+
+            <li className="slider">
+              <label>Creativity</label>
+              <input type="range" min="1" max="100" value="59" id="myRange" />
+            </li>
+
+            <li className="slider">
+              <label>Communication</label>
+              <input type="range" min="1" max="100" value="65" id="myRange" />
+            </li>
+          </ul>
+          <ul>
+            <li className="slider">
+              <label>API + Server Management</label>
+              <input type="range" min="1" max="100" value="85" id="myRange" />
+            </li>
+
+            <li className="slider">
+              <label>Problem-Solving</label>
+              <input type="range" min="1" max="100" value="63" id="myRange" />
+            </li>
+
+            <li className="slider">
+              <label>Interpersonal Skills</label>
+              <input type="range" min="1" max="100" value="72" id="myRange" />
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="b-skills__also">
+        <h4>And I'm pretty good at...</h4>
+        <p>
+          Unit and Integration testing, Git/Github (and version control
+          systems), VS/VSC, XCode, Rider, Jira, Trello, Microsoft Suite
+        </p>
+      </div>
     </div>
   );
 };
 
 export default SkillsPage;
 
-<div className="b-otherSkills">
+{
+  /* <div className="b-otherSkills">
   <h1 className="b-skills__other__background">
-    <h4 className="b-skills__other__title">But what else can I do?</h4>
+    <h4 className="b-skills__other__title">What else can I do?</h4>
     <div className="b-skills__other__addition">
       <h3>In addition to those languages, I can also use:</h3>
-      <ul className="pillbox">
-        <li className="pill">Unit and Integration Testing</li>
-        <li className="pill">Git/Github</li>
-        <li className="pill">Version Control Systems</li>
-        <li className="pill">VS/VSC</li>
-        <li className="pill">Xcode</li>
-        <li className="pill">Rider</li>
-        <li className="pill">Jira</li>
-        <li className="pill">Trello</li>
-        <li className="pill">Adobe Suite</li>
-        <li className="pill">Microsoft Suite</li>
-      </ul>
+      <div className="b-skills__other__inside">
+        <ul>
+          <li className="slider">
+            <label>FullStack Web Development</label>
+            <input type="range" min="1" max="100" value="90" id="myRange" />
+          </li>
 
-      {/* <h4>And I'm pretty good at...</h4> */}
+          <li className="slider">
+            <label>Creativity</label>
+            <input type="range" min="1" max="100" value="65" id="myRange" />
+          </li>
+
+          <li className="slider">
+            <label>Communication</label>
+            <input type="range" min="1" max="100" value="75" id="myRange" />
+          </li>
+        </ul>
+        <ul>
+          <li className="slider">
+            <label>API + Server Management</label>
+            <input type="range" min="1" max="100" value="75" id="myRange" />
+          </li>
+
+          <li className="slider">
+            <label>Problem-Solving</label>
+            <input type="range" min="1" max="100" value="60" id="myRange" />
+          </li>
+
+          <li className="slider">
+            <label>Interpersonal Skills</label>
+            <input type="range" min="1" max="100" value="70" id="myRange" />
+          </li>
+        </ul>
+      </div>
     </div>
   </h1>
 
@@ -121,8 +189,10 @@ export default SkillsPage;
           SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS
         </textPath>
       </text>
-    </svg>
-    {/* <div className="b-skills__other__inside">
+    </svg> */
+}
+{
+  /* <div className="b-skills__other__inside">
             <ul>
               <li className="slider">
                 <label>FullStack Web Development</label>
@@ -156,6 +226,7 @@ export default SkillsPage;
                 <input type="range" min="1" max="100" value="70" id="myRange" />
               </li>
             </ul>
-          </div> */}
-  </div>
-</div>;
+          </div> */
+}
+//   </div>
+// </div>;

@@ -90,16 +90,16 @@
   list-style: none;
   font-size: 24px;
   font-family: "Inter", sans-serif;
-  color: #000000;
+  color: #333;
   padding: 0 10px;
 }
 .b-navbar__wrapper__link a {
-  color: #000000;
+  color: #333;
   text-decoration: none;
   font-weight: 100;
 }
 .b-navbar__wrapper__link a:visited {
-  color: #000000;
+  color: #333;
 }
 
 .socials ul {
@@ -405,7 +405,6 @@
     grid-row: 2;
     font-size: 32px;
     margin: 0 auto;
-    border-top: 4px solid #06c073;
   }
 }
 .b-about__description {
@@ -538,107 +537,78 @@
   overflow: hidden;
   position: relative;
 }
-.b-projects__title {
-  font-family: "Inter", sans-serif;
-  letter-spacing: -0.5vw;
-  font-size: 8vw;
-  padding-left: 2vw;
-  text-align: left;
-}
-.b-projects__marquee {
+.b-projects__cardList {
   position: absolute;
-  right: 30px;
+  top: -15vh;
+  left: 20vw;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  list-style: none;
-  animation: 50s linear infinite moveDown;
+  height: 100%;
+  justify-content: center;
+  height: 1000px;
+  max-width: 60vw;
+  width: 100%;
+  margin: auto;
 }
-.b-projects__marquee__list {
-  min-height: 130px;
-  margin: -24px 0;
-}
-.b-projects__marquee__list a {
+.b-projects__cardList__title {
+  font-weight: 600;
+  z-index: 1;
+  color: black;
+  margin: 0;
+  padding: 5px;
   font-family: "Inter", sans-serif;
   letter-spacing: -0.5vw;
   font-size: 8vw;
   padding-left: 2vw;
-  font-size: 6vw;
-  font-weight: 800;
-  text-decoration: none;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 1px;
-  color: #22473d;
-  transition: 0.1s ease-in-out;
-  padding: 0;
-}
-.b-projects__marquee__list a:hover {
-  transform: translateX(10px);
-  -webkit-text-fill-color: #22473d;
-  -webkit-text-stroke: 1px;
-}
-.b-projects__cardList {
-  margin-left: -3vw;
-}
-.b-projects__cardList ul {
-  display: flex;
-  flex-direction: row;
-}
-.b-projects__cardList .--2 {
-  position: relative;
-  right: 10vw;
+  font-size: 50px;
+  letter-spacing: -3px;
+  text-align: start;
 }
 .b-projects__cardList .card {
-  z-index: 1;
-  position: relative;
-  background-color: #22473d;
-  border-radius: 15px;
-  border: 1px solid #22473d;
-  list-style-type: none;
-  margin: 5px;
-  min-width: 275px;
-  min-height: 200px;
-  max-width: 275px;
-  transition: 0.2s ease-in-out;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
   overflow: hidden;
-}
-.b-projects__cardList .card__title, .b-projects__cardList .card__description, .b-projects__cardList .card__date, .b-projects__cardList .card__button {
-  z-index: 2;
+  width: 100%;
+  transition: height 0.5s ease, padding 0.5s ease;
+  cursor: pointer;
+  border-top: 0.1px solid black;
   position: relative;
-  transition: 0.2s ease-in-out;
+  height: 50px;
+}
+.b-projects__cardList .card:hover, .b-projects__cardList .card.active {
+  height: 250px;
 }
 .b-projects__cardList .card__bg {
-  z-index: 1;
   position: absolute;
-  top: -50px;
-  left: 225px;
-  width: 100px;
-  height: 100px;
-  border-bottom-left-radius: 50%;
-  background-color: #ffffff;
-  transition: 0.2s ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
 }
 .b-projects__cardList .card__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  z-index: 1;
+  color: #333;
+  margin: 0;
+  padding: 5px;
   font-family: "Inter", sans-serif;
   letter-spacing: -0.5vw;
   font-size: 8vw;
   padding-left: 2vw;
-  font-size: 3vw;
-  color: #ffffff;
-  padding: 4px 8px;
-  margin-top: 8px;
-  letter-spacing: -2px;
 }
 .b-projects__cardList .card__description {
   font-family: "Inter", sans-serif;
   letter-spacing: -1px;
   font-size: 20px;
-  font-weight: 200;
+  font-weight: 400;
   padding-left: 2vw;
-  color: #22473d;
-  font-size: 18px;
-  padding: 4px 8px;
-  font-weight: 300;
+  position: absolute;
+  bottom: 15px;
+  right: 10px;
 }
 .b-projects__cardList .card__date {
   font-family: "Inter", sans-serif;
@@ -646,97 +616,102 @@
   font-size: 20px;
   font-weight: 400;
   padding-left: 2vw;
-  font-weight: 500;
-  padding: 4px 8px;
-  color: #22473d;
+  position: absolute;
+  bottom: 15px;
+  font-weight: 800;
+  font-size: 30px;
+}
+.b-projects__cardList .card__description, .b-projects__cardList .card__date {
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.3s ease;
 }
 .b-projects__cardList .card__button {
-  background-color: #ffffff;
+  background-color: #333;
+  padding: 10px;
+  color: white;
   border: none;
-  position: absolute;
-  bottom: 5px;
+  z-index: 1;
+  transition: background-color 0.3s ease;
+}
+.b-projects__cardList .card:hover .card__description, .b-projects__cardList .card:hover .card__date, .b-projects__cardList .card:hover .card__title, .b-projects__cardList .card.active .card__description, .b-projects__cardList .card.active .card__date {
+  opacity: 1;
+  color: #0056b3;
+}
+.b-projects__cardList .card:hover .card__button, .b-projects__cardList .card.active .card__button {
+  background-color: #0056b3;
+}
+.b-projects__cardList .empty {
+  height: 0;
+  visibility: hidden;
+}
+.b-projects__bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 60vw;
+  border-top: 0.1px solid #333;
   font-family: "Inter", sans-serif;
   letter-spacing: -1px;
   font-size: 20px;
   font-weight: 200;
   padding-left: 2vw;
-  font-weight: 100;
-  font-size: medium;
-  padding: 6px;
-  margin-left: 5px;
-  color: #ffffff;
-  width: 30%;
-  border-radius: 14px;
-  text-align: center;
 }
-.b-projects__cardList .card__button:hover {
-  padding: 8px;
+.b-projects__svg {
+  z-index: 0;
+  position: absolute;
+  top: -30vh;
+  left: 5vw;
+  height: 100%;
+  width: 90%;
 }
-.b-projects__cardList .card:hover {
-  padding: 2px;
+
+svg.svgsquare {
+  overflow: visible;
+}
+
+svg.svgsquare text {
+  font-family: "Impact", sans-serif;
+  letter-spacing: 1px;
+  font-size: 100px;
 }
 
 @media only screen and (max-width: 800px) {
   .b-projects__title {
     text-align: left;
   }
-  .b-projects__marquee {
-    display: none;
-  }
   .b-projects__cardList {
-    position: relative;
+    max-width: 80vw;
+    top: -20vh;
+    left: 10vw;
     margin: 0;
-    left: 2.7%;
     padding: 0;
   }
   .b-projects__cardList .card {
-    min-width: 45%;
-    max-width: 225px;
+    height: 60px;
   }
   .b-projects__cardList .card__title {
     font-size: 36px;
   }
   .b-projects__cardList .card__button {
-    width: 40%;
+    width: 30%;
   }
-  .b-projects__cardList .--1,
-  .b-projects__cardList .--2,
-  .b-projects__cardList .--3 {
-    display: flex;
-    margin: auto;
-    padding: 0;
+  .b-projects__cardList .card__description, .b-projects__cardList .card__date {
+    z-index: 1;
+    color: #0056b3;
+    font-size: 13px;
   }
-  .b-projects__cardList .--2 {
-    right: 0;
+  .b-projects__bottom {
+    max-width: 80vw;
+    font-size: 12px;
+  }
+  .b-projects__svg {
+    display: none;
   }
   .b-projects .empty {
     display: none;
   }
 }
-.card:hover {
-  border: 1px solid #22473d;
-}
-
-.card:hover .card__bg {
-  width: 500px;
-  height: 500px;
-  top: -5px;
-  left: 0;
-  border-radius: 15px;
-  overflow: hidden;
-}
-
-.card:hover .card__title {
-  color: #22473d;
-}
-
-.card:hover .card__button {
-  width: 95%;
-  background-color: #22473d;
-  color: #ffffff;
-  font-weight: 500;
-}
-
 .b-experience__title {
   font-family: "Inter", sans-serif;
   letter-spacing: -0.5vw;
@@ -823,7 +798,7 @@
 }
 .b-testimonials__header {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   grid-row: 1;
   padding: 0;
 }
@@ -834,12 +809,13 @@
   font-weight: 300;
   padding-left: 2vw;
   color: #06c073;
-  font-size: 4vw;
+  font-size: 50px;
   font-weight: 500;
+  text-wrap: nowrap;
 }
 .b-testimonials__header svg {
   margin-top: 1vh;
-  margin-left: 50vw;
+  margin-left: 80vw;
 }
 .b-testimonials__swiper {
   height: 100%;
@@ -899,23 +875,6 @@
   --gap: 1.5vw;
   position: relative;
 }
-.b-skills ul {
-  display: flex;
-  flex-direction: row;
-  gap: var(--gap);
-  transition: 0.2s margin ease-in-out;
-}
-.b-skills ul li {
-  min-width: 15vw;
-  min-height: 2vw;
-  list-style: none;
-  border: 1px solid #000000;
-  box-shadow: 0px 1px 0px #000000;
-  font-size: 2.3vw;
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-  letter-spacing: -1px;
-}
 .b-skills__languages {
   display: flex;
   flex-direction: column;
@@ -936,7 +895,7 @@
   align-self: flex-end;
   text-align: end;
   max-width: 30vw;
-  margin: -8vw 3vw 3vw 0px;
+  margin: -8vh 3vw 3vw 0px;
 }
 .b-skills__pillBox {
   display: flex;
@@ -945,17 +904,34 @@
   gap: var(--gap);
   margin-top: 2vh;
 }
+.b-skills__pillBox ul {
+  display: flex;
+  flex-direction: row;
+  gap: var(--gap);
+  transition: 0.2s margin ease-in-out;
+}
+.b-skills__pillBox ul li {
+  min-width: 15vw;
+  min-height: 2vw;
+  list-style: none;
+  border: 1px solid #333;
+  box-shadow: 0px 1px 0px #333;
+  font-size: 2.3vw;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  letter-spacing: -1px;
+}
 .b-skills__pillBox .pill {
   text-align: center;
   border-radius: 3vw;
   padding: 1vh;
   padding-top: 1.5vh;
   transition: 0.2s ease-in-out;
-  box-shadow: 0px 1px 0px #000000;
+  box-shadow: 0px 1px 0px #333;
 }
 .b-skills__pillBox .pill:hover {
   padding: 10px;
-  box-shadow: 0px 8px 0px #000000;
+  box-shadow: 0px 6px 0px #333;
 }
 .b-skills__pillBox--1, .b-skills__pillBox--3, .b-skills__pillBox--5 {
   margin-left: -10vw;
@@ -969,126 +945,102 @@
 .b-skills__pillBox svg:hover {
   scale: 1.05;
 }
-.b-skills__other {
-  position: relative;
-  border-radius: 75px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80vw;
-  max-width: 850px;
-  margin: 10vh auto;
-}
-.b-skills__other__background {
-  z-index: 5;
-  position: absolute;
-  left: 10vw;
-  border-radius: 7.5vw;
-  height: 75%;
-  width: 80%;
-}
-.b-skills__other__title {
+.b-skills__subtitle {
   font-family: "Inter", sans-serif;
-  font-size: 5vw;
-  font-weight: 900;
+  letter-spacing: -1px;
+  font-size: 40px;
+  font-weight: 300;
+  padding-left: 2vw;
+  padding: 0;
+  text-align: center;
+  font-weight: 600;
   font-style: italic;
-  letter-spacing: -1px;
-  text-align: center;
-  margin-top: 5vh;
+  padding-top: 10vh;
 }
-.b-skills__other__addition {
-  margin: auto;
-  max-width: 800px;
+.b-skills__other {
+  padding: 10vh 0;
+  width: 100vw;
 }
-.b-skills__other__addition h3 {
-  text-align: center;
-  font-family: "Inter", sans-serif;
-  font-weight: 200;
-  font-size: 2.5vw;
-  letter-spacing: -1px;
-}
-.b-skills__other__addition p {
-  font-family: "Inter", sans-serif;
-  letter-spacing: -1px;
-  font-weight: 200;
-  font-size: 2vw;
-  max-width: 70vw;
-  padding: 15px;
-  margin: auto;
-  text-align: center;
-}
-.b-skills__other__addition .pillbox {
-  z-index: 6;
+.b-skills__other__sliders {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  margin: auto;
-  margin-top: 6vh;
-  padding: 5vh;
-  list-style-type: none;
-  gap: var(--gap);
+  width: 100%;
+  justify-content: center;
 }
-.b-skills__other__addition .pillbox .pill {
+.b-skills__other__sliders ul {
+  padding: 0;
+}
+.b-skills__other__sliders ul li {
+  border: none;
+}
+.b-skills__other__sliders .slider {
+  list-style: none;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  width: 32vw;
+  text-wrap: nowrap;
+  padding: 1vh;
+  color: #333;
+}
+.b-skills__other__sliders .slider label {
+  font-family: "Inter", sans-serif;
+  font-weight: 200;
+  display: block;
+  font-size: 24px;
+  margin-bottom: 2px;
+}
+.b-skills__other__sliders .slider input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  border-radius: 10px;
+  outline: none;
+  /* Track */
+  /* Thumb (handle) */
+}
+.b-skills__other__sliders .slider input[type=range]::-webkit-slider-runnable-track {
+  height: 12px;
+  background: linear-gradient(90deg, #06c073, #06c073);
+  border-radius: 10px;
+}
+.b-skills__other__sliders .slider input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px; /* Customize size */
+  height: 25px;
+  border-radius: 50%;
+  background-color: #22473d;
+  cursor: pointer;
+  margin-top: -10px; /* To align the thumb with the track */
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+.b-skills__also {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
   margin: auto;
-  text-align: center;
-  border-radius: 40px;
-  padding: 10px;
-  padding-top: 10px;
-  font-size: 2.5vw;
-  font-weight: 400;
+}
+.b-skills__also h4 {
+  font-family: "Inter", sans-serif;
   letter-spacing: -1px;
-  transition: 0.2s ease-in-out;
+  font-size: 20px;
+  font-weight: 400;
+  padding-left: 2vw;
+  font-weight: 600;
+  padding: 0;
+  text-align: center;
 }
-.b-skills__other__addition .pillbox .pill:hover {
-  padding: 12px;
-  box-shadow: 0px 8px 0px #000000;
-}
-
-.b-otherSkills {
-  position: relative;
-}
-
-svg.svgsquare {
-  overflow: visible;
-}
-
-svg.svgsquare text {
-  font-family: "Impact", sans-serif;
-  letter-spacing: -0.5vw;
-  font-size: 100px;
+.b-skills__also p {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -1px;
+  font-size: 20px;
+  font-weight: 200;
+  padding-left: 2vw;
+  text-align: left;
+  letter-spacing: normal;
 }
 
-@media only screen and (max-width: 800px) {
-  .b-skills__other .slider {
-    display: none;
-  }
-  .b-skills__other__title {
-    display: none;
-  }
-  .b-skills__other__addition h3 {
-    display: none;
-  }
-  .b-skills__other__addition h4 {
-    display: none;
-  }
-  .b-skills__other__addition ul li {
-    min-width: 70px;
-    min-height: 14px;
-  }
-  .b-skills__other__addition .pillbox {
-    margin-top: 5vh;
-  }
-}
-@media only screen and (min-width: 1200px) {
-  .b-skills .pillbox {
-    margin-top: 0vh;
-  }
-}
-@media only screen and (min-width: 1600px) {
-  .b-otherSkills {
-    display: none;
-  }
-}
 * {
   margin: 0;
 }
@@ -1126,7 +1078,7 @@ svg.svgsquare text {
   min-width: 100vw;
 }
 #root .b-projects {
-  min-height: 100vh;
+  min-height: 120vh;
 }
 #root .b-skills {
   max-height: 160vh;

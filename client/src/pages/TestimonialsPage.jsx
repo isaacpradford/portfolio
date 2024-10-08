@@ -19,7 +19,7 @@ const TestimonialsPage = () => {
     <div id="testimonials" className="b-testimonials">
       <div className="b-testimonials__header">
         <h1>The reviews are in:</h1>
-        <ImQuotesRight size={40} color="#06dd83" />
+        <ImQuotesRight size={40} color="#06dd83" style={{ minWidth: 40 }} />
       </div>
       <div className="b-testimonials__swiper">
         <Swiper
