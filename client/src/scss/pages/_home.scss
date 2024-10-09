@@ -10,7 +10,9 @@
   z-index: 1;
   overflow-x: hidden;
 
-  @include flexColumn;
+  // display: grid;
+  // grid-template-columns: 100%;
+  // grid-template-rows: 50vh 50vh;
 
 
   &__background {
@@ -24,10 +26,11 @@
     // background-color: #84c0b0;
     // background-color: #40adfb;
     // background-color: #ffa600;
-    z-index: 2;
+    z-index: 1;
   }
 
   &__title {
+    grid-row: 2;
     h1 {
       @include pageTitle;
       text-align: start;
@@ -38,6 +41,8 @@
 
     p {
       @include mainBodyText;
+      font-size: 10vw;
+      padding: 0;
     }
 
   }

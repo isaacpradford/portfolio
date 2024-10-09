@@ -85,9 +85,6 @@ const ProjectPage = () => {
             See More:
           </button>
         </li>
-        <li className="card empty"></li>
-
-        <li className="card empty"></li>
         <li
           className="card project5"
           onClick={() => {
@@ -110,7 +107,7 @@ const ProjectPage = () => {
           </button>
         </li>
         <li
-          className="card project4"
+          className="card lastCard"
           onClick={() => {
             isPopupOpen ? handlePopupClose() : handlePopupOpen();
           }}
@@ -120,7 +117,7 @@ const ProjectPage = () => {
           <p className="card__description">
             The website you're looking at right now
           </p>
-          <p className="card__date">Always a work in progress...</p>
+          <p className="card__date">Present</p>
           <button
             className="card__button"
             onClick={() => {

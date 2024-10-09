@@ -12,16 +12,25 @@ import TestimonialPage from "./pages/TestimonialsPage";
 import ContactPage from "./pages/ContactPage";
 import NoPage from "./pages/NoPage";
 
+import Background from "./Components/Background";
+import Blank from "./Components/Blank";
+
 function App() {
   return (
     <>
       <Header />
       <HelmetProvider>
+        <Background /> 
         <HomePage />
+        <Blank />
         <SkillsPage />
+        <Blank />
         <ExperiencePage />
+        <Blank />
         <ProjectPage />
+        <Blank />
         <TestimonialPage />
+        <Blank />
         <ContactPage />
 
         {/* For undefined URLS, we can put this to make a 404 page */}

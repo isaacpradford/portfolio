@@ -49,10 +49,10 @@ const SkillsPage = () => {
         </div>
       </div>
 
-      <h4 className="b-skills__subtitle">But what else can I do?</h4>
+      {/* <h4 className="b-skills__subtitle">But what else can I do?</h4> */}
       <div className="b-skills__other">
         {/* <h3>In addition to those languages, I can also use:</h3> */}
-        <div className="b-skills__other__sliders">
+        {/* <div className="b-skills__other__sliders">
           <ul>
             <li className="slider">
               <label>FullStack Web Development</label>
@@ -81,11 +81,11 @@ const SkillsPage = () => {
             </li>
 
             <li className="slider">
-              <label>Interpersonal Skills</label>
+              <label>Teamwork</label>
               <input type="range" min="1" max="100" value="72" id="myRange" />
             </li>
           </ul>
-        </div>
+        </div> */}
       </div>
 
       <div className="b-skills__also">

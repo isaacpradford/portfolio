@@ -11,6 +11,10 @@ const HomePage = () => {
         <h1>FULL STACK WEB DEV</h1>
         <p>Isaac Radford</p>
       </div>
+
+      <h1>https://www.framer.com/motion/</h1>
+      <h1>https://r3f.docs.pmnd.rs/getting-started/introduction</h1>
+      <h1>https://threejs.org/</h1>
       {/* <div className="b-home__banner">
         <p>
           FULL STACK WEBDEV | UI / UX | FULL STACK WEBDEV | UI / UX | FULL STACK

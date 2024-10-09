@@ -62,12 +62,10 @@
           @include mainBodyText;
           padding: 10px 0;
           font-size: 22px;
-          
         }
 
         ul {
           li {
-
           }
         }
       }
@@ -75,8 +73,60 @@
   }
 }
 
+@media only screen and (max-width: 800px) {
+  .b-experience {
+    &__timeline {
+      @include flexColumn;
+      padding: 0;
+      width: 100%;
+      // align-items: center;
+      
+
+      &__entry {
+        @include flexRow;
+        width: 100%;
+        margin-bottom: 20px;
+
+        &__date {
+          max-width: 220px;
+          min-width: 220px;
+          font-size: 24px;
+          width: 100%;
+          margin-bottom: 5px;
+        }
+
+        &__role {
+          min-width: 100px;
+          max-w
+          h5 {
+            font-size: 14px;;
+          }
+          h4 {
+            font-size: 22px;
+          }
+
+          p {
+            font-size: 20px;
+          }
+
+
+        }
+      }
+
+      &__line {
+        display: none;
+      }
+
+      &__title {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
 //   // All of the grid alignment is in the first __timeline section, all the decoration is in the second
-//   &__timeline {
+// .b-experience {
+// &__timeline {
 // display: grid;
 // grid-template-columns: 45% 10% 45%;
 // grid-template-rows: 150px 200px 200px 150px;
@@ -154,3 +204,4 @@
 //       }
 //     }
 //   }
+// }

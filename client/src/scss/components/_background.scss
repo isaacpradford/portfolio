@@ -1,9 +1,4 @@
-
 @use "../variables" as *;
-#root {
-    background-color: $backgroundColor;
-    // opacity: 0.8;
-    // background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, $white 1500px ), repeating-linear-gradient( $backgroundColor, $backgroundColor2 );
-    // backdrop-filter: blur(1000px);
-    // filter: invert(70%);
+
+.b-background {
 }

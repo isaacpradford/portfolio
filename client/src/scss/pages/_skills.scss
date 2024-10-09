@@ -186,6 +186,20 @@
   }
 }
 
+
+@media only screen and (max-width: 800px) {
+  .b-skills {
+    .slider {
+      text-align: center;
+      text-wrap: wrap;
+      label {
+        font-size: 16px;
+        padding-bottom: 12px;
+      }
+    }
+  }
+}
+
 // .b-otherSkills {
 //   position: relative;
 // }

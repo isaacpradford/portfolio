@@ -68,26 +68,6 @@ const Header = () => {
             </li>
             <li className={`b-navbar__wrapper__link ${isOpen ? "open" : ""}`}>
               <Link
-                to="testimonials"
-                smooth={true}
-                duration={500}
-                onClick={() => setOpen(false)}
-              >
-                Reviews
-              </Link>
-            </li>
-            <li className={`b-navbar__wrapper__link ${isOpen ? "open" : ""}`}>
-              <Link
-                to="skills"
-                smooth={true}
-                duration={500}
-                onClick={() => setOpen(false)}
-              >
-                Skills
-              </Link>
-            </li>
-            <li className={`b-navbar__wrapper__link ${isOpen ? "open" : ""}`}>
-              <Link
                 to="contact"
                 smooth={true}
                 duration={500}

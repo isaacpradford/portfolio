@@ -4,17 +4,69 @@
   margin: 0;
 }
 
-#root {
+html {
+  position: relative;
   display: grid;
   grid-template-columns: 100vw;
   grid-template-rows: auto auto auto auto auto auto;
   grid-template-areas:
     "home"
+    "blank1"
     "skills"
+    "blank2"
     "projects"
+    "blank3"
     "experience"
+    "blank4"
     "testimonials"
+    "blank5"
     "contact";
+
+  .b-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 890vh; // Height for the entire page
+
+    z-index: -1;
+    background-size: 10vw 10vw;
+    background-image: 
+      linear-gradient(to right, rgba(128, 128, 128, 0.822) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(128, 128, 128, 0.721) 1px, transparent 1px);
+      background-attachment: fixed;
+      background-position: center;
+      opacity: 0.4;
+  }
+
+  // Blank areas between pages
+  .b-blank {
+    grid-area: blank1, blank2, blank3, blank4, blank5;
+    min-height: 50vh;
+    background-color: transparent;
+   
+  }
+
+  .b-home,
+  .b-skills,
+  .b-experience,
+  .b-projects,
+  .b-testimonials,
+  .b-contact {
+    min-height: 100vh;
+    min-width: 100vw;
+    background: transparent; 
+  }
+
+  // .b-home,
+  // .b-about,
+  // .b-contact,
+  // .b-experience,
+  // .b-projects,
+  // .b-skills,
+  // .b-testimonials {
+  // }
 
   .b-home {
     grid-area: home;
@@ -46,7 +98,7 @@
   }
 
   .b-projects {
-    min-height: 120vh;
+    min-height: 100vh;
   }
 
   .b-skills {

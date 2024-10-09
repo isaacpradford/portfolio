@@ -22,7 +22,6 @@
     margin: auto;
     // align-items: center;
 
-
     &__title {
       font-weight: 600;
       z-index: 1;
@@ -123,6 +122,9 @@
       }
     }
 
+    // :nth-child(6) {
+    //   height: 250px;
+    // }
     .empty {
       height: 0;
       visibility: hidden;
@@ -184,7 +186,6 @@ svg.svgsquare text {
 
         &__description,
         &__date {
-          // opacity: 1;
           z-index: 1;
           color: #0056b3;
           font-size: 13px;
