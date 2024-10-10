@@ -1,0 +1,154 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.project-popup {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+
+  // Left side of the screen / images
+  &__header {
+    position: relative;
+    z-index: 0;
+
+    width: 50%;
+    gap: 20px;
+    @include flexColumn;
+    justify-content: center;
+    align-items: center;
+
+    &__images {
+      z-index: 2;
+
+      img {
+        width: 80%;
+        max-width: 400px;
+        min-width: 300px;
+        height: auto;
+        object-fit: cover;
+        border-radius: 4px;
+      }
+    }
+
+    &__1 {
+      z-index: 2;
+      rotate: -20deg;
+      position: relative;
+      top: 20vh;
+      left: 5vw;
+    }
+
+    &__2 {
+      z-index: 3;
+      rotate: 10deg;
+      position: relative;
+      top: -10vh;
+      left: -5vw;
+    }
+
+    &__background {
+      z-index: 1;
+      position: absolute;
+      top: 30vh;
+      height: 50vh;
+      width: 30vw;
+      background-color: var(--project-color);
+      border-radius: 15px;
+    }
+
+    &__text {
+      @include pageTitle;
+      padding: 0 12px;
+      font-size: 20px;
+      letter-spacing: -1px;
+      z-index: 10;
+      position: absolute;
+      bottom: -10vh;
+      color: $backgroundColor;
+      background-color: black;
+    }
+  }
+  // Right side of the screen
+  &__content {
+    width: 50%;
+    padding-left: 20px;
+
+    h2 {
+      @include pageTitle;
+      color: var(--project-color);
+      letter-spacing: $mediumLetterSpacing;
+      margin-bottom: 20px;
+    }
+
+    &__description {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+
+    &__links {
+      margin-top: 20px;
+      a {
+        margin-right: 10px;
+        color: #680879;
+        text-decoration: none;
+        font-weight: bold;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &__stack {
+      @include flexRow;
+      justify-content: center;
+      border-collapse: collapse;
+
+      margin-top: 20px;
+      min-height: 200px;
+      max-height: 300px;
+
+      h3 {
+        margin-bottom: 10px;
+      }
+
+      ul {
+        @include flexColumn;
+        list-style-type: none;
+        height: 100%;
+
+        li {
+          width: 20vw;
+          border: 0.1px solid $black;
+          height: 100%;
+          text-align: center;
+          margin: 4px;
+        }
+      }
+    }
+  }
+
+  &__contact {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    font-size: 1.2rem;
+
+    a {
+      color: #680879;
+      font-weight: bold;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .focus-image {
+    img {
+      max-width: 900px;
+    }
+  }
+}

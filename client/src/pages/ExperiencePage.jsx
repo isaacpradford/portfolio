@@ -54,18 +54,18 @@ const ExperiencePage = () => {
             <p>
               Developed in fast paced, start-up environment designing scalable
               software for a variety of interfaces such as:
-              <ul>
-                {/* <li>
-                  Built an Admin Page for administrators of the website to view
-                  businesses, customers, registrations, analytics, and support
-                  requests in a single location
-                </li>
-                <li>
-                  Redesigned the business dashboard for business owners to
-                  manage customers
-                </li> */}
-              </ul>
             </p>
+            <ul>
+              <li>
+                Built an Admin Page for administrators of the website to view
+                businesses, customers, registrations, analytics, and support
+                requests in a single location
+              </li>
+              <li>
+                Redesigned the business dashboard for business owners to manage
+                customers
+              </li>
+            </ul>
           </div>
         </div>
 

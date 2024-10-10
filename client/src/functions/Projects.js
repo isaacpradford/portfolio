@@ -15,3 +15,19 @@ export const getProjectNameList = async () => {
     throw err;
   }
 };
+
+// Get all info about a project using a specific title
+export const getProjectInfo = async (projectTitle) => {
+  try {
+    const api_password = process.env.REACT_APP_API_PASSWORD;
+    const res = await axios.get(`${URL}projects/${projectTitle}`, {
+      headers: {
+        password: api_password,
+      },
+    });
+    return res.data;
+  } catch (err) {
+    console.log(err);
+    throw err;
+  }
+};

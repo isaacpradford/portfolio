@@ -3,130 +3,71 @@ import Popup from "../Components/Popup";
 import ProjectPopUp from "./ProjectPopUpPage";
 import { Link } from "react-scroll";
 
-import Subitt from "../assets/Subitt.png";
-
 const ProjectPage = () => {
   const [isPopupOpen, setPopupOpen] = useState(false);
-  const handlePopupOpen = () => setPopupOpen(true);
-  const handlePopupClose = () => setPopupOpen(false);
+  const [selectedProject, setSelectedProject] = useState(null);
 
+  // Set the names and descriptions of the proejcts
   const [projects, setProjects] = useState([
-    // { title: "" },
-    { id: 1, title: "Raft" },
-    { id: 2, title: "Subitt" },
-    { id: 3, title: "Twitter Bots" },
-    { id: 4, title: "Portfolio" },
-    { id: 5, title: "PLMS" },
-    { id: 6, title: "" },
+    {
+      id: 1,
+      title: "Subitt",
+      description: "Subscribe how you want to! ",
+      date: "3/24 - Present",
+    },
+    {
+      id: 2,
+      title: "Raft",
+      description: "I had *every* user on the app following me",
+      date: "3/24",
+    },
+    {
+      id: 3,
+      title: "TwitterBots",
+      description: "Twitter bots from before Twitter wasn't Twitter",
+      date: "10/23",
+    },
+    {
+      id: 5,
+      title: "PLMS",
+      description: "Personal Learning Modules, or Plums for short",
+      date: "2/24",
+    },
+    {
+      id: 4,
+      title: "Portfolio",
+      description: "The website you're looking at right now",
+      date: "Present",
+    },
   ]);
+
+  const handlePopupOpen = (projectTitle) => {
+    setSelectedProject(projectTitle);
+    setPopupOpen(true);
+  };
+
+  const handlePopupClose = () => {
+    setPopupOpen(false);
+    setSelectedProject(null);
+  };
 
   return (
     <div id="projects" className="b-projects">
       <div className="b-projects__cardList">
         <h1 className="b-projects__cardList__title">Projects:</h1>
-        <li
-          className="card"
-          onClick={() => {
-            isPopupOpen ? handlePopupClose() : handlePopupOpen();
-          }}
-        >
-          <div className="card__bg"></div>
-          <h3 className="card__title">Subitt</h3>
-          <p className="card__description">Subscribe how you want to!</p>
-          <p className="card__date">3/24 - Present</p>
-          <button
-            className="card__button"
-            onClick={() => {
-              isPopupOpen ? handlePopupClose() : handlePopupOpen();
-            }}
+        {projects.map((project) => (
+          <li
+            key={project.id}
+            className="card"
+            onClick={() => handlePopupOpen(project.title)}
           >
-            See More:
-          </button>
-        </li>
-        <li
-          className="card"
-          onClick={() => {
-            isPopupOpen ? handlePopupClose() : handlePopupOpen();
-          }}
-        >
-          <h3 className="card__title">RAFT</h3>
-          <p className="card__description">
-            I had *every* user on the app following me
-          </p>
-          <p className="card__date">3/24</p>
-          <button
-            className="card__button"
-            onClick={() => {
-              isPopupOpen ? handlePopupClose() : handlePopupOpen();
-            }}
-          >
-            See More:
-          </button>
-          <div className="card__bg"></div>
-        </li>
-        <li
-          className="card"
-          onClick={() => {
-            isPopupOpen ? handlePopupClose() : handlePopupOpen();
-          }}
-        >
-          <div className="card__bg"></div>
-          <h3 className="card__title">PLMS</h3>
-          <p className="card__description">
-            Personal Learning Modules, or Plums for short
-          </p>
-          <p className="card__date">2/24</p>
-          <button
-            className="card__button"
-            onClick={() => {
-              isPopupOpen ? handlePopupClose() : handlePopupOpen();
-            }}
-          >
-            See More:
-          </button>
-        </li>
-        <li
-          className="card project5"
-          onClick={() => {
-            isPopupOpen ? handlePopupClose() : handlePopupOpen();
-          }}
-        >
-          <div className="card__bg"></div>
-          <h3 className="card__title">Twitter Bots</h3>
-          <p className="card__description">
-            Twitter bots from before Twitter wasn't Twitter
-          </p>
-          <p className="card__date">10/23</p>
-          <button
-            className="card__button"
-            onClick={() => {
-              isPopupOpen ? handlePopupClose() : handlePopupOpen();
-            }}
-          >
-            See More:
-          </button>
-        </li>
-        <li
-          className="card lastCard"
-          onClick={() => {
-            isPopupOpen ? handlePopupClose() : handlePopupOpen();
-          }}
-        >
-          <div className="card__bg"></div>
-          <h3 className="card__title">Portfolio</h3>
-          <p className="card__description">
-            The website you're looking at right now
-          </p>
-          <p className="card__date">Present</p>
-          <button
-            className="card__button"
-            onClick={() => {
-              isPopupOpen ? handlePopupClose() : handlePopupOpen();
-            }}
-          >
-            See More:
-          </button>
-        </li>
+            <div className="card__bg"></div>
+            <h3 className="card__title">{project.title}</h3>
+            <p className="card__description">{project.description}</p>
+            <p className="card__date">{project.date}</p>
+            <button className="card__button">See More</button>
+          </li>
+        ))}
 
         <div className="b-projects__bottom">
           <p>Hover over us, don't miss out! </p>
@@ -174,7 +115,9 @@ const ProjectPage = () => {
       <Popup
         isOpen={isPopupOpen}
         onClose={handlePopupClose}
-        component={ProjectPopUp}
+        component={(props) => (
+          <ProjectPopUp {...props} projectTitle={selectedProject} />
+        )}
       />
     </div>
   );

@@ -4,7 +4,6 @@ import Header from "./Components/Header";
 import "./global.css";
 
 import HomePage from "./pages/HomePage";
-import AboutPage from "./pages/AboutPage";
 import SkillsPage from "./pages/SkillsPage";
 import ExperiencePage from "./pages/ExperiencePage";
 import ProjectPage from "./pages/ProjectPage";
@@ -20,7 +19,7 @@ function App() {
     <>
       <Header />
       <HelmetProvider>
-        <Background /> 
+        <Background />
         <HomePage />
         <Blank />
         <SkillsPage />
