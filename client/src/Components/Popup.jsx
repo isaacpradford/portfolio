@@ -1,19 +1,46 @@
 import React from "react";
-import { Link } from "react-scroll";
 import { AnimatePresence, motion } from "framer-motion";
+import { Link } from "react-scroll";
 
-const Popup = ({ isOpen, onClose, component: Component }) => {
-  if (!isOpen) return null;
-
-  // popup animation
-  const popupVariant = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { duration: 0.2, ease: "easeInOut" },
+const topBarVariant = {
+  hidden: { y: "-100%" },
+  visible: {
+    y: "-25%", // Move down
+    transition: {
+      duration: 1,
+      ease: "easeInOut",
+      delayChildren: 0.1,
+      staggerChildren: 0.1,
     },
-    exit: { opacity: 0, scale: 0.1, y: "-100%", transition: { duration: 0.3 } },
-  };
+  },
+  exit: {
+    y: "-100%",
+    transition: {
+      duration: 1,
+      ease: "easeInOut",
+      delayChildren: 0.1,
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const popupVariant = {
+  hidden: { opacity: 1 },
+  visible: {
+    opacity: 1,
+    transition: { duration: 0.2, ease: "easeInOut" },
+  },
+  exit: {
+    opacity: 1,
+    scale: 0.1,
+    y: "-100%",
+    transition: { duration: 0.3 },
+  },
+};
+
+// Popup component
+const Popup = ({ isOpen, onClose, component: Component, contentLoaded }) => {
+  if (!isOpen) return null;
 
   return (
     <AnimatePresence>
@@ -24,6 +51,21 @@ const Popup = ({ isOpen, onClose, component: Component }) => {
         exit="exit"
         variants={popupVariant}
       >
+        {/* Top 3 bars lowering */}
+        <motion.div
+          className="bars top-bars"
+          variants={topBarVariant}
+          initial="hidden"
+          animate={contentLoaded ? "exit" : "visible"}
+          exit="exit"
+        >
+          <motion.div className="bar" variants={topBarVariant} />
+          <motion.div className="bar" variants={topBarVariant} />
+          <motion.div className="bar" variants={topBarVariant} />
+          <motion.div className="bar" variants={topBarVariant} />
+          <motion.div className="bar" variants={topBarVariant} />
+        </motion.div>
+
         <div className="popup-logo">
           <Link to="home" smooth={true} duration={250} onClick={onClose}>
             ISAAC
@@ -31,8 +73,6 @@ const Popup = ({ isOpen, onClose, component: Component }) => {
         </div>
 
         <div className="popup-content">
-          {/* Lets me pass in any page in as a popup, it just needs to be modified to take in onClose as an argument */}
-          {/* Like the about page: "const AboutPage = ({ onClose }) => {} "*/}
           <Component onClose={onClose} />
           <button className="popup-close" onClick={onClose}>
             X

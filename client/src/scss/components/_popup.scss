@@ -13,6 +13,24 @@
   z-index: 100;
 }
 
+.bars {
+  position: absolute;
+  height: 50vh;
+  width: 100vw;
+  z-index: 101;
+}
+
+.top-bars {
+  display: flex;
+  flex-direction: row;
+}
+
+.bar {
+  width: 60vw; 
+  height: 200vh;
+  margin-left: -5px;
+  background-color: var(--project-color);
+}
 // Hard coded to be in the same spot as the normal logo
 .popup-logo {
   z-index: 150;

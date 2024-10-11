@@ -19,7 +19,7 @@ import Blank from "./Components/Blank";
 function App() {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
+    stiffness: 150,
     damping: 30,
     restDelta: 0.001,
   });

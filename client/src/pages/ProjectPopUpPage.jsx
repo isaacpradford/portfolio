@@ -72,31 +72,37 @@ const itemVariant = {
   },
 };
 
+// Maybe add a next page button too?
+
 // This is the page that pops up when a project name is clicked
-const ProjectPopUp = ({ onClose, projectTitle }) => {
+const ProjectPopUp = ({ onClose, projectTitle, setContentLoaded }) => {
   const [projectDetails, setProjectDetails] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
 
+  // Get data, set animation states while/after loading
   useEffect(() => {
     const fetchProjectDetails = async () => {
       try {
         const response = await getProjectInfo(projectTitle);
         setProjectDetails(response);
+
+        // Content is loaded, notify parent component (Popup) to trigger the exit animation
+        setTimeout(() => {
+          setContentLoaded(true);
+        }, 2000);
       } catch (error) {
         console.error("Error fetching project details:", error);
       }
     };
 
     fetchProjectDetails();
-  }, [projectTitle]);
+  }, [projectTitle, setContentLoaded]);
 
   // Set the color of the box to be the color received from db
   document.documentElement.style.setProperty(
     "--project-color",
     projectDetails?.color
   );
-
-  // Animation variants
 
   return (
     <motion.section

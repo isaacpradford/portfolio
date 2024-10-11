@@ -24,6 +24,7 @@ html {
 
   .progress-bar {
     position: fixed;
+    width: 100vh;
     rotate: 90deg;
     top: -10px;
     left: 0;
@@ -31,9 +32,6 @@ html {
     height: 20px;
     background: var(--project-color);
     transform-origin: 0%;
-  }
-  .b-background {
-    
   }
 
   // Blank areas between pages
