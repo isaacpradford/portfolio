@@ -2,33 +2,11 @@ import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-scroll";
 
-const topBarVariant = {
-  hidden: { y: "-100%" },
-  visible: {
-    y: "-25%", // Move down
-    transition: {
-      duration: 1,
-      ease: "easeInOut",
-      delayChildren: 0.1,
-      staggerChildren: 0.1,
-    },
-  },
-  exit: {
-    y: "-100%",
-    transition: {
-      duration: 1,
-      ease: "easeInOut",
-      delayChildren: 0.1,
-      staggerChildren: 0.1,
-    },
-  },
-};
-
 const popupVariant = {
-  hidden: { opacity: 1 },
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { duration: 0.2, ease: "easeInOut" },
+    transition: { duration: 1, ease: "easeInOut" },
   },
   exit: {
     opacity: 1,
@@ -39,33 +17,12 @@ const popupVariant = {
 };
 
 // Popup component
-const Popup = ({ isOpen, onClose, component: Component, contentLoaded }) => {
+const Popup = ({ isOpen, onClose, component: Component }) => {
   if (!isOpen) return null;
 
   return (
     <AnimatePresence>
-      <motion.div
-        className="popup-overlay"
-        initial="hidden"
-        animate="visible"
-        exit="exit"
-        variants={popupVariant}
-      >
-        {/* Top 3 bars lowering */}
-        <motion.div
-          className="bars top-bars"
-          variants={topBarVariant}
-          initial="hidden"
-          animate={contentLoaded ? "exit" : "visible"}
-          exit="exit"
-        >
-          <motion.div className="bar" variants={topBarVariant} />
-          <motion.div className="bar" variants={topBarVariant} />
-          <motion.div className="bar" variants={topBarVariant} />
-          <motion.div className="bar" variants={topBarVariant} />
-          <motion.div className="bar" variants={topBarVariant} />
-        </motion.div>
-
+      <motion.div className="popup-overlay" variants={popupVariant}>
         <div className="popup-logo">
           <Link to="home" smooth={true} duration={250} onClick={onClose}>
             ISAAC

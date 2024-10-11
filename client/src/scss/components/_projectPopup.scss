@@ -6,6 +6,15 @@
   justify-content: space-between;
   align-items: flex-start;
 
+  
+  &__background {
+    z-index: 0;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: $aboutBackground;
+  }
+
   &__banner {
     z-index: 3;
     position: absolute;
@@ -15,7 +24,6 @@
     @include pageTitle;
     color: var(--project-color);
   }
-
   // Left side of the screen / images
   &__header {
     position: relative;
@@ -216,4 +224,24 @@
       font-size: 18px;
     }
   }
+}
+
+// Loading animation bars
+.bars {
+  position: absolute;
+  height: 50vh;
+  width: 100vw;
+  z-index: 101;
+}
+
+.top-bars {
+  display: flex;
+  flex-direction: row;
+}
+
+.bar {
+  width: 60vw; 
+  height: 200vh;
+  margin-left: -5px;
+  background-color: var(--project-color);
 }

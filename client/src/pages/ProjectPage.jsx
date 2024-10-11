@@ -6,7 +6,6 @@ import { Link } from "react-scroll";
 const ProjectPage = () => {
   const [isPopupOpen, setPopupOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
-  const [contentLoaded, setContentLoaded] = useState(false);
 
   // Set the names and descriptions of the proejcts
   const [projects, setProjects] = useState([
@@ -45,12 +44,11 @@ const ProjectPage = () => {
   const handlePopupOpen = (projectTitle) => {
     setSelectedProject(projectTitle);
     setPopupOpen(true);
-    setContentLoaded(false);
   };
 
   const handlePopupClose = () => {
     setPopupOpen(false);
-    // setSelectedProject(null);
+    setSelectedProject(null);
   };
 
   return (
@@ -117,13 +115,8 @@ const ProjectPage = () => {
       <Popup
         isOpen={isPopupOpen}
         onClose={handlePopupClose}
-        contentLoaded={contentLoaded}
         component={(props) => (
-          <ProjectPopUp
-            {...props}
-            projectTitle={selectedProject}
-            setContentLoaded={setContentLoaded}
-          />
+          <ProjectPopUp {...props} projectTitle={selectedProject} />
         )}
       />
     </div>
