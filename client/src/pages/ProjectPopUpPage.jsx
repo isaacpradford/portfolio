@@ -141,7 +141,8 @@ const ProjectPopUp = ({ onClose, projectTitle }) => {
         exit="exit"
         variants={backgroundAnimation}
       ></motion.div>
-      {/* Top 3 bars lowering */}
+
+      {/* Transition animatino */}
       <motion.div
         className="bars top-bars"
         variants={transitionVariant}
@@ -149,6 +150,9 @@ const ProjectPopUp = ({ onClose, projectTitle }) => {
         animate={contentLoaded ? "exit" : "visible"}
         exit="exit"
       >
+        <motion.div className="bar" variants={transitionVariant} />
+        <motion.div className="bar" variants={transitionVariant} />
+        <motion.div className="bar" variants={transitionVariant} />
         <motion.div className="bar" variants={transitionVariant} />
         <motion.div className="bar" variants={transitionVariant} />
         <motion.div className="bar" variants={transitionVariant} />
