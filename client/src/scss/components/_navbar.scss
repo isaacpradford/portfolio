@@ -19,7 +19,8 @@
     flex-direction: row;
     font-family: $mainFont;
     letter-spacing: $mediumLetterSpacing;
-    color: $fontHighlights;
+    // color: $fontHighlights;
+    color: var(--project-color);
     font-weight: bold;
     font-style: italic;
     font-size: 40px;

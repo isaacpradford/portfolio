@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-scroll";
+import me from "../assets/me.png";
 
 const AboutPage = ({ onClose }) => {
   return (
@@ -8,13 +9,16 @@ const AboutPage = ({ onClose }) => {
         <div className="b-about__title">
           <h1>ABOUT ME</h1>
         </div>
+        {/* <div className="b-about__image">
+          <img src={me} alt="" srcSet={me} />
+        </div> */}
         <div className="b-about__description">
           {/* <h1>About Me</h1> */}
           <p className="b-about__name">
             Hi! My name's Isaac, I'm 24 and I just graduated from BYU-Idaho with
             a Bachelor's degree in Software Engineering.
           </p>
-          
+
           <p className="b-about__bold">
             From Design to Deployment, I specialize in making websites that are
             scalable and functional.

@@ -3,6 +3,8 @@ import { HelmetProvider } from "react-helmet-async";
 import Header from "./Components/Header";
 import "./global.css";
 
+import { motion, useScroll, useSpring } from "framer-motion";
+
 import HomePage from "./pages/HomePage";
 import SkillsPage from "./pages/SkillsPage";
 import ExperiencePage from "./pages/ExperiencePage";
@@ -15,8 +17,20 @@ import Background from "./Components/Background";
 import Blank from "./Components/Blank";
 
 function App() {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
+  // Sets default color
+  document.documentElement.style.setProperty("--project-color", "#06c073");
+
   return (
     <>
+      <motion.div className="progress-bar" style={{ scaleX }} />
+
       <Header />
       <HelmetProvider>
         <Background />

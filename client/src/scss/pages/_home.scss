@@ -14,15 +14,16 @@
   // grid-template-columns: 100%;
   // grid-template-rows: 50vh 50vh;
 
-
   &__background {
     background-size: cover;
     height: 50vh;
     width: 50vw;
-    position: absolute;
+    position: relative;
     top: 25%;
     left: 25%;
 
+    background-color: black;
+    mix-blend-mode: exclusion;
     // background-color: #84c0b0;
     // background-color: #40adfb;
     // background-color: #ffa600;
@@ -30,7 +31,19 @@
   }
 
   &__title {
-    grid-row: 2;
+    z-index: 5;
+    @include flexColumn;
+    position: fixed;
+    bottom: 0;
+
+    span {
+      @include pageTitle;
+      font-size: 100px;
+      padding: 0;
+      mix-blend-mode: exclusion;
+      color: black;
+    }
+
     h1 {
       @include pageTitle;
       text-align: start;
@@ -44,14 +57,13 @@
       font-size: 10vw;
       padding: 0;
     }
-
   }
 
   &__banner {
     position: absolute;
     top: 40vh;
     max-width: 100vw;
-    
+
     font-family: $headerFont;
     letter-spacing: $largeLetterSpacing;
     font-weight: bold;
@@ -59,7 +71,7 @@
     text-wrap: nowrap;
     animation: $marquee;
     color: $fontHighlights;
-    mix-blend-mode:hue;
+    mix-blend-mode: hue;
     z-index: 3;
   }
 
@@ -103,4 +115,3 @@
     }
   }
 }
-

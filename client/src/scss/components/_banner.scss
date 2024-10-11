@@ -1,0 +1,20 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.banner-wrapper {
+  white-space: nowrap;
+  width: 100vw;
+}
+
+.scroller {
+  display: flex;
+  flex-direction: row;
+  text-transform: uppercase;
+  gap: 60px;
+}
+
+.scroller span {
+  letter-spacing: -2.8px;
+  padding: 0;
+  font-weight: 900;
+}
