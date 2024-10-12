@@ -214,7 +214,8 @@ const ProjectPopUp = ({ onClose, projectTitle, allProjects }) => {
               variants={titleVariant}
               className="project-popup__header__title"
             >
-              {projectDetails?.title}
+              {/* {projectDetails?.title} */}
+              <ScrollingBanner title={projectDetails?.title} baseVelocity={2} />
             </motion.h2>
 
             <motion.div

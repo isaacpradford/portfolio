@@ -63,8 +63,12 @@
       line-height: 90%;
       text-transform: uppercase;
       padding: 0;
-      padding-left: 2.7vw;
+      padding-left: 2.3vw;
 
+
+      border-right: 3px solid var(--project-color);
+      max-width: 72vw;
+      overflow: hidden;
       color: $invisible;
       -webkit-text-stroke-color: black;
       -webkit-text-stroke-width: 1px;
@@ -123,15 +127,15 @@
     &__subtitle {
       grid-row: 1/2;
       z-index: 1;
-      // max-width: 500px;
+      // max-width: 550px;
       // max-height: 300px;
       text-wrap: wrap;
-
+      
       @include pageTitle;
       font-size: 6.8vw;
       font-weight: 900;
+      text-align:start;
 
-      text-align: start;
       letter-spacing: -0.2vw;
       line-height: 95%;
       text-transform: uppercase;

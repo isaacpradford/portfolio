@@ -211,7 +211,10 @@
   line-height: 90%;
   text-transform: uppercase;
   padding: 0;
-  padding-left: 2.7vw;
+  padding-left: 2.3vw;
+  border-right: 3px solid var(--project-color);
+  max-width: 72vw;
+  overflow: hidden;
   color: rgba(0, 0, 0, 0);
   -webkit-text-stroke-color: black;
   -webkit-text-stroke-width: 1px;
