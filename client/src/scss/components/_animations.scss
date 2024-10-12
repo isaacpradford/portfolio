@@ -1,0 +1,44 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+// This file contains the css for all the random animation objects around
+
+// Project image focus
+.focus-image {
+  @include flexColumn;
+  z-index: 10;
+
+  // Overrides the __header image styling
+  img {
+    max-width: 900px;
+    min-width: 600px;
+    min-height: 200px;
+    max-height: 800px;
+  }
+
+  h1 {
+    @include subTitle;
+    padding: 12px 0;
+    font-size: 18px;
+  }
+}
+
+// Project Loading animation bars
+.bars {
+  position: absolute;
+  height: 50vh;
+  width: 100vw;
+  z-index: 101;
+}
+
+.top-bars {
+  display: flex;
+  flex-direction: row;
+}
+
+.bar {
+  width: 110vw;
+  height: 200vh;
+  margin-left: -5px;
+  background-color: $purple;
+}

@@ -28,13 +28,13 @@ const ProjectPage = () => {
       date: "10/23",
     },
     {
-      id: 5,
+      id: 4,
       title: "PLMS",
       description: "Personal Learning Modules, or Plums for short",
       date: "2/24",
     },
     {
-      id: 4,
+      id: 5,
       title: "Portfolio",
       description: "The website you're looking at right now",
       date: "Present",
@@ -116,7 +116,11 @@ const ProjectPage = () => {
         isOpen={isPopupOpen}
         onClose={handlePopupClose}
         component={(props) => (
-          <ProjectPopUp {...props} projectTitle={selectedProject} />
+          <ProjectPopUp
+            {...props}
+            projectTitle={selectedProject}
+            allProjects={projects}
+          />
         )}
       />
     </div>

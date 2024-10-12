@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import { getProjectInfo } from "../functions/Projects";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, keyframes } from "framer-motion";
 import ScrollingBanner from "../Components/LoopingBanner";
 
 // Loading animation of the bars coming down and going up
@@ -17,7 +17,7 @@ const transitionVariant = {
     },
   },
   exit: {
-    y: "-100%",
+    y: "200%",
     transition: {
       duration: 1,
       ease: "easeInOut",
@@ -99,16 +99,21 @@ const itemVariant = {
 // Maybe add a next page button too?
 
 // This is the page that pops up when a project name is clicked
-const ProjectPopUp = ({ onClose, projectTitle }) => {
+const ProjectPopUp = ({ onClose, projectTitle, allProjects }) => {
   const [projectDetails, setProjectDetails] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
   const [contentLoaded, setContentLoaded] = useState(false);
 
-  // Get data, set animation states while/after loading
+  // Get index of current project and load it
+  const [currentIndex, setCurrentIndex] = useState(
+    allProjects.findIndex((project) => project.title === projectTitle)
+  );
+
+  // Get data, set animation states while/after loading + when next project is clicked
   useEffect(() => {
     const fetchProjectDetails = async () => {
       try {
-        const response = await getProjectInfo(projectTitle);
+        const response = await getProjectInfo(allProjects[currentIndex].title);
 
         setTimeout(() => {
           setContentLoaded(true);
@@ -121,19 +126,29 @@ const ProjectPopUp = ({ onClose, projectTitle }) => {
     };
 
     fetchProjectDetails();
-  }, [projectTitle]);
+  }, [currentIndex, projectTitle]);
 
   // Set the color of the box to be the color received from db
+  // useEffect(() => {
+  //   if (projectDetails?.color) {
+  //   }
+  // }, [currentIndex, projectDetails]);
+
   document.documentElement.style.setProperty(
     "--project-color",
     projectDetails?.color
   );
 
+  // Handle "Next Project" logic
+  const goToNextProject = () => {
+    const nextIndex = (currentIndex + 1) % allProjects.length; // Loop back to the first project if needed
+    setCurrentIndex(nextIndex);
+    setContentLoaded(false); // Resets animations
+  };
+
   return (
-    <motion.section
-      className="popup-overlay project-popup"
-      variants={backgroundAnimation}
-    >
+    <motion.section className="popup-overlay project-popup">
+      {/* Background that comes in while transition is playing */}
       <motion.div
         className="project-popup__background"
         initial="hidden"
@@ -142,7 +157,7 @@ const ProjectPopUp = ({ onClose, projectTitle }) => {
         variants={backgroundAnimation}
       ></motion.div>
 
-      {/* Transition animatino */}
+      {/* Transition animation */}
       <motion.div
         className="bars top-bars"
         variants={transitionVariant}
@@ -162,21 +177,17 @@ const ProjectPopUp = ({ onClose, projectTitle }) => {
 
       {contentLoaded && (
         <>
-          <div className="project-popup__banner">
-            <ScrollingBanner title={projectTitle} baseVelocity={2} />
-          </div>
-
-          <div className="project-popup__header">
-            {/* Images sliding in */}
+          {/* Images sliding in */}
+          {/* <div>
             <motion.div
-              className="project-popup__header__images"
+              className="project-popup__images"
               variants={imageVariant}
             >
               {projectDetails?.header_picture && (
                 <motion.img
                   src={`data:image/png;base64,${projectDetails?.header_picture}`}
                   alt={`${projectDetails?.title} header`}
-                  className="project-popup__header__1"
+                  className="project-popup__images__1"
                   layoutId="headerImage"
                   onClick={() => setSelectedImage("headerImage")}
                   whileHover={{ rotate: 5, translateY: -50, zIndex: 5 }}
@@ -188,7 +199,7 @@ const ProjectPopUp = ({ onClose, projectTitle }) => {
                 <motion.img
                   src={`data:image/png;base64,${projectDetails?.demo_picture}`}
                   alt={`${projectDetails?.title} demo picture`}
-                  className="project-popup__header__2"
+                  className="project-popup__images__2"
                   layoutId="demoImage"
                   onClick={() => setSelectedImage("demoImage")}
                   whileHover={{ rotate: -8, translateY: -50, zIndex: 5 }}
@@ -196,105 +207,110 @@ const ProjectPopUp = ({ onClose, projectTitle }) => {
                 />
               )}
             </motion.div>
+          </div> */}
 
-            <div className="project-popup__header__background"></div>
-
-            {projectDetails?.demo_picture && projectDetails?.header_picture && (
-              <motion.div
-                className="project-popup__header__text"
-                variants={titleVariant}
-              >
-                Click on these for a better look!
-              </motion.div>
-            )}
-          </div>
-
-          {/* Right Side - Text Content */}
-          <div className="project-popup__content">
-            {/* Title sliding in */}
-            <motion.h2 variants={titleVariant}>
+          <div className="project-popup__header">
+            <motion.h2
+              variants={titleVariant}
+              className="project-popup__header__title"
+            >
               {projectDetails?.title}
             </motion.h2>
+
+            <motion.div
+              className="project-popup__header__nextButton"
+              variants={descriptionVariant}
+              initial="hidden"
+              animate="visible"
+            >
+              <h1>Next Project:</h1>
+              <p onClick={goToNextProject}>
+                {allProjects[(currentIndex + 1) % allProjects.length].title}
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Bottom - Text Content */}
+          <div className="project-popup__content">
+            {/* Subtitle */}
+            <motion.p
+              className="project-popup__content__subtitle"
+              variants={titleVariant}
+            >
+              {projectDetails?.subtitle}
+            </motion.p>
 
             {/* Descriptions staggered */}
             <motion.div
               variants={descriptionVariant}
               initial="hidden"
               animate="visible"
+              className="project-popup__content__description"
             >
-              <motion.p
-                className="project-popup__content__description"
-                variants={itemVariant}
-              >
+              <motion.p variants={itemVariant}>
                 {projectDetails?.description1}
               </motion.p>
-              <motion.p
-                className="project-popup__content__description"
-                variants={itemVariant}
-              >
+              <motion.p variants={itemVariant}>
                 {projectDetails?.description2}
               </motion.p>
-              <motion.p
-                className="project-popup__content__description lastDesc"
-                variants={itemVariant}
-              >
+              <motion.p className="lastDesc" variants={itemVariant}>
                 {projectDetails?.description3}
               </motion.p>
             </motion.div>
 
-            {/* Tech Stack with staggered entry */}
-            {/* <div className="project-popup__header__stack">
-          {projectDetails?.frontend_stack && (
-            <motion.div
-              variants={listVariant}
-              initial="hidden"
-              animate="visible"
-            >
-              <h3>Frontend</h3>
-              <motion.ul>
-                {projectDetails?.frontend_stack.map((tech, index) => (
-                  <motion.li key={index} variants={itemVariant}>
-                    {tech}
-                  </motion.li>
-                ))}
-              </motion.ul>
-            </motion.div>
-          )}
+            {/* Tech stack */}
+            <div className="project-popup__content__stack">
+              {projectDetails?.frontend_stack && (
+                <motion.div
+                  variants={listVariant}
+                  initial="hidden"
+                  animate="visible"
+                >
+                  {/* <h3>Frontend</h3> */}
+                  <motion.ul>
+                    {projectDetails?.frontend_stack.map((tech, index) => (
+                      <motion.li key={index} variants={itemVariant}>
+                        {tech}
+                      </motion.li>
+                    ))}
+                  </motion.ul>
+                </motion.div>
+              )}
 
-          {projectDetails?.backend_stack && (
-            <motion.div
-              variants={listVariant}
-              initial="hidden"
-              animate="visible"
-            >
-              <h3>Backend</h3>
-              <motion.ul>
-                {projectDetails?.backend_stack.map((tech, index) => (
-                  <motion.li key={index} variants={itemVariant}>
-                    {tech}
-                  </motion.li>
-                ))}
-              </motion.ul>
-            </motion.div>
-          )}
+              {projectDetails?.backend_stack && (
+                <motion.div
+                  variants={listVariant}
+                  initial="hidden"
+                  animate="visible"
+                >
+                  {/* <h3>Backend</h3> */}
+                  <motion.ul>
+                    {projectDetails?.backend_stack.map((tech, index) => (
+                      <motion.li key={index} variants={itemVariant}>
+                        {tech}
+                      </motion.li>
+                    ))}
+                  </motion.ul>
+                </motion.div>
+              )}
 
-          {projectDetails?.tech_stack && (
-            <motion.div
-              variants={listVariant}
-              initial="hidden"
-              animate="visible"
-            >
-              <h3>Tech Stack:</h3>
-              <motion.ul>
-                {projectDetails?.tech_stack.map((tech, index) => (
-                  <motion.li key={index} variants={itemVariant}>
-                    {tech}
-                  </motion.li>
-                ))}
-              </motion.ul>
-            </motion.div>
-          )}
-        </div> */}
+              {projectDetails?.tech_stack && (
+                <motion.div
+                  variants={listVariant}
+                  initial="hidden"
+                  animate="visible"
+                >
+                  {/* <h3>Tech Stack:</h3> */}
+                  <motion.ul>
+                    {projectDetails?.tech_stack.map((tech, index) => (
+                      <motion.li key={index} variants={itemVariant}>
+                        {tech}
+                      </motion.li>
+                    ))}
+                  </motion.ul>
+                </motion.div>
+              )}
+            </div>
 
             {/* Links */}
             <motion.div
@@ -323,7 +339,7 @@ const ProjectPopUp = ({ onClose, projectTitle }) => {
                 </a>
               )}
             </motion.div>
-
+            {/* Pop open image when clicked */}
             <AnimatePresence>
               {selectedImage && (
                 <motion.div

@@ -8,7 +8,7 @@
   max-height: 100vh;
   position: relative;
   z-index: 1;
-  overflow-x: hidden;
+  overflow: hidden;
 
   // display: grid;
   // grid-template-columns: 100%;
@@ -22,7 +22,7 @@
     top: 25%;
     left: 25%;
 
-    background-color: black;
+    // background-color: white;
     mix-blend-mode: exclusion;
     // background-color: #84c0b0;
     // background-color: #40adfb;
@@ -32,16 +32,27 @@
 
   &__title {
     z-index: 5;
-    @include flexColumn;
-    position: fixed;
-    bottom: 0;
+    // @include flexColumn;
+
+    &__first {
+      background-color: $black;
+    }
+
+    &__second {
+      background-color: $pink;
+      rotate: 180deg;
+    }
+
+    &__third {
+      background-color: $secondaryColor;
+    }
 
     span {
       @include pageTitle;
       font-size: 100px;
       padding: 0;
       mix-blend-mode: exclusion;
-      color: black;
+      color: white;
     }
 
     h1 {
@@ -79,39 +90,5 @@
     position: absolute;
     bottom: 0;
     right: 10px;
-  }
-
-  &__halftone {
-    max-height: 40vh;
-    width: 100vw;
-    --mask: linear-gradient(rgb(0 0 0), rgb(0 0 0 / 0.3));
-    --stop1: 0.06rem;
-    --stop2: 1.5rem;
-    --invert: 1;
-    --dotColor: white;
-    --bgColor: black;
-    --dottedBackground: radial-gradient(
-      circle at center,
-      var(--dotColor) var(--stop1),
-      transparent var(--stop2)
-    );
-
-    aspect-ratio: 1;
-    position: relative;
-    background: var(--bgColor);
-    filter: contrast(50) invert(var(--invert, 0));
-    mix-blend-mode: exclusion;
-    isolation: isolate;
-
-    &::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image: var(--dottedBackground);
-      background-size: var(--bgSize, 1rem) var(--bgSize, 1rem);
-      background-repeat: round;
-      background-position: 0 0, var(--bgPosition) var(--bgPosition);
-      mask-image: var(--mask);
-    }
   }
 }

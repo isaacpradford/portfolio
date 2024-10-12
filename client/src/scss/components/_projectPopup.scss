@@ -2,11 +2,7 @@
 @use "../mixins" as *;
 
 .project-popup {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-
-  
+  // Actual full screen background of the project popup
   &__background {
     z-index: 0;
     position: absolute;
@@ -15,90 +11,171 @@
     background-color: $aboutBackground;
   }
 
-  &__banner {
-    z-index: 3;
-    position: absolute;
-    top: -20px;
-    height: 0vh;
-    width: 100vw;
-    @include pageTitle;
-    color: var(--project-color);
-  }
   // Left side of the screen / images
-  &__header {
-    position: relative;
-    z-index: 0;
+  &__images {
+    z-index: 2;
+    position: absolute;
 
-    width: 50%;
-    gap: 20px;
+    img {
+      width: 80%;
+      max-width: 200px;
+      min-width: 200px;
+      min-height: 100px;
+      max-height: 100px;
 
-    @include flexColumn;
-    justify-content: center;
-    align-items: center;
-
-    &__images {
-      z-index: 2;
-
-      img {
-        width: 80%;
-        max-width: 500px;
-        min-width: 400px;
-        min-height: 225px;
-        max-height: 225px;
-
-        height: auto;
-        object-fit: cover;
-        border-radius: 4px;
-        border: 1px solid rgba(0, 0, 0, 0.119);
-      }
+      height: auto;
+      object-fit: cover;
+      border-radius: 4px;
+      border: 1px solid rgba(0, 0, 0, 0.119);
     }
 
     &__1 {
-      position: relative;
-      top: 35vh;
-      right: -5vw;
-      rotate: -5deg;
-    }
-
-    &__2 {
-      position: relative;
-      top: 7.5vh;
-      left: -3vw;
-      rotate: 8deg;
-    }
-
-    &__background {
       position: absolute;
-      bottom: -10vh;
-      z-index: 1;
-      height: 25vh;
-      width: 50vw;
-      max-width: 500px;
-      background-color: var(--project-color);
-      border-radius: 15px;
+      top: 65vh;
+      left: 24vw;
+      rotate: 5deg;
+    }
+  
+    &__2 {
+      position: absolute;
+      top: 65vh;
+      left: 25vw;
+      rotate: -10deg;
+    }
+  }
+
+  &__header {
+    position: relative;
+    z-index: 10;
+    @include flexRow;
+    align-items: end;
+    justify-content: space-between;
+    padding: 0 10px;
+
+    // border-bottom: 1000px solid var(--project-color);
+    margin-top: 50px;
+
+    &__title {
+      z-index: 2;
+      @include pageTitle;
+      font-weight: 900;
+      font-size: 8vw;
+      line-height: 90%;
+      text-transform: uppercase;
+      padding: 0;
+      padding-left: 2.7vw;
+
+      color: $invisible;
+      -webkit-text-stroke-color: black;
+      -webkit-text-stroke-width: 1px;
     }
 
-    &__text {
+    &__nextButton {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+
+      @include pageTitle;
+      padding: 0;
+      text-align: end;
+
+      font-weight: 900;
+      font-size: 50px;
+      cursor: pointer;
+
+      z-index: 1;
+      width: 100vw;
+      text-transform: uppercase;
+
+      h1 {
+        letter-spacing: -1.5px;
+        font-size: 20px;
+        text-wrap: nowrap;
+      }
+
+      p {
+        color: $invisible;
+        -webkit-text-stroke-color: var(--project-color);
+        -webkit-text-stroke-width: 2px;
+        transition: 0.1s ease-in-out;
+        letter-spacing: -1px;
+        line-height: 90%;
+        margin: 0 15px;
+
+        &:hover {
+          // letter-spacing: 5px;
+          color: var(--project-color);
+        }
+      }
+    }
+  }
+
+  // Right side of the screen
+  &__content {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    grid-row: 100px 300px auto;
+
+    margin-top: 50px;
+    align-items: center;
+    justify-content: center;
+
+    &__subtitle {
+      grid-row: 1/2;
+      z-index: 1;
+      // max-width: 500px;
+      // max-height: 300px;
+      text-wrap: wrap;
+
+      @include pageTitle;
+      font-size: 6.8vw;
+      font-weight: 900;
+
+      text-align: start;
+      letter-spacing: -0.2vw;
+      line-height: 95%;
+      text-transform: uppercase;
+
+      padding: 0;
+      padding-left: 3vw;
+    }
+
+    &__description {
+      grid-column: 2;
+      grid-row: 1/2;
+
       @include mainBodyText;
-      padding: 0 12px;
-      font-size: 12px;
+      padding: 0;
       letter-spacing: normal;
-      z-index: 10;
-      position: relative;
-      bottom: -9vh;
-      color: $backgroundColor;
+
+      max-width: 45vw;
+      margin-top: -12px;
+      padding-left: 5vw;
+      text-align: left;
+
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      line-height: 1.5;
+
+      border-left: 3px solid var(--project-color);
+
+      p {
+        margin: 14px 0;
+      }
     }
 
     &__stack {
+      grid-column: 2;
+      grid-row: 2;
       z-index: 2;
-      position: relative;
-      top: 50%;
 
-      @include flexRow;
+      @include flexColumn;
       justify-content: center;
-      table-layout: fixed;
+
       max-height: 200px;
-      scale: 0.8;
+      max-width: 50vw;
+      margin-top: 50px;
+      // scale: 0.7;
 
       h3 {
         @include subTitle;
@@ -108,18 +185,21 @@
       }
 
       ul {
-        @include flexColumn;
+        @include flexRow;
         list-style-type: none;
+        width: 100%;
         height: 100%;
         padding: 0;
 
         li {
           @include mainBodyText;
           padding: 4px 0;
-          width: 20vw;
+          width: 50%;
+
           border: 0.1px solid $black;
           background-color: $aboutBackground;
-          height: 100%;
+          height: 25px;
+
           text-align: center;
           margin: 2px;
           transition: 0.1s ease-in-out;
@@ -130,44 +210,22 @@
         }
       }
     }
-  }
-  // Right side of the screen
-  &__content {
-    width: 40%;
-    position: absolute;
-    right: 5%;
-    bottom: 20%;
 
-    h2 {
-      @include pageTitle;
-      padding: 0;
-
-      color: var(--project-color);
-      letter-spacing: $mediumLetterSpacing;
-      margin-bottom: 20px;
-    }
-
-    &__description {
-      @include mainBodyText;
-      padding: 0;
-      letter-spacing: normal;
-
-      text-align: left;
-      font-size: 1rem;
-      margin-bottom: 10px;
-      line-height: 1.5;
-    }
-
-    .lastDesc {
-      padding: 20px;
-      color: $aboutBackground;
-      background-color: var(--project-color);
-    }
+    // .lastDesc {
+    //   color: $aboutBackground;
+    //   background-color: var(--project-color);
+    // }
 
     &__links {
+      grid-column: 1;
+      grid-row: 2;
+      z-index: 1;
+
       display: flex;
       flex-direction: row;
       justify-content: center;
+
+      margin-top: 10%;
 
       p {
         padding: 0 8px;
@@ -205,43 +263,4 @@
       }
     }
   }
-
-  .focus-image {
-    @include flexColumn;
-    z-index: 10;
-
-    // Overrides the __header image styling
-    img {
-      max-width: 900px;
-      min-width: 600px;
-      min-height: 200px;
-      max-height: 800px;
-    }
-
-    h1 {
-      @include subTitle;
-      padding: 12px 0;
-      font-size: 18px;
-    }
-  }
-}
-
-// Loading animation bars
-.bars {
-  position: absolute;
-  height: 50vh;
-  width: 100vw;
-  z-index: 101;
-}
-
-.top-bars {
-  display: flex;
-  flex-direction: row;
-}
-
-.bar {
-  width: 60vw; 
-  height: 200vh;
-  margin-left: -5px;
-  background-color: $fontHighlights;
 }
