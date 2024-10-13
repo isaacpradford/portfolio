@@ -11,39 +11,7 @@
     background-color: $aboutBackground;
   }
 
-  // Left side of the screen / images
-  &__images {
-    z-index: 2;
-    position: absolute;
-
-    img {
-      width: 80%;
-      max-width: 200px;
-      min-width: 200px;
-      min-height: 100px;
-      max-height: 100px;
-
-      height: auto;
-      object-fit: cover;
-      border-radius: 4px;
-      border: 1px solid rgba(0, 0, 0, 0.119);
-    }
-
-    &__1 {
-      position: absolute;
-      top: 65vh;
-      left: 24vw;
-      rotate: 5deg;
-    }
-  
-    &__2 {
-      position: absolute;
-      top: 65vh;
-      left: 25vw;
-      rotate: -10deg;
-    }
-  }
-
+  // The top part of the project page, the header and the next page button
   &__header {
     position: relative;
     z-index: 10;
@@ -67,7 +35,9 @@
 
 
       border-right: 3px solid var(--project-color);
-      max-width: 72vw;
+      border-left: 3px solid var(--project-color);
+      max-width: 55vw;
+      min-width: 55vw;
       overflow: hidden;
       color: $invisible;
       -webkit-text-stroke-color: black;
@@ -85,11 +55,12 @@
 
       font-weight: 900;
       font-size: 50px;
-      cursor: pointer;
+      
 
       z-index: 1;
       width: 100vw;
       text-transform: uppercase;
+      font-style: italic;
 
       h1 {
         letter-spacing: -1.5px;
@@ -98,17 +69,17 @@
       }
 
       p {
-        color: $invisible;
-        -webkit-text-stroke-color: var(--project-color);
-        -webkit-text-stroke-width: 2px;
+        color: var(--project-color);
         transition: 0.1s ease-in-out;
         letter-spacing: -1px;
         line-height: 90%;
         margin: 0 15px;
+        cursor: pointer;
 
         &:hover {
-          // letter-spacing: 5px;
-          color: var(--project-color);
+          color: $invisible;
+          -webkit-text-stroke-color: var(--project-color);
+          -webkit-text-stroke-width: 2px;
         }
       }
     }
@@ -118,41 +89,64 @@
   &__content {
     display: grid;
     grid-template-columns: 45% 55%;
-    grid-row: 100px 300px auto;
+    grid-row: 150px 300px 100px;
 
     margin-top: 50px;
     align-items: center;
     justify-content: center;
 
+    &__images {
+      align-self: start;
+      grid-column: 2;
+      grid-row: 3;
+      z-index: 2;
+      // position: absolute;
+  
+      img {
+        width: 80%;
+        max-width: 200px;
+        min-width: 200px;
+        min-height: 100px;
+        max-height: 100px;
+  
+        height: auto;
+        object-fit: cover;
+        border-radius: 4px;
+        border: 1px solid rgba(0, 0, 0, 0.119);
+      }
+    }
+
     &__subtitle {
-      grid-row: 1/2;
+      grid-row: 1;
       z-index: 1;
       // max-width: 550px;
-      // max-height: 300px;
+      max-height: 150px;
       text-wrap: wrap;
       
       @include pageTitle;
-      font-size: 6.8vw;
+      font-size: 6.2vw;
       font-weight: 900;
-      text-align:start;
+      text-align: start;
+      align-self: flex-start;
 
       letter-spacing: -0.2vw;
       line-height: 95%;
       text-transform: uppercase;
 
-      padding: 0;
       padding-left: 3vw;
+      padding-right: 100px;
     }
 
     &__description {
       grid-column: 2;
-      grid-row: 1/2;
+      grid-row: 1;
 
       @include mainBodyText;
       padding: 0;
       letter-spacing: normal;
 
       max-width: 45vw;
+      max-height: 300px;
       margin-top: -12px;
       padding-left: 5vw;
       text-align: left;
@@ -169,15 +163,17 @@
     }
 
     &__stack {
-      grid-column: 2;
-      grid-row: 2;
+      grid-column: 1;
+      grid-row: 3;
       z-index: 2;
 
       @include flexColumn;
       justify-content: center;
 
       max-height: 200px;
-      max-width: 50vw;
+      max-width: 40vw;
+      min-width: 40vw;
+      margin:auto;
       margin-top: 50px;
       // scale: 0.7;
 

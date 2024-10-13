@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import Header from "./Components/Header";
@@ -15,8 +16,10 @@ import NoPage from "./pages/NoPage";
 
 import Background from "./Components/Background";
 import Blank from "./Components/Blank";
+import Foreground from "./Components/Foreground";
 
 function App() {
+  const [showContent, setShowContent] = useState(false);
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 150,
@@ -24,33 +27,41 @@ function App() {
     restDelta: 0.001,
   });
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowContent(false);
+    }, 7500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   // Sets default color
   document.documentElement.style.setProperty("--project-color", "#06c073");
 
   return (
     <>
-      <motion.div className="progress-bar" style={{ scaleX }} />
+      {!showContent ? (
+        <Foreground />
+      ) : (
+        <>
+          <HelmetProvider>
+            <motion.div className="progress-bar" style={{ scaleX }} />
+            <Header />
+            <Background />
+            <HomePage />
+            <SkillsPage />
+            <ExperiencePage />
+            <ProjectPage />
+            <TestimonialPage />
+            <ContactPage />
 
-      <Header />
-      <HelmetProvider>
-        <Background />
-        <HomePage />
-        <Blank />
-        <SkillsPage />
-        <Blank />
-        <ExperiencePage />
-        <Blank />
-        <ProjectPage />
-        <Blank />
-        <TestimonialPage />
-        <Blank />
-        <ContactPage />
-
-        {/* For undefined URLS, we can put this to make a 404 page */}
-        {/* <Routes>
+            {/* For undefined URLS, we can put this to make a 404 page */}
+            {/* <Routes>
           <Route path="*" element={<NoPage />} />
         </Routes> */}
-      </HelmetProvider>
+          </HelmetProvider>
+        </>
+      )}
     </>
   );
 }

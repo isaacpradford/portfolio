@@ -1,9 +1,34 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { FaArrowAltCircleRight } from "react-icons/fa";
+import {
+  motion,
+  useInView,
+} from "framer-motion";
 
 const SkillsPage = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    amount: "some",
+  });
+
+  useEffect(() => {
+    console.log(`The element ${isInView ? "is" : "is NOT"} in view`);
+  }, [isInView]);
+
   return (
-    <div id="skills" className="b-skills">
+    <motion.div
+      id="skills"
+      className="b-skills"
+      ref={ref}
+      style={{
+        transition: "1s",
+        backgroundColor: isInView ? "black" : "yellow",
+      }}
+      animate={{
+        scale: isInView ? "0%" : "100%",
+      }}
+    >
+      <motion.div className="b-skills__boxes"></motion.div>
       <div className="b-skills__languages">
         <h1>Languages</h1>
 
@@ -49,45 +74,6 @@ const SkillsPage = () => {
         </div>
       </div>
 
-      {/* <h4 className="b-skills__subtitle">But what else can I do?</h4> */}
-      <div className="b-skills__other">
-        {/* <h3>In addition to those languages, I can also use:</h3> */}
-        {/* <div className="b-skills__other__sliders">
-          <ul>
-            <li className="slider">
-              <label>FullStack Web Development</label>
-              <input type="range" min="1" max="100" value="90" id="myRange" />
-            </li>
-
-            <li className="slider">
-              <label>Creativity</label>
-              <input type="range" min="1" max="100" value="59" id="myRange" />
-            </li>
-
-            <li className="slider">
-              <label>Communication</label>
-              <input type="range" min="1" max="100" value="65" id="myRange" />
-            </li>
-          </ul>
-          <ul>
-            <li className="slider">
-              <label>API + Server Management</label>
-              <input type="range" min="1" max="100" value="85" id="myRange" />
-            </li>
-
-            <li className="slider">
-              <label>Problem-Solving</label>
-              <input type="range" min="1" max="100" value="63" id="myRange" />
-            </li>
-
-            <li className="slider">
-              <label>Teamwork</label>
-              <input type="range" min="1" max="100" value="72" id="myRange" />
-            </li>
-          </ul>
-        </div> */}
-      </div>
-
       <div className="b-skills__also">
         <h4>And I'm pretty good at...</h4>
         <p>
@@ -95,7 +81,7 @@ const SkillsPage = () => {
           systems), VS/VSC, XCode, Rider, Jira, Trello, Microsoft Suite
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

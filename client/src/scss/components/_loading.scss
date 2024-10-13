@@ -1,21 +1,21 @@
 @use "../variables" as *;
 @use "../mixins" as *;
 
-.loading-circle {
-    z-index: 105;
-    position: relative;
-    aspect-ratio: 1;
-  }
-  
-  .letter {
-    @include pageTitle;
-    font-weight: 900;
-    letter-spacing: normal;
+.spinning-circle {
+  z-index: 1;
+  position: relative;
+  aspect-ratio: 1;
+}
 
-    position: absolute;
-    top: 0;
-    left: 50%;
+.letter {
+  @include pageTitle;
+  font-weight: 900;
+  letter-spacing: normal;
 
-    color: $secondaryColor;
-    text-transform:uppercase;
-  }
+  position: absolute;
+  top: 0;
+  left: 50%;
+
+  color: $secondaryColor;
+  text-transform: uppercase;
+}

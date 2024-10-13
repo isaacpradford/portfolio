@@ -1,19 +1,19 @@
 @use "../variables" as *;
 
 .b-background {
-    position: absolute;
-    top: 0;
-    left: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
 
-    width: 100vw;
-    height: 900vh; // Height for the entire page
+  width: 100vw;
+  height: 900vh; // Height for the entire page
 
-    z-index: -1;
-    background-attachment: fixed;
-    background-position: center;
-    opacity: 0.4;
+  z-index: -1;
+
+  background-size: 10vw 10vw;
+  background-attachment: fixed;
+  background-position: center;
 }
-
 
 // Grid
 // background-image: linear-gradient(

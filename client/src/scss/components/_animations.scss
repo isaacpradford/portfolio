@@ -3,10 +3,39 @@
 
 // This file contains the css for all the random animation objects around
 
+// Main animation
+.foreground {
+  // position: fixed;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  width: 100vw;
+  height: 100vh;
+  place-items: center; // Center the grid items
+
+  perspective: 10;
+  background-color: $black;
+
+  .square {
+    background-color: $yellow;
+    width: 20vw; 
+    height: 20vh;
+    // mix-blend-mode: exclusion;
+    transform-style: preserve-3d;
+
+    backface-visibility: hidden;
+  }
+}
+
 // Project image focus
 .focus-image {
   @include flexColumn;
   z-index: 10;
+  align-items: center;
+  justify-content: center;
+  background-color: #fffffff6;
 
   // Overrides the __header image styling
   img {
@@ -14,6 +43,8 @@
     min-width: 600px;
     min-height: 200px;
     max-height: 800px;
+    border: 3px solid rgba(0, 0, 0, 0.113);
+    border-radius: 15px;
   }
 
   h1 {

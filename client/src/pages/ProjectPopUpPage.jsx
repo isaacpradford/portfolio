@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import { getProjectInfo } from "../functions/Projects";
-import { motion, AnimatePresence, keyframes } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import ScrollingBanner from "../Components/LoopingBanner";
 
+// List of variants (animations) for each of the items that come onto the screen
 // Loading animation of the bars coming down and going up
 const transitionVariant = {
   hidden: { y: "-100%" },
@@ -177,38 +178,6 @@ const ProjectPopUp = ({ onClose, projectTitle, allProjects }) => {
 
       {contentLoaded && (
         <>
-          {/* Images sliding in */}
-          {/* <div>
-            <motion.div
-              className="project-popup__images"
-              variants={imageVariant}
-            >
-              {projectDetails?.header_picture && (
-                <motion.img
-                  src={`data:image/png;base64,${projectDetails?.header_picture}`}
-                  alt={`${projectDetails?.title} header`}
-                  className="project-popup__images__1"
-                  layoutId="headerImage"
-                  onClick={() => setSelectedImage("headerImage")}
-                  whileHover={{ rotate: 5, translateY: -50, zIndex: 5 }}
-                  whileTap={{ scale: 0.9, borderRadius: "10px" }}
-                />
-              )}
-
-              {projectDetails?.demo_picture && (
-                <motion.img
-                  src={`data:image/png;base64,${projectDetails?.demo_picture}`}
-                  alt={`${projectDetails?.title} demo picture`}
-                  className="project-popup__images__2"
-                  layoutId="demoImage"
-                  onClick={() => setSelectedImage("demoImage")}
-                  whileHover={{ rotate: -8, translateY: -50, zIndex: 5 }}
-                  whileTap={{ scale: 0.9, borderRadius: "10px" }}
-                />
-              )}
-            </motion.div>
-          </div> */}
-
           <div className="project-popup__header">
             <motion.h2
               variants={titleVariant}
@@ -240,6 +209,36 @@ const ProjectPopUp = ({ onClose, projectTitle, allProjects }) => {
             >
               {projectDetails?.subtitle}
             </motion.p>
+
+            {/* Images */}
+            <motion.div
+              className="project-popup__content__images"
+              variants={imageVariant}
+            >
+              {projectDetails?.header_picture && (
+                <motion.img
+                  src={`data:image/png;base64,${projectDetails?.header_picture}`}
+                  alt={`${projectDetails?.title} header`}
+                  className="project-popup__images"
+                  layoutId="headerImage"
+                  onClick={() => setSelectedImage("headerImage")}
+                  whileHover={{ rotate: 5, translateY: -50, zIndex: 5 }}
+                  whileTap={{ scale: 0.9, borderRadius: "10px" }}
+                />
+              )}
+
+              {projectDetails?.demo_picture && (
+                <motion.img
+                  src={`data:image/png;base64,${projectDetails?.demo_picture}`}
+                  alt={`${projectDetails?.title} demo picture`}
+                  className="project-popup__images"
+                  layoutId="demoImage"
+                  onClick={() => setSelectedImage("demoImage")}
+                  whileHover={{ rotate: 5, translateY: -50, zIndex: 5 }}
+                  whileTap={{ scale: 0.9, borderRadius: "10px" }}
+                />
+              )}
+            </motion.div>
 
             {/* Descriptions staggered */}
             <motion.div

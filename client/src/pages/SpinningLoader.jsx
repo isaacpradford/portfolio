@@ -2,10 +2,10 @@ import { motion, useAnimate } from "framer-motion";
 import { useEffect } from "react";
 
 export default function SpinningLoader() {
-  const text = "Loading Loading Loading Loading";
+  const text = "Isaac Radford - Full Stack Web Dev";
   const characters = text.split("");
 
-  const radius = 120;
+  const radius = 200;
   const fontSize = "20px";
   const letterSpacing = 11.3;
 
@@ -45,7 +45,7 @@ export default function SpinningLoader() {
   return (
     <motion.div
       ref={scope}
-      className="loading-circle"
+      className="spinning-circle"
       style={{ width: radius * 2 }}
     >
       <p aria-label={text} />
