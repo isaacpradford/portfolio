@@ -11,15 +11,10 @@ html {
   grid-template-rows: auto auto auto auto auto auto;
   grid-template-areas:
     "home"
-    // "blank1"
     "skills"
-    // "blank2"
     "projects"
-    // "blank3"
     "experience"
-    // "blank4"
     "testimonials"
-    // "blank5"
     "contact";
 
   .progress-bar {
@@ -57,7 +52,6 @@ html {
   // Set Grid Areas
   .b-home {
     grid-area: home;
-    // background-image: url("./assets/background.svg");
   }
   .b-skills {
     grid-area: skills;
@@ -77,7 +71,7 @@ html {
 
   // Special sizing
   .b-projects {
-    min-height: 100vh;
+    min-height: 80vh;
   }
 
   .b-skills {

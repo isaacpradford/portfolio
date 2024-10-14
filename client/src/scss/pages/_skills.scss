@@ -5,6 +5,17 @@
   --gap: 1.5vw;
   position: relative;
 
+  &__title {
+    font-family: $headerFont;
+    font-style: italic;
+
+    color: var(--project-color);
+    // -webkit-text-stroke-color: var(--project-color);
+    // -webkit-text-stroke-width: 1px;
+    font-size: 120px;
+    padding: 5vh 0;
+  }
+
   // The Parent of the pillbox
   &__languages {
     display: flex;
@@ -39,12 +50,12 @@
       flex-direction: row;
       gap: var(--gap);
       transition: 0.2s margin ease-in-out;
-  
+
       li {
         min-width: 15vw;
         min-height: 2vw;
         list-style: none;
-  
+
         border: 1px solid $fontColor;
         box-shadow: 0px 1px 0px $fontColor;
         font-size: 2.3vw;
@@ -102,13 +113,13 @@
     padding: 10vh 0;
     width: 100vw;
     // margin: auto;
-    
+
     &__sliders {
       display: flex;
       flex-direction: row;
       width: 100%;
       justify-content: center;
-      
+
       ul {
         padding: 0;
         li {
@@ -144,7 +155,11 @@
           /* Track */
           &::-webkit-slider-runnable-track {
             height: 12px;
-            background: linear-gradient(90deg, $secondaryColor, $secondaryColor);
+            background: linear-gradient(
+              90deg,
+              $secondaryColor,
+              $secondaryColor
+            );
             border-radius: 10px;
           }
 
@@ -186,7 +201,6 @@
   }
 }
 
-
 @media only screen and (max-width: 800px) {
   .b-skills {
     .slider {
@@ -199,143 +213,3 @@
     }
   }
 }
-
-// .b-otherSkills {
-//   position: relative;
-// }
-
-// svg.svgsquare {
-//   overflow: visible;
-// }
-
-// svg.svgsquare text {
-//   font-family: $headerFont;
-//   letter-spacing: $mediumLetterSpacing;
-//   font-size: 100px;
-// }
-
-// @media only screen and (max-width: 800px) {
-//   .b-skills {
-//     &__other {
-//       .slider {
-//         // display: none;
-//       }
-//       &__title {
-//         // display: none;
-//       }
-
-//       &__addition {
-//         h3 {
-//           display: none;
-//         }
-
-//         h4 {
-//           display: none;
-//         }
-
-//         ul {
-//           li {
-//             min-width: 70px;
-//             min-height: 14px;
-//           }
-//         }
-
-//         .pillbox {
-//           margin-top: 5vh;
-//         }
-//       }
-
-//       &__background {
-//         // display: none;
-//       }
-//     }
-//   }
-// }
-
-// @media only screen and (min-width: 1200px) {
-//   .b-skills {
-//     .pillbox {
-//       margin-top: 0vh;
-//     }
-//   }
-// }
-
-
-
-// &__background {
-//   z-index: 5;
-//   position: absolute;
-//   left: 10vw;
-//   border-radius: 7.5vw;
-//   height: 75%;
-//   width: 80%;
-//   // overflow-y:scroll ;
-// }
-
-// &__title {
-//   font-family: $mainFont;
-//   font-size: 5vw;
-//   font-weight: 900;
-//   font-style: italic;
-//   letter-spacing: $smallLetterSpacing;
-
-//   text-align: center;
-//   margin-top: 5vh;
-// }
-
-// &__addition {
-//   margin: auto;
-//   max-width: 800px;
-
-//   h3 {
-//     text-align: center;
-//     font-family: $mainFont;
-//     font-weight: 200;
-//     font-size: 2.5vw;
-//     letter-spacing: $smallLetterSpacing;
-//   }
-
-//   p {
-//     font-family: $subFont;
-//     letter-spacing: $smallLetterSpacing;
-//     font-weight: 200;
-//     font-size: 2vw;
-
-//     max-width: 70vw;
-
-//     padding: 15px;
-//     margin: auto;
-//     text-align: center;
-//   }
-
-//   .pillbox {
-//     z-index: 6;
-//     display: flex;
-//     flex-direction: row;
-//     flex-wrap: wrap;
-//     margin: auto;
-//     margin-top: 6vh;
-//     padding: 5vh;
-
-//     list-style-type: none;
-//     gap: var(--gap);
-
-//     .pill {
-//       margin: auto;
-//       text-align: center;
-//       border-radius: 40px;
-//       padding: 10px;
-//       padding-top: 10px;
-//       font-size: 2.5vw;
-//       font-weight: 400;
-//       letter-spacing: $smallLetterSpacing;
-
-//       transition: 0.2s ease-in-out;
-
-//       &:hover {
-//         padding: 12px;
-//         box-shadow: 0px 8px 0px $fontColor;
-//       }
-//     }
-//   }
-// }

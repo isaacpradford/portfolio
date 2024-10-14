@@ -1,31 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-
-// Fonts
-// @font-face {
-//   font-family: "Impact Regular";
-//   font-style: normal;
-//   font-weight: normal;
-//   src: local("Impact Regular"), url("../assets/fonts/impact.woff") format("woff");
-// }
-
-// @font-face {
-//   font-family: "Impact Regular";
-//   font-style: normal;
-//   font-weight: normal;
-//   src: local("Impact Regular"), url("../assets/fonts/unicode.impact.woff") format("woff");
-// }
-
-// @font-face {
-//   font-family: "Impacted Regular";
-//   font-style: normal;
-//   font-weight: normal;
-//   src: local("Impacted Regular"), url("../assets/fonts/Impacted.woff") format("woff");
-// }
+// Three fonts, Inter, Bebas Neue and Plaster
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plaster&display=swap');
 
 // Colors
-$backgroundColor: #ffffff;
-// $backgroundColor: #EAE7DC;
+// $backgroundColor: #f6f6f6;
+// $backgroundColor: #2f2e2e;
+// $backgroundColor: #2f2e2e;
+$backgroundColor: #EAE7DC;
 $backgroundColor2: #AF1B3F;
 $aboutBackground: #f6f6f6fd;
 
@@ -33,29 +13,24 @@ $fontColor: #333;
 $fontHighlights: #22473d;
 $secondaryColor: #06c073;
 
+$mainColor: var(--project-color);
+
 //Colors I like
+$red: #e1001e;
 $pink: #ff0066;
 $purple: #5900ff;
+$oliveGreen: #22473d;
 $subittOrange: #e54c4c;
 $blue: #0056b3;
-$yellow: #e9ed00;
+$yellow: #9fa100;
 $yellow2: #d4ed32;
 $black: #333;
-
-
-// Basic Colors
-$lightGreen: #699abd;
-$darkBlue: #0e0299;
-$lightBlue:#2B6254;
-$red: #be1414;
-$brown: #CCB69B;
-$white: #f0f0f0;
-$gray: #f3f3f3;
 $invisible: #00000000;
 
 // Fonts
-$mainFont: "Inter", sans-serif;
+$siteTitle: "Plaster", sans-serif;
 $headerFont: "Impact", sans-serif;
+$mainFont: "Inter", sans-serif;
 $subFont: "Inter", sans-serif;
 $projectTitleSize: 100px;
 

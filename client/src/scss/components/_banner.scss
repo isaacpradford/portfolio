@@ -1,6 +1,8 @@
 @use "../variables" as *;
 @use "../mixins" as *;
 
+
+// Doing page specific styling on each page rather than here
 .banner-wrapper {
   white-space: nowrap;
   width: 100vw;

@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { delay, motion } from "framer-motion";
+import Socials from "./Socials";
+import TextSpinnerLoader from "./TextSpinAnimation";
 
-// Spiral ordering algorithm
+// Spiral ordering algorithm for the exit animation
 const calculateSpiralOrder = (gridSize) => {
   const spiralOrder = [];
   const matrix = Array.from({ length: gridSize }, () =>
@@ -143,7 +145,23 @@ const Foreground = () => {
     return squares;
   };
 
-  return <motion.div className="foreground">{renderSquares()}</motion.div>;
+  return (
+    <motion.div className="siteload">
+      <motion.h1
+        className="title"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, rotateY: [0, 0, 90] }}
+        transition={{
+          opacity: { duration: 1, ease: "easeInOut", delay: 3 },
+          rotateY: { duration: 0.5, ease: "easeInOut", delay: 8.35 },
+        }}
+      >
+        Hey,<br></br> thanks for stopping by!
+      </motion.h1>
+      <Socials />
+      <motion.div className="foreground">{renderSquares()}</motion.div>
+    </motion.div>
+  );
 };
 
 export default Foreground;

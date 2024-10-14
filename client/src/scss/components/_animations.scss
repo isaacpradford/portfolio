@@ -3,29 +3,81 @@
 
 // This file contains the css for all the random animation objects around
 
-// Main animation
-.foreground {
-  // position: fixed;
-  top: 0;
-  left: 0;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  width: 100vw;
-  height: 100vh;
-  place-items: center; // Center the grid items
+// Main site loading animation
+.siteload {
+  position: relative;
+  text-align: center;
+  vertical-align: auto;
+  z-index: 100;
 
-  perspective: 10;
-  background-color: $black;
+  .title {
+    position: absolute;
+    top: 43vh;
+    left: 40vw;
+    z-index: 102;
 
-  .square {
-    background-color: $yellow;
-    width: 20vw; 
-    height: 20vh;
-    // mix-blend-mode: exclusion;
-    transform-style: preserve-3d;
+    @include pageTitle;
+    letter-spacing: normal;
+    text-align: center;
+    max-width: 20vw;
+    font-size: 3vw;
+    padding: 0;
+    color: $backgroundColor;
+  }
 
-    backface-visibility: hidden;
+  .foreground {
+    z-index: 101;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    width: 100vw;
+    height: 100vh;
+
+    perspective: 1000;
+    // background-color: $backgroundColor;
+
+    .square {
+      background-color: $mainColor;
+      width: 20vw;
+      height: 20vh;
+      scale: 1.01; // Ensures no weird white lines popup while animating
+      transform-style: preserve-3d;
+
+      backface-visibility: hidden;
+    }
+  }
+
+  .socials {
+    position: absolute;
+    bottom: -100vh;
+    left: 0;
+    z-index: 102;
+  }
+
+
+  .spinner {
+    z-index: 102;
+    position: absolute;
+    top: 85vh;
+    right: 2%;
+
+    .circle {
+      position: relative;
+      aspect-ratio: 1;
+    }
+  
+    .letter {
+      position: absolute;
+      top: 0;
+      left: 50%;
+
+      font-family: $subFont;
+      color: $backgroundColor;
+      text-transform: uppercase
+    }
   }
 }
 
@@ -72,4 +124,33 @@
   height: 200vh;
   margin-left: -5px;
   background-color: $purple;
+}
+
+// Page progress % circle
+.progress {
+  z-index: 10;
+  position: fixed;
+  bottom: 0;
+  right: -100px;
+  margin: 0;
+  padding: 0;
+}
+
+.progress svg {
+  transform: translateX(-100px) rotate(-90deg);
+}
+
+circle {
+  stroke-dashoffset: 0;
+  stroke-width: 7.5%;
+  fill: none;
+}
+
+.bg {
+  stroke: var(--project-color);
+  opacity: 0.2;
+}
+
+.progress .indicator {
+  stroke: var(--project-color);
 }

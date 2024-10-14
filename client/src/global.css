@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plaster&display=swap");
 @keyframes marquee {
   0% {
     transform: translateX(-50vw);
@@ -102,15 +101,47 @@
   color: #333;
 }
 
-.socials ul {
+.socials {
+  position: fixed;
+  bottom: 0;
+  left: 0;
   display: flex;
   flex-direction: row;
-  gap: 10px;
-  list-style-type: none;
-  font-family: "Inter", sans-serif;
+  padding: 14px;
 }
-.socials ul li a {
-  color: #22473d;
+.socials .words {
+  display: flex;
+  flex-direction: column;
+  min-width: 175px;
+}
+.socials .words h1 {
+  font-family: "Inter", sans-serif;
+  font-weight: 200;
+  font-size: 16px;
+  letter-spacing: -0.5px;
+  text-align: left;
+}
+.socials .links {
+  display: flex;
+  flex-direction: column;
+}
+.socials .links ul {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  list-style-type: none;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  letter-spacing: -1px;
+  font-size: 20px;
+  font-weight: 200;
+  padding-left: 2vw;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 800;
+}
+.socials .links ul li a {
+  color: var(--project-color);
   text-decoration: none;
 }
 
@@ -425,19 +456,49 @@
   text-transform: uppercase;
 }
 
+html {
+  transition: 0.4s ease-in-out;
+  filter: invert(var(--invert));
+  background-color: #EAE7DC;
+}
+
 .b-background {
   position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
-  height: 900vh;
+  height: 755vh;
   z-index: -1;
-  background-size: 10vw 10vw;
+  background-size: 100vw 80vh;
   background-attachment: fixed;
   background-position: center;
 }
 
-.foreground {
+.siteload {
+  position: relative;
+  text-align: center;
+  vertical-align: auto;
+  z-index: 100;
+}
+.siteload .title {
+  position: absolute;
+  top: 43vh;
+  left: 40vw;
+  z-index: 102;
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.5vw;
+  font-size: 8vw;
+  padding-left: 2vw;
+  letter-spacing: normal;
+  text-align: center;
+  max-width: 20vw;
+  font-size: 3vw;
+  padding: 0;
+  color: #EAE7DC;
+}
+.siteload .foreground {
+  z-index: 101;
+  position: fixed;
   top: 0;
   left: 0;
   display: grid;
@@ -445,16 +506,39 @@
   grid-template-rows: repeat(5, 1fr);
   width: 100vw;
   height: 100vh;
-  place-items: center;
-  perspective: 10;
-  background-color: #333;
+  perspective: 1000;
 }
-.foreground .square {
-  background-color: #e9ed00;
+.siteload .foreground .square {
+  background-color: var(--project-color);
   width: 20vw;
   height: 20vh;
+  scale: 1.01;
   transform-style: preserve-3d;
   backface-visibility: hidden;
+}
+.siteload .socials {
+  position: absolute;
+  bottom: -100vh;
+  left: 0;
+  z-index: 102;
+}
+.siteload .spinner {
+  z-index: 102;
+  position: absolute;
+  top: 85vh;
+  right: 2%;
+}
+.siteload .spinner .circle {
+  position: relative;
+  aspect-ratio: 1;
+}
+.siteload .spinner .letter {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  font-family: "Inter", sans-serif;
+  color: #EAE7DC;
+  text-transform: uppercase;
 }
 
 .focus-image {
@@ -502,20 +586,78 @@
   background-color: #5900ff;
 }
 
+.progress {
+  z-index: 10;
+  position: fixed;
+  bottom: 0;
+  right: -100px;
+  margin: 0;
+  padding: 0;
+}
+
+.progress svg {
+  transform: translateX(-100px) rotate(-90deg);
+}
+
+circle {
+  stroke-dashoffset: 0;
+  stroke-width: 7.5%;
+  fill: none;
+}
+
+.bg {
+  stroke: var(--project-color);
+  opacity: 0.2;
+}
+
+.progress .indicator {
+  stroke: var(--project-color);
+}
+
 .b-home {
   min-width: 100%;
-  min-height: 500px;
-  height: 100vh;
-  max-height: 100vh;
+  min-height: 1400px;
+  height: auto;
   position: relative;
   z-index: 1;
   background-color: #333;
-  mix-blend-mode: exclusion;
 }
 .b-home__title {
-  z-index: 1001;
-  color: #333;
-  font-size: 90px;
+  z-index: 1;
+  color: var(--project-color);
+  text-align: center;
+}
+.b-home__title h1 {
+  font-family: "Plaster", sans-serif;
+  text-transform: uppercase;
+  font-size: 17.35vw;
+  letter-spacing: -0.6vw;
+  line-height: 0.85;
+  padding-top: 15vh;
+}
+.b-home__title h3 {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 2.5vw;
+  text-transform: uppercase;
+}
+.b-home__image img {
+  width: 80vw;
+  max-width: 80vw;
+  max-height: 600px;
+  margin-top: 10vw;
+  border-radius: 50px;
+  object-fit: cover;
+  margin-left: 10vw;
+}
+.b-home__nightMode {
+  position: absolute;
+  bottom: 5vh;
+  right: 10vw;
+  z-index: 1;
+}
+.b-home__nightMode svg {
+  scale: 5;
 }
 .b-home__socials {
   position: absolute;
@@ -579,7 +721,7 @@
   font-family: "Bebas Neue", sans-serif;
   font-style: italic;
   background: #000000;
-  color: #ffffff;
+  color: #EAE7DC;
   mix-blend-mode: exclusion;
 }
 .b-contact__input {
@@ -616,7 +758,7 @@
   width: 50%;
   padding: 10px;
   background-color: #22473d;
-  color: #ffffff;
+  color: #EAE7DC;
   border-radius: 10px;
   transition: 0.2s ease-in-out;
   font-family: "Montserrat", sans-serif;
@@ -630,7 +772,7 @@
 }
 .b-contact__send:active {
   background-color: #22473d;
-  color: #ffffff;
+  color: #EAE7DC;
   box-shadow: 5px 5px #06c073;
 }
 .b-contact .socials {
@@ -827,14 +969,14 @@
 }
 .b-projects__cardList {
   position: absolute;
-  top: -15vh;
-  left: 20vw;
+  top: -30vh;
+  left: 12.5vw;
   display: flex;
   flex-direction: column;
   height: 100%;
   justify-content: center;
   height: 1000px;
-  max-width: 60vw;
+  max-width: 75vw;
   width: 100%;
   margin: auto;
 }
@@ -1202,6 +1344,13 @@ svg.svgsquare text {
   --gap: 1.5vw;
   position: relative;
 }
+.b-skills__title {
+  font-family: "Impact", sans-serif;
+  font-style: italic;
+  color: var(--project-color);
+  font-size: 120px;
+  padding: 5vh 0;
+}
 .b-skills__languages {
   display: flex;
   flex-direction: column;
@@ -1435,7 +1584,7 @@ html .b-contact {
   grid-area: contact;
 }
 html .b-projects {
-  min-height: 100vh;
+  min-height: 80vh;
 }
 html .b-skills {
   max-height: 160vh;

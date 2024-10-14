@@ -1,9 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import { FaArrowAltCircleRight } from "react-icons/fa";
-import {
-  motion,
-  useInView,
-} from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import ScrollingBanner from "../Components/LoopingBanner";
 
 const SkillsPage = () => {
   const ref = useRef(null);
@@ -11,26 +9,27 @@ const SkillsPage = () => {
     amount: "some",
   });
 
-  useEffect(() => {
-    console.log(`The element ${isInView ? "is" : "is NOT"} in view`);
-  }, [isInView]);
-
   return (
     <motion.div
       id="skills"
       className="b-skills"
       ref={ref}
-      style={{
-        transition: "1s",
-        backgroundColor: isInView ? "black" : "yellow",
-      }}
+      style={
+        {
+          // transition: "1s",
+          // backgroundColor: isInView ? "black" : "yellow",
+        }
+      }
       animate={{
-        scale: isInView ? "0%" : "100%",
+        scale: isInView ? "0" : "1",
       }}
     >
+      <div className="b-skills__title">
+        <ScrollingBanner title="Languages+Skills" baseVelocity={2} />
+      </div>
       <motion.div className="b-skills__boxes"></motion.div>
       <div className="b-skills__languages">
-        <h1>Languages</h1>
+        {/* <h1>Languages</h1> */}
 
         <div className="b-skills__pillBox">
           <ul className="b-skills__pillBox--1">
@@ -86,133 +85,3 @@ const SkillsPage = () => {
 };
 
 export default SkillsPage;
-
-{
-  /* <div className="b-otherSkills">
-  <h1 className="b-skills__other__background">
-    <h4 className="b-skills__other__title">What else can I do?</h4>
-    <div className="b-skills__other__addition">
-      <h3>In addition to those languages, I can also use:</h3>
-      <div className="b-skills__other__inside">
-        <ul>
-          <li className="slider">
-            <label>FullStack Web Development</label>
-            <input type="range" min="1" max="100" value="90" id="myRange" />
-          </li>
-
-          <li className="slider">
-            <label>Creativity</label>
-            <input type="range" min="1" max="100" value="65" id="myRange" />
-          </li>
-
-          <li className="slider">
-            <label>Communication</label>
-            <input type="range" min="1" max="100" value="75" id="myRange" />
-          </li>
-        </ul>
-        <ul>
-          <li className="slider">
-            <label>API + Server Management</label>
-            <input type="range" min="1" max="100" value="75" id="myRange" />
-          </li>
-
-          <li className="slider">
-            <label>Problem-Solving</label>
-            <input type="range" min="1" max="100" value="60" id="myRange" />
-          </li>
-
-          <li className="slider">
-            <label>Interpersonal Skills</label>
-            <input type="range" min="1" max="100" value="70" id="myRange" />
-          </li>
-        </ul>
-      </div>
-    </div>
-  </h1>
-
-  <div className="b-skills__other">
-    <svg
-      className="svgsquare"
-      viewBox="0 0 1000 1000"
-      preserveAspectRatio="xMidYMid meet"
-    >
-      <path
-        id="squarepath"
-        d="M0 675 V75 A100 100 0 0 1 100 0 H900 A100 100 0 0 1 1000 75 V675 A100 100 0 0 1 900 750 H100 A100 100 0 0 1 0 675 Z"
-        fill="none"
-        stroke="transparent"
-      />
-
-      <text textAnchor="start">
-        <textPath className="my-text" href="#squarepath" startOffset="0%">
-          <animate
-            attributeName="startOffset"
-            from="-400%"
-            to="100%"
-            begin="0s"
-            dur="600s"
-            repeatCount="indefinite"
-          ></animate>
-          OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER
-          SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER
-          SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER
-          SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER
-          SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER
-          SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER
-          SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER
-          SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER
-          SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER
-          SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER
-          SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER
-          SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER
-          SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER
-          SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER
-          SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER
-          SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER
-          SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER
-          SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER
-          SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER
-          SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS OTHER SKILLS
-        </textPath>
-      </text>
-    </svg> */
-}
-{
-  /* <div className="b-skills__other__inside">
-            <ul>
-              <li className="slider">
-                <label>FullStack Web Development</label>
-                <input type="range" min="1" max="100" value="90" id="myRange" />
-              </li>
-
-              <li className="slider">
-                <label>Creativity</label>
-                <input type="range" min="1" max="100" value="65" id="myRange" />
-              </li>
-
-              <li className="slider">
-                <label>Communication</label>
-                <input type="range" min="1" max="100" value="75" id="myRange" />
-              </li>
-            </ul>
-
-            <ul>
-              <li className="slider">
-                <label>API + Server Management</label>
-                <input type="range" min="1" max="100" value="75" id="myRange" />
-              </li>
-
-              <li className="slider">
-                <label>Problem-Solving</label>
-                <input type="range" min="1" max="100" value="60" id="myRange" />
-              </li>
-
-              <li className="slider">
-                <label>Interpersonal Skills</label>
-                <input type="range" min="1" max="100" value="70" id="myRange" />
-              </li>
-            </ul>
-          </div> */
-}
-//   </div>
-// </div>;

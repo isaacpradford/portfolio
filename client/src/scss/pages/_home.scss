@@ -1,20 +1,60 @@
 @use "../variables" as *;
 @use "../mixins" as *;
 
+
 .b-home {
   min-width: 100%;
-  min-height: 500px;
-  height: 100vh;
-  max-height: 100vh;
+  min-height: 1400px;
+  height: auto;
   position: relative;
   z-index: 1;
   background-color: $black;
-  mix-blend-mode: exclusion;
+  
 
   &__title {
-    z-index: 1001;
-    color: $black;
-    font-size: 90px;
+    z-index: 1;
+    color: $mainColor;
+    // mix-blend-mode: exclusion;
+    text-align: center;
+  
+    h1 {
+      font-family: $siteTitle;
+      text-transform: uppercase;
+      font-size: 17.35vw;
+      letter-spacing: -.6vw;
+      line-height: .85;
+      
+      padding-top: 15vh;
+    }
+    h3 {
+      font-family: $subFont;
+      font-weight: 300;
+      font-size: 2.5vw;
+      text-transform: uppercase;
+    }
+  }
+
+  &__image {    
+    img {
+      width: 80vw;
+      max-width: 80vw;
+      max-height: 600px;
+      margin-top: 10vw;
+      border-radius: 50px;
+      object-fit: cover;
+      margin-left: 10vw;
+    }
+  }
+
+  &__nightMode {
+    position: absolute;
+    bottom: 5vh;
+    right: 10vw;
+    z-index: 1;
+
+    svg {
+      scale: 5;
+    }
   }
 
   // background-color: #84c0b0;

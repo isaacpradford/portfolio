@@ -55,10 +55,6 @@ const ScrollingBanner = ({ title, baseVelocity = 100 }) => {
         <span>{title}</span>
         <span>{title}</span>
         <span>{title}</span>
-        <span>{title}</span>
-        <span>{title}</span>
-        <span>{title}</span>
-        <span>{title}</span>
       </motion.div>
     </div>
   );
