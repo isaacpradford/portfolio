@@ -4,7 +4,7 @@
   margin: 0;
 }
 
-html {
+#root {
   position: relative;
   display: grid;
   grid-template-columns: 100vw;
@@ -17,21 +17,9 @@ html {
     "testimonials"
     "contact";
 
-  .progress-bar {
-    position: fixed;
-    width: 100vh;
-    rotate: 90deg;
-    top: -10px;
-    left: 0;
-    right: 0;
-    height: 20px;
-    background: var(--project-color);
-    transform-origin: 0%;
-  }
-
   // Blank areas between pages
   .b-blank {
-    grid-area: blank1, blank2, blank3, blank4, blank5;
+    // grid-area: blank1, blank2, blank3, blank4, blank5;
     min-height: 50vh;
     background-color: transparent;
   }

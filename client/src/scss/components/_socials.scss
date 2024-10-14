@@ -24,7 +24,6 @@
   .links {
     @include flexColumn;
 
-
     ul {
       @include flexRow;
       gap: 20px;
@@ -40,6 +39,7 @@
         a {
           color: $mainColor;
           text-decoration: none;
+          mix-blend-mode: darken;
         }
       }
     }

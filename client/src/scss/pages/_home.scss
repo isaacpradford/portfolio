@@ -53,8 +53,21 @@
     z-index: 1;
 
     svg {
+      transition: .1s ease-in-out;
+
       scale: 5;
+      &:hover {
+        scale: 5.2;
+      }
     }
+  }
+
+  .cobweb {
+    transition: .1s ease-in-out;
+
+    scale: 50;
+    rotate: 45deg;
+    color: #006bbc;
   }
 
   // background-color: #84c0b0;

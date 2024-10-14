@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { LuSunMoon } from "react-icons/lu";
-import { GiMoonBats } from "react-icons/gi";
+import { GiCobweb, GiMoonBats } from "react-icons/gi";
 
 import Socials from "../Components/Socials";
 import Street from "../assets/IMG_3990.jpg";
@@ -15,7 +15,7 @@ const HomePage = () => {
   const [invert, setInvert] = useState(false);
   const invertColors = document.documentElement.style.setProperty(
     "--invert",
-    invert ? 1 : 0
+    invert ? 0.9 : 0
   );
 
   const handleNightModeClick = () => setInvert(!invert);
@@ -24,11 +24,14 @@ const HomePage = () => {
     <div id="home" className="b-home">
       <div className="b-home__nightMode">
         <GiMoonBats
-          
           fill="var(--project-color)"
           onClick={handleNightModeClick}
         />
       </div>
+
+      {/* Don't get scared! */}
+      {invert ? <GiCobweb className="cobweb" /> : <></>}
+
       <div className="b-home__title">
         <h1>Isaac Radford</h1>
         <h3>Software Engineering + Full Stack Web Development</h3>

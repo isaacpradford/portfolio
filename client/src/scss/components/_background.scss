@@ -16,7 +16,7 @@ html {
   height: 755vh; // Height for the entire page
 
   z-index: -1;
-  // background-image: radial-gradient(circle, rgb(235, 212, 222) 0%, rgba(148,187,233,1) 100%);
+  background-image: radial-gradient(circle, #ffb6bf 0%, $backgroundColor 100%);
 
   background-size: 100vw 80vh;
   background-attachment: fixed;

@@ -143,6 +143,7 @@
 .socials .links ul li a {
   color: var(--project-color);
   text-decoration: none;
+  mix-blend-mode: darken;
 }
 
 .popup-overlay {
@@ -469,6 +470,7 @@ html {
   width: 100vw;
   height: 755vh;
   z-index: -1;
+  background-image: radial-gradient(circle, #ffb6bf 0%, #EAE7DC 100%);
   background-size: 100vw 80vh;
   background-attachment: fixed;
   background-position: center;
@@ -657,7 +659,17 @@ circle {
   z-index: 1;
 }
 .b-home__nightMode svg {
+  transition: 0.1s ease-in-out;
   scale: 5;
+}
+.b-home__nightMode svg:hover {
+  scale: 5.2;
+}
+.b-home .cobweb {
+  transition: 0.1s ease-in-out;
+  scale: 50;
+  rotate: 45deg;
+  color: #006bbc;
 }
 .b-home__socials {
   position: absolute;
@@ -1531,76 +1543,64 @@ svg.svgsquare text {
   margin: 0;
 }
 
-html {
+#root {
   position: relative;
   display: grid;
   grid-template-columns: 100vw;
   grid-template-rows: auto auto auto auto auto auto;
   grid-template-areas: "home" "skills" "projects" "experience" "testimonials" "contact";
 }
-html .progress-bar {
-  position: fixed;
-  width: 100vh;
-  rotate: 90deg;
-  top: -10px;
-  left: 0;
-  right: 0;
-  height: 20px;
-  background: var(--project-color);
-  transform-origin: 0%;
-}
-html .b-blank {
-  grid-area: blank1, blank2, blank3, blank4, blank5;
+#root .b-blank {
   min-height: 50vh;
   background-color: transparent;
 }
-html .b-home,
-html .b-skills,
-html .b-experience,
-html .b-projects,
-html .b-testimonials,
-html .b-about,
-html .b-contact {
+#root .b-home,
+#root .b-skills,
+#root .b-experience,
+#root .b-projects,
+#root .b-testimonials,
+#root .b-about,
+#root .b-contact {
   min-height: 100vh;
   min-width: 100vw;
   background: transparent;
 }
-html .b-home {
+#root .b-home {
   grid-area: home;
 }
-html .b-skills {
+#root .b-skills {
   grid-area: skills;
 }
-html .b-experience {
+#root .b-experience {
   grid-area: experience;
 }
-html .b-projects {
+#root .b-projects {
   grid-area: projects;
 }
-html .b-testimonials {
+#root .b-testimonials {
   grid-area: testimonials;
 }
-html .b-contact {
+#root .b-contact {
   grid-area: contact;
 }
-html .b-projects {
+#root .b-projects {
   min-height: 80vh;
 }
-html .b-skills {
+#root .b-skills {
   max-height: 160vh;
 }
 @media (min-width: 1024px) {
-  html .b-skills {
+  #root .b-skills {
     max-height: 215vh;
   }
 }
 @media (max-width: 800px) {
-  html .b-testimonials {
+  #root .b-testimonials {
     min-height: 120vh;
   }
 }
 @media (max-width: 500px) {
-  html .b-testimonials {
+  #root .b-testimonials {
     min-height: 145vh;
   }
 }/*# sourceMappingURL=global.css.map */
