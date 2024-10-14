@@ -8,11 +8,10 @@
   height: auto;
   position: relative;
   z-index: 1;
-  background-color: $black;
   
 
   &__title {
-    z-index: 1;
+    z-index: 2;
     color: $mainColor;
     // mix-blend-mode: exclusion;
     text-align: center;
@@ -63,10 +62,13 @@
   }
 
   .cobweb {
+    position: absolute;
+    top: 0;
+    left: 15vw;
+    z-index: -1;
     transition: .1s ease-in-out;
 
-    scale: 50;
-    rotate: 45deg;
+    scale: 30;
     color: #006bbc;
   }
 

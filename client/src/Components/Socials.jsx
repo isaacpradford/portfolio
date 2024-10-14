@@ -1,9 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {
+  motion,
+  useScroll,
+  useSpring,
+  useTransform,
+  useMotionValue,
+  useMotionValueEvent,
+} from "framer-motion";
 
 const Socials = () => {
+  const { scrollY } = useScroll();
+  const scale = useTransform(scrollY, [0, 300], [1.5, 1]);
+  const translate = useTransform(scrollY, [0, 300], [100, 0]);
+  const smoothScale = useSpring(scale, { stiffness: 1000, damping: 200 });
+
   return (
-    <div className="socials">
+    <motion.div
+      className="socials"
+      style={{ scale: smoothScale, translateX: translate }}
+    >
       <div className="words">
         <h1>Isaac Radford - @2024</h1>
         <h1>Chicago, Illinois</h1>
@@ -48,7 +64,7 @@ const Socials = () => {
           </li>
         </ul>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

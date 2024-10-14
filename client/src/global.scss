@@ -39,22 +39,32 @@
 
   // Set Grid Areas
   .b-home {
+    position: sticky;
+    top: 0;
     grid-area: home;
+    z-index: 10;
+    mix-blend-mode: darken;
+    // background-color: black;
   }
   .b-skills {
     grid-area: skills;
+    z-index: 15;
   }
   .b-experience {
     grid-area: experience;
+    z-index: 20;
   }
   .b-projects {
     grid-area: projects;
+    z-index: 25;
   }
   .b-testimonials {
     grid-area: testimonials;
+    z-index: 30;
   }
   .b-contact {
     grid-area: contact;
+    z-index: 35;
   }
 
   // Special sizing

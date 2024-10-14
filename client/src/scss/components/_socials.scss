@@ -40,6 +40,11 @@
           color: $mainColor;
           text-decoration: none;
           mix-blend-mode: darken;
+          transition: .2s ease-in-out;
+
+          &:hover {
+            scale: 1.2;
+          }
         }
       }
     }

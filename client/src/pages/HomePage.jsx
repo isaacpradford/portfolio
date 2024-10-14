@@ -2,6 +2,15 @@ import React, { useEffect, useState } from "react";
 import { LuSunMoon } from "react-icons/lu";
 import { GiCobweb, GiMoonBats } from "react-icons/gi";
 
+import {
+  motion,
+  useScroll,
+  useSpring,
+  useTransform,
+  useMotionValue,
+  useMotionValueEvent,
+} from "framer-motion";
+
 import Socials from "../Components/Socials";
 import Street from "../assets/IMG_3990.jpg";
 
@@ -17,11 +26,15 @@ const HomePage = () => {
     "--invert",
     invert ? 0.9 : 0
   );
-
   const handleNightModeClick = () => setInvert(!invert);
 
+  const { scrollY } = useScroll();
+  const scale = useTransform(scrollY, [0, 300], [1, 0.3]);
+  const translate = useTransform(scrollY, [0, 300], [0, -225]);
+  const smoothScale = useSpring(scale, { stiffness: 1000, damping: 200 });
+
   return (
-    <div id="home" className="b-home">
+    <motion.div id="home" className="b-home">
       <div className="b-home__nightMode">
         <GiMoonBats
           fill="var(--project-color)"
@@ -32,10 +45,13 @@ const HomePage = () => {
       {/* Don't get scared! */}
       {invert ? <GiCobweb className="cobweb" /> : <></>}
 
-      <div className="b-home__title">
+      <motion.div
+        className="b-home__title"
+        style={{ scale: smoothScale, translateY: translate }}
+      >
         <h1>Isaac Radford</h1>
         <h3>Software Engineering + Full Stack Web Development</h3>
-      </div>
+      </motion.div>
 
       <div className="b-home__image">
         {/* <img src={Street} alt="Image of Fairfax Avenue in California" /> */}
@@ -43,7 +59,7 @@ const HomePage = () => {
       <div className="b-home__socials">
         <Socials />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

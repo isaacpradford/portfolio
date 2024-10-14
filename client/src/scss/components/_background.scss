@@ -1,10 +1,17 @@
 @use "../variables" as *;
 
-
 html {
   transition: 0.4s ease-in-out;
-  filter:invert(var(--invert));
+  filter: invert(var(--invert));
   background-color: $backgroundColor;
+
+  // height: 100%;
+  // overflow: hidden;
+}
+
+body {
+  // height: 100%;
+  // overflow: auto;
 }
 
 .b-background {
@@ -16,7 +23,7 @@ html {
   height: 755vh; // Height for the entire page
 
   z-index: -1;
-  background-image: radial-gradient(circle, #ffb6bf 0%, $backgroundColor 100%);
+  background-image: radial-gradient(circle, #e9d4d5 0%, $backgroundColor 100%);
 
   background-size: 100vw 80vh;
   background-attachment: fixed;

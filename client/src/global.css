@@ -144,6 +144,10 @@
   color: var(--project-color);
   text-decoration: none;
   mix-blend-mode: darken;
+  transition: 0.2s ease-in-out;
+}
+.socials .links ul li a:hover {
+  scale: 1.2;
 }
 
 .popup-overlay {
@@ -470,7 +474,7 @@ html {
   width: 100vw;
   height: 755vh;
   z-index: -1;
-  background-image: radial-gradient(circle, #ffb6bf 0%, #EAE7DC 100%);
+  background-image: radial-gradient(circle, #e9d4d5 0%, #EAE7DC 100%);
   background-size: 100vw 80vh;
   background-attachment: fixed;
   background-position: center;
@@ -622,10 +626,9 @@ circle {
   height: auto;
   position: relative;
   z-index: 1;
-  background-color: #333;
 }
 .b-home__title {
-  z-index: 1;
+  z-index: 2;
   color: var(--project-color);
   text-align: center;
 }
@@ -666,9 +669,12 @@ circle {
   scale: 5.2;
 }
 .b-home .cobweb {
+  position: absolute;
+  top: 0;
+  left: 15vw;
+  z-index: -1;
   transition: 0.1s ease-in-out;
-  scale: 50;
-  rotate: 45deg;
+  scale: 30;
   color: #006bbc;
 }
 .b-home__socials {
@@ -1566,22 +1572,31 @@ svg.svgsquare text {
   background: transparent;
 }
 #root .b-home {
+  position: sticky;
+  top: 0;
   grid-area: home;
+  z-index: 10;
+  mix-blend-mode: darken;
 }
 #root .b-skills {
   grid-area: skills;
+  z-index: 15;
 }
 #root .b-experience {
   grid-area: experience;
+  z-index: 20;
 }
 #root .b-projects {
   grid-area: projects;
+  z-index: 25;
 }
 #root .b-testimonials {
   grid-area: testimonials;
+  z-index: 30;
 }
 #root .b-contact {
   grid-area: contact;
+  z-index: 35;
 }
 #root .b-projects {
   min-height: 80vh;

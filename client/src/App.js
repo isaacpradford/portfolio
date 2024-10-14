@@ -53,11 +53,8 @@ function App() {
             <HomePage />
             <SkillsPage />
             <ExperiencePage />
-            <Blank />
             <ProjectPage />
-            <Blank />
             <TestimonialPage />
-            <Blank />
             <ContactPage />
 
             {/* For undefined URLS, we can put this to make a 404 page */}
