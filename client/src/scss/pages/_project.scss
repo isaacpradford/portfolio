@@ -4,19 +4,20 @@
 // https://codepen.io/wikyware-net/pen/dyKPRxQ
 
 .b-projects {
-  overflow: hidden;
+
   position: relative;
+  scale: 0.9;
 
   &__cardList {
+    z-index: 1;
     position: absolute;
-    top: -30vh;
+    top: 9vh;
     left: 12.5vw;
 
     @include flexColumn;
-    height: 100%;
     justify-content: center;
 
-    height: 1000px;
+    height: 80vh;
     max-width: 75vw;
     width: 100%;
     margin: auto;
@@ -130,17 +131,19 @@
   &__bottom {
     @include flexRow;
     justify-content: space-between;
-    max-width: 60vw;
+    // max-width: 60vw;
     border-top: 0.1px solid #333;
     // margin:auto;
 
     @include mainBodyText;
   }
 
+
   &__svg {
+    rotate: 180deg;
     z-index: 0;
     position:absolute;
-    top: -30vh;
+    top: 7.5vh;
     left: 5vw;
     height: 100%;
     width: 90%;
@@ -167,7 +170,7 @@ svg.svgsquare text {
 
     &__cardList {
       max-width: 80vw;
-      top: -20vh;
+      top: 5vh;
       left: 10vw;
       margin: 0;
       padding: 0;
@@ -196,8 +199,8 @@ svg.svgsquare text {
       font-size: 12px;
     }
 
-    &__svg {
-      width: 150%;
+    &__svg { 
+      display: none;
     }
     .empty {
       display: none;

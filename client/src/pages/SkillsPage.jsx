@@ -1,37 +1,64 @@
 import React, { useRef, useEffect } from "react";
 import { FaArrowAltCircleRight } from "react-icons/fa";
-import { motion, useInView } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useSpring,
+  useTransform,
+  useInView,
+  useMotionValue,
+  useMotionValueEvent,
+} from "framer-motion";
 import ScrollingBanner from "../Components/LoopingBanner";
 
 const SkillsPage = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, {
-    amount: "some",
+  const { scrollY } = useScroll({
+    target: ref,
+    offset: ["end end", "start start"],
   });
+
+  const isInView = useInView(ref, { amount: 0.5 });
 
   return (
     <motion.div
       id="skills"
-      className="b-skills"
+      className="b-skills page"
       ref={ref}
-      style={
-        {
-          // transition: "1s",
-          // backgroundColor: isInView ? "black" : "yellow",
-        }
-      }
-      animate={{
-        scale: isInView ? "0" : "1",
-      }}
+      // style={{
+      //   transition: "1s",
+      //   backgroundColor: isInView ? "white" : "orange",
+      // }}
     >
-      <div className="b-skills__title">
-        <ScrollingBanner title="Languages+Skills" baseVelocity={2} />
-      </div>
       <motion.div className="b-skills__boxes"></motion.div>
-      <div className="b-skills__languages">
+      <motion.div
+        className="b-skills__languages"
+        initial={{ x: 0 }}
+        animate={{ x: isInView ? 0 : 2500 }}
+        exit={{ x: 0 }}
+        transition={{
+          duration: 5,
+          type: "spring",
+          stiffness: 100,
+          damping: 20,
+        }}
+      >
         {/* <h1>Languages</h1> */}
 
         <div className="b-skills__pillBox">
+          <motion.div
+            className="b-skills__title"
+            animate={{ y: isInView ? 0 : -2060 }}
+            exit={{ y: 0 }}
+            transition={{
+              duration: 5,
+              type: "spring",
+              stiffness: 100,
+              damping: 20,
+            }}
+          >
+            <ScrollingBanner title="Languages+Skills" baseVelocity={2} />
+          </motion.div>
           <ul className="b-skills__pillBox--1">
             <li className="pill"></li>
             <li className="pill">React</li>
@@ -44,6 +71,7 @@ const SkillsPage = () => {
             <li className="pill">Next</li>
             <li className="pill">tRPC</li>
           </ul>
+
           <ul className="b-skills__pillBox--3">
             <li className="pill"></li>
             <li className="pill">Python</li>
@@ -67,18 +95,26 @@ const SkillsPage = () => {
         </div>
 
         <div className="b-skills__languages__databases">
-          <p>
-            MongoDB, MySQL, SQLite, PostgreSQL, Prisma, Mongoose, PlanetScale
-          </p>
+          <h1>And I've used them with:</h1>
+
+          <ul>
+            <li>MongoDB</li>
+            <li>MySQL</li>
+            <li>SQLite</li>
+            <li>PostgreSQL</li>
+            <li>Prisma</li>
+            <li>Mongoose</li>
+          </ul>
         </div>
-      </div>
+      </motion.div>
 
       <div className="b-skills__also">
-        <h4>And I'm pretty good at...</h4>
+        <h4>In addition to...</h4>
         <p>
           Unit and Integration testing, Git/Github (and version control
-          systems), VS/VSC, XCode, Rider, Jira, Trello, Microsoft Suite
+          systems), VS/VSC, XCode, Rider, Jira, Trello, Microsoft Suite,
         </p>
+        <p>I can also use...</p>
       </div>
     </motion.div>
   );

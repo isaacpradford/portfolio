@@ -4,6 +4,10 @@
 .b-skills {
   --gap: 1.5vw;
   position: relative;
+  max-width: 100vw;
+  overflow-x: hidden;
+
+  // scale: 0.8;
 
   &__title {
     font-family: $headerFont;
@@ -13,14 +17,16 @@
     // -webkit-text-stroke-color: var(--project-color);
     // -webkit-text-stroke-width: 1px;
     font-size: 120px;
-    padding: 5vh 0;
+    // padding: 5vh 0;
   }
 
   // The Parent of the pillbox
   &__languages {
+    position: absolute;
+    left: 0;
     display: flex;
     flex-direction: column;
-    max-width: 1100px;
+    // max-width: 1100px;
     margin: auto;
 
     h1 {
@@ -28,14 +34,24 @@
     }
 
     &__databases {
-      font-family: $subFont;
-      font-size: 2.5vw;
+      font-family: $mainFont;
+      font-size: 2vw;
       letter-spacing: $smallLetterSpacing;
-      font-weight: 200;
+      letter-spacing: -2px;
       align-self: flex-end;
       text-align: end;
       max-width: 30vw;
-      margin: -8vh 3vw 3vw 0px;
+      margin: -30vh 5vw 0 0;
+
+      h1 {
+        font-size: 20px;
+        letter-spacing: -1px;
+        font-weight: 800;
+      }
+      li {
+        list-style: none;
+        font-weight: 300;
+      }
     }
   }
 
@@ -43,8 +59,9 @@
   &__pillBox {
     @include flexStart;
     gap: var(--gap);
-    margin-top: 2vh;
+    margin-top: 4vh;
 
+    scale: 0.9;
     ul {
       display: flex;
       flex-direction: row;
@@ -53,12 +70,12 @@
 
       li {
         min-width: 15vw;
-        min-height: 2vw;
+        min-height: 2vh;
         list-style: none;
 
         border: 1px solid $fontColor;
         box-shadow: 0px 1px 0px $fontColor;
-        font-size: 2.3vw;
+        font-size: 20px;
         font-family: $mainFont;
         font-weight: 400;
         letter-spacing: $smallLetterSpacing;
@@ -67,9 +84,9 @@
 
     .pill {
       text-align: center;
-      border-radius: 3vw;
+      border-radius: 30px;
 
-      padding: 1vh;
+      padding: 12px;
       padding-top: 1.5vh;
 
       transition: 0.2s ease-in-out;
@@ -185,6 +202,18 @@
     flex-direction: column;
     max-width: 600px;
     margin: auto;
+    margin-top: 5vh;
+
+    h3 {
+      // text-align: center;
+      @include pageTitle;
+      padding: 0;
+      font-size: 50px;
+      font-weight: 800;
+      letter-spacing: -2px;
+      text-wrap: nowrap;
+      font-style: italic;
+    }
 
     h4 {
       @include subTitle;
@@ -195,7 +224,8 @@
 
     p {
       @include mainBodyText;
-      text-align: left;
+      padding: 0;
+      text-align: center;
       letter-spacing: normal;
     }
   }
@@ -203,13 +233,37 @@
 
 @media only screen and (max-width: 800px) {
   .b-skills {
-    .slider {
-      text-align: center;
-      text-wrap: wrap;
-      label {
-        font-size: 16px;
-        padding-bottom: 12px;
+    &__subtitle {
+      display: none;
+    }
+    &__languages {
+      &__databases {
+        text-align: center;
+        align-self: center;
+        max-width: 100vw;
+        margin: 4vh 0 0 -2vw;
+
+
+        h1 {
+          text-align: center;
+          font-size: 5vw;
+        }
+        li {
+          // list-style:disc;
+          font-size: 3vw;
+        }
       }
+    }
+    &__pillbox {
+      ul {
+        flex-direction: column;
+        align-items: center;
+      }
+      // @include flexColumn;
+    }
+
+    &__also {
+      display: none;
     }
   }
 }

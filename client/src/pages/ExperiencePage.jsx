@@ -1,9 +1,39 @@
-import React from "react";
+import React, { useState, useRef } from "react";
+import {
+  motion,
+  useScroll,
+  useSpring,
+  useTransform,
+  useInView,
+} from "framer-motion";
 
 const ExperiencePage = () => {
+  const ref = useRef(null);
+  const { scrollY } = useScroll({
+    target: ref,
+    offset: ["end end", "start start"],
+  });
+  const isInView = useInView(ref, { amount: 0.5 });
+
+  const scale = useTransform(scrollY, [0, 300], [1, 0.3]);
+  const translate = useTransform(scrollY, [0, 300], [0, -200]);
+  const smoothScale = useSpring(scale, { stiffness: 1000, damping: 200 });
+
   return (
-    <div id="experience" className="b-experience">
-      <h1 className="b-experience__title">Experience:</h1>
+    <motion.div id="experience" className="b-experience page" ref={ref}>
+      {/* <motion.h1
+        className="b-experience__title"
+        animate={{ y: isInView ? 0 : -400, }}
+        exit={{ y: 0 }}
+        transition={{
+          duration: 5,
+          type: "spring",
+          stiffness: 100,
+          damping: 20,
+        }}
+      >
+        Experience:
+      </motion.h1> */}
 
       <div className="b-experience__timeline">
         <h1 className="b-experience__timeline__title">Education</h1>
@@ -71,7 +101,7 @@ const ExperiencePage = () => {
 
         <div className="b-experience__timeline__line"></div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,7 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Popup from "../Components/Popup";
 import ProjectPopUp from "./ProjectPopUpPage";
 import { Link } from "react-scroll";
+
+import {
+  motion,
+  useScroll,
+  useInView,
+  useTransform,
+  useSpring,
+} from "framer-motion";
 
 const ProjectPage = () => {
   const [isPopupOpen, setPopupOpen] = useState(false);
@@ -51,10 +59,32 @@ const ProjectPage = () => {
     setSelectedProject(null);
   };
 
+  const ref = useRef(null);
+  const { scrollY } = useScroll({
+    target: ref,
+    offset: ["end end", "start start"],
+  });
+
+  const isInView = useInView(ref, { amount: 0.5 });
+
+  const scale = useTransform(scrollY, [0, 300], [1, 0.3]);
+
   return (
-    <div id="projects" className="b-projects">
-      <div className="b-projects__cardList">
-        <h1 className="b-projects__cardList__title">Projects:</h1>
+    <motion.div id="projects" className="b-projects page" ref={ref}>
+      <motion.div
+        className="b-projects__cardList"
+        initial={{ scale: 0.5 }}
+        animate={{ scale: isInView ? 1 : 0.5 }}
+        exit={{ scale: 0.5 }}
+        transition={{
+          duration: 5,
+          type: "spring",
+          stiffness: 100,
+          damping: 20,
+        }}
+        viewport={{ once: false }}
+      >
+        {/* <h1 className="b-projects__cardList__title">Projects:</h1> */}
         {projects.map((project) => (
           <li
             key={project.id}
@@ -73,9 +103,21 @@ const ProjectPage = () => {
           <p>Hover over us, don't miss out! </p>
           <p>0.0.0</p>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="b-projects__svg">
+      <motion.div
+        className="b-projects__svg"
+        initial={{ scale: 0.3 }}
+        animate={{ scale: isInView ? 1 : 0.3 }}
+        exit={{ scale: 0.3 }}
+        transition={{
+          duration: 5,
+          type: "spring",
+          stiffness: 100,
+          damping: 20,
+        }}
+        viewport={{ once: false }}
+      >
         <svg
           className="svgsquare"
           viewBox="0 0 1000 1000"
@@ -83,7 +125,7 @@ const ProjectPage = () => {
         >
           <path
             id="squarepath"
-            d="M0 1350 V150 A100 100 0 0 1 100 0 H900 A100 100 0 0 1 1000 150 V1350 A100 100 0 0 1 900 1500 H100 A100 100 0 0 1 0 1350 Z"
+            d="M100 0 H900 A100 100 0 0 1 1000 100 V550 A100 100 0 0 1 900 650 H100 A100 100 0 0 1 0 550 V100 A100 100 0 0 1 100 0 Z"
             fill="none"
             stroke="transparent"
           />
@@ -110,7 +152,7 @@ const ProjectPage = () => {
             </textPath>
           </text>
         </svg>
-      </div>
+      </motion.div>
 
       <Popup
         isOpen={isPopupOpen}
@@ -123,7 +165,7 @@ const ProjectPage = () => {
           />
         )}
       />
-    </div>
+    </motion.div>
   );
 };
 

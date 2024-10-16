@@ -14,12 +14,70 @@ import NoPage from "./pages/NoPage";
 import Background from "./Components/Background";
 import Blank from "./Components/Blank";
 import Foreground from "./Components/SiteLoadAnimation";
+import ScrollingBanner from "./Components/LoopingBanner";
 
-import ParallaxSection from "./Components/ParallaxSection";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useSpring,
+  useInView,
+} from "framer-motion";
+
+function Page({ id, children }) {
+  const ref = useRef(null);
+  const { scrollY } = useScroll({
+    target: ref,
+    offset: ["end end", "start start"],
+  });
+
+  const isInView = useInView(ref, { amount: 0.5 });
+
+  return (
+    <motion.section ref={ref} className="page" id={id}>
+      {/* Parallax title */}
+      <motion.h1
+        className="page-title"
+        initial={{ y: 100 }}
+        animate={{ y: isInView ? -360 : 0 }}
+        exit={{ y: 100 }}
+        transition={{
+          duration: 5,
+          type: "spring",
+          stiffness: 100,
+          damping: 20,
+        }}
+        viewport={{ once: false }}
+      >
+        {id}
+        {/* <ScrollingBanner title={id} baseVelocity={2} /> */}
+      </motion.h1>
+
+      {/* Page content with slower movement */}
+      <motion.div
+        className="page-content"
+        initial={{ x: 0, scale: 0.9 }}
+        animate={{ scale: isInView ? 1 : 0.9 }}
+        exit={{ x: 0 }}
+        transition={{
+          duration: 5,
+          type: "spring",
+          stiffness: 100,
+          damping: 20,
+        }}
+        viewport={{ once: false }}
+      >
+        {children}
+      </motion.div>
+    </motion.section>
+  );
+}
 
 function App() {
   const [showContent, setShowContent] = useState(false);
   const [animationFinished, setAnimationFinished] = useState(false);
+
+  const { scrollYProgress } = useScroll();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -43,27 +101,70 @@ function App() {
     <>
       {/* Unrenders the loading animation when it's finished so that you can click on links again */}
       {!animationFinished ? <Foreground /> : <></>}
-      {!showContent ? (
-        <></>
-      ) : (
-        <>
-          <HelmetProvider>
+      <HelmetProvider>
+        <Background />
+        {!showContent ? (
+          <></>
+        ) : (
+          <>
             <Header />
-            <Background />
-            <HomePage />
-            <SkillsPage />
-            <ExperiencePage />
-            <ProjectPage />
-            <TestimonialPage />
-            <ContactPage />
+            <div className="pageContainer">
+              <Page id={"home"}>
+                <HomePage />
+              </Page>
+              <Page id={"skills"}>
+                <SkillsPage />
+              </Page>
+              <Page id={"projects"}>
+                <ProjectPage />
+              </Page>
+              <Page id={"experience"}>
+                <ExperiencePage />
+              </Page>
+              <Page id={"Testimonials"}>
+                <TestimonialPage />
+              </Page>
+              <Page id={"Contact"}>
+                <ContactPage />
+              </Page>
+              {/* <Blank />
+              <SkillsPage />
+              <Blank />
 
-            {/* For undefined URLS, we can put this to make a 404 page */}
-            {/* <Routes>
-              <Route path="*" element={<NoPage />} />
-            </Routes> */}
-          </HelmetProvider>
-        </>
-      )}
+              <ExperiencePage />
+              <Blank />
+              <ProjectPage />
+              <Blank />
+              <TestimonialPage />
+              <Blank /> */}
+              <figure className="progress">
+                <svg
+                  id="progress"
+                  width="100"
+                  height="100"
+                  viewBox="0 0 100 100"
+                >
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="30"
+                    pathLength="1"
+                    className="bg"
+                  />
+                  <motion.circle
+                    cx="50"
+                    cy="50"
+                    r="30"
+                    pathLength="1"
+                    className="indicator"
+                    style={{ pathLength: scrollYProgress }}
+                  />
+                </svg>
+              </figure>
+            </div>
+          </>
+        )}
+      </HelmetProvider>
     </>
   );
 }

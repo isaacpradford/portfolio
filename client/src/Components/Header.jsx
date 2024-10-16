@@ -38,13 +38,13 @@ const Header = () => {
           <Hamburger toggled={isOpen} toggle={setOpen} size={40} />
         </div>
 
-        <div className="b-navbar__logo">
+        {/* <div className="b-navbar__logo">
           <Link to="home" smooth={true} duration={250}>
             ISAAC
           </Link>
-        </div>
+        </div> */}
 
-        {(isOpen || windowDimensions.width > 768) && (
+        {(isOpen || windowDimensions.width > 800) && (
           <ul className="b-navbar__wrapper">
             <li className={`b-navbar__wrapper__link ${isOpen ? "open" : ""}`}>
               <Link

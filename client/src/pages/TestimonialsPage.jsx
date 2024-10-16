@@ -16,7 +16,7 @@ import { Pagination, Navigation } from "swiper/modules";
 
 const TestimonialsPage = () => {
   return (
-    <div id="testimonials" className="b-testimonials">
+    <div id="testimonials" className="b-testimonials page">
       <div className="b-testimonials__header">
         <h1>The reviews are in:</h1>
         <ImQuotesRight size={40} color="#06dd83" style={{ minWidth: 40 }} />

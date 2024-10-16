@@ -3,6 +3,13 @@ import { delay, motion } from "framer-motion";
 import Socials from "./Socials";
 import TextSpinnerLoader from "./TextSpinAnimation";
 
+const siteMessages = [
+  "Hey, thanks for stopping by!",
+  "Welcome!",
+  "Nice to meet you!",
+  "Hi, I'm Isaac!",
+];
+
 // Spiral ordering algorithm for the exit animation
 const calculateSpiralOrder = (gridSize) => {
   const spiralOrder = [];
@@ -105,6 +112,13 @@ const Square = ({ row, col, centerX, centerY, shouldExit, spiralOrder }) => {
 };
 
 const Foreground = () => {
+  const [siteMessage, setSiteMessage] = useState("");
+
+  useEffect(() => {
+    const randomNumber = Math.floor(Math.random() * siteMessages.length);
+    setSiteMessage(siteMessages[randomNumber]);
+  }, []);
+
   const gridSize = 5; // 5x5 grid
   const centerX = (gridSize - 1) / 2;
   const centerY = (gridSize - 1) / 2;
@@ -156,9 +170,8 @@ const Foreground = () => {
           rotateY: { duration: 0.5, ease: "easeInOut", delay: 8.35 },
         }}
       >
-        Hey,<br></br> thanks for stopping by!
+        {siteMessage}
       </motion.h1>
-      <Socials />
       <motion.div className="foreground">{renderSquares()}</motion.div>
     </motion.div>
   );

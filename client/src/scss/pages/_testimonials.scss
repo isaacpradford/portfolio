@@ -2,13 +2,14 @@
 @use "../mixins" as *;
 
 .b-testimonials {
-  display: grid;
-  grid-template-columns: 90%;
-  grid-template-rows: 30% 70%;
-  justify-content: center;
-  align-items: center;
+  @include flexColumn;
+  // display: grid;
+  // grid-template-columns: 100%;
+  // grid-template-rows: 30% 70%;
+  // justify-content: center;
+  // align-items: center;
 
-  // background-color: $darkBlue;
+  overflow-x:hidden;
 
   &__header {
     @include flexColumn;

@@ -2,10 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plaster&display=swap');
 
 // Colors
-// $backgroundColor: #f6f6f6;
+$backgroundColor: #f6f6f6;
 // $backgroundColor: #2f2e2e;
-// $backgroundColor: #2f2e2e;
-$backgroundColor: #EAE7DC;
+// $backgroundColor: #EAE7DC;
 $backgroundColor2: #AF1B3F;
 $aboutBackground: #f6f6f6fd;
 
@@ -13,7 +12,8 @@ $fontColor: #333;
 $fontHighlights: #22473d;
 $secondaryColor: #06c073;
 
-$mainColor: var(--project-color);
+$mainColor: #004089;
+// $mainColor: var(--project-color);
 
 //Colors I like
 $red: #e1001e;

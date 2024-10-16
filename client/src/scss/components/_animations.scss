@@ -57,7 +57,6 @@
     z-index: 102;
   }
 
-
   .spinner {
     z-index: 102;
     position: absolute;
@@ -68,7 +67,7 @@
       position: relative;
       aspect-ratio: 1;
     }
-  
+
     .letter {
       position: absolute;
       top: 0;
@@ -76,7 +75,7 @@
 
       font-family: $subFont;
       color: $backgroundColor;
-      text-transform: uppercase
+      text-transform: uppercase;
     }
   }
 }

@@ -4,18 +4,64 @@
   margin: 0;
 }
 
+
 #root {
+  z-index: 1;
   position: relative;
+  overflow-y: hidden;
   display: grid;
   grid-template-columns: 100vw;
   grid-template-rows: auto auto auto auto auto auto;
   grid-template-areas:
     "home"
-    "skills"
     "projects"
+    "skills"
     "experience"
     "testimonials"
     "contact";
+
+  max-width: 100vw;
+  overflow-x: hidden;
+
+  // Set up for page snapping
+  .pageContainer {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    height: 100vh;
+    // background: transparent;
+
+    .page {
+      height: 100vh;
+
+      display: flex;
+      // justify-content: center;
+      align-items: center;
+      position: relative;
+      scroll-snap-align: center;
+
+      .page-title {
+        font-family: "Impact", sans-serif;
+        text-transform: uppercase;
+        font-size: 3.35vw;
+        letter-spacing: -0.15vw;
+        line-height: 0.85;
+        position:sticky;
+
+        left: 1.5vw;
+      }
+
+      .page-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
 
   // Blank areas between pages
   .b-blank {
@@ -35,52 +81,43 @@
     min-height: 100vh;
     min-width: 100vw;
     background: transparent;
+    
   }
 
   // Set Grid Areas
   .b-home {
-    position: sticky;
-    top: 0;
+    // position: ƒixed;
+    // top: 0;
+
     grid-area: home;
-    z-index: 10;
-    mix-blend-mode: darken;
-    // background-color: black;
+    z-index: 100;
   }
+
   .b-skills {
     grid-area: skills;
     z-index: 15;
-  }
-  .b-experience {
-    grid-area: experience;
-    z-index: 20;
-  }
-  .b-projects {
-    grid-area: projects;
-    z-index: 25;
-  }
-  .b-testimonials {
-    grid-area: testimonials;
-    z-index: 30;
-  }
-  .b-contact {
-    grid-area: contact;
-    z-index: 35;
-  }
 
-  // Special sizing
-  .b-projects {
-    min-height: 80vh;
-  }
-
-  .b-skills {
-    max-height: 160vh;
 
     @media (min-width: 1024px) {
       max-height: 215vh;
     }
   }
 
+  .b-experience {
+    grid-area: experience;
+    z-index: 20;
+    height: 140vh;
+  }
+
+  .b-projects {
+    min-height: 100vh;
+    grid-area: projects;
+    z-index: 25;
+  }
   .b-testimonials {
+    grid-area: testimonials;
+    z-index: 30;
+
     @media (max-width: 800px) {
       min-height: 120vh;
     }
@@ -88,5 +125,9 @@
     @media (max-width: 500px) {
       min-height: 145vh;
     }
+  }
+  .b-contact {
+    grid-area: contact;
+    z-index: 35;
   }
 }
