@@ -2,6 +2,7 @@
 @use "../mixins" as *;
 
 .project-popup {
+  scale: 1.1;
   // Actual full screen background of the project popup
   &__background {
     z-index: 0;

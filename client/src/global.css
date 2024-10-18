@@ -216,6 +216,9 @@
   z-index: 150;
 }
 
+.project-popup {
+  scale: 1.1;
+}
 .project-popup__background {
   z-index: 0;
   position: absolute;
@@ -640,6 +643,21 @@ circle {
 
 .progress .indicator {
   stroke: var(--project-color);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 0px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--project-color);
+  border-radius: 10px;
 }
 
 .b-home {
@@ -1127,10 +1145,10 @@ circle {
 }
 .b-projects__cardList .card:hover .card__description, .b-projects__cardList .card:hover .card__date, .b-projects__cardList .card:hover .card__title, .b-projects__cardList .card.active .card__description, .b-projects__cardList .card.active .card__date {
   opacity: 1;
-  color: #0056b3;
+  color: var(--project-color);
 }
 .b-projects__cardList .card:hover .card__button, .b-projects__cardList .card.active .card__button {
-  background-color: #0056b3;
+  background-color: var(--project-color);
 }
 .b-projects__cardList .empty {
   height: 0;
@@ -1203,24 +1221,36 @@ svg.svgsquare text {
     display: none;
   }
 }
+#Experience {
+  min-height: 170vh;
+}
+
+.b-experience {
+  display: flex;
+  flex-direction: column;
+}
 .b-experience__title {
   font-family: "Inter", sans-serif;
   letter-spacing: -0.5vw;
   font-size: 8vw;
   padding-left: 2vw;
-  text-align: left;
+  font-size: 9vw;
+  margin-right: auto;
 }
 .b-experience__timeline {
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
+  padding: 20px;
 }
 .b-experience__timeline__line {
-  grid-column: 1/5;
-  grid-row: 4;
-  width: 30%;
-  height: 1px;
-  background-color: black;
-  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  transform-origin: top;
+  background: var(--project-color);
+  min-width: 10px;
+  min-height: 10px;
 }
 .b-experience__timeline__title {
   font-family: "Inter", sans-serif;
@@ -1229,12 +1259,41 @@ svg.svgsquare text {
   font-weight: 300;
   padding-left: 2vw;
   grid-column: 1;
-  padding: 24px 0;
+  padding: 20px 0;
+}
+.b-experience__timeline__subtitle {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -1px;
+  font-size: 20px;
+  font-weight: 400;
+  padding-left: 2vw;
+  font-size: 2.5vw;
+  padding: 20px 0;
+}
+.b-experience__timeline__subheading {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -1px;
+  font-size: 20px;
+  font-weight: 400;
+  padding-left: 2vw;
+  padding: 12px 0;
+  font-size: 1.4vw;
+}
+.b-experience__timeline .certificates li {
+  font-size: 16px;
+}
+.b-experience__timeline .certificates h4 {
+  font-size: 22px;
+  font-weight: 700;
+}
+.b-experience__timeline .certificates p {
+  font-size: 16px;
 }
 .b-experience__timeline__entry {
   display: flex;
   flex-direction: row;
   grid-column: 3;
+  padding: 2vh 0;
 }
 .b-experience__timeline__entry__date {
   min-width: 200px;
@@ -1243,6 +1302,7 @@ svg.svgsquare text {
   font-size: 20px;
   font-weight: 400;
   padding-left: 2vw;
+  padding: 0;
   font-weight: 200;
 }
 .b-experience__timeline__entry__role {
@@ -1254,8 +1314,8 @@ svg.svgsquare text {
   font-size: 8vw;
   padding-left: 2vw;
   padding: 0;
-  font-size: 28px;
-  font-weight: 400;
+  font-size: 32px;
+  font-weight: 900;
   letter-spacing: -1px;
 }
 .b-experience__timeline__entry__role h5 {
@@ -1270,13 +1330,22 @@ svg.svgsquare text {
 }
 .b-experience__timeline__entry__role p {
   font-family: "Inter", sans-serif;
-  letter-spacing: -1px;
-  font-size: 20px;
-  font-weight: 200;
+  letter-spacing: -0.5vw;
+  font-size: 8vw;
   padding-left: 2vw;
+  font-size: 20px;
+  letter-spacing: normal;
   padding: 10px 0;
-  font-size: 22px;
 }
+.b-experience__timeline__entry__role li {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.5vw;
+  font-size: 8vw;
+  padding-left: 2vw;
+  font-size: 16px;
+  letter-spacing: normal;
+}
+
 @media only screen and (max-width: 800px) {
   .b-experience__timeline {
     display: flex;
@@ -1316,6 +1385,11 @@ svg.svgsquare text {
     margin-bottom: 10px;
   }
 }
+#Testimonials {
+  max-height: 50vh;
+  min-height: 50vh;
+}
+
 .b-testimonials {
   display: flex;
   flex-direction: column;
@@ -1333,7 +1407,7 @@ svg.svgsquare text {
   font-size: 40px;
   font-weight: 300;
   padding-left: 2vw;
-  color: #06c073;
+  color: var(--project-color);
   font-size: 50px;
   font-weight: 500;
   text-wrap: nowrap;
@@ -1635,13 +1709,21 @@ svg.svgsquare text {
 }
 #WhatIDo {
   justify-content: end;
-  max-width: 80vw;
-  margin-left: 10vw;
+  min-height: 100vh;
+  max-width: 90vw;
+  margin-left: 5vw;
   scale: 0.95;
 }
 
-.b-what__title {
-  margin-top: 8vh;
+.b-what__line {
+  position: absolute;
+  top: 0vh;
+  left: -7.6vw;
+  z-index: 5;
+  transform-origin: top;
+  background: var(--project-color);
+  min-width: 10px;
+  min-height: 10px;
 }
 .b-what__title h1 {
   font-family: "Inter", sans-serif;
@@ -1649,7 +1731,8 @@ svg.svgsquare text {
   font-size: 8vw;
   padding-left: 2vw;
   color: var(--project-color);
-  font-size: 40px;
+  text-align: center;
+  font-size: 42px;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: normal;
@@ -1690,7 +1773,7 @@ svg.svgsquare text {
 }
 .b-what__cards__card__content {
   display: grid;
-  grid: 60% 40%/100% 100%;
+  grid: 40% 60%/100% 100%;
   width: 50%;
   height: 35vh;
   max-width: 450px;

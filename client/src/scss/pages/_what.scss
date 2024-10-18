@@ -3,20 +3,33 @@
 
 #WhatIDo {
   justify-content: end;
-  max-width: 80vw;
-  margin-left: 10vw;
+  min-height: 100vh;
+  max-width: 90vw;
+  margin-left: 5vw;
   scale: 0.95;
+  // background-color: #d4e7f5;
  
 }
 
 .b-what {
+  &__line {
+    position: absolute;
+    top: 0vh;
+    left: -7.6vw;
+    z-index: 5;
+    transform-origin: top;
+    background: $mainColor;
+    min-width: 10px;
+    min-height: 10px;
+  }
   
   &__title {
-    margin-top: 8vh;
+
     h1 {
       @include pageTitle;
       color: $mainColor;
-      font-size: 40px;
+      text-align: center;
+      font-size: 42px;
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: normal;
@@ -62,7 +75,7 @@
 
       &__content {
         display: grid;
-        grid: 60% 40% / 100% 100%;
+        grid: 40% 60% / 100% 100%;
         width: 50%;
         height: 35vh;
         max-width: 450px;

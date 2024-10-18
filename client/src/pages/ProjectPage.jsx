@@ -16,6 +16,8 @@ const ProjectPage = () => {
   const [isPopupOpen, setPopupOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
 
+  console.log(playedAnimation);
+
   // Set the names and descriptions of the proejcts
   const [projects, setProjects] = useState([
     {
@@ -66,7 +68,7 @@ const ProjectPage = () => {
     offset: ["end end", "start start"],
   });
 
-  const isInView = useInView(ref, { amount: 0.5 });
+  const isInView = useInView(ref, { amount: 0.9 });
 
   useEffect(() => {
     if (isInView && !playedAnimation) {
@@ -81,18 +83,7 @@ const ProjectPage = () => {
       <div className="b-projects__explanation">
         <h1>FOR EXAMPLE...</h1>
       </div>
-      <motion.div
-        className="b-projects__cardList"
-        initial={{ scale: !playedAnimation ? 0.5 : 1 }}
-        animate={{ scale: isInView && !playedAnimation ? 0.5 : 1 }}
-        exit={{ scale: !playedAnimation ? 0.5 : 1 }}
-        transition={{
-          duration: 5,
-          type: "spring",
-          stiffness: 100,
-          damping: 20,
-        }}
-      >
+      <motion.div className="b-projects__cardList">
         {/* <h1 className="b-projects__cardList__title">Projects:</h1> */}
         {projects.map((project) => (
           <li

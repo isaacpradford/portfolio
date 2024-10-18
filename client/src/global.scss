@@ -23,6 +23,8 @@
   margin: 0;
 }
 
+
+
 #root {
   z-index: 1;
   position: relative;
@@ -40,6 +42,7 @@
 
   max-width: 100vw;
   overflow-x: hidden;
+
 
   // Set up for page snapping
   .pageContainer {

@@ -133,12 +133,12 @@
       &.active .card__description,
       &.active .card__date {
         opacity: 1;
-        color: #0056b3;
+        color: $mainColor;
       }
 
       &:hover .card__button,
       &.active .card__button {
-        background-color: #0056b3;
+        background-color: $mainColor;
       }
     }
     .empty {

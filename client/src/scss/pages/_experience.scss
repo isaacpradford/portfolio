@@ -1,57 +1,95 @@
 @use "../variables" as *;
 @use "../mixins" as *;
 
+#Experience {
+  min-height: 170vh;
+
+}
+
 .b-experience {
+  @include flexColumn;
 
   &__title {
     @include pageTitle;
-    text-align: left;
+    font-size: 9vw;
+    margin-right: auto;
   }
 
   &__timeline {
-    // display: grid;
-    // grid-template-columns: 25% 5% 70%;
-    // grid-template-rows: 175px 175px 50px 200px;
-
-    // @include flexColumn;
-    max-width: 800px;
+    max-width: 900px;
     margin: auto;
-    // padding-top: 75px;
+
+    // border-left: 17px solid $black;
+    padding: 20px;
 
     &__line {
-      grid-column: 1/5;
-      grid-row: 4;
-      width: 30%;
-      height: 1px;
-      background-color: black;
-      margin: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 5;
+      transform-origin: top;
+      background: $mainColor;
+      min-width: 10px;
+      min-height: 10px;
     }
 
     &__title {
       @include sectionTitle;
+
       grid-column: 1;
-      padding: 24px 0;
+      padding: 20px 0;
       // max-width: 15;
+    }
+
+    &__subtitle {
+      @include subTitle;
+      font-size: 2.5vw;
+      padding: 20px 0;
+    }
+
+    &__subheading {
+      @include subTitle;
+      padding: 12px 0;
+      font-size: 1.4vw;
+    }
+
+    .certificates {
+      // padding: 4vh 4vw;
+
+      li {
+        font-size: 16px;
+      }
+
+      h4 {
+        font-size: 22px;
+        font-weight: 700;
+      }
+
+      p {
+        font-size: 16px;
+      }
     }
 
     &__entry {
       @include flexRow;
       grid-column: 3;
+      padding: 2vh 0;
 
       &__date {
         min-width: 200px;
         @include subTitle;
+        padding: 0;
         font-weight: 200;
       }
 
       &__role {
-        // padding-top: 20px;
         min-width: 400px;
+
         h4 {
           @include pageTitle;
           padding: 0;
-          font-size: 28px;
-          font-weight: 400;
+          font-size: 32px;
+          font-weight: 900;
           letter-spacing: -1px;
         }
 
@@ -63,14 +101,17 @@
         }
 
         p {
-          @include mainBodyText;
+          @include pageTitle;
+          font-size: 20px;
+
+          letter-spacing: normal;
           padding: 10px 0;
-          font-size: 22px;
         }
 
-        ul {
-          li {
-          }
+        li {
+          @include pageTitle;
+          font-size: 16px;
+          letter-spacing: normal;
         }
       }
     }
@@ -84,7 +125,6 @@
       padding: 0;
       width: 100%;
       // align-items: center;
-      
 
       &__entry {
         @include flexRow;
@@ -101,9 +141,8 @@
 
         &__role {
           min-width: 100px;
-          max-w
-          h5 {
-            font-size: 14px;;
+          max-w h5 {
+            font-size: 14px;
           }
           h4 {
             font-size: 22px;
@@ -112,8 +151,6 @@
           p {
             font-size: 20px;
           }
-
-
         }
       }
 

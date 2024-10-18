@@ -23,64 +23,9 @@ import {
   useSpring,
   useInView,
 } from "framer-motion";
+import Page from "./Components/Page";
 import AboutPage from "./pages/AboutPage";
 import WhatPage from "./pages/WhatPage";
-
-function Page({ id, children }) {
-  const [playedAnimation, setPlayedAnimation] = useState(false);
-  const ref = useRef(null);
-  const { scrollY } = useScroll({
-    target: ref,
-    offset: ["end end", "start start"],
-  });
-
-  const isInView = useInView(ref, { amount: 0.5 });
-
-  useEffect(() => {
-    if (isInView && !playedAnimation) {
-      setPlayedAnimation(true);
-    }
-  }, [isInView, playedAnimation]);
-
-  return (
-    <motion.section ref={ref} className="page" id={id}>
-      {/* Parallax title */}
-      <motion.h1
-        className="page-title"
-        initial={{ y: 100 }}
-        animate={{ y: isInView ? -325 : 0 }}
-        exit={{ y: 300 }}
-        transition={{
-          duration: 5,
-          type: "spring",
-          stiffness: 100,
-          damping: 20,
-        }}
-        viewport={{ once: false }}
-      >
-        {id}
-        {/* <ScrollingBanner title={id} baseVelocity={2} /> */}
-      </motion.h1>
-
-      {/* Page content with slower movement */}
-      <motion.div
-        className="page-content"
-        initial={{ x: 0, scale: !playedAnimation ? 0.1 : 1 }}
-        animate={{ scale: isInView && !playedAnimation ? 1 : 0.95 }}
-        exit={{ x: 0 }}
-        transition={{
-          duration: 5,
-          type: "spring",
-          stiffness: 100,
-          damping: 20,
-        }}
-        viewport={{ once: false }}
-      >
-        {children}
-      </motion.div>
-    </motion.section>
-  );
-}
 
 function App() {
   const [showContent, setShowContent] = useState(true);
@@ -118,15 +63,12 @@ function App() {
           <>
             {/* <Header /> */}
             <HomePage />
-            {/* <AboutPage /> */}
             <Page id={"Skills"}>
               <SkillsPage />
             </Page>
-
             <Page id={"Projects"}>
               <ProjectPage />
             </Page>
-
             <Page id="WhatIDo">
               <WhatPage />
             </Page>

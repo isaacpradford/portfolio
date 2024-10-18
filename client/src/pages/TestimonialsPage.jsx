@@ -19,8 +19,13 @@ const TestimonialsPage = () => {
     <div id="testimonials" className="b-testimonials page">
       <div className="b-testimonials__header">
         <h1>The reviews are in:</h1>
-        <ImQuotesRight size={40} color="#06dd83" style={{ minWidth: 40 }} />
+        <ImQuotesRight
+          size={40}
+          color="var(--project-color)"
+          style={{ minWidth: 40 }}
+        />
       </div>
+
       <div className="b-testimonials__swiper">
         <Swiper
           slidesPerView={1}
@@ -130,3 +135,82 @@ const TestimonialsPage = () => {
 };
 
 export default TestimonialsPage;
+
+// <div className="b-testimonials__cards">
+// <div className="b-testimonials__cards__card">
+//   <p>
+//     "I had the pleasure of working with Isaac during his time as a
+//     Full-Stack Developer at Subitt. Isaac excelled in collaborating with
+//     a large team of developers to create products and solutions for
+//     real-world problems, including those requiring immediate attention.
+//   </p>
+//   <p>
+//     Isaac is a highly capable and competent problem-solver, particularly
+//     with React.js and Node.js. He not only thinks creatively and
+//     efficiently when tackling technical challenges but also communicates
+//     effectively with non-technical stakeholders. This ensures a smooth
+//     transition of projects from the development teams to other
+//     associated teams.
+//   </p>
+//   <p>
+//     I strongly recommend Isaac to any team looking for a candidate with
+//     the perfect blend of technical and soft skills."
+//   </p>
+//   <div className="b-testimonials__name">
+//     {/* <ImQuotesRight /> */}
+//     <h1 className="b-testimonials__name">Jae Hyun Kim</h1>
+//     <h4>Head of Business Success | Subitt.io</h4>
+//   </div>
+// </div>
+
+// <div className="b-testimonials__cards__card">
+//   <p>
+//     "I had the pleasure of working with Isaac during his time as a
+//     Full-Stack Developer at Subitt. Isaac excelled in collaborating with
+//     a large team of developers to create products and solutions for
+//     real-world problems, including those requiring immediate attention.
+//   </p>
+//   <p>
+//     Isaac is a highly capable and competent problem-solver, particularly
+//     with React.js and Node.js. He not only thinks creatively and
+//     efficiently when tackling technical challenges but also communicates
+//     effectively with non-technical stakeholders. This ensures a smooth
+//     transition of projects from the development teams to other
+//     associated teams.
+//   </p>
+//   <p>
+//     I strongly recommend Isaac to any team looking for a candidate with
+//     the perfect blend of technical and soft skills."
+//   </p>
+//   <div className="b-testimonials__name">
+//     {/* <ImQuotesRight /> */}
+//     <h1 className="b-testimonials__name">Jae Hyun Kim</h1>
+//     <h4>Head of Business Success | Subitt.io</h4>
+//   </div>
+// </div>
+// <div className="b-testimonials__cards__card">
+//   <p>
+//     "I had the pleasure of working with Isaac during his time as a
+//     Full-Stack Developer at Subitt. Isaac excelled in collaborating with
+//     a large team of developers to create products and solutions for
+//     real-world problems, including those requiring immediate attention.
+//   </p>
+//   <p>
+//     Isaac is a highly capable and competent problem-solver, particularly
+//     with React.js and Node.js. He not only thinks creatively and
+//     efficiently when tackling technical challenges but also communicates
+//     effectively with non-technical stakeholders. This ensures a smooth
+//     transition of projects from the development teams to other
+//     associated teams.
+//   </p>
+//   <p>
+//     I strongly recommend Isaac to any team looking for a candidate with
+//     the perfect blend of technical and soft skills."
+//   </p>
+//   <div className="b-testimonials__name">
+//     {/* <ImQuotesRight /> */}
+//     <h1 className="b-testimonials__name">Jae Hyun Kim</h1>
+//     <h4>Head of Business Success | Subitt.io</h4>
+//   </div>
+// </div>
+// </div>

@@ -1,6 +1,12 @@
 @use "../variables" as *;
 @use "../mixins" as *;
 
+#Testimonials {
+  max-height: 50vh;
+  min-height: 50vh;
+}
+
+
 .b-testimonials {
   @include flexColumn;
   // display: grid;
@@ -18,7 +24,7 @@
 
     h1 {
       @include sectionTitle;
-      color: $secondaryColor;
+      color: $mainColor;
       font-size: 50px;
       font-weight: 500;
       text-wrap: nowrap;
