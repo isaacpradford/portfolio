@@ -69,4 +69,32 @@
       }
     }
   }
+
+  &__nightMode {
+    // position: fixed;
+    // bottom: 5vh;
+    // right: 10vw;
+    z-index: 1;
+
+    svg {
+      transition: 0.1s ease-in-out;
+
+      scale: 5;
+      &:hover {
+        scale: 5.2;
+      }
+    }
+  }
+
+  .cobweb {
+    position: absolute;
+    top: 0;
+    left: 15vw;
+    z-index: -1;
+    transition: 0.1s ease-in-out;
+
+    scale: 30;
+    color: #006bbc;
+  }
+
 }

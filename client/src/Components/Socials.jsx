@@ -18,7 +18,7 @@ const Socials = () => {
   return (
     <motion.div
       className="socials"
-      // style={{ scale: smoothScale, translateX: translate }}
+      style={{ scale: smoothScale, translateX: translate }}
     >
       <div className="words">
         <h1>Isaac Radford - @2024</h1>

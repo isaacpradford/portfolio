@@ -2,6 +2,9 @@
 @use "../mixins" as *;
 
 .b-about {
+  z-index: 50;
+  background-color: #2a2929;
+  
   // Content has all the grid alignment
   &__content {
     display: grid;

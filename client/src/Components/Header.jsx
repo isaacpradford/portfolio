@@ -2,12 +2,22 @@ import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-scroll";
 import Hamburger from "hamburger-react";
+import { FaRegMoon } from "react-icons/fa6";
+import { GiCobweb, GiMoonBats } from "react-icons/gi";
 import Popup from "./Popup";
 import AboutPage from "../pages/AboutPage";
 
 const Header = () => {
   let location = useLocation();
   const [isOpen, setOpen] = useState(false);
+  const [invert, setInvert] = useState(false);
+
+  // Night mode setup
+  const invertColors = document.documentElement.style.setProperty(
+    "--invert",
+    invert ? 0.9 : 0
+  );
+  const handleNightModeClick = () => setInvert(!invert);
 
   // Set up about popup
   const [isPopupOpen, setPopupOpen] = useState(false);
@@ -38,11 +48,11 @@ const Header = () => {
           <Hamburger toggled={isOpen} toggle={setOpen} size={40} />
         </div>
 
-        {/* <div className="b-navbar__logo">
+        <div className="b-navbar__logo">
           <Link to="home" smooth={true} duration={250}>
             ISAAC
           </Link>
-        </div> */}
+        </div>
 
         {(isOpen || windowDimensions.width > 800) && (
           <ul className="b-navbar__wrapper">
@@ -76,6 +86,11 @@ const Header = () => {
                 Contact
               </Link>
             </li>
+
+            <div className="b-navbar__nightMode">
+              {/* fill="var(--project-color)" */}
+              <FaRegMoon onClick={handleNightModeClick} />
+            </div>
           </ul>
         )}
       </nav>

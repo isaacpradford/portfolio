@@ -1,73 +1,72 @@
 @use "../variables" as *;
 @use "../mixins" as *;
 
-
 .b-home {
   min-width: 100%;
   min-height: 1400px;
   height: auto;
-  position: relative;
+  position: sticky;
   z-index: 1;
 
+  display: grid;
+  grid-template-columns: 100vw;
+  grid-template-rows: 100vh;
+  justify-content: center;
+  align-items: center;
+
   &__title {
-    color: $mainColor;
-    mix-blend-mode: exclusion;
+    grid-column: 1;
+    grid-row: 1;
+
+    // color: $mainColor;
+    // mix-blend-mode: exclusion;
     text-align: center;
-  
+    // margin-top: 25vh;
+    z-index: 10;
+
     h1 {
-      font-family: $siteTitle;
+      // font-family: $siteTitle;
       text-transform: uppercase;
-      font-size: 17.35vw;
-      letter-spacing: -.6vw;
-      line-height: .85;
-      
+      font-size: 11.35vw;
+      // letter-spacing: -0.6vw;
+      line-height: 0.85;
     }
     h3 {
+      color: $mainColor;
       font-family: $subFont;
       font-weight: 300;
       font-size: 2.5vw;
+      padding: 30px;
       text-transform: uppercase;
     }
   }
 
-  &__image {    
+  .banner-wrapper {
+    color: $mainColor;
+    font-size: 15vw;
+    mix-blend-mode: exclusion;
+  }
+
+  &__image {
+    grid-column: 1;
+    grid-row: 1;
+    z-index: -1;
+
+    position: fixed;
+    // left: -1vw;
+
+    
     img {
-      width: 80vw;
       max-width: 80vw;
-      max-height: 600px;
-      margin-top: 10vw;
+      // max-height: 600px;
+      // margin-top: 10vw;
       border-radius: 50px;
+      mix-blend-mode: exclusion;
       object-fit: cover;
       margin-left: 10vw;
     }
   }
 
-  &__nightMode {
-    position: fixed;
-    bottom: 5vh;
-    right: 10vw;
-    z-index: 1;
-
-    svg {
-      transition: .1s ease-in-out;
-
-      scale: 5;
-      &:hover {
-        scale: 5.2;
-      }
-    }
-  }
-
-  .cobweb {
-    position: absolute;
-    top: 0;
-    left: 15vw;
-    z-index: -1;
-    transition: .1s ease-in-out;
-
-    scale: 30;
-    color: #006bbc;
-  }
 
   // background-color: #84c0b0;
   // background-color: #40adfb;
@@ -80,9 +79,8 @@
   }
 }
 
-
-@media only screen and (max-width: 800px) { 
-  .b-home{
+@media only screen and (max-width: 800px) {
+  .b-home {
     &__nightMode {
       display: none;
     }

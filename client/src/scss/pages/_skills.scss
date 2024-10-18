@@ -1,15 +1,25 @@
 @use "../variables" as *;
 @use "../mixins" as *;
 
+
+#Skills {
+  max-height: 85vh;
+  background-color: #f0f4f8;
+  justify-content: flex-start;
+}
+
 .b-skills {
   --gap: 1.5vw;
   position: relative;
   max-width: 100vw;
-  overflow-x: hidden;
+  // overflow-x: hidden;
+  // overflow-y: hidden;
 
   // scale: 0.8;
 
   &__title {
+    position: relative;
+    top: -35vh;
     font-family: $headerFont;
     font-style: italic;
 
@@ -18,6 +28,8 @@
     // -webkit-text-stroke-width: 1px;
     font-size: 120px;
     // padding: 5vh 0;
+
+
   }
 
   // The Parent of the pillbox
@@ -41,7 +53,7 @@
       align-self: flex-end;
       text-align: end;
       max-width: 30vw;
-      margin: -30vh 5vw 0 0;
+      margin: -30vh -30vw 0 0;
 
       h1 {
         font-size: 20px;
@@ -59,7 +71,7 @@
   &__pillBox {
     @include flexStart;
     gap: var(--gap);
-    margin-top: 4vh;
+    // margin-top: 4vh;
 
     scale: 0.9;
     ul {
@@ -202,7 +214,7 @@
     flex-direction: column;
     max-width: 600px;
     margin: auto;
-    margin-top: 5vh;
+    margin-top: 95vh;
 
     h3 {
       // text-align: center;
@@ -233,6 +245,10 @@
 
 @media only screen and (max-width: 800px) {
   .b-skills {
+
+    &__title {
+      top: -45vh;
+    }
     &__subtitle {
       display: none;
     }

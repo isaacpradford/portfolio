@@ -1,9 +1,27 @@
 @use "./scss/index";
 
+@font-face {
+  font-family: "Druk Wide Bold";
+  src: url("./assets/fonts/DrukWideBold.woff") format("woff");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Impact";
+  src: url("./assets/fonts/impact.woff") format("woff");
+  font-weight: bold;
+}
+
+
+// Declare imported fonts on here because of react ruling
+.b-home__title {
+  font-family: "Impact", sans-serif;
+}
+
+
 * {
   margin: 0;
 }
-
 
 #root {
   z-index: 1;
@@ -25,52 +43,52 @@
 
   // Set up for page snapping
   .pageContainer {
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: block;
     scroll-behavior: smooth;
     overflow-y: scroll;
     height: 100vh;
-    // background: transparent;
+    background: transparent;
+  }
 
-    .page {
-      height: 100vh;
+  .page {
+    height: 100vh;
 
-      display: flex;
-      // justify-content: center;
-      align-items: center;
-      position: relative;
-      scroll-snap-align: center;
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+    position: relative;
+    scroll-snap-align: center;
 
-      .page-title {
-        font-family: "Impact", sans-serif;
-        text-transform: uppercase;
-        font-size: 3.35vw;
-        letter-spacing: -0.15vw;
-        line-height: 0.85;
-        position:sticky;
+    .page-title {
+      font-family: "Impact", sans-serif;
+      text-transform: uppercase;
+      font-size: 3.35vw;
+      letter-spacing: -0.15vw;
+      line-height: 0.85;
+      position: sticky;
 
-        left: 1.5vw;
-      }
+      left: 1.5vw;
+    }
 
-      .page-content {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        width: 100%;
-        height: 100%;
-      }
+    .page-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      // width: 100%;
+      // height: 100%;
     }
   }
 
   // Blank areas between pages
-  .b-blank {
+  // .b-blank {
     // grid-area: blank1, blank2, blank3, blank4, blank5;
-    min-height: 50vh;
-    background-color: transparent;
-  }
+  //   min-height: 50vh;
+  //   background-color: transparent;
+  // }
 
-  // Set sizes and transparent bg
+  // Set transparent bg
   .b-home,
   .b-skills,
   .b-experience,
@@ -78,25 +96,21 @@
   .b-testimonials,
   .b-about,
   .b-contact {
-    min-height: 100vh;
-    min-width: 100vw;
     background: transparent;
-    
   }
 
   // Set Grid Areas
   .b-home {
-    // position: ƒixed;
-    // top: 0;
-
+    min-height: 100vh;
+    min-width: 100vw;
     grid-area: home;
     z-index: 100;
   }
 
   .b-skills {
+    // max-height: 50vh;
     grid-area: skills;
     z-index: 15;
-
 
     @media (min-width: 1024px) {
       max-height: 215vh;
@@ -110,10 +124,11 @@
   }
 
   .b-projects {
-    min-height: 100vh;
+    max-height: 50vh;
     grid-area: projects;
     z-index: 25;
   }
+
   .b-testimonials {
     grid-area: testimonials;
     z-index: 30;

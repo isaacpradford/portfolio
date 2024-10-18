@@ -23,8 +23,11 @@ import {
   useSpring,
   useInView,
 } from "framer-motion";
+import AboutPage from "./pages/AboutPage";
+import WhatPage from "./pages/WhatPage";
 
 function Page({ id, children }) {
+  const [playedAnimation, setPlayedAnimation] = useState(false);
   const ref = useRef(null);
   const { scrollY } = useScroll({
     target: ref,
@@ -33,14 +36,20 @@ function Page({ id, children }) {
 
   const isInView = useInView(ref, { amount: 0.5 });
 
+  useEffect(() => {
+    if (isInView && !playedAnimation) {
+      setPlayedAnimation(true);
+    }
+  }, [isInView, playedAnimation]);
+
   return (
     <motion.section ref={ref} className="page" id={id}>
       {/* Parallax title */}
       <motion.h1
         className="page-title"
         initial={{ y: 100 }}
-        animate={{ y: isInView ? -360 : 0 }}
-        exit={{ y: 100 }}
+        animate={{ y: isInView ? -325 : 0 }}
+        exit={{ y: 300 }}
         transition={{
           duration: 5,
           type: "spring",
@@ -56,8 +65,8 @@ function Page({ id, children }) {
       {/* Page content with slower movement */}
       <motion.div
         className="page-content"
-        initial={{ x: 0, scale: 0.9 }}
-        animate={{ scale: isInView ? 1 : 0.9 }}
+        initial={{ x: 0, scale: !playedAnimation ? 0.1 : 1 }}
+        animate={{ scale: isInView && !playedAnimation ? 1 : 0.95 }}
         exit={{ x: 0 }}
         transition={{
           duration: 5,
@@ -74,8 +83,8 @@ function Page({ id, children }) {
 }
 
 function App() {
-  const [showContent, setShowContent] = useState(false);
-  const [animationFinished, setAnimationFinished] = useState(false);
+  const [showContent, setShowContent] = useState(true);
+  const [animationFinished, setAnimationFinished] = useState(true);
 
   const { scrollYProgress } = useScroll();
 
@@ -95,7 +104,7 @@ function App() {
   }, []);
 
   // Sets default color
-  document.documentElement.style.setProperty("--project-color", "#fe0222");
+  document.documentElement.style.setProperty("--project-color", "#468cdd");
 
   return (
     <>
@@ -107,27 +116,46 @@ function App() {
           <></>
         ) : (
           <>
-            <Header />
-            <div className="pageContainer">
-              <Page id={"home"}>
-                <HomePage />
-              </Page>
-              <Page id={"skills"}>
-                <SkillsPage />
-              </Page>
-              <Page id={"projects"}>
-                <ProjectPage />
-              </Page>
-              <Page id={"experience"}>
-                <ExperiencePage />
-              </Page>
-              <Page id={"Testimonials"}>
-                <TestimonialPage />
-              </Page>
-              <Page id={"Contact"}>
-                <ContactPage />
-              </Page>
-              {/* <Blank />
+            {/* <Header /> */}
+            <HomePage />
+            {/* <AboutPage /> */}
+            <Page id={"Skills"}>
+              <SkillsPage />
+            </Page>
+
+            <Page id={"Projects"}>
+              <ProjectPage />
+            </Page>
+
+            <Page id="WhatIDo">
+              <WhatPage />
+            </Page>
+
+            <Page id={"Experience"}>
+              <ExperiencePage />
+            </Page>
+            <Page id={"Testimonials"}>
+              <TestimonialPage />
+            </Page>
+            <Page id={"Contact"}>
+              <ContactPage />
+            </Page>
+
+            {/* Progress circle */}
+            <figure className="progress">
+              <svg id="progress" width="100" height="100" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="30" pathLength="1" className="bg" />
+                <motion.circle
+                  cx="50"
+                  cy="50"
+                  r="30"
+                  pathLength="1"
+                  className="indicator"
+                  style={{ pathLength: scrollYProgress }}
+                />
+              </svg>
+            </figure>
+            {/* <Blank />
               <SkillsPage />
               <Blank />
 
@@ -137,31 +165,7 @@ function App() {
               <Blank />
               <TestimonialPage />
               <Blank /> */}
-              <figure className="progress">
-                <svg
-                  id="progress"
-                  width="100"
-                  height="100"
-                  viewBox="0 0 100 100"
-                >
-                  <circle
-                    cx="50"
-                    cy="50"
-                    r="30"
-                    pathLength="1"
-                    className="bg"
-                  />
-                  <motion.circle
-                    cx="50"
-                    cy="50"
-                    r="30"
-                    pathLength="1"
-                    className="indicator"
-                    style={{ pathLength: scrollYProgress }}
-                  />
-                </svg>
-              </figure>
-            </div>
+            {/* </div> */}
           </>
         )}
       </HelmetProvider>

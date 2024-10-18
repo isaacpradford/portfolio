@@ -100,6 +100,25 @@
 .b-navbar__wrapper__link a:visited {
   color: #333;
 }
+.b-navbar__nightMode {
+  z-index: 1;
+}
+.b-navbar__nightMode svg {
+  transition: 0.1s ease-in-out;
+  scale: 5;
+}
+.b-navbar__nightMode svg:hover {
+  scale: 5.2;
+}
+.b-navbar .cobweb {
+  position: absolute;
+  top: 0;
+  left: 15vw;
+  z-index: -1;
+  transition: 0.1s ease-in-out;
+  scale: 30;
+  color: #006bbc;
+}
 
 .socials {
   position: fixed;
@@ -141,7 +160,7 @@
   font-weight: 800;
 }
 .socials .links ul li a {
-  color: #004089;
+  color: var(--project-color);
   text-decoration: none;
   mix-blend-mode: darken;
   transition: 0.2s ease-in-out;
@@ -469,7 +488,6 @@
 html {
   transition: 0.4s ease-in-out;
   filter: invert(var(--invert));
-  background-color: #e8e8e8;
 }
 
 .b-background {
@@ -479,7 +497,6 @@ html {
   width: 100vw;
   height: 755vh;
   z-index: -1;
-  background-image: linear-gradient(to right, rgba(128, 128, 128, 0.822) 1px, transparent 1px), linear-gradient(to bottom, rgba(128, 128, 128, 0.721) 1px, transparent 1px);
   background-size: 95vw 85vh;
   background-attachment: fixed;
   background-position: center;
@@ -505,7 +522,7 @@ html {
   max-width: 20vw;
   font-size: 3vw;
   padding: 0;
-  color: #f6f6f6;
+  color: #242424;
 }
 .siteload .foreground {
   z-index: 101;
@@ -520,7 +537,7 @@ html {
   perspective: 1000;
 }
 .siteload .foreground .square {
-  background-color: #004089;
+  background-color: var(--project-color);
   width: 20vw;
   height: 20vh;
   scale: 1.01;
@@ -548,7 +565,7 @@ html {
   top: 0;
   left: 50%;
   font-family: "Inter", sans-serif;
-  color: #f6f6f6;
+  color: #242424;
   text-transform: uppercase;
 }
 
@@ -629,57 +646,50 @@ circle {
   min-width: 100%;
   min-height: 1400px;
   height: auto;
-  position: relative;
+  position: sticky;
   z-index: 1;
+  display: grid;
+  grid-template-columns: 100vw;
+  grid-template-rows: 100vh;
+  justify-content: center;
+  align-items: center;
 }
 .b-home__title {
-  color: #004089;
-  mix-blend-mode: exclusion;
+  grid-column: 1;
+  grid-row: 1;
   text-align: center;
+  z-index: 10;
 }
 .b-home__title h1 {
-  font-family: "Plaster", sans-serif;
   text-transform: uppercase;
-  font-size: 17.35vw;
-  letter-spacing: -0.6vw;
+  font-size: 11.35vw;
   line-height: 0.85;
 }
 .b-home__title h3 {
+  color: var(--project-color);
   font-family: "Inter", sans-serif;
   font-weight: 300;
   font-size: 2.5vw;
+  padding: 30px;
   text-transform: uppercase;
 }
+.b-home .banner-wrapper {
+  color: var(--project-color);
+  font-size: 15vw;
+  mix-blend-mode: exclusion;
+}
+.b-home__image {
+  grid-column: 1;
+  grid-row: 1;
+  z-index: -1;
+  position: fixed;
+}
 .b-home__image img {
-  width: 80vw;
   max-width: 80vw;
-  max-height: 600px;
-  margin-top: 10vw;
   border-radius: 50px;
+  mix-blend-mode: exclusion;
   object-fit: cover;
   margin-left: 10vw;
-}
-.b-home__nightMode {
-  position: fixed;
-  bottom: 5vh;
-  right: 10vw;
-  z-index: 1;
-}
-.b-home__nightMode svg {
-  transition: 0.1s ease-in-out;
-  scale: 5;
-}
-.b-home__nightMode svg:hover {
-  scale: 5.2;
-}
-.b-home .cobweb {
-  position: absolute;
-  top: 0;
-  left: 15vw;
-  z-index: -1;
-  transition: 0.1s ease-in-out;
-  scale: 30;
-  color: #006bbc;
 }
 .b-home__socials {
   position: absolute;
@@ -748,7 +758,7 @@ circle {
   font-family: "Bebas Neue", sans-serif;
   font-style: italic;
   background: #000000;
-  color: #f6f6f6;
+  color: #242424;
   mix-blend-mode: exclusion;
 }
 .b-contact__input {
@@ -785,7 +795,7 @@ circle {
   width: 50%;
   padding: 10px;
   background-color: #22473d;
-  color: #f6f6f6;
+  color: #242424;
   border-radius: 10px;
   transition: 0.2s ease-in-out;
   font-family: "Montserrat", sans-serif;
@@ -799,7 +809,7 @@ circle {
 }
 .b-contact__send:active {
   background-color: #22473d;
-  color: #f6f6f6;
+  color: #242424;
   box-shadow: 5px 5px #06c073;
 }
 .b-contact .socials {
@@ -807,6 +817,10 @@ circle {
   right: 3vw;
 }
 
+.b-about {
+  z-index: 50;
+  background-color: #2a2929;
+}
 .b-about__content {
   display: grid;
   grid-template-columns: 20% 25% 25% 20% 20%;
@@ -990,20 +1004,40 @@ circle {
   }
 }
 
-.b-projects {
-  position: relative;
-  scale: 0.9;
+#Projects {
+  max-height: 100vh;
+  background-color: #f0f4f8;
+  justify-content: end;
+}
+
+.b-projects__explanation {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 20vw;
+  height: 100vh;
+  align-self: flex-start;
+}
+.b-projects__explanation h1 {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.5vw;
+  font-size: 8vw;
+  padding-left: 2vw;
+  text-wrap: nowrap;
+  font-size: 90px;
+  letter-spacing: -0.2vw;
+  font-weight: 900;
+  margin-bottom: 17.5vh;
+  padding: 2vw;
+  rotate: -90deg;
 }
 .b-projects__cardList {
   z-index: 1;
-  position: absolute;
-  top: 9vh;
-  left: 12.5vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 80vh;
-  max-width: 75vw;
+  height: 100vh;
+  max-width: 60vw;
   width: 100%;
   margin: auto;
 }
@@ -1032,7 +1066,7 @@ circle {
   cursor: pointer;
   border-top: 0.1px solid black;
   position: relative;
-  height: 50px;
+  height: 100px;
 }
 .b-projects__cardList .card:hover, .b-projects__cardList .card.active {
   height: 250px;
@@ -1362,13 +1396,20 @@ svg.svgsquare text {
   align-items: center;
 }
 
+#Skills {
+  max-height: 85vh;
+  background-color: #f0f4f8;
+  justify-content: flex-start;
+}
+
 .b-skills {
   --gap: 1.5vw;
   position: relative;
   max-width: 100vw;
-  overflow-x: hidden;
 }
 .b-skills__title {
+  position: relative;
+  top: -35vh;
   font-family: "Impact", sans-serif;
   font-style: italic;
   color: var(--project-color);
@@ -1395,7 +1436,7 @@ svg.svgsquare text {
   align-self: flex-end;
   text-align: end;
   max-width: 30vw;
-  margin: -30vh 5vw 0 0;
+  margin: -30vh -30vw 0 0;
 }
 .b-skills__languages__databases h1 {
   font-size: 20px;
@@ -1411,7 +1452,6 @@ svg.svgsquare text {
   flex-direction: column;
   align-items: flex-start;
   gap: var(--gap);
-  margin-top: 4vh;
   scale: 0.9;
 }
 .b-skills__pillBox ul {
@@ -1530,7 +1570,7 @@ svg.svgsquare text {
   flex-direction: column;
   max-width: 600px;
   margin: auto;
-  margin-top: 5vh;
+  margin-top: 95vh;
 }
 .b-skills__also h3 {
   font-family: "Inter", sans-serif;
@@ -1566,6 +1606,9 @@ svg.svgsquare text {
 }
 
 @media only screen and (max-width: 800px) {
+  .b-skills__title {
+    top: -45vh;
+  }
   .b-skills__subtitle {
     display: none;
   }
@@ -1590,6 +1633,141 @@ svg.svgsquare text {
     display: none;
   }
 }
+#WhatIDo {
+  justify-content: end;
+  max-width: 80vw;
+  margin-left: 10vw;
+  scale: 0.95;
+}
+
+.b-what__title {
+  margin-top: 8vh;
+}
+.b-what__title h1 {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.5vw;
+  font-size: 8vw;
+  padding-left: 2vw;
+  color: var(--project-color);
+  font-size: 40px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: normal;
+  line-height: 90%;
+  padding: 25px 0;
+}
+.b-what__title h3 {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.5vw;
+  font-size: 8vw;
+  padding-left: 2vw;
+  font-size: 30px;
+  margin: auto;
+  max-width: 50vw;
+  letter-spacing: normal;
+  text-align: center;
+  padding: 14px 0 40px 0;
+  font-weight: 200;
+}
+.b-what__cards {
+  display: flex;
+  flex-direction: row;
+  max-width: 100vw;
+  height: 100%;
+  justify-content: center;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+  gap: 2.5vw;
+}
+.b-what__cards__card {
+  width: 45%;
+  height: 35vh;
+  max-width: 450px;
+  max-height: 450px;
+  background-color: #f0f4f8;
+  border-radius: 10px;
+}
+.b-what__cards__card__content {
+  display: grid;
+  grid: 60% 40%/100% 100%;
+  width: 50%;
+  height: 35vh;
+  max-width: 450px;
+  max-height: 450px;
+}
+.b-what__cards__card__content h1 {
+  grid-row: 1;
+  grid-column: 1;
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.5vw;
+  font-size: 8vw;
+  padding-left: 2vw;
+  padding: 1.5vw;
+  font-size: 4vw;
+  letter-spacing: -0.25vw;
+  color: var(--project-color);
+  margin-right: auto;
+  justify-self: start;
+}
+.b-what__cards__card__content svg {
+  padding: 1.5vw;
+  grid-row: 1;
+  grid-column: 2;
+  justify-self: end;
+  margin-left: auto;
+}
+.b-what__cards__card__content p {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -1px;
+  font-size: 20px;
+  font-weight: 200;
+  padding-left: 2vw;
+  padding: 1.5vw;
+  max-width: 65%;
+  letter-spacing: normal;
+  align-self: self-start;
+  grid-row: 2;
+  grid-column: 1/3;
+}
+
+@media only screen and (max-width: 800px) {
+  #WhatIDo {
+    min-height: 200vh;
+    width: 90vw;
+    margin-left: 5vw;
+  }
+  .b-what__cards {
+    display: flex;
+    flex-direction: column;
+  }
+  .b-what__cards__card {
+    width: 100vw;
+  }
+  .b-what__cards__card__content {
+    grid: 50% 50%/50% 50%;
+    width: 100vw;
+    height: 35vh;
+    padding: 6px;
+  }
+  .b-what__cards__card__content h1 {
+    font-size: 32px;
+  }
+}
+@font-face {
+  font-family: "Druk Wide Bold";
+  src: url("./assets/fonts/DrukWideBold.woff") format("woff");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Impact";
+  src: url("./assets/fonts/impact.woff") format("woff");
+  font-weight: bold;
+}
+.b-home__title {
+  font-family: "Impact", sans-serif;
+}
+
 * {
   margin: 0;
 }
@@ -1606,19 +1784,20 @@ svg.svgsquare text {
   overflow-x: hidden;
 }
 #root .pageContainer {
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: block;
   scroll-behavior: smooth;
   overflow-y: scroll;
   height: 100vh;
+  background: transparent;
 }
-#root .pageContainer .page {
+#root .page {
   height: 100vh;
   display: flex;
   align-items: center;
   position: relative;
   scroll-snap-align: center;
 }
-#root .pageContainer .page .page-title {
+#root .page .page-title {
   font-family: "Impact", sans-serif;
   text-transform: uppercase;
   font-size: 3.35vw;
@@ -1627,18 +1806,12 @@ svg.svgsquare text {
   position: sticky;
   left: 1.5vw;
 }
-#root .pageContainer .page .page-content {
+#root .page .page-content {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  width: 100%;
-  height: 100%;
-}
-#root .b-blank {
-  min-height: 50vh;
-  background-color: transparent;
 }
 #root .b-home,
 #root .b-skills,
@@ -1647,11 +1820,11 @@ svg.svgsquare text {
 #root .b-testimonials,
 #root .b-about,
 #root .b-contact {
-  min-height: 100vh;
-  min-width: 100vw;
   background: transparent;
 }
 #root .b-home {
+  min-height: 100vh;
+  min-width: 100vw;
   grid-area: home;
   z-index: 100;
 }
@@ -1670,7 +1843,7 @@ svg.svgsquare text {
   height: 140vh;
 }
 #root .b-projects {
-  min-height: 100vh;
+  max-height: 50vh;
   grid-area: projects;
   z-index: 25;
 }

@@ -12,6 +12,7 @@ import {
 } from "framer-motion";
 
 const ProjectPage = () => {
+  const [playedAnimation, setPlayedAnimation] = useState(false);
   const [isPopupOpen, setPopupOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
 
@@ -67,22 +68,30 @@ const ProjectPage = () => {
 
   const isInView = useInView(ref, { amount: 0.5 });
 
+  useEffect(() => {
+    if (isInView && !playedAnimation) {
+      setPlayedAnimation(true);
+    }
+  }, [isInView, playedAnimation]);
+
   const scale = useTransform(scrollY, [0, 300], [1, 0.3]);
 
   return (
     <motion.div id="projects" className="b-projects page" ref={ref}>
+      <div className="b-projects__explanation">
+        <h1>FOR EXAMPLE...</h1>
+      </div>
       <motion.div
         className="b-projects__cardList"
-        initial={{ scale: 0.5 }}
-        animate={{ scale: isInView ? 1 : 0.5 }}
-        exit={{ scale: 0.5 }}
+        initial={{ scale: !playedAnimation ? 0.5 : 1 }}
+        animate={{ scale: isInView && !playedAnimation ? 0.5 : 1 }}
+        exit={{ scale: !playedAnimation ? 0.5 : 1 }}
         transition={{
           duration: 5,
           type: "spring",
           stiffness: 100,
           damping: 20,
         }}
-        viewport={{ once: false }}
       >
         {/* <h1 className="b-projects__cardList__title">Projects:</h1> */}
         {projects.map((project) => (
@@ -105,7 +114,7 @@ const ProjectPage = () => {
         </div>
       </motion.div>
 
-      <motion.div
+      {/* <motion.div
         className="b-projects__svg"
         initial={{ scale: 0.3 }}
         animate={{ scale: isInView ? 1 : 0.3 }}
@@ -152,7 +161,7 @@ const ProjectPage = () => {
             </textPath>
           </text>
         </svg>
-      </motion.div>
+      </motion.div> */}
 
       <Popup
         isOpen={isPopupOpen}
