@@ -72,7 +72,7 @@ const ContactForm = () => {
 
   return (
     <form className="b-contact__form" ref={form} onSubmit={sendEmail}>
-      <label className="b-contact__label">Name</label>
+      {/* <label className="b-contact__label">Name</label> */}
       <input
         className="form-input b-contact__input"
         type="text"
@@ -81,7 +81,7 @@ const ContactForm = () => {
         placeholder="Name"
       />
 
-      <label className="b-contact__label">Email</label>
+      {/* <label className="b-contact__label">Email</label> */}
       <input
         className="b-contact__input"
         type="email"
@@ -90,7 +90,7 @@ const ContactForm = () => {
         placeholder="Email"
       />
 
-      <label className="b-contact__label">Message</label>
+      {/* <label className="b-contact__label">Message</label> */}
 
       <textarea
         className="b-contact__input b-contact__textArea"

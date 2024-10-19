@@ -34,15 +34,15 @@ const ProjectPage = () => {
     },
     {
       id: 3,
-      title: "TwitterBots",
-      description: "Twitter bots from before Twitter wasn't Twitter",
-      date: "10/23",
-    },
-    {
-      id: 4,
       title: "PLMS",
       description: "Personal Learning Modules, or Plums for short",
       date: "2/24",
+    },
+    {
+      id: 4,
+      title: "TwitterBots",
+      description: "Twitter bots from before Twitter wasn't Twitter",
+      date: "10/23",
     },
     {
       id: 5,

@@ -244,6 +244,11 @@
 }
 
 @media only screen and (max-width: 800px) {
+  #Skills {
+    max-height: 115vh;
+    min-height: 110vh;
+  }
+
   .b-skills {
 
     &__title {

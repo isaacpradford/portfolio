@@ -720,30 +720,50 @@ circle {
     display: none;
   }
 }
+#Contact {
+  min-height: 100vh;
+  max-height: 100vh;
+  scale: 1.05;
+}
+
 .b-contact {
   --min-width: 80%;
   --max-width: 100%;
   --max-height: 200px;
   --min-height: 100px;
+  z-index: 1;
+}
+.b-contact__background {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  margin: 0;
+  max-width: 100vw;
+  min-width: 100vw;
+  max-height: 100vh;
+  min-height: 100vh;
+  object-fit: cover;
 }
 .b-contact__content {
+  z-index: 2;
   display: grid;
-  grid-template-columns: 45% 45%;
-  grid-template-rows: 90vh;
+  grid: 20vh 80vh/50vw 50vw;
   justify-content: center;
   align-items: center;
+  margin: 0;
 }
 .b-contact__title {
+  z-index: 2;
+  grid-column: 1;
+  grid-row: 1/3;
   display: flex;
   flex-direction: column;
-  font-family: "Inter", sans-serif;
-  letter-spacing: -0.5vw;
-  font-size: 8vw;
-  padding-left: 2vw;
-  font-size: 6.5vw;
-  font-weight: 900;
-  letter-spacing: -1vw;
-  font-style: italic;
+}
+.b-contact__title--3 {
+  align-self: flex-end;
 }
 .b-contact__title p {
   font-family: "Inter", sans-serif;
@@ -751,39 +771,47 @@ circle {
   font-size: 20px;
   font-weight: 200;
   padding-left: 2vw;
+  font-size: 3vw;
+  color: #f0f4f8;
   letter-spacing: 0;
-  padding: 0 24px;
+  padding: 12px 4px;
 }
 .b-contact__title h1 {
-  margin: -2vh;
-}
-.b-contact__title--3 {
-  text-align: center;
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.5vw;
+  font-size: 8vw;
+  padding-left: 2vw;
+  font-size: 16vw;
+  font-weight: 900;
+  letter-spacing: normal;
+  padding: 0;
+  line-height: 0.8;
+  padding-left: 8px;
+  color: #f0f4f8;
+  text-wrap: nowrap;
 }
 .b-contact__form {
-  justify-self: center;
-  align-self: flex-end;
+  z-index: 2;
+  grid-column: 2;
+  grid-row: 1/3;
   display: flex;
   flex-direction: column;
-  padding: 30px;
   min-width: var(--min-width);
-  width: 80%;
+  padding: 14px;
 }
 .b-contact__label {
   text-align: left;
   padding-top: 10px;
-  font-size: 20px;
-  font-family: "Bebas Neue", sans-serif;
-  font-style: italic;
-  background: #000000;
-  color: #242424;
-  mix-blend-mode: exclusion;
+  font-size: 24px;
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+  color: var(--project-color);
 }
 .b-contact__input {
   max-width: var(--max-width);
   width: 90%;
   height: 36px;
-  background-color: #e0e0e0;
+  background-color: #f0f4f8;
   border: none;
   border-radius: 10px;
   border-bottom: #22473d;
@@ -797,7 +825,7 @@ circle {
   transition: border-color 0.2s;
 }
 .b-contact__input:focus {
-  outline: 3px solid #06c073;
+  outline: 3px solid var(--project-color);
 }
 .b-contact__textArea {
   min-width: var(--min-width);
@@ -812,8 +840,8 @@ circle {
   margin: auto;
   width: 50%;
   padding: 10px;
-  background-color: #22473d;
-  color: #242424;
+  background-color: #f0f4f8;
+  color: var(--project-color);
   border-radius: 10px;
   transition: 0.2s ease-in-out;
   font-family: "Montserrat", sans-serif;
@@ -822,17 +850,12 @@ circle {
 }
 .b-contact__send:hover {
   scale: 1.02;
-  border: 2px solid #22473d;
-  box-shadow: 10px 10px #06c073;
+  box-shadow: 10px 10px var(--project-color);
 }
 .b-contact__send:active {
   background-color: #22473d;
   color: #242424;
   box-shadow: 5px 5px #06c073;
-}
-.b-contact .socials {
-  position: absolute;
-  right: 3vw;
 }
 
 .b-about {
@@ -1042,7 +1065,7 @@ circle {
   font-size: 8vw;
   padding-left: 2vw;
   text-wrap: nowrap;
-  font-size: 90px;
+  font-size: 60px;
   letter-spacing: -0.2vw;
   font-weight: 900;
   margin-bottom: 17.5vh;
@@ -1084,7 +1107,7 @@ circle {
   cursor: pointer;
   border-top: 0.1px solid black;
   position: relative;
-  height: 100px;
+  height: 15vh;
 }
 .b-projects__cardList .card:hover, .b-projects__cardList .card.active {
   height: 250px;
@@ -1098,7 +1121,7 @@ circle {
   z-index: 0;
 }
 .b-projects__cardList .card__title {
-  font-size: 1.5rem;
+  font-size: 4vw;
   font-weight: 600;
   z-index: 1;
   color: #333;
@@ -1186,18 +1209,27 @@ svg.svgsquare text {
 }
 
 @media only screen and (max-width: 800px) {
-  .b-projects__title {
-    text-align: left;
+  #Projects {
+    max-height: 80vh;
+  }
+  .b-projects__explanation {
+    display: none;
+  }
+  .b-projects__explanation h1 {
+    font-size: 30px;
+    margin-bottom: 100vh;
+    padding: 2vw;
+    rotate: -90deg;
   }
   .b-projects__cardList {
-    max-width: 80vw;
-    top: 5vh;
-    left: 10vw;
+    position: relative;
+    max-width: 90vw;
+    left: 5vw;
     margin: 0;
     padding: 0;
   }
   .b-projects__cardList .card {
-    height: 60px;
+    height: 120px;
   }
   .b-projects__cardList .card__title {
     font-size: 36px;
@@ -1226,6 +1258,7 @@ svg.svgsquare text {
 }
 
 .b-experience {
+  min-height: 170vh;
   display: flex;
   flex-direction: column;
 }
@@ -1386,88 +1419,80 @@ svg.svgsquare text {
   }
 }
 #Testimonials {
-  max-height: 50vh;
-  min-height: 50vh;
+  max-height: 80vh;
+  min-height: 80vh;
 }
 
 .b-testimonials {
+  --border-radius: 10px;
+  --height: 350px;
+  --width: 300px;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
 }
 .b-testimonials__header {
   display: flex;
   flex-direction: column;
   grid-row: 1;
   padding: 0;
+  padding: 0 0 80px 0;
+  text-transform: uppercase;
 }
 .b-testimonials__header h1 {
-  font-family: "Inter", sans-serif;
-  letter-spacing: -1px;
-  font-size: 40px;
-  font-weight: 300;
-  padding-left: 2vw;
   color: var(--project-color);
-  font-size: 50px;
-  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.5vw;
+  font-size: 8vw;
+  padding-left: 2vw;
+  padding: 0;
+  font-size: 5vw;
+  letter-spacing: -2px;
+  font-weight: 900;
   text-wrap: nowrap;
 }
-.b-testimonials__header svg {
-  margin-top: 1vh;
-  margin-left: 80vw;
+.b-testimonials__cards-wrapper {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  padding: 0;
+  margin: 0;
 }
-.b-testimonials__swiper {
-  height: 100%;
-  width: 100%;
-  grid-row: 2;
-}
-.b-testimonials__content {
+.b-testimonials__card {
   display: flex;
   flex-direction: column;
-  font-family: "Inter", sans-serif;
-  letter-spacing: -1px;
-  font-size: 20px;
-  font-weight: 200;
-  padding-left: 2vw;
-  letter-spacing: 0;
-}
-.b-testimonials__content p {
-  padding: 15px 15%;
-}
-.b-testimonials__name {
-  font-family: "Inter", sans-serif;
-  letter-spacing: -1px;
-  font-size: 40px;
-  font-weight: 300;
-  padding-left: 2vw;
+  border-radius: var(--border-radius);
+  min-width: var(--width);
+  max-width: var(--width);
+  min-height: var(--height);
+  max-height: var(--height);
+  background-color: #f0f4f8;
   text-align: center;
-  width: 120%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
 }
-.b-testimonials__name h1 {
-  font-size: 32px;
-  padding: 0;
-}
-.b-testimonials__name h4 {
-  font-size: 24px;
-  padding: 0;
-}
-
-.swiper {
-  width: 100%;
-  height: 100%;
-}
-
-.swiper {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.swiper-slide {
+.b-testimonials__card p {
+  padding: 14px;
   font-size: 18px;
-  /* Center slide text vertically */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-style: italic;
+  margin: 10px 0;
+}
+.b-testimonials__card h3 {
+  margin-top: auto;
+  font-size: 20px;
+  font-weight: 600;
+}
+.b-testimonials__card h4 {
+  margin-top: auto;
+  font-size: 14px;
+  font-weight: 400;
+}
+.b-testimonials__card img {
+  border-radius: var(--border-radius);
+  min-width: var(--width);
+  max-width: var(--width);
+  min-height: var(--height);
+  max-height: var(--height);
+  object-fit: cover;
 }
 
 #Skills {
@@ -1680,6 +1705,10 @@ svg.svgsquare text {
 }
 
 @media only screen and (max-width: 800px) {
+  #Skills {
+    max-height: 115vh;
+    min-height: 110vh;
+  }
   .b-skills__title {
     top: -45vh;
   }
@@ -1709,7 +1738,7 @@ svg.svgsquare text {
 }
 #WhatIDo {
   justify-content: end;
-  min-height: 100vh;
+  min-height: 110vh;
   max-width: 90vw;
   margin-left: 5vw;
   scale: 0.95;
@@ -1851,6 +1880,23 @@ svg.svgsquare text {
   font-family: "Impact", sans-serif;
 }
 
+#Contact {
+  background: url("./assets/IMG_3990.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+}
+
+#Contact::before {
+  content: "";
+  width: 100vw;
+  height: 100vh;
+  background: inherit;
+  filter: blur(1px);
+  z-index: -1;
+}
+
 * {
   margin: 0;
 }
@@ -1923,10 +1969,8 @@ svg.svgsquare text {
 #root .b-experience {
   grid-area: experience;
   z-index: 20;
-  height: 140vh;
 }
 #root .b-projects {
-  max-height: 50vh;
   grid-area: projects;
   z-index: 25;
 }

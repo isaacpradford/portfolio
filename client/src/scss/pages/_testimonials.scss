@@ -2,90 +2,90 @@
 @use "../mixins" as *;
 
 #Testimonials {
-  max-height: 50vh;
-  min-height: 50vh;
+  max-height: 80vh;
+  min-height: 80vh;
 }
 
-
 .b-testimonials {
-  @include flexColumn;
-  // display: grid;
-  // grid-template-columns: 100%;
-  // grid-template-rows: 30% 70%;
-  // justify-content: center;
-  // align-items: center;
+  --border-radius: 10px;
+  --height: 350px;
+  --width: 300px;
 
-  overflow-x:hidden;
+  @include flexColumn;
 
   &__header {
     @include flexColumn;
     grid-row: 1;
     padding: 0;
+    padding: 0 0 80px 0;
+    text-transform: uppercase;
 
     h1 {
-      @include sectionTitle;
       color: $mainColor;
-      font-size: 50px;
-      font-weight: 500;
+
+      @include pageTitle;
+      padding: 0;
+      font-size: 5vw;
+      letter-spacing: -2px;
+      font-weight: 900;
       text-wrap: nowrap;
     }
-    svg {
-      margin-top: 1vh;
-      margin-left: 80vw;
-    }
   }
 
-  &__swiper {
-    height: 100%;
-    width: 100%;
-    grid-row: 2;
-    
-    
+  &__cards-wrapper {
+    @include flexRow;
+    overflow-x: scroll;
+    // flex-wrap: wrap;
+    // max-width: 1480px; // 350px width * 4 cards + 10px margin each side
+    // min-width: 1480px;
+
+    // justify-content: center;
+
+    padding: 0;
+    margin: 0;
   }
 
-  &__content {
+  &__card {
     @include flexColumn;
-    @include mainBodyText;
-    letter-spacing: 0;
+    border-radius: var(--border-radius);
+    min-width: var(--width);
+    max-width: var(--width);
+    min-height: var(--height);
+    max-height: var(--height);
+
+    background-color: $backgroundColor2;
+
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
 
     p {
-      padding: 15px 15%;
+      padding: 14px;
+      font-size: 18px;
+      font-style: italic;
+      margin: 10px 0;
     }
-  }
 
-  &__name {
-    @include sectionTitle;
-    text-align: center;
-
-    // background-color: $gray;
-    width: 120%;
-    h1 {
-      font-size: 32px;
-      padding: 0;
+    h3 {
+      margin-top: auto;
+      font-size: 20px;
+      font-weight: 600;
     }
 
     h4 {
-      font-size: 24px;
-      padding: 0;
+      margin-top: auto;
+      font-size: 14px;
+      font-weight: 400;
+      
+    }
+
+    img {
+      border-radius: var(--border-radius);
+      min-width: var(--width);
+      max-width: var(--width);
+      min-height: var(--height);
+      max-height: var(--height);
+      object-fit: cover;
     }
   }
-}
-
-.swiper {
-  width: 100%;
-  height: 100%;
-}
-.swiper {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.swiper-slide {
-  font-size: 18px;
-  // background-color: $secondaryColor;
-
-  /* Center slide text vertically */
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }

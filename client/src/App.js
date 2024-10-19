@@ -28,8 +28,8 @@ import AboutPage from "./pages/AboutPage";
 import WhatPage from "./pages/WhatPage";
 
 function App() {
-  const [showContent, setShowContent] = useState(true);
-  const [animationFinished, setAnimationFinished] = useState(true);
+  const [showContent, setShowContent] = useState(false);
+  const [animationFinished, setAnimationFinished] = useState(false);
 
   const { scrollYProgress } = useScroll();
 

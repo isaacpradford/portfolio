@@ -20,7 +20,7 @@
     h1 {
       @include pageTitle;
       text-wrap: nowrap;
-      font-size: 90px;
+      font-size: 60px;
       letter-spacing: -0.2vw;
       font-weight: 900;
       // line-height: 75%;
@@ -68,7 +68,7 @@
       border-top: 0.1px solid black;
 
       position: relative;
-      height: 100px;
+      height: 15vh;
 
       &:hover,
       &.active {
@@ -86,7 +86,7 @@
       }
 
       &__title {
-        font-size: 1.5rem;
+        font-size: 4vw;
         font-weight: 600;
         z-index: 1;
         color: #333;
@@ -180,20 +180,33 @@ svg.svgsquare text {
 
 // Responsiveness
 @media only screen and (max-width: 800px) {
+  #Projects {
+    max-height: 80vh;
+  }
+
   .b-projects {
-    &__title {
-      text-align: left;
+
+    &__explanation {
+      display: none;
+  
+      h1 {
+        font-size: 30px;
+        margin-bottom: 100vh;
+        padding: 2vw;
+        rotate: -90deg;
+      }
     }
 
     &__cardList {
-      max-width: 80vw;
-      top: 5vh;
-      left: 10vw;
+      position: relative;
+      max-width: 90vw;
+      // top: 50vh;
+      left: 5vw;
       margin: 0;
       padding: 0;
 
       .card {
-        height: 60px;
+        height: 120px;
 
         &__title {
           font-size: 36px;

@@ -44,8 +44,7 @@ const ExperiencePage = () => {
               Developed scalable software solutions in a fast-paced startup
               environment using React, Javascript, SCSS, Mongoose, NodeJS, and
               Express. Contributed to full stack development for customer-facing
-              applications that focused on user management and enhanced
-              functionality
+              applications that focused on user management
             </p>
             <ul>
               <li>

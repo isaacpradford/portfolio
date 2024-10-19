@@ -7,6 +7,7 @@ import {
   useInView,
 } from "framer-motion";
 
+import ScrollingBanner from "./LoopingBanner";
 function Page({ id, children }) {
   const [playedAnimation, setPlayedAnimation] = useState(false);
   const ref = useRef(null);
@@ -41,7 +42,6 @@ function Page({ id, children }) {
       >
         {id}
       </motion.h1> */}
-      {/* <ScrollingBanner title={id} baseVelocity={2} /> */}
 
       {/* Page content with slower movement */}
       <motion.div

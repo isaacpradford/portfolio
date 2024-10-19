@@ -3,6 +3,7 @@ import ContactForm from "../Components/ContactForm";
 import Socials from "../Components/Socials";
 
 import { motion, useScroll, useSpring } from "framer-motion";
+import background from "../assets/IMG_3990.jpg";
 
 const ContactPage = () => {
   const ref = useRef(null);
@@ -15,7 +16,7 @@ const ContactPage = () => {
   });
 
   return (
-    <div id="contact" className="b-contact page" ref={ref}>
+    <div id="contact" className="b-contact" ref={ref}>
       <div className="b-contact__content">
         <div className="b-contact__title">
           <p>Working on a project?</p>

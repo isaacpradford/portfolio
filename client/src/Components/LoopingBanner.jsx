@@ -8,7 +8,7 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-import { wrap } from "@motionone/utils"; // used to wrap the animation seamlessly
+import { wrap } from "@motionone/utils"; 
 
 // Thanks to Matt from Framer Motion for making this code open source
 // https://codesandbox.io/p/sandbox/r1dy4u?file=%2Fsrc%2FApp.tsx%3A20%2C3-54%2C37
