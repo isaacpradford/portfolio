@@ -31,7 +31,6 @@ const ExperiencePage = () => {
       ></motion.div>
 
       <div className="b-experience__timeline">
-        {/* Should this just say experience? */}
         <h1 className="b-experience__timeline__subtitle">Work Experience</h1>
         <div className="b-experience__timeline__entry">
           <div className="b-experience__timeline__entry__date">
@@ -72,15 +71,17 @@ const ExperiencePage = () => {
               principles, focusing on creating scalable, maintainable, and
               high-performance software.
             </p>
-            <li>
-              Trained to think critically and solve complex problems using old
-              and modern development frameworks
-            </li>
-            <li>
-              Learned to develop in fast-paced environments and how to adapt to
-              latest tools and technology
-            </li>
-            <li>Emphasized collaboration through team-based projects</li>
+            <ul>
+              <li>
+                Trained to think critically and solve complex problems using old
+                and modern development frameworks
+              </li>
+              <li>
+                Learned to develop in fast-paced environments and how to adapt
+                to latest tools and technology
+              </li>
+              <li>Emphasized collaboration through team-based projects</li>
+            </ul>
           </div>
         </div>
         {/* <h1 className="b-experience__timeline__subheading">Certifications</h1> */}
@@ -96,13 +97,17 @@ const ExperiencePage = () => {
               integrating databases, servers, and RESTful APIs into user
               interfaces into seamless, functional systems.
             </p>
-            <li>
-              Prioritized building responsive, user-friendly applications using
-              JavaScript, React, and style languages like SCSS/CSS and Tailwind.
-            </li>
-            <li>
-              Utilized NodeJS, Express, NextJS, with both SQL and noSQL systems
-            </li>
+            <ul>
+              <li>
+                Prioritized building responsive, user-friendly applications
+                using JavaScript, React, and style languages like SCSS/CSS and
+                Tailwind.
+              </li>
+              <li>
+                Utilized NodeJS, Express, NextJS, with both SQL and noSQL
+                systems
+              </li>
+            </ul>
           </div>
         </div>
         <div className="b-experience__timeline__entry">
@@ -116,16 +121,18 @@ const ExperiencePage = () => {
               Gained an in-depth understanding of software architecture with an
               emphasis on object-oriented design principles.
             </p>
-            <li>
-              Focused on design tools and how to use them to create
-              maintainable, cohesive, convenient software systems that are
-              aligned with customer needs.
-            </li>
-            <li>
-              Used and implemented creational, structural, and behavioral Design
-              Patterns to optimize code structure and enhance software
-              scalability.
-            </li>
+            <ul>
+              <li>
+                Focused on design tools and how to use them to create
+                maintainable, cohesive, convenient software systems that are
+                aligned with customer needs.
+              </li>
+              <li>
+                Used and implemented creational, structural, and behavioral
+                Design Patterns to optimize code structure and enhance software
+                scalability.
+              </li>
+            </ul>
           </div>
         </div>
       </div>

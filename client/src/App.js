@@ -61,7 +61,7 @@ function App() {
           <></>
         ) : (
           <>
-            {/* <Header /> */}
+            <Header />
             <HomePage />
             <Page id={"Skills"}>
               <SkillsPage />
@@ -97,17 +97,6 @@ function App() {
                 />
               </svg>
             </figure>
-            {/* <Blank />
-              <SkillsPage />
-              <Blank />
-
-              <ExperiencePage />
-              <Blank />
-              <ProjectPage />
-              <Blank />
-              <TestimonialPage />
-              <Blank /> */}
-            {/* </div> */}
           </>
         )}
       </HelmetProvider>
@@ -116,13 +105,3 @@ function App() {
 }
 
 export default App;
-
-{
-  /* <Route path="/" element={<HomePage />} />
-  <Route path="/about" element={<AboutPage />} />
-  <Route path="/skills" element={<SkillsPage />} />
-  <Route path="/experience" element={<ExperiencePage />} />
-  <Route path="/projects" element={<ProjectPage />} />
-  <Route path="/testimonials" element={<TestimonialPage />} />
-  <Route path="/contact" element={<ContactPage />} /> */
-}

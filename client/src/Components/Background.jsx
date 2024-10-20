@@ -23,7 +23,7 @@ const Background = () => {
           height: "10vh",
           backgroundColor: "#333",
           mixBlendMode: "exclusion",
-          
+
           position: "fixed",
           top: background,
         }}

@@ -1,22 +1,39 @@
 import React, { useState, useEffect, useRef } from "react";
 import Popup from "../Components/Popup";
 import ProjectPopUp from "./ProjectPopUpPage";
-import { Link } from "react-scroll";
 
-import {
-  motion,
-  useScroll,
-  useInView,
-  useTransform,
-  useSpring,
-} from "framer-motion";
+import { motion, useInView } from "framer-motion";
+
+const barVariants = {
+  hidden: (side) => ({
+    x: side === "left" ? "0vw" : "0vw",
+  }),
+  visible: (side) => ({
+    x: side === "left" ? "-100vw" : "100vw",
+    transition: {
+      duration: 1.1,
+      ease: "easeInOut",
+    },
+  }),
+};
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
 
 const ProjectPage = () => {
   const [playedAnimation, setPlayedAnimation] = useState(false);
   const [isPopupOpen, setPopupOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
 
-  console.log(playedAnimation);
+  // Set up motion tracking on screen
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.6 });
 
   // Set the names and descriptions of the proejcts
   const [projects, setProjects] = useState([
@@ -62,28 +79,61 @@ const ProjectPage = () => {
     setSelectedProject(null);
   };
 
-  const ref = useRef(null);
-  const { scrollY } = useScroll({
-    target: ref,
-    offset: ["end end", "start start"],
-  });
-
-  const isInView = useInView(ref, { amount: 0.9 });
-
+  // Sets Project CardList in front of bars after animation has played
+  // Without this, you cant hover over the card list since the bars still are rendered over the cards
+  // and have a higher z-index
   useEffect(() => {
     if (isInView && !playedAnimation) {
-      setPlayedAnimation(true);
+      const timer = setTimeout(() => {
+        setPlayedAnimation(true);
+      }, 1300);
     }
   }, [isInView, playedAnimation]);
 
-  const scale = useTransform(scrollY, [0, 300], [1, 0.3]);
-
   return (
     <motion.div id="projects" className="b-projects page" ref={ref}>
+      {/* Animated bars on view */}
+      <motion.div
+        className="b-projects__leftBars"
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+      >
+        {/* Left side bars */}
+        {[...Array(6)].map((_, index) => (
+          <motion.div
+            key={index}
+            className="stripe"
+            variants={barVariants}
+            custom="left"
+          />
+        ))}
+      </motion.div>
+
+      {/* Right-side bars */}
+      <motion.div
+        className="b-projects__rightBars"
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+      >
+        {[...Array(6)].map((_, index) => (
+          <motion.div
+            key={index}
+            className="stripe"
+            variants={barVariants}
+            custom="right"
+          />
+        ))}
+      </motion.div>
+
       <div className="b-projects__explanation">
         <h1>FOR EXAMPLE...</h1>
       </div>
-      <motion.div className="b-projects__cardList">
+      <motion.div
+        className="b-projects__cardList"
+        style={{ zIndex: playedAnimation ? 100 : 1 }}
+      >
         {/* <h1 className="b-projects__cardList__title">Projects:</h1> */}
         {projects.map((project) => (
           <li
@@ -104,55 +154,6 @@ const ProjectPage = () => {
           <p>0.0.0</p>
         </div>
       </motion.div>
-
-      {/* <motion.div
-        className="b-projects__svg"
-        initial={{ scale: 0.3 }}
-        animate={{ scale: isInView ? 1 : 0.3 }}
-        exit={{ scale: 0.3 }}
-        transition={{
-          duration: 5,
-          type: "spring",
-          stiffness: 100,
-          damping: 20,
-        }}
-        viewport={{ once: false }}
-      >
-        <svg
-          className="svgsquare"
-          viewBox="0 0 1000 1000"
-          preserveAspectRatio="xMidYMid meet"
-        >
-          <path
-            id="squarepath"
-            d="M100 0 H900 A100 100 0 0 1 1000 100 V550 A100 100 0 0 1 900 650 H100 A100 100 0 0 1 0 550 V100 A100 100 0 0 1 100 0 Z"
-            fill="none"
-            stroke="transparent"
-          />
-
-          <text textAnchor="start">
-            <textPath className="my-text" href="#squarepath" startOffset="0%">
-              <animate
-                attributeName="startOffset"
-                from="-400%"
-                to="100%"
-                begin="0s"
-                dur="600s"
-                repeatCount="indefinite"
-              ></animate>
-              PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS
-              PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS
-              PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS
-              PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS
-              PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS
-              PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS
-              PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS
-              PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS
-              PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS PROJECTS
-            </textPath>
-          </text>
-        </svg>
-      </motion.div> */}
 
       <Popup
         isOpen={isPopupOpen}

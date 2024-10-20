@@ -6,7 +6,8 @@
 #Projects {
   max-height: 100vh;
   background-color: #f0f4f8;
-  justify-content: end
+  justify-content: end;
+  // overflow: hidden;
 }
 
 .b-projects {
@@ -35,12 +36,11 @@
 
     @include flexColumn;
     justify-content: center;
-    
 
     height: 100vh;
     max-width: 60vw;
     width: 100%;
-    margin:auto;
+    margin: auto;
 
     &__title {
       font-weight: 600;
@@ -166,16 +166,9 @@
     height: 100%;
     width: 90%;
   }
-}
 
-// SVG classes
-svg.svgsquare {
-  overflow: visible;
-}
-svg.svgsquare text {
-  font-family: $headerFont;
-  letter-spacing: 1px;
-  font-size: 100px;
+
+  
 }
 
 // Responsiveness
@@ -185,10 +178,9 @@ svg.svgsquare text {
   }
 
   .b-projects {
-
     &__explanation {
       display: none;
-  
+
       h1 {
         font-size: 30px;
         margin-bottom: 100vh;

@@ -41,7 +41,7 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="b-header">
+    <header className="b-header">
       <nav className="b-navbar">
         {/* Hamburger button */}
         <div className="b-navbar__hamburger">
@@ -86,10 +86,11 @@ const Header = () => {
                 Contact
               </Link>
             </li>
-
             <div className="b-navbar__nightMode">
-              {/* fill="var(--project-color)" */}
-              <FaRegMoon onClick={handleNightModeClick} />
+              <FaRegMoon
+                onClick={handleNightModeClick}
+                fill="var(--project-color)"
+              />
             </div>
           </ul>
         )}
@@ -100,7 +101,7 @@ const Header = () => {
         onClose={handlePopupClose}
         component={AboutPage}
       />
-    </div>
+    </header>
   );
 };
 

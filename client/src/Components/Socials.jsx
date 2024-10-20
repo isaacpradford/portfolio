@@ -18,7 +18,7 @@ const Socials = () => {
   return (
     <motion.div
       className="socials"
-      style={{ scale: smoothScale, translateX: translate }}
+      style={{ scale: smoothScale, translateX: translate, zIndex: 0 }}
     >
       <div className="words">
         <h1>Isaac Radford - @2024</h1>
@@ -41,14 +41,6 @@ const Socials = () => {
           </li>
         </ul>
         <ul>
-          {/* <li>
-            <Link
-              to={"https://www.instagram.com/radford_isaac/"}
-              target="_blank"
-            >
-              Instagram
-            </Link>
-          </li> */}
           <li>
             <Link
               to={"https://bsky.app/profile/wheat.bsky.social"}

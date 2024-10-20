@@ -73,7 +73,7 @@ const Square = ({ row, col, centerX, centerY, shouldExit, spiralOrder }) => {
   );
 
   const scaleAnimationDelay = distanceToCenter * 0.45;
-  const spiralAnimationDelay = spiralIndex * 0.05;
+  const spiralAnimationDelay = spiralIndex * 0.15;
   const animationDuration = 0.8;
 
   const variants = {
@@ -81,7 +81,7 @@ const Square = ({ row, col, centerX, centerY, shouldExit, spiralOrder }) => {
     enter: {
       scale: 1,
       transition: {
-        duration: 0.8,
+        duration: 0.9,
         delay: scaleAnimationDelay,
       },
     },
@@ -89,7 +89,7 @@ const Square = ({ row, col, centerX, centerY, shouldExit, spiralOrder }) => {
       rotateY: 180,
       scale: 1,
       transition: {
-        duration: 0.2,
+        duration: 0.5,
         delay: spiralAnimationDelay,
       },
     },
@@ -111,7 +111,14 @@ const Square = ({ row, col, centerX, centerY, shouldExit, spiralOrder }) => {
 };
 
 const Foreground = () => {
-  const gridSize = 6; // 5x5 grid
+  const [siteMessage, setSiteMessage] = useState("");
+
+  useEffect(() => {
+    const randomNumber = Math.floor(Math.random() * siteMessages.length);
+    setSiteMessage(siteMessages[randomNumber]);
+  }, []);
+
+  const gridSize = 5; // 5x5 grid
   const centerX = (gridSize - 1) / 2;
   const centerY = (gridSize - 1) / 2;
 
@@ -158,10 +165,12 @@ const Foreground = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, rotateY: [0, 0, 90] }}
         transition={{
-          opacity: { duration: 0.8, ease: "easeInOut", delay: 2 },
-          rotateY: { duration: 0.5, ease: "easeInOut", delay: 2.35 },
+          opacity: { duration: 1, ease: "easeInOut", delay: 3 },
+          rotateY: { duration: 0.5, ease: "easeInOut", delay: 8.35 },
         }}
-      ></motion.h1>
+      >
+        {siteMessage}
+      </motion.h1>
       <motion.div className="foreground">{renderSquares()}</motion.div>
     </motion.div>
   );

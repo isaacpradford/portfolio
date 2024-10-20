@@ -31,30 +31,22 @@
     top: 0;
     left: 0;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
     width: 100vw;
     height: 100vh;
 
     perspective: 1000;
-    // background-color: $backgroundColor;
 
     .square {
       background-color: $mainColor;
-      width: 20vw;
-      height: 20vh;
+      width: 17.5vw;
+      height: 17.5vh;
       scale: 1.01; // Ensures no weird white lines popup while animating
       transform-style: preserve-3d;
 
       backface-visibility: hidden;
     }
-  }
-
-  .socials {
-    position: absolute;
-    bottom: -100vh;
-    left: 0;
-    z-index: 102;
   }
 
   .spinner {
@@ -77,6 +69,40 @@
       color: $backgroundColor;
       text-transform: uppercase;
     }
+  }
+}
+
+// Project bars
+.b-projects {
+  // Animated bars
+  &__leftBars,
+  &__rightBars {
+    // rotate: 90deg;
+    position: absolute;
+    top: 0;
+
+    height: 100vh;
+    z-index: 100;
+    @include flexColumn;
+
+  }
+
+  &__leftBars {
+    left: -25vw;
+    width: 75vw;
+    
+  }
+
+  &__rightBars {
+    right: 0;
+    width: 75vw;
+  }
+
+  .stripe {
+    width: 100vw;
+    height: 20vh;
+    background-color: $mainColor;
+    margin-top: -5px;
   }
 }
 
@@ -124,6 +150,7 @@
   margin-left: -5px;
   background-color: $purple;
 }
+
 
 // Page progress % circle
 .progress {

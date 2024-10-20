@@ -71,7 +71,7 @@ const ContactForm = () => {
   };
 
   return (
-    <form className="b-contact__form" ref={form} onSubmit={sendEmail}>
+    <form ref={form} onSubmit={sendEmail}>
       {/* <label className="b-contact__label">Name</label> */}
       <input
         className="form-input b-contact__input"

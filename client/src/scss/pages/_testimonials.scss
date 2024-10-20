@@ -60,6 +60,8 @@
     margin: 10px;
 
     p {
+      @include mainBodyText;
+      letter-spacing: normal;
       padding: 14px;
       font-size: 18px;
       font-style: italic;

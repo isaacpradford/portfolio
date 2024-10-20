@@ -1,19 +1,40 @@
 @use "../variables" as *;
+@use "../mixins" as *;
 
 // Make navbar color excluded from whats behind
 
+
+header {
+  --background: #fff;
+  --accent: #000;
+}
+
+header::before {
+  background: var(--accent);
+  opacity: 0.9;
+}
+
+
 .b-navbar {
-  position: fixed;  
-  top: 0;          
-  left: 0;          
-  right: 0;         
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
-  padding: 10px 20px; 
+  padding: 10px 20px;
+  z-index: 1000;
+
+  background-image: radial-gradient(
+    rgba(0, 0, 0, 0) 1px,
+    var(--background) 1px
+  );
+  background-size: 8px 8px;
+  backdrop-filter: blur(3px);
 
   a {
     cursor: pointer;
   }
-  
+
   &__logo {
     display: flex;
     flex-direction: row;
@@ -32,7 +53,7 @@
     z-index: 1;
 
     @media (min-width: 768px) {
-      display: none; 
+      display: none;
     }
   }
 
@@ -41,28 +62,29 @@
     top: 50px;
     right: 25px;
     z-index: 2;
-    display: flex;
-    flex-direction: column;
+    @include flexColumn;
     gap: 10px;
     align-items: flex-end;
     justify-content: flex-end;
 
     @media (min-width: 768px) {
-        top: 10px;
+      top: 10px;
       flex-direction: row;
     }
 
     &__link {
       list-style: none;
-      font-size: 24px;
-      font-family: $subFont;
       color: $fontColor;
       padding: 0 10px;
 
       a {
-        color: $fontColor;
+        @include pageTitle;
+        font-size: 20px;
+        font-weight: 400;
+        letter-spacing: -1px;
+        padding: 0;
+        color: $mainColor;
         text-decoration: none;
-        font-weight: 100;
         &:visited {
           color: $fontColor;
         }
@@ -71,17 +93,12 @@
   }
 
   &__nightMode {
-    // position: fixed;
-    // bottom: 5vh;
-    // right: 10vw;
-    z-index: 1;
-
     svg {
       transition: 0.1s ease-in-out;
 
-      scale: 5;
+      scale: 1.3;
       &:hover {
-        scale: 5.2;
+        scale: 1.4;
       }
     }
   }
@@ -96,5 +113,4 @@
     scale: 30;
     color: #006bbc;
   }
-
 }

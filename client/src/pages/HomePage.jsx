@@ -11,8 +11,6 @@ import {
 } from "framer-motion";
 
 import Socials from "../Components/Socials";
-import Street from "../assets/IMG_3990.jpg";
-import ScrollingBanner from "../Components/LoopingBanner";
 
 const HomePage = () => {
   const ref = useRef(null);

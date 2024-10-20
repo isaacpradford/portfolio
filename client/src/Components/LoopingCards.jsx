@@ -11,7 +11,7 @@ import {
 
 import { ImQuotesLeft, ImQuotesRight } from "react-icons/im";
 
-import fairfax from "../assets/IMG_3990.jpg";
+import fairfax from "../assets/IMG_3990.png";
 import cacti from "../assets/cacti.png";
 import chicago from "../assets/chicago.png";
 

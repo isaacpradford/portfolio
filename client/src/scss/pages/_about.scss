@@ -2,8 +2,8 @@
 @use "../mixins" as *;
 
 .b-about {
-  z-index: 50;
-  background-color: #2a2929;
+  z-index: 1000;
+  background-color: $aboutBackground;
   
   // Content has all the grid alignment
   &__content {

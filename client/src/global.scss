@@ -12,27 +12,23 @@
   font-weight: bold;
 }
 
-// Declare imported fonts on here because of react ruling
+// Declare any imported fonts or URLs on here because of react ruling
 .b-home__title {
-  font-family: "Impact", sans-serif;
+  font-family: "Plaster", sans-serif;
 }
 
-#Contact {
-  background: url("./assets/IMG_3990.jpg");
-  background-size: cover;
+.b-contact__backdrop {
+  background: url("./assets/IMG_3990.png");
+  background-size:cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: bottom;
+  height: 85vh;
+  width: 98vw;
+
+  position: absolute;
+  top: 5vh;
+  left: 1vw;
   z-index: 1;
-}
-
-#Contact::before {
-  content: "";
-  width: 100vw;
-  height: 100vh;
-
-  background: inherit;
-  filter: blur(1px);
-  z-index: -1;
 }
 
 * {
