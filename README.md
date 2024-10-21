@@ -20,15 +20,14 @@ I thought I'd give a quick example of what the projects look like in the DB as w
   demo_link: String,\
   project_url: String,\
   date_created: String,\
-  youtube_link: String,\
   description1: String,\
   description2: String,\
   description3: String,\
-  frontend_stack: [String],\
-  backend_stack: [String],\
-  demo_picture: String,\
-  header_picture: String,\
-  subtitle: String,\
+  frontend_stack: [String], \
+  backend_stack: [String], \
+  demo_picture: String, \
+  header_picture: String, \
+  subtitle: String, \
 \
 And **here's** an example of what a full insert looks like: \
 {\
@@ -38,8 +37,8 @@ And **here's** an example of what a full insert looks like: \
   "title": "Raft",\
   "color": "#ff0066",\
   "demo_link": "tango-ten.vercel.app/",\
-  "project_url": "https://github.com/isaacpradford/tango",\
-  "date_created": "04/24",\
+  "project_url": "https://github.com/isaacpradford/tango", \
+  "date_created": "04/24", \
   "description1": "Raft is a Twitter-like social media...",\
   "description2": "Raft was created...",\
   "description3": "Currently, it’s under maintenance...",\
@@ -56,7 +55,7 @@ And **here's** an example of what a full insert looks like: \
     "Prisma"\
   ],\
   "demo_picture": "base64 string",\
-  "header_picture": "base64 string", // shoutout to https://base64.guru/converter/encode/image/png\
+  "header_picture": "base64 string", // shoutout to https://base64.guru/converter/encode/image/png \
   "subtitle": "Social Media clone"\
 }"\
 
