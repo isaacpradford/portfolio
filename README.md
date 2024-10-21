@@ -65,7 +65,7 @@ If you clone and set up your own repo, you'll obviously have to get your own cre
 REACT_APP_API_PASSWORD = ___\
 REACT_APP_SERVICE_ID = ___\
 REACT_APP_PUBLIC_KEY = ___\
-REACT_APP_TEMPLATE_ID = ____\
+REACT_APP_TEMPLATE_ID = ____
 
 ## That's it!
 That's all for now, if you have any questions or want to chat, you can email me at isaacpradford@gmail.com or reach out to me through the form on my own website!
