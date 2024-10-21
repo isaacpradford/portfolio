@@ -3,7 +3,7 @@
 
 .b-about {
   z-index: 1000;
-  background-color: $aboutBackground;
+  background-color: white;
   
   // Content has all the grid alignment
   &__content {
@@ -61,7 +61,6 @@
       grid-row: 2;
       font-size: 32px;
       margin: 0 auto;
-      // border-top: 4px solid $secondaryColor;
     }
   }
 
@@ -98,7 +97,6 @@
     flex-direction: column;
     text-align: left;
     text-wrap: nowrap;
-    // padding: 24px;
 
     @media (max-width: 920px) {
       grid-column: 1;
@@ -175,7 +173,7 @@
       transition: 0.1s ease-in-out;
       &:hover {
         padding: 5px;
-        box-shadow: 4px 4px 0 $secondaryColor;
+        box-shadow: 4px 4px 0 $mainColor;
       }
     }
 

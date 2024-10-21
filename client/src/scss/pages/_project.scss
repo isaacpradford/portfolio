@@ -1,15 +1,6 @@
 @use "../variables" as *;
 @use "../mixins" as *;
 
-// https://codepen.io/wikyware-net/pen/dyKPRxQ
-
-#Projects {
-  max-height: 100vh;
-  background-color: #f0f4f8;
-  justify-content: end;
-  // overflow: hidden;
-}
-
 .b-projects {
   &__explanation {
     @include flexColumn;
@@ -24,7 +15,6 @@
       font-size: 60px;
       letter-spacing: -0.2vw;
       font-weight: 900;
-      // line-height: 75%;
       margin-bottom: 17.5vh;
       padding: 2vw;
       rotate: -90deg;
@@ -41,6 +31,13 @@
     max-width: 60vw;
     width: 100%;
     margin: auto;
+
+    a {
+      cursor: pointer;
+  
+      text-decoration: none;
+      color: #333;
+    }
 
     &__title {
       font-weight: 600;
@@ -73,7 +70,6 @@
       &:hover,
       &.active {
         height: 250px;
-        // padding: 20px;
       }
 
       &__bg {
@@ -150,9 +146,7 @@
   &__bottom {
     @include flexRow;
     justify-content: space-between;
-    // max-width: 60vw;
     border-top: 0.1px solid #333;
-    // margin:auto;
 
     @include mainBodyText;
   }
@@ -166,9 +160,6 @@
     height: 100%;
     width: 90%;
   }
-
-
-  
 }
 
 // Responsiveness
@@ -192,7 +183,6 @@
     &__cardList {
       position: relative;
       max-width: 90vw;
-      // top: 50vh;
       left: 5vw;
       margin: 0;
       padding: 0;

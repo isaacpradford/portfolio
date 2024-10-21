@@ -1,28 +1,55 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { LiaLaptopCodeSolid, LiaPaletteSolid } from "react-icons/lia";
 import { RiTeamLine } from "react-icons/ri";
 import { MdOutlineConstruction } from "react-icons/md";
 
-import {
-  motion,
-  useScroll,
-  useSpring,
-  useTransform,
-  useInView,
-} from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
 const WhatPage = () => {
+  // Ref for the page
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["end end", "start start"],
   });
 
+  // Left line animation that changes line height
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["100%", "11%"]);
   const smoothLineHeight = useSpring(lineHeight, {
     stiffness: 100,
     damping: 30,
   });
+
+  // Adjusts card position and inner card content on mouse move
+  const handleMouseMove = (e) => {
+    const cards = document.querySelectorAll(".b-what__cards__card");
+    cards.forEach((card) => {
+      const speed = 1;
+      const x = (window.innerWidth - e.pageX * speed) / 150;
+      const y = (window.innerHeight - e.pageY * speed) / 150;
+
+      card.style.transform = `translate(${x}px, ${y}px)`;
+    });
+
+    const cardContents = document.querySelectorAll(
+      ".b-what__cards__card__content"
+    );
+    cardContents.forEach((card) => {
+      const speed = 1;
+      const x = (window.innerWidth - e.pageX * speed) / 150;
+      const y = (window.innerHeight - e.pageY * speed) / 150;
+
+      card.style.transform = `translate(${x}px, ${y}px)`;
+    });
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
 
   return (
     <div className="b-what" ref={ref}>
@@ -39,7 +66,7 @@ const WhatPage = () => {
       </div>
 
       <div className="b-what__cards">
-        <div className="b-what__cards__card">
+        <motion.div className="b-what__cards__card" initial={{ scale: 1 }}>
           <div className="b-what__cards__card__content">
             <h1>Design</h1>
             <LiaPaletteSolid
@@ -53,8 +80,8 @@ const WhatPage = () => {
               applications.
             </p>
           </div>
-        </div>
-        <div className="b-what__cards__card">
+        </motion.div>
+        <motion.div className="b-what__cards__card" initial={{ scale: 1 }}>
           <div className="b-what__cards__card__content">
             <h1>Develop</h1>
             <LiaLaptopCodeSolid
@@ -68,8 +95,8 @@ const WhatPage = () => {
               improves user experience.
             </p>
           </div>
-        </div>
-        <div className="b-what__cards__card">
+        </motion.div>
+        <motion.div className="b-what__cards__card" initial={{ scale: 1 }}>
           <div className="b-what__cards__card__content">
             <h1>Maintain</h1>
             <MdOutlineConstruction
@@ -83,8 +110,8 @@ const WhatPage = () => {
               code is written to last.
             </p>
           </div>
-        </div>
-        <div className="b-what__cards__card">
+        </motion.div>
+        <motion.div className="b-what__cards__card" initial={{ scale: 1 }}>
           <div className="b-what__cards__card__content">
             <h1>Collaborate</h1>
             <RiTeamLine
@@ -98,7 +125,7 @@ const WhatPage = () => {
               a vital member.
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

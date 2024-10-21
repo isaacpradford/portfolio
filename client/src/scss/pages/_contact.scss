@@ -1,13 +1,6 @@
 @use "../variables" as *;
 @use "../mixins" as *;
 
-#Contact {
-  min-height: 100vh;
-  max-height: 100vh;
-  scale: 1.05;
-  z-index: 1;
-}
-
 
 // Backdrop is in global css because of url import
 .b-contact {
@@ -34,9 +27,6 @@
     grid-row: 1/3;
     @include flexColumn;
     align-items: center;
-    // background: #000000;
-    // color: $fontHighlights;
-    // mix-blend-mode: exclusion;
 
     &--3 {
       align-self: flex-end;
@@ -74,7 +64,6 @@
     @include flexColumn;
 
     min-width: var(--min-width);
-    // background-color: $backgroundColor2;
     padding: 14px;
   }
 
@@ -87,7 +76,6 @@
     font-weight: 900;
 
     color: $mainColor;
-    // mix-blend-mode: exclusion;
   }
 
   &__input {
@@ -142,7 +130,6 @@
 
     &:hover {
       scale: 1.02;
-      // border: 2px solid $mainColor;
       box-shadow: 10px 10px $mainColor;
     }
     &:active {

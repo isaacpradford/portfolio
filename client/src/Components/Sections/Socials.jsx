@@ -11,8 +11,8 @@ import {
 
 const Socials = () => {
   const { scrollY } = useScroll();
-  const scale = useTransform(scrollY, [0, 300], [1.5, 1]);
-  const translate = useTransform(scrollY, [0, 300], [100, 0]);
+  const scale = useTransform(scrollY, [0, 300], [1.2, 1]);
+  const translate = useTransform(scrollY, [0, 300], [50, 0]);
   const smoothScale = useSpring(scale, { stiffness: 1000, damping: 200 });
 
   return (

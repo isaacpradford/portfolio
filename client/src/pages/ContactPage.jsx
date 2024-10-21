@@ -1,11 +1,14 @@
 import React, { useRef } from "react";
-import ContactForm from "../Components/ContactForm";
-import { Link } from "react-router-dom";
+import ContactForm from "../Components/Sections/ContactForm";
 
-import { motion, useTransform, useScroll, useSpring } from "framer-motion";
+import { motion, useTransform, useScroll } from "framer-motion";
+import { useColor } from "../functions/ColorContext";
 
 const ContactPage = () => {
   const ref = useRef(null);
+
+  // Get dark mode to get rid of picture background with it on
+  const { darkMode } = useColor();
 
   // Detect scroll progress for this section
   const { scrollYProgress } = useScroll({
@@ -35,13 +38,16 @@ const ContactPage = () => {
   );
 
   return (
-    <motion.div id="contact" className="b-contact" ref={ref}>
-      <motion.div
-        className="b-contact__backdrop"
-        style={{
-          backgroundPositionY,
-        }}
-      ></motion.div>
+    <motion.div id="contact" className="b-contact page" ref={ref}>
+      {!darkMode && (
+        <motion.div
+          className="b-contact__backdrop"
+          style={{
+            backgroundPositionY,
+          }}
+        />
+      )}
+
       <div className="b-contact__content">
         <motion.div
           className="b-contact__title"
@@ -71,36 +77,3 @@ const ContactPage = () => {
 };
 
 export default ContactPage;
-
-{
-  /* <div className="b-contact__socials">
-        <ul>
-          <li>
-            <Link to={"https://github.com/isaacpradford"} target="_blank">
-              Github
-            </Link>
-          </li>
-          <li>
-            <Link
-              to={"https://www.linkedin.com/in/isaacpradford/"}
-              target="_blank"
-            >
-              LinkedIn
-            </Link>
-          </li>
-          <li>
-            <Link
-              to={"https://bsky.app/profile/wheat.bsky.social"}
-              target="_blank"
-            >
-              BlueSky
-            </Link>
-          </li>
-          <li>
-            <Link to={"https://soundcloud.com/isaacradford"} target="_blank">
-              SoundCloud
-            </Link>
-          </li>
-        </ul>
-      </div> */
-}

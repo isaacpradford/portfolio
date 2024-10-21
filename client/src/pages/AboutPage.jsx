@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-scroll";
-import me from "../assets/me.png";
+
 
 const AboutPage = ({ onClose }) => {
   return (
@@ -9,14 +9,11 @@ const AboutPage = ({ onClose }) => {
         <div className="b-about__title">
           <h1>ABOUT ME</h1>
         </div>
-        {/* <div className="b-about__image">
-          <img src={me} alt="" srcSet={me} />
-        </div> */}
+
         <div className="b-about__description">
-          {/* <h1>About Me</h1> */}
           <p className="b-about__name">
-            Hi! My name's Isaac, I'm 24 and I just graduated from BYU-Idaho with
-            a Bachelor's degree in Software Engineering.
+            Hi! My name's Isaac, I'm 24, and I just graduated from BYU-Idaho
+            with a Bachelor's degree in Software Engineering.
           </p>
 
           <p className="b-about__bold">
@@ -28,8 +25,6 @@ const AboutPage = ({ onClose }) => {
             It's my goal to help build durable websites for people and companies
             that represent their visual identity and align with their goals.
           </p>
-          {/* I strive to build internet technologies that make living life on the web
-        simpler. */}
           <div className="b-about__description__bar"></div>
         </div>
 

@@ -19,7 +19,7 @@
 
 .b-contact__backdrop {
   background: url("./assets/IMG_3990.png");
-  background-size:cover;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
   height: 85vh;
@@ -35,51 +35,42 @@
   margin: 0;
 }
 
+// Gets the invert from the ColorContext
+html {
+  transition: 0.4s ease-in-out;
+  filter: invert(var(--invert));
+  cursor: none;
+  pointer-events:visiblePainted;
+
+}
+
+.cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background-color: #E1001E;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: transform 0.1s ease;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  mix-blend-mode: exclusion;
+}
+
 #root {
   z-index: 1;
   position: relative;
   overflow-y: hidden;
-  display: grid;
-  grid-template-columns: 100vw;
-  grid-template-rows: auto auto auto auto auto auto;
-  grid-template-areas:
-    "home"
-    "projects"
-    "skills"
-    "experience"
-    "testimonials"
-    "contact";
-
-  max-width: 100vw;
   overflow-x: hidden;
-
-  // Set up for page snapping
-  .pageContainer {
-    scroll-snap-type: block;
-    scroll-behavior: smooth;
-    overflow-y: scroll;
-    height: 100vh;
-    background: transparent;
-  }
+  max-width: 100vw;
 
   .page {
     height: 100vh;
     display: flex;
-    // justify-content: center;
     align-items: center;
     position: relative;
     scroll-snap-align: center;
-
-    .page-title {
-      font-family: "Impact", sans-serif;
-      text-transform: uppercase;
-      font-size: 3.35vw;
-      letter-spacing: -0.15vw;
-      line-height: 0.85;
-      position: sticky;
-
-      left: 1.5vw;
-    }
+    z-index: 1;
 
     .page-content {
       position: absolute;
@@ -87,64 +78,78 @@
       left: 0;
       right: 0;
       bottom: 0;
-      // width: 100%;
-      // height: 100%;
     }
   }
 
-  // Set transparent bg
-  .b-home,
-  .b-skills,
-  .b-experience,
-  .b-projects,
-  .b-testimonials,
-  .b-about,
-  .b-contact {
+  .responsiveness {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--project-color);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__warning {
+      font-family: "Inter", sans-serif;
+      font-weight: 800;
+      font-size: 24px;
+      color: white;
+      text-align: center;
+      margin-top: auto;
+      padding: 100px;
+    }
+
+    &__logo {
+      margin: auto;
+      max-width: 100px;
+    }
+  }
+
+  #Skills {
+    height: 100vh;
+    max-height: 100vh;
+    background-color: #f0f4f8;
+    justify-content: flex-start;
+  }
+
+  #Projects {
+    max-height: 100vh;
+    background-color: #f0f4f8;
+    justify-content: end;
+  }
+
+  #Experience {
+    min-height: 170vh;
     background: transparent;
   }
 
-  // Set Grid Areas
+  #Testimonials {
+    max-height: 80vh;
+    min-height: 80vh;
+    background: transparent;
+  }
+
+  #Contact {
+    min-height: 100vh;
+    max-height: 100vh;
+    scale: 1.05;
+    z-index: 1;
+    background: transparent;
+  }
+
+  #WhatIDo {
+    justify-content: end;
+    min-height: 110vh;
+    max-width: 90vw;
+    margin-left: 5vw;
+    scale: 0.95;
+  }
+
   .b-home {
     min-height: 100vh;
     min-width: 100vw;
-    grid-area: home;
     z-index: 100;
-  }
-
-  .b-skills {
-    // max-height: 50vh;
-    grid-area: skills;
-    z-index: 15;
-
-    @media (min-width: 1024px) {
-      max-height: 215vh;
-    }
-  }
-
-  .b-experience {
-    grid-area: experience;
-    z-index: 20;
-  }
-
-  .b-projects {
-    grid-area: projects;
-    z-index: 25;
-  }
-
-  .b-testimonials {
-    grid-area: testimonials;
-    z-index: 30;
-
-    @media (max-width: 800px) {
-      min-height: 120vh;
-    }
-
-    @media (max-width: 500px) {
-      min-height: 145vh;
-    }
-  }
-  .b-contact {
-    grid-area: contact;
-    z-index: 35;
   }
 }

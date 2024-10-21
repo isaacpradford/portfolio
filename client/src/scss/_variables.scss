@@ -1,22 +1,16 @@
 // Three fonts, Inter, Bebas Neue and Plaster
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plaster&display=swap');
-
-
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plaster&display=swap");
 
 // Colors
-// $backgroundColor: #f6f6f6;
-$backgroundColor: #242424;
 $backgroundColor2: #f0f4f8;
-// $backgroundColor: #2f2e2e;
-// $backgroundColor: #EAE7DC;
-// $backgroundColor2: #AF1B3F;
 $aboutBackground: #f6f6f6fd;
 
-$fontColor: #333;
 $fontHighlights: #22473d;
 $secondaryColor: #06c073;
 
-// $mainColor: #468cdd;
+
+$backgroundColor: var(--background-color);
+$fontColor: var(--font-color);
 $mainColor: var(--project-color);
 
 //Colors I like
@@ -36,7 +30,6 @@ $invisible: #00000000;
 $siteTitle: "Plaster", sans-serif;
 $headerFont: "Impact", sans-serif;
 $mainFont: "Inter", sans-serif;
-$subFont: "Inter", sans-serif;
 $projectTitleSize: 100px;
 
 $largeLetterSpacing: -10px;
@@ -47,56 +40,3 @@ $smallLetterSpacing: -1px;
 $smallPadding: 2vw;
 $medPadding: 4vw;
 $lrgPadding: 10vw;
-
-// Animations
-$marquee: 200s infinite marquee;
-$reverseMarquee: 200s infinite reverseMarquee;
-
-$increaseSize: 10s linear 1 increaseSize;
-$moveDown: 50s linear infinite moveDown;
-$moveDown2: 25s linear infinite moveDown;
-
-$flickering: 1.5s linear infinite flicker;
-$typing: typing 3.5s steps(20), blink 0.5s step-end infinite alternate;
-
-// Animation Keyframes
-@keyframes marquee {
-  0% {
-    transform: translateX(-50vw);
-  }
-  100% {
-    transform: translateX(-400vw);
-  }
-}
-
-@keyframes reverseMarquee {
-  0% {
-    transform: translateX(-50vw);
-  }
-  48% {
-    transform: translateX(250vw);
-  }
-  52% {
-    transform: translateX(250vw);
-  }
-  100% {
-    transform: translateX(-50vw);
-  }
-}
-
-@keyframes moveDown {
-  0% {
-    transform: translateY(-100vh);
-  }
-  100% {
-    transform: translateY(-10vh);
-  }
-}
-@keyframes moveUp {
-  0% {
-    transform: translateY(-200vh);
-  }
-  100% {
-    transform: translateY(-500vh);
-  }
-}

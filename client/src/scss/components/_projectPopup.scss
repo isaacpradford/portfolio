@@ -2,14 +2,16 @@
 @use "../mixins" as *;
 
 .project-popup {
-  scale: 1.1;
+  margin-top: 15vh;
+  height: 85vh;
   // Actual full screen background of the project popup
   &__background {
     z-index: 0;
     position: absolute;
+    top: 0;
     width: 100vw;
     height: 100vh;
-    background-color: $aboutBackground;
+    background-color: white;
   }
 
   // The top part of the project page, the header and the next page button
@@ -211,11 +213,6 @@
         }
       }
     }
-
-    // .lastDesc {
-    //   color: $aboutBackground;
-    //   background-color: var(--project-color);
-    // }
 
     &__links {
       grid-column: 1;

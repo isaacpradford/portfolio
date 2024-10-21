@@ -1,23 +1,15 @@
-import React, { useRef } from "react";
-import {
-  motion,
-  useMotionValue,
-  useVelocity,
-  useAnimationFrame,
-  useScroll,
-  useSpring,
-  useTransform,
-} from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 
-import { ImQuotesLeft, ImQuotesRight } from "react-icons/im";
+import { ImQuotesLeft } from "react-icons/im";
 
-import fairfax from "../assets/IMG_3990.png";
-import cacti from "../assets/cacti.png";
-import chicago from "../assets/chicago.png";
+import fairfax from "../../assets/IMG_3990.png";
+import cacti from "../../assets/cacti.png";
+import chicago from "../../assets/chicago.png";
 
 const marqueeVariants = {
   animate: {
-    x: [250, -250, 250],
+    x: [0, 0, 0],
     transition: {
       x: {
         repeat: Infinity,
@@ -30,25 +22,7 @@ const marqueeVariants = {
 };
 
 const LoopingCards = () => {
-  const baseX = useMotionValue(0);
-  const { scrollY } = useScroll();
-  const scrollVelocity = useVelocity(scrollY);
-  const smoothVelocity = useSpring(scrollVelocity, {
-    damping: 50,
-    stiffness: 400,
-  });
-
-  const velocityFactor = useTransform(smoothVelocity, [0, 5000], [0, 5], {
-    clamp: false,
-  });
-
   const testimonials = [
-    {
-      image: fairfax,
-    },
-    {
-      image: chicago,
-    },
     {
       //   name: "Jae Hyun Kim",
       content:
@@ -62,12 +36,14 @@ const LoopingCards = () => {
       position: "Development Supervisor, Subitt.io",
     },
     {
-      name: "Michael Brown",
+      name: "Annmarie Sansevero",
       content: "",
-      position: "Pee inc.",
+      position: "Project Lead, CSE445",
     },
     {
-      image: cacti,
+      name: "Aoi Kuriki",
+      content: "",
+      position: "Subitt.io CTO",
     },
   ];
 
@@ -83,9 +59,7 @@ const LoopingCards = () => {
           {testimonial.content && <p>{testimonial.content}</p>}
           {testimonial.name && <h1>{testimonial.name}</h1>}
           {testimonial.position && <h4>{testimonial.position}</h4>}
-          {testimonial.image && (
-            <img src={testimonial.image} alt="An image of me" />
-          )}
+          {testimonial.image && <img src={testimonial.image} />}
         </motion.div>
       ))}
     </motion.div>

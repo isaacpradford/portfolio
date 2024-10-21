@@ -1,5 +1,5 @@
 // Components
-@use "./components/navbar";
+@use "./components/header";
 @use "./components/socials";
 @use "./components/popup";
 @use "./components/projectPopup";
@@ -19,4 +19,3 @@
 @use "./pages/testimonials";
 @use "./pages/skills";
 @use "./pages/what";
-@use "./pages/noPage";

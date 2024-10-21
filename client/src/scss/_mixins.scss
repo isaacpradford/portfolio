@@ -8,7 +8,7 @@
 }
 
 @mixin sectionTitle {
-    font-family: $subFont;
+    font-family: $mainFont;
     letter-spacing: $smallLetterSpacing;
     font-size: 40px;
     font-weight: 300;
@@ -16,7 +16,7 @@
 }
 
 @mixin subTitle {
-    font-family: $subFont;
+    font-family: $mainFont;
     letter-spacing: $smallLetterSpacing;
     font-size: 20px;
     font-weight: 400;
@@ -24,7 +24,7 @@
 }
 
 @mixin mainBodyText {
-    font-family: $subFont;
+    font-family: $mainFont;
     letter-spacing: $smallLetterSpacing;
     font-size: 20px;
     font-weight: 200;

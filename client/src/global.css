@@ -1,42 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plaster&display=swap");
-@keyframes marquee {
-  0% {
-    transform: translateX(-50vw);
-  }
-  100% {
-    transform: translateX(-400vw);
-  }
-}
-@keyframes reverseMarquee {
-  0% {
-    transform: translateX(-50vw);
-  }
-  48% {
-    transform: translateX(250vw);
-  }
-  52% {
-    transform: translateX(250vw);
-  }
-  100% {
-    transform: translateX(-50vw);
-  }
-}
-@keyframes moveDown {
-  0% {
-    transform: translateY(-100vh);
-  }
-  100% {
-    transform: translateY(-10vh);
-  }
-}
-@keyframes moveUp {
-  0% {
-    transform: translateY(-200vh);
-  }
-  100% {
-    transform: translateY(-500vh);
-  }
-}
 header {
   --background: #fff;
   --accent: #000;
@@ -52,25 +14,24 @@ header::before {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: 101;
   padding: 10px 20px;
-  z-index: 1000;
   background-image: radial-gradient(rgba(0, 0, 0, 0) 1px, var(--background) 1px);
   background-size: 8px 8px;
   backdrop-filter: blur(3px);
 }
 .b-navbar a {
+  color: var(--project-color);
   cursor: pointer;
+  text-decoration: none;
 }
 .b-navbar__logo {
   display: flex;
   flex-direction: row;
-  font-family: "Inter", sans-serif;
-  letter-spacing: -0.5vw;
+  font-family: "Plaster", sans-serif;
+  letter-spacing: -3px;
+  font-size: 60px;
   color: var(--project-color);
-  font-weight: bold;
-  font-style: italic;
-  font-size: 40px;
 }
 .b-navbar__hamburger {
   position: absolute;
@@ -101,7 +62,7 @@ header::before {
 }
 .b-navbar__wrapper__link {
   list-style: none;
-  color: #333;
+  color: var(--project-color);
   padding: 0 10px;
 }
 .b-navbar__wrapper__link a {
@@ -117,7 +78,7 @@ header::before {
   text-decoration: none;
 }
 .b-navbar__wrapper__link a:visited {
-  color: #333;
+  color: var(--project-color);
 }
 .b-navbar__nightMode svg {
   transition: 0.1s ease-in-out;
@@ -129,10 +90,9 @@ header::before {
 .b-navbar .cobweb {
   position: absolute;
   top: 0;
-  left: 15vw;
   z-index: -1;
   transition: 0.1s ease-in-out;
-  scale: 30;
+  scale: 10;
   color: #006bbc;
 }
 
@@ -152,8 +112,9 @@ header::before {
 }
 .socials .words h1 {
   font-family: "Inter", sans-serif;
-  font-weight: 200;
-  font-size: 16px;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 13px;
   letter-spacing: -0.5px;
   text-align: left;
 }
@@ -174,7 +135,7 @@ header::before {
   padding-left: 2vw;
   padding: 0;
   font-size: 16px;
-  font-weight: 800;
+  font-weight: 300;
 }
 .socials .links ul li a {
   color: var(--project-color);
@@ -197,8 +158,12 @@ header::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(246, 246, 246, 0.9921568627);
+  background: white;
   z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 .popup-logo {
@@ -231,18 +196,20 @@ header::before {
   top: 8px;
   right: 20px;
   cursor: pointer;
-  z-index: 150;
+  z-index: 1000;
 }
 
 .project-popup {
-  scale: 1.1;
+  margin-top: 15vh;
+  height: 85vh;
 }
 .project-popup__background {
   z-index: 0;
   position: absolute;
+  top: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(246, 246, 246, 0.9921568627);
+  background-color: white;
 }
 .project-popup__header {
   position: relative;
@@ -506,18 +473,14 @@ header::before {
   text-transform: uppercase;
 }
 
-html {
-  transition: 0.4s ease-in-out;
-  filter: invert(var(--invert));
-}
-
 .b-background {
   position: absolute;
   top: 0;
-  left: 0;
   width: 100vw;
-  height: 755vh;
+  height: 760vh;
   z-index: -1;
+  background-color: var(--background-color);
+  background-image: linear-gradient(to right, rgba(128, 128, 128, 0.075) 1px, transparent 1px), linear-gradient(to bottom, rgba(128, 128, 128, 0.065) 1px, transparent 1px);
   background-size: 10vw 10vw;
   background-attachment: fixed;
   background-position: center;
@@ -525,63 +488,37 @@ html {
 
 .siteload {
   position: relative;
-  text-align: center;
   vertical-align: auto;
-  z-index: 100;
+  z-index: 105;
 }
-.siteload .title {
+.siteload .loadingLogo {
   position: absolute;
-  top: 43vh;
-  left: 40vw;
-  z-index: 102;
-  font-family: "Inter", sans-serif;
-  letter-spacing: -0.5vw;
-  font-size: 8vw;
-  padding-left: 2vw;
-  letter-spacing: normal;
-  text-align: center;
-  max-width: 20vw;
-  font-size: 3vw;
-  padding: 0;
-  color: #242424;
+  left: 50vw;
+  top: 50vh;
+  z-index: 106;
+  font-size: 60px;
+  font-family: "Plaster", sans-serif;
+  color: white;
 }
 .siteload .foreground {
-  z-index: 101;
+  z-index: 105;
   position: fixed;
   top: 0;
   left: 0;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
   width: 100vw;
   height: 100vh;
   perspective: 1000;
 }
 .siteload .foreground .square {
   background-color: var(--project-color);
-  width: 17.5vw;
-  height: 17.5vh;
+  width: 12.5vw;
+  height: 12.5vh;
   scale: 1.01;
   transform-style: preserve-3d;
   backface-visibility: hidden;
-}
-.siteload .spinner {
-  z-index: 102;
-  position: absolute;
-  top: 85vh;
-  right: 2%;
-}
-.siteload .spinner .circle {
-  position: relative;
-  aspect-ratio: 1;
-}
-.siteload .spinner .letter {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  font-family: "Inter", sans-serif;
-  color: #242424;
-  text-transform: uppercase;
 }
 
 .b-projects__leftBars, .b-projects__rightBars {
@@ -653,7 +590,7 @@ html {
 }
 
 .progress {
-  z-index: 10;
+  z-index: 1;
   position: fixed;
   bottom: 0;
   right: -100px;
@@ -696,26 +633,36 @@ circle {
 }
 
 .b-home {
-  min-width: 100%;
-  min-height: 1400px;
-  height: auto;
-  position: sticky;
-  z-index: 1;
   display: grid;
   grid-template-columns: 100vw;
   grid-template-rows: 100vh;
   justify-content: center;
   align-items: center;
+  position: relative;
+  min-height: 100vh;
+  max-height: 100vh;
+  height: auto;
+  position: sticky;
+  z-index: -1;
 }
 .b-home__title {
   grid-column: 1;
   grid-row: 1;
+  color: var(--project-color);
   text-align: center;
-  z-index: 10;
+  z-index: 1;
+  mix-blend-mode: difference;
 }
 .b-home__title h1 {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.5vw;
+  font-size: 8vw;
+  padding-left: 2vw;
+  padding: 0;
+  font-weight: 900;
   text-transform: uppercase;
-  font-size: 11.35vw;
+  max-width: 800px;
+  font-size: 8.35vw;
   line-height: 0.85;
 }
 .b-home__title h3 {
@@ -726,23 +673,34 @@ circle {
   padding: 30px;
   text-transform: uppercase;
 }
-.b-home .banner-wrapper {
+.b-home__square1, .b-home__square2 {
+  position: absolute;
+  top: 12.5vh;
+  height: 87.5vh;
+  width: 50vw;
+  background-color: rgba(246, 246, 246, 0.9921568627);
+  z-index: 0;
+}
+.b-home__square1 {
+  left: 0;
+}
+.b-home__square2 {
+  right: 0;
+}
+.b-home__name {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.5vw;
+  font-size: 8vw;
+  padding-left: 2vw;
+  font-weight: 900;
+  font-size: 6vw;
+  letter-spacing: -0.3vw;
   color: var(--project-color);
-  font-size: 15vw;
-  mix-blend-mode: exclusion;
-}
-.b-home__image {
-  grid-column: 1;
-  grid-row: 1;
+  text-transform: uppercase;
+  position: absolute;
+  text-align: center;
+  bottom: 0;
   z-index: -1;
-  position: fixed;
-}
-.b-home__image img {
-  max-width: 80vw;
-  border-radius: 50px;
-  mix-blend-mode: exclusion;
-  object-fit: cover;
-  margin-left: 10vw;
 }
 
 @media only screen and (max-width: 800px) {
@@ -750,13 +708,6 @@ circle {
     display: none;
   }
 }
-#Contact {
-  min-height: 100vh;
-  max-height: 100vh;
-  scale: 1.05;
-  z-index: 1;
-}
-
 .b-contact {
   --min-width: 80%;
   --max-width: 100%;
@@ -875,13 +826,13 @@ circle {
 }
 .b-contact__send:active {
   background-color: #22473d;
-  color: #242424;
+  color: var(--background-color);
   box-shadow: 5px 5px #06c073;
 }
 
 .b-about {
   z-index: 1000;
-  background-color: rgba(246, 246, 246, 0.9921568627);
+  background-color: white;
 }
 .b-about__content {
   display: grid;
@@ -1058,18 +1009,12 @@ circle {
 }
 .b-about__contact a:hover {
   padding: 5px;
-  box-shadow: 4px 4px 0 #06c073;
+  box-shadow: 4px 4px 0 var(--project-color);
 }
 @media (max-width: 920px) {
   .b-about__contact {
     display: none;
   }
-}
-
-#Projects {
-  max-height: 100vh;
-  background-color: #f0f4f8;
-  justify-content: end;
 }
 
 .b-projects__explanation {
@@ -1102,6 +1047,11 @@ circle {
   max-width: 60vw;
   width: 100%;
   margin: auto;
+}
+.b-projects__cardList a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #333;
 }
 .b-projects__cardList__title {
   font-weight: 600;
@@ -1264,10 +1214,6 @@ circle {
     display: none;
   }
 }
-#Experience {
-  min-height: 170vh;
-}
-
 .b-experience {
   min-height: 170vh;
   display: flex;
@@ -1429,11 +1375,6 @@ circle {
     margin-bottom: 10px;
   }
 }
-#Testimonials {
-  max-height: 80vh;
-  min-height: 80vh;
-}
-
 .b-testimonials {
   --border-radius: 10px;
   --height: 350px;
@@ -1464,7 +1405,12 @@ circle {
 .b-testimonials__cards-wrapper {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 1480px;
+  min-width: 1480px;
+  margin: auto;
   overflow-x: scroll;
+  justify-content: center;
   padding: 0;
   margin: 0;
 }
@@ -1481,6 +1427,9 @@ circle {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 10px;
 }
+.b-testimonials__card svg {
+  padding: 10px;
+}
 .b-testimonials__card p {
   font-family: "Inter", sans-serif;
   letter-spacing: -1px;
@@ -1490,18 +1439,27 @@ circle {
   letter-spacing: normal;
   padding: 14px;
   font-size: 18px;
-  font-style: italic;
+  line-height: 150%;
   margin: 10px 0;
 }
-.b-testimonials__card h3 {
-  margin-top: auto;
+.b-testimonials__card h1 {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.5vw;
+  font-size: 8vw;
+  padding-left: 2vw;
+  margin-right: auto;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 800;
+  letter-spacing: -1px;
+  padding: 0 12px;
+  margin-top: 18px;
 }
 .b-testimonials__card h4 {
+  margin-right: auto;
   margin-top: auto;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 200;
+  padding: 0 14px 14px 14px;
 }
 .b-testimonials__card img {
   border-radius: var(--border-radius);
@@ -1512,12 +1470,16 @@ circle {
   object-fit: cover;
 }
 
-#Skills {
-  max-height: 85vh;
-  background-color: #f0f4f8;
-  justify-content: flex-start;
+@media only screen and (max-width: 800px) {
+  #Testimonials {
+    max-height: 115vh;
+    min-height: 110vh;
+  }
+  .b-testimonials__cards-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
 }
-
 .b-skills {
   --gap: 1.5vw;
   position: relative;
@@ -1580,8 +1542,8 @@ circle {
   min-width: 15vw;
   min-height: 2vh;
   list-style: none;
-  border: 1px solid #333;
-  box-shadow: 0px 1px 0px #333;
+  border: 1px solid;
+  box-shadow: 0px 1px 0px black;
   font-size: 20px;
   font-family: "Inter", sans-serif;
   font-weight: 400;
@@ -1593,11 +1555,11 @@ circle {
   padding: 12px;
   padding-top: 1.5vh;
   transition: 0.2s ease-in-out;
-  box-shadow: 0px 1px 0px #333;
+  box-shadow: 0px 1px 0px black;
 }
 .b-skills__pillBox .pill:hover {
   padding: 10px;
-  box-shadow: 0px 6px 0px #333;
+  box-shadow: 0px 6px 0px black;
 }
 .b-skills__pillBox--1, .b-skills__pillBox--3, .b-skills__pillBox--5 {
   margin-left: -10vw;
@@ -1647,7 +1609,7 @@ circle {
   width: 32vw;
   text-wrap: nowrap;
   padding: 1vh;
-  color: #333;
+  color: var(--font-color);
 }
 .b-skills__other__sliders .slider label {
   font-family: "Inter", sans-serif;
@@ -1673,12 +1635,12 @@ circle {
 .b-skills__other__sliders .slider input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 25px; /* Customize size */
+  width: 25px;
   height: 25px;
   border-radius: 50%;
   background-color: #22473d;
   cursor: pointer;
-  margin-top: -10px; /* To align the thumb with the track */
+  margin-top: -10px;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
 }
 .b-skills__also {
@@ -1753,14 +1715,6 @@ circle {
     display: none;
   }
 }
-#WhatIDo {
-  justify-content: end;
-  min-height: 110vh;
-  max-width: 90vw;
-  margin-left: 5vw;
-  scale: 0.95;
-}
-
 .b-what__line {
   position: absolute;
   top: 0vh;
@@ -1914,23 +1868,32 @@ circle {
   margin: 0;
 }
 
+html {
+  transition: 0.4s ease-in-out;
+  filter: invert(var(--invert));
+  cursor: none;
+  pointer-events: visiblePainted;
+}
+
+.cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background-color: #E1001E;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: transform 0.1s ease;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  mix-blend-mode: exclusion;
+}
+
 #root {
   z-index: 1;
   position: relative;
   overflow-y: hidden;
-  display: grid;
-  grid-template-columns: 100vw;
-  grid-template-rows: auto auto auto auto auto auto;
-  grid-template-areas: "home" "projects" "skills" "experience" "testimonials" "contact";
-  max-width: 100vw;
   overflow-x: hidden;
-}
-#root .pageContainer {
-  scroll-snap-type: block;
-  scroll-behavior: smooth;
-  overflow-y: scroll;
-  height: 100vh;
-  background: transparent;
+  max-width: 100vw;
 }
 #root .page {
   height: 100vh;
@@ -1938,15 +1901,7 @@ circle {
   align-items: center;
   position: relative;
   scroll-snap-align: center;
-}
-#root .page .page-title {
-  font-family: "Impact", sans-serif;
-  text-transform: uppercase;
-  font-size: 3.35vw;
-  letter-spacing: -0.15vw;
-  line-height: 0.85;
-  position: sticky;
-  left: 1.5vw;
+  z-index: 1;
 }
 #root .page .page-content {
   position: absolute;
@@ -1955,53 +1910,64 @@ circle {
   right: 0;
   bottom: 0;
 }
-#root .b-home,
-#root .b-skills,
-#root .b-experience,
-#root .b-projects,
-#root .b-testimonials,
-#root .b-about,
-#root .b-contact {
+#root .responsiveness {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--project-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#root .responsiveness__warning {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  color: white;
+  text-align: center;
+  margin-top: auto;
+  padding: 100px;
+}
+#root .responsiveness__logo {
+  margin: auto;
+  max-width: 100px;
+}
+#root #Skills {
+  height: 100vh;
+  max-height: 100vh;
+  background-color: #f0f4f8;
+  justify-content: flex-start;
+}
+#root #Projects {
+  max-height: 100vh;
+  background-color: #f0f4f8;
+  justify-content: end;
+}
+#root #Experience {
+  min-height: 170vh;
   background: transparent;
+}
+#root #Testimonials {
+  max-height: 80vh;
+  min-height: 80vh;
+  background: transparent;
+}
+#root #Contact {
+  min-height: 100vh;
+  max-height: 100vh;
+  scale: 1.05;
+  z-index: 1;
+  background: transparent;
+}
+#root #WhatIDo {
+  justify-content: end;
+  min-height: 110vh;
+  max-width: 90vw;
+  margin-left: 5vw;
+  scale: 0.95;
 }
 #root .b-home {
   min-height: 100vh;
   min-width: 100vw;
-  grid-area: home;
   z-index: 100;
-}
-#root .b-skills {
-  grid-area: skills;
-  z-index: 15;
-}
-@media (min-width: 1024px) {
-  #root .b-skills {
-    max-height: 215vh;
-  }
-}
-#root .b-experience {
-  grid-area: experience;
-  z-index: 20;
-}
-#root .b-projects {
-  grid-area: projects;
-  z-index: 25;
-}
-#root .b-testimonials {
-  grid-area: testimonials;
-  z-index: 30;
-}
-@media (max-width: 800px) {
-  #root .b-testimonials {
-    min-height: 120vh;
-  }
-}
-@media (max-width: 500px) {
-  #root .b-testimonials {
-    min-height: 145vh;
-  }
-}
-#root .b-contact {
-  grid-area: contact;
-  z-index: 35;
 }/*# sourceMappingURL=global.css.map */

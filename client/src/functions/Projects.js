@@ -31,3 +31,32 @@ export const getProjectInfo = async (projectTitle) => {
     throw err;
   }
 };
+
+// All projects and home page descriptions about them
+export const projects = [
+  {
+    title: "Subitt",
+    description: "Subscribe how you want to! ",
+    date: "3/24 - Present",
+  },
+  {
+    title: "Raft",
+    description: "I had *every* user on the app following me",
+    date: "3/24",
+  },
+  {
+    title: "PLMS",
+    description: "Personal Learning Modules, or Plums for short",
+    date: "2/24",
+  },
+  {
+    title: "TwitterBots",
+    description: "Twitter bots from before Twitter wasn't Twitter",
+    date: "10/23",
+  },
+  {
+    title: "Portfolio",
+    description: "The website you're looking at right now",
+    date: "Present",
+  },
+];

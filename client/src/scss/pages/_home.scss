@@ -2,38 +2,41 @@
 @use "../mixins" as *;
 
 .b-home {
-  min-width: 100%;
-  min-height: 1400px;
-  height: auto;
-  position: sticky;
-  z-index: 1;
-
   display: grid;
   grid-template-columns: 100vw;
   grid-template-rows: 100vh;
   justify-content: center;
   align-items: center;
 
+  position: relative;
+
+  min-height: 100vh;
+  max-height: 100vh;
+  height: auto;
+  position: sticky;
+  z-index: -1;
+
   &__title {
     grid-column: 1;
     grid-row: 1;
 
-    // color: $mainColor;
-    // mix-blend-mode: exclusion;
+    color: var(--project-color);
     text-align: center;
-    // margin-top: 25vh;
-    z-index: 10;
+    z-index: 1;
+    mix-blend-mode:difference;
 
     h1 {
-      // font-family: $siteTitle;
+      @include pageTitle;
+      padding: 0;
+      font-weight: 900;
       text-transform: uppercase;
-      font-size: 11.35vw;
-      // letter-spacing: -0.6vw;
+      max-width: 800px;
+      font-size: 8.35vw;
       line-height: 0.85;
     }
     h3 {
       color: $mainColor;
-      font-family: $subFont;
+      font-family: $mainFont;
       font-weight: 300;
       font-size: 2.5vw;
       padding: 30px;
@@ -41,36 +44,36 @@
     }
   }
 
-  .banner-wrapper {
+  &__square1,
+  &__square2 {
+    position: absolute;
+    top: 12.5vh;
+    height: 87.5vh;
+    width: 50vw;
+    background-color: $aboutBackground;
+    z-index: 0;
+  }
+
+  &__square1 {
+    left: 0;
+  }
+
+  &__square2 {
+    right: 0;
+  }
+
+  &__name {
+    @include pageTitle;
+    font-weight: 900;
+    font-size: 6vw;
+    letter-spacing: -0.3vw;
     color: $mainColor;
-    font-size: 15vw;
-    mix-blend-mode: exclusion;
-  }
-
-  &__image {
-    grid-column: 1;
-    grid-row: 1;
+    text-transform: uppercase;
+    position: absolute;
+    text-align: center;
+    bottom: 0;
     z-index: -1;
-
-    position: fixed;
-    // left: -1vw;
-
-    
-    img {
-      max-width: 80vw;
-      // max-height: 600px;
-      // margin-top: 10vw;
-      border-radius: 50px;
-      mix-blend-mode: exclusion;
-      object-fit: cover;
-      margin-left: 10vw;
-    }
   }
-
-
-  // background-color: #84c0b0;
-  // background-color: #40adfb;
-  // background-color: #ffa600;
 }
 
 @media only screen and (max-width: 800px) {

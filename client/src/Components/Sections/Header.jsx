@@ -1,29 +1,36 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import { Link } from "react-scroll";
 import Hamburger from "hamburger-react";
+import Popup from "../Animations/Popup";
+import AboutPage from "../../pages/AboutPage";
+
 import { FaRegMoon } from "react-icons/fa6";
 import { GiCobweb, GiMoonBats } from "react-icons/gi";
-import Popup from "./Popup";
-import AboutPage from "../pages/AboutPage";
+
+import { useColor } from "../../functions/ColorContext";
 
 const Header = () => {
-  let location = useLocation();
   const [isOpen, setOpen] = useState(false);
-  const [invert, setInvert] = useState(false);
 
-  // Night mode setup
-  const invertColors = document.documentElement.style.setProperty(
-    "--invert",
-    invert ? 0.9 : 0
-  );
-  const handleNightModeClick = () => setInvert(!invert);
+  // Dark mode context setup
+  const { colors, darkMode, toggleDarkMode } = useColor();
+  useEffect(() => {
+    document.documentElement.style.setProperty(
+      "--background-color",
+      colors.backgroundColor
+    );
+  }, [colors]);
+
+  const handleNightModeClick = () => {
+    toggleDarkMode(); // Toggle dark mode
+  };
 
   // Set up about popup
   const [isPopupOpen, setPopupOpen] = useState(false);
   const handlePopupOpen = () => setPopupOpen(true);
   const handlePopupClose = () => setPopupOpen(false);
 
+  // Checks for window size
   const [windowDimensions, setWindowDimensions] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
@@ -49,10 +56,12 @@ const Header = () => {
         </div>
 
         <div className="b-navbar__logo">
-          <Link to="home" smooth={true} duration={250}>
-            ISAAC
+          <Link to="home" smooth={true} duration={1250}>
+            IR
           </Link>
         </div>
+
+        {darkMode ? <GiCobweb className="cobweb" /> : <></>}
 
         {(isOpen || windowDimensions.width > 800) && (
           <ul className="b-navbar__wrapper">
@@ -70,7 +79,7 @@ const Header = () => {
               <Link
                 to="projects"
                 smooth={true}
-                duration={500}
+                duration={1000}
                 onClick={() => setOpen(false)}
               >
                 Projects
@@ -80,14 +89,14 @@ const Header = () => {
               <Link
                 to="contact"
                 smooth={true}
-                duration={500}
+                duration={1000}
                 onClick={() => setOpen(false)}
               >
                 Contact
               </Link>
             </li>
             <div className="b-navbar__nightMode">
-              <FaRegMoon
+              <GiMoonBats
                 onClick={handleNightModeClick}
                 fill="var(--project-color)"
               />

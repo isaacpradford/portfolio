@@ -1,24 +1,11 @@
 import React, { useRef, useEffect, useState } from "react";
 import { FaArrowAltCircleRight } from "react-icons/fa";
-import {
-  motion,
-  useScroll,
-  useSpring,
-  useTransform,
-  useInView,
-  useMotionValue,
-  useMotionValueEvent,
-} from "framer-motion";
-import ScrollingBanner from "../Components/LoopingBanner";
+import { motion, useInView } from "framer-motion";
+import ScrollingBanner from "../Components/Animations/LoopingBanner";
 
 const SkillsPage = () => {
   const [playedAnimation, setPlayedAnimation] = useState(false);
   const ref = useRef(null);
-  const { scrollY } = useScroll({
-    target: ref,
-    offset: ["end end", "start start"],
-  });
-
   const isInView = useInView(ref, { amount: 0.5 });
 
   useEffect(() => {
@@ -28,33 +15,12 @@ const SkillsPage = () => {
   }, [isInView, playedAnimation]);
 
   return (
-    <motion.div
-      id="skills"
-      className="page b-skills"
-      ref={ref}
-      // style={{
-      //   transition: "1s",
-      //   backgroundColor: isInView ? "white" : "orange",
-      // }}
-    >
+    <motion.div id="skills" className="page b-skills" ref={ref}>
       <motion.div className="b-skills__boxes"></motion.div>
-      <motion.div
-        className="b-skills__title"
-        initial={{ x: !playedAnimation ? 0 : -2500 }}
-        whileInView={{ x: isInView && !playedAnimation ? 0 : -2500 }}
-        exit={{ x: !playedAnimation ? 0 : -2500 }}
-        transition={{
-          duration: 5,
-          type: "spring",
-          stiffness: 100,
-          damping: 20,
-        }}
-      >
+      <motion.div className="b-skills__title">
         <ScrollingBanner title="Languages+Skills" baseVelocity={2} />
       </motion.div>
       <div className="b-skills__languages">
-        {/* <h1>Languages</h1> */}
-
         <motion.div
           className="b-skills__pillBox"
           initial={{ x: 1500 }}
@@ -115,15 +81,6 @@ const SkillsPage = () => {
           </ul>
         </div>
       </div>
-
-      {/* <div className="b-skills__also">
-        <h4>In addition to...</h4>
-        <p>
-          Unit and Integration testing, Git/Github (and version control
-          systems), VS/VSC, XCode, Rider, Jira, Trello, Microsoft Suite,
-        </p>
-        <p>I can also use...</p>
-      </div> */}
     </motion.div>
   );
 };

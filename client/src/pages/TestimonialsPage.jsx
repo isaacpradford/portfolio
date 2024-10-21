@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import LoopingCards from "../Components/LoopingCards";
+import LoopingCards from "../Components/Animations/LoopingCards";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
 const TestimonialsPage = () => {

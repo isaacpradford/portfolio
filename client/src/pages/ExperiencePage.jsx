@@ -1,14 +1,15 @@
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import {
   motion,
   useScroll,
   useSpring,
-  useTransform,
-  useInView,
+  useTransform
 } from "framer-motion";
 
 const ExperiencePage = () => {
   const ref = useRef(null);
+
+  // Scrolly is tracking line on the left, adjusting line height as it scrolls
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["end end", "start start"],
