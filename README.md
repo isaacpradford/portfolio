@@ -5,28 +5,14 @@ This project is a personal portfolio that showcases me, Isaac Radford, and my wo
 ## Creating New Pages
 
 To create a new page in the portfolio, here's a quick tutorial:
-1. **Add a New Component**: Create a new React component inside the src/pages directory. Each page should be a separate component.
-   
-   Example: src/pages/AboutPage.js
-   
-jsx
-   import React from 'react';
-
-   const AboutPage = () => {
-     return (
-       <div>
-         <h1>About Me</h1>
-         <p>This is the About page content.</p>
-       </div>
-     );
-   };
-
-   export default AboutPage;
+1. **Add a New Component**: Create a new React component inside the src/pages directory. Each page should be a separate component!
 
 2. **Add the new component page to the AllPages page** where you think it should go in the list. If you wrap it in the <Page/> component, it should set the page sizing and basic CSS for you!
 
+3. **Create a SCSS file to go with it** and make sure to include it in the _index.scss file!
+
 ## Adding new projects
-I thought I'd provide a quick example of what the projects look like in the DB as well, just in case anybody wants to clone the repo and make their own. Here's what the objects look like: 
+I thought I'd give a quick example of what the projects look like in the DB as well, just in case anybody wants to clone the repo and make their own. Here's what the objects look like: 
 
 "
   title: String,
@@ -71,7 +57,7 @@ And **here's** an example of what a full insert looks like:
     "Prisma"
   ],
   "demo_picture": "base64 string",
-  "header_picture": "base64 string",
+  "header_picture": "base64 string", // shoutout to https://base64.guru/converter/encode/image/png
   "subtitle": "Social Media clone"
 }"
 
