@@ -18,7 +18,7 @@ const AboutPage = ({ onClose }) => {
 
           <p className="b-about__bold">
             From Design to Deployment, I specialize in making websites that are
-            scalable and functional.
+            both engaging and functional.
           </p>
 
           <p>
