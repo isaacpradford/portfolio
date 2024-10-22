@@ -1,6 +1,6 @@
 ## Overview
 
-This project is a personal portfolio that showcases me, Isaac Radford, and my work as a Full-Stack Web Developer. The site features one main page that includes a **Home**, **Skills**, **Experience**, **Projects**, **Testimonials**, and **Contact** page. It also generates sub-project pages with info it fetches about each project from Mongodb. It's built with React with a lot of Framer Motion, which was used for things like the parallax scrolling effects. It also has a built in dark mode with a spooky addition for the halloween season.
+This project is a personal portfolio that showcases me, Isaac Radford, and my work as a Full-Stack Web Developer. The site features one main page that includes a **Home**, **Skills**, **Experience**, **Projects**, **Testimonials**, and **Contact** page. It also generates sub-project pages with info it fetches about each project from Mongodb. It's built with React and a lot of Framer Motion, which was used for things like the parallax scrolling effects. It also has a built in dark mode with a spooky addition for the halloween season.
 
 ## Creating New Pages
 
