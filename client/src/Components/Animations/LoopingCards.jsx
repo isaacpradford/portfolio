@@ -23,21 +23,22 @@ const marqueeVariants = {
 
 const LoopingCards = () => {
   const testimonials = [
-    {
-      //   name: "Jae Hyun Kim",
-      content:
-        "Isaac excelled in collaborating with a large team of developers to create products and solutions for real-world problems, including those requiring immediate attention. I strongly recommend Isaac to any team looking for a candidate with the perfect blend of technical and soft skills.",
-      //   position: "Development Supervisor, Subitt.io",
-    },
+    // {
+    //   name: "Jae Hyun Kim",
+    // content:
+    //   "Isaac is a highly capable and competent problem-solver, particularly with React.js and Node.js. He not only thinks creatively and efficiently when tackling technical challenges but also communicates effectively with non-technical stakeholders...",
+    //   position: "Development Supervisor, Subitt.io",
+    // },
     {
       name: "Jae Hyun Kim",
       content:
-        "Isaac is a highly capable and competent problem-solver, particularly with React.js and Node.js. He not only thinks creatively and efficiently when tackling technical challenges but also communicates effectively with non-technical stakeholders.",
+        "He excelled in collaborating with a large team of developers to create products and solutions for real-world problems, including those requiring immediate attention. I strongly recommend Isaac to any team looking for a candidate with the perfect blend of technical and soft skills.",
       position: "Development Supervisor, Subitt.io",
     },
     {
       name: "Annmarie Sansevero",
-      content: "",
+      content:
+        "His team consistently finished early and was often able to step in and help other teams. I highly recommend him as a skilled and diligent worker who will stay on task and get the job done.",
       position: "Project Lead, CSE445",
     },
     {

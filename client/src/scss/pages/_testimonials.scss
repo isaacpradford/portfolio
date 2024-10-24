@@ -32,15 +32,15 @@
     max-width: 1480px; // 350px width * 4 cards + 10px margin each side
     min-width: 1480px;
     margin: auto;
-
-    overflow-x: scroll;
+    overflow:hidden;
     justify-content: center;
-
+    min-height: 400px;
     padding: 0;
     margin: 0;
   }
 
   &__card {
+    position: relative;
     @include flexColumn;
     border-radius: var(--border-radius);
     min-width: var(--width);
@@ -55,9 +55,14 @@
     margin: 10px;
 
     svg {
+      position: absolute;
+      top: 5px;
+      left: 5px;
       padding: 10px;
     }
     p {
+      position: absolute;
+      top: 15px;
       @include mainBodyText;
       letter-spacing: normal;
       padding: 14px;
@@ -67,16 +72,19 @@
     }
 
     h1 {
+      position: absolute;
+      bottom: 30px;
       @include pageTitle;
       margin-right: auto;
       font-size: 20px;
       font-weight: 800;
       letter-spacing: -1px;
       padding: 0 12px;
-      margin-top: 18px;
     }
 
     h4 {
+      position: absolute;
+      bottom: -1px;
       margin-right: auto;
       margin-top: auto;
       font-size: 14px;

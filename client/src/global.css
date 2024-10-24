@@ -1409,12 +1409,14 @@ circle {
   max-width: 1480px;
   min-width: 1480px;
   margin: auto;
-  overflow-x: scroll;
+  overflow: hidden;
   justify-content: center;
+  min-height: 400px;
   padding: 0;
   margin: 0;
 }
 .b-testimonials__card {
+  position: relative;
   display: flex;
   flex-direction: column;
   border-radius: var(--border-radius);
@@ -1428,9 +1430,14 @@ circle {
   margin: 10px;
 }
 .b-testimonials__card svg {
+  position: absolute;
+  top: 5px;
+  left: 5px;
   padding: 10px;
 }
 .b-testimonials__card p {
+  position: absolute;
+  top: 15px;
   font-family: "Inter", sans-serif;
   letter-spacing: -1px;
   font-size: 20px;
@@ -1443,6 +1450,8 @@ circle {
   margin: 10px 0;
 }
 .b-testimonials__card h1 {
+  position: absolute;
+  bottom: 30px;
   font-family: "Inter", sans-serif;
   letter-spacing: -0.5vw;
   font-size: 8vw;
@@ -1452,9 +1461,10 @@ circle {
   font-weight: 800;
   letter-spacing: -1px;
   padding: 0 12px;
-  margin-top: 18px;
 }
 .b-testimonials__card h4 {
+  position: absolute;
+  bottom: -1px;
   margin-right: auto;
   margin-top: auto;
   font-size: 14px;
