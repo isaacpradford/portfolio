@@ -1,4 +1,5 @@
 @use "../variables" as *;
+@use "../variables" as *;
 
 .b-background {
   position: absolute;
@@ -7,22 +8,43 @@
   height: 760vh;
   z-index: -1;
 
-  mix-blend-mode: difference;
+  &__grid {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-color);
+    background-image: linear-gradient(
+        to right,
+        rgba(128, 128, 128, 0.05) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgba(93, 93, 93, 0.05) 1px, transparent 1px);
+    background-size: 8vw 8vw;
+    background-attachment: fixed;
+    background-position: center;
+  }
 
-  background-color: var(--background-color);
-  background: linear-gradient(
-    0deg,
-    var(--project-color) -750%, 
-    var(--background-color) 100%,
-  );
-  background-size: 100vw 100vh;
-  background-attachment: fixed;
-  background-position: center right;
+
+  /* Chrome-specific */
+  @media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+    .noise {
+      filter: contrast(110%) brightness(200%);
+    }
+  }
+
+  &__gradient {
+    position: fixed;
+    opacity: 0.3;
+    width: 100vw;
+    height: 100vh;
+
+    height: 100%;
+    background: radial-gradient(
+      ellipse at bottom,
+      var(--project-color) -50%,
+      transparent 75%
+    );
+    filter: contrast(110%) brightness(200%);
+    filter: blur(1px);
+  }
 }
-
-// background-image: linear-gradient(
-//     to right,
-//     rgba(128, 128, 128, 0.075) 1px,
-//     transparent 1px
-//   ),
-//   linear-gradient(to bottom, rgba(128, 128, 128, 0.065) 1px, transparent 1px);

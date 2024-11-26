@@ -479,12 +479,32 @@ header::before {
   width: 100vw;
   height: 760vh;
   z-index: -1;
-  mix-blend-mode: difference;
+  /* Chrome-specific */
+}
+.b-background__grid {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
   background-color: var(--background-color);
-  background: linear-gradient(0deg, var(--project-color) -750%, var(--background-color) 100%);
-  background-size: 100vw 100vh;
+  background-image: linear-gradient(to right, rgba(128, 128, 128, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(93, 93, 93, 0.05) 1px, transparent 1px);
+  background-size: 8vw 8vw;
   background-attachment: fixed;
-  background-position: center right;
+  background-position: center;
+}
+@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+  .b-background .noise {
+    filter: contrast(110%) brightness(200%);
+  }
+}
+.b-background__gradient {
+  position: fixed;
+  opacity: 0.3;
+  width: 100vw;
+  height: 100vh;
+  height: 100%;
+  background: radial-gradient(ellipse at bottom, var(--project-color) -50%, transparent 75%);
+  filter: contrast(110%) brightness(200%);
+  filter: blur(1px);
 }
 
 .siteload {
@@ -636,12 +656,12 @@ circle {
 .b-home {
   display: grid;
   grid-template-columns: 100vw;
-  grid-template-rows: 100vh;
+  grid-template-rows: 500vh;
   justify-content: center;
   align-items: center;
   position: relative;
-  min-height: 100vh;
-  max-height: 100vh;
+  min-height: 500vh;
+  max-height: 500vh;
   height: auto;
   position: sticky;
   z-index: -1;
@@ -749,7 +769,6 @@ circle {
   padding-left: 2vw;
   font-size: 2vw;
   font-weight: 400;
-  color: #f0f4f8;
   letter-spacing: 0;
   padding: 12px 4px;
   align-self: normal;
@@ -1433,7 +1452,7 @@ circle {
   max-height: var(--height);
   background-color: #f0f4f8;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin: 10px;
 }
 .b-testimonials__card svg {
@@ -1497,6 +1516,13 @@ circle {
     flex-direction: column;
   }
 }
+.b-testimonials__card {
+  transition: 0.2s ease-in-out;
+}
+.b-testimonials__card:hover {
+  scale: 1.03;
+}
+
 .b-skills {
   --gap: 1.5vw;
   position: relative;
@@ -1894,8 +1920,8 @@ html {
 
 .cursor {
   position: fixed;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   background-color: #E1001E;
   border-radius: 50%;
   pointer-events: none;

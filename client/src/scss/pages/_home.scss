@@ -4,14 +4,14 @@
 .b-home {
   display: grid;
   grid-template-columns: 100vw;
-  grid-template-rows: 100vh;
+  grid-template-rows: 500vh;
   justify-content: center;
   align-items: center;
 
   position: relative;
 
-  min-height: 100vh;
-  max-height: 100vh;
+  min-height: 500vh;
+  max-height: 500vh;
   height: auto;
   position: sticky;
   z-index: -1;

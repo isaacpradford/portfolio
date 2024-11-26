@@ -10,8 +10,6 @@
   --min-height: 100px;
   z-index: 1;
 
-  
-
   &__content {
     z-index: 2;
     display: grid;
@@ -36,7 +34,7 @@
       @include mainBodyText;
       font-size: 2vw;
       font-weight: 400;
-      color: $backgroundColor2;
+      // color: $backgroundColor;
       letter-spacing: 0;
       padding: 12px 4px;
       align-self:normal;

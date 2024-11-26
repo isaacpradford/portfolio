@@ -56,10 +56,21 @@ const ContactPage = () => {
             opacity: opacity,
           }}
         >
-          <p>Working on a project?</p>
-          <h1>LET'S</h1>
-          <h1>CONN</h1>
-          <h1 className="b-contact__title--3">ECT!</h1>
+          <p style={darkMode ? { color: "black" } : { color: "white" }}>
+            Working on a project?
+          </p>
+          <h1 style={darkMode ? { color: "black" } : { color: "white" }}>
+            LET'S
+          </h1>
+          <h1 style={darkMode ? { color: "black" } : { color: "white" }}>
+            CONN
+          </h1>
+          <h1
+            className="b-contact__title--3"
+            style={darkMode ? { color: "black" } : { color: "white" }}
+          >
+            ECT!
+          </h1>
         </motion.div>
 
         <motion.div

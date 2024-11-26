@@ -51,7 +51,7 @@
     background-color: $backgroundColor2;
 
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin: 10px;
 
     svg {
@@ -113,5 +113,12 @@
     &__cards-wrapper {
       @include flexColumn;
     }
+  }
+}
+
+.b-testimonials__card {
+  transition: .2s ease-in-out;
+  &:hover {
+    scale: 1.03;
   }
 }
