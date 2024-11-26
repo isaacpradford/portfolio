@@ -112,8 +112,10 @@ const ProjectPage = () => {
         ))}
 
         <div className="b-projects__bottom">
-          <p>Hover over us, don't miss out! </p>
-          <p>0.0.0</p>
+          <p>
+            This server is currently using a free hosting service, so apologies
+            in advance for long loading times!
+          </p>
         </div>
       </motion.div>
     </motion.div>

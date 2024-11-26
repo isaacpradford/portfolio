@@ -40,11 +40,10 @@ const HomePage = () => {
 
       <motion.div className="b-home__title">
         <Link to="home">
-          <h1>Software Engineering</h1>
-          <h1>+</h1>
-          <h1>Full Stack WebDev</h1>
+          <p>Software Engineering /</p>
+          <p>Full Stack WebDev</p>
         </Link>
-        <p className="b-home__name">Isaac Radford</p>
+        <h3 className="b-home__name">Isaac Radford</h3>
       </motion.div>
 
       <motion.div className="b-home__socials">
