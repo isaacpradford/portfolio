@@ -486,7 +486,6 @@ header::before {
   width: 100vw;
   height: 100vh;
   background-color: var(--background-color);
-  background-image: linear-gradient(to right, rgba(128, 128, 128, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(93, 93, 93, 0.05) 1px, transparent 1px);
   background-size: 8vw 8vw;
   background-attachment: fixed;
   background-position: center;
@@ -669,6 +668,8 @@ circle {
 .b-home__title {
   grid-column: 1;
   grid-row: 1;
+  display: flex;
+  flex-direction: row;
   color: var(--project-color);
   text-align: center;
   z-index: 1;
@@ -684,7 +685,7 @@ circle {
   text-transform: uppercase;
   letter-spacing: -0.2vw;
   max-width: 800px;
-  font-size: 4.35vw;
+  font-size: 3.35vw;
   line-height: 0.85;
 }
 .b-home__title h3 {
@@ -704,7 +705,7 @@ circle {
   position: absolute;
   top: 12.5vh;
   height: 87.5vh;
-  width: 80vw;
+  width: 100vw;
   background-color: #f0f4f8;
   z-index: 0;
 }
@@ -1781,6 +1782,16 @@ circle {
   letter-spacing: normal;
   line-height: 90%;
   padding: 25px 0;
+}
+.b-what__title h4 {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.5vw;
+  font-size: 8vw;
+  padding-left: 2vw;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: normal;
+  text-transform: uppercase;
 }
 .b-what__title h3 {
   font-family: "Inter", sans-serif;

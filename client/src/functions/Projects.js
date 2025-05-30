@@ -35,14 +35,24 @@ export const getProjectInfo = async (projectTitle) => {
 // All projects and home page descriptions about them
 export const projects = [
   {
-    title: "Subitt",
-    description: "Subscribe how you want to! ",
-    date: "3/24 - Present",
+    title: "Simple",
+    description: "Earn points by existing",
+    date: "4/25",
+  },
+  {
+    title: "Portfolio",
+    description: "The website you're looking at right now",
+    date: "10/24",
   },
   {
     title: "Raft",
     description: "I had *every* user on the app following me",
-    date: "3/24",
+    date: "7/24",
+  },
+  {
+    title: "Subitt",
+    description: "Subscribe how you want to! ",
+    date: "2/24 - 4/25",
   },
   {
     title: "PLMS",
@@ -53,10 +63,5 @@ export const projects = [
     title: "TwitterBots",
     description: "Twitter bots from before Twitter wasn't Twitter",
     date: "10/23",
-  },
-  {
-    title: "Portfolio",
-    description: "The website you're looking at right now",
-    date: "Present",
   },
 ];

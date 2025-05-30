@@ -5,7 +5,7 @@ const ColorContext = createContext();
 
 export const ColorProvider = ({ children }) => {
   // Set default color for the entire website
-  const [projectColor, setProjectColor] = useState("#468cdd");
+  const [projectColor, setProjectColor] = useState("#f75528");
   const [darkMode, setDarkMode] = useState(false);
   const [invert, setInvert] = useState(darkMode);
 

@@ -41,11 +41,11 @@ const LoopingCards = () => {
         "His team consistently finished early and was often able to step in and help other teams. I highly recommend him as a skilled and diligent worker who will stay on task and get the job done.",
       position: "Project Lead, CSE445",
     },
-    {
-      name: "Aoi Kuriki",
-      content: "",
-      position: "Subitt.io CTO",
-    },
+    // {
+    //   name: "Aoi Kuriki",
+    //   content: "",
+    //   position: "Subitt.io CTO",
+    // },
   ];
 
   return (

@@ -85,15 +85,18 @@ const AllPages = () => {
           ) : (
             <>
               <Header />
-              <HomePage />
-              <Page id={"Skills"}>
-                <SkillsPage />
-              </Page>
+                  <HomePage />
+                  
+              <Page id="WhatIDo">
+                <WhatPage />
+                  </Page>
+                  
               <Page id={"Projects"}>
                 <ProjectPage />
               </Page>
-              <Page id="WhatIDo">
-                <WhatPage />
+                  
+              <Page id={"Skills"}>
+                <SkillsPage />
               </Page>
 
               <Page id={"Experience"}>

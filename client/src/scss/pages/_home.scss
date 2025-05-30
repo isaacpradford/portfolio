@@ -19,6 +19,8 @@
   &__title {
     grid-column: 1;
     grid-row: 1;
+    display: flex;
+    flex-direction: row;
 
     color: var(--project-color);
     text-align: center;
@@ -32,7 +34,7 @@
       text-transform: uppercase;
       letter-spacing: -0.2vw;
       max-width: 800px;
-      font-size: 4.35vw;
+      font-size:3.35vw;
       line-height: 0.85;
     }
 
@@ -53,7 +55,7 @@
     position: absolute;
     top: 12.5vh;
     height: 87.5vh;
-    width: 80vw;
+    width: 100vw;
     background-color: $backgroundColor2;
     z-index: 0;
   }

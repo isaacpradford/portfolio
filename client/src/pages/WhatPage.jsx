@@ -58,6 +58,7 @@ const WhatPage = () => {
         style={{ scaleY: smoothLineHeight }}
       ></motion.div>
       <div className="b-what__title">
+        <h4>What do I do?</h4>
         <h1>I build scalable and engaging web applications</h1>
         <h3>
           I work in fast paced development environments to deliver high-quality

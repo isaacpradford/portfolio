@@ -61,7 +61,8 @@ const Header = () => {
           </Link>
         </div>
 
-        {darkMode ? <GiCobweb className="cobweb" /> : <></>}
+        {/* For spooky season */}
+        {/* {darkMode ? <GiCobweb className="cobweb" /> : <></>} */}
 
         {(isOpen || windowDimensions.width > 800) && (
           <ul className="b-navbar__wrapper">
@@ -96,7 +97,7 @@ const Header = () => {
               </Link>
             </li>
             <div className="b-navbar__nightMode">
-              <GiMoonBats
+              <FaRegMoon
                 onClick={handleNightModeClick}
                 fill="var(--project-color)"
               />
