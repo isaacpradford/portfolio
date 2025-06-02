@@ -1,10 +1,5 @@
 import React, { useRef } from "react";
-import {
-  motion,
-  useScroll,
-  useSpring,
-  useTransform
-} from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
 const ExperiencePage = () => {
   const ref = useRef(null);
@@ -36,25 +31,27 @@ const ExperiencePage = () => {
         <div className="b-experience__timeline__entry">
           <div className="b-experience__timeline__entry__date">
             <h4>Subitt.io</h4>
-            <p>2024 - Present</p>
+            <p>Feb 2024 - April 2025</p>
           </div>
           <div className="b-experience__timeline__entry__role">
             <h4>Full Stack Web Developer</h4>
             <p>
-              Developed scalable software solutions in a fast-paced startup
-              environment using React, Javascript, SCSS, Mongoose, NodeJS, and
-              Express. Contributed to full stack development for customer-facing
-              applications that focused on user management
+              Developed scalable web and mobile applications, managed REST APIs
+              in fast-paced, startup environment using React, React Native,
+              Javascript, Typescript, SCSS, Mongoose, NodeJS, and Express.
             </p>
             <ul>
               <li>
-                Led business dashboard redesign, allowing business owners to
-                efficiently manage user data and analytics
+                Took on many roles to research, design, and develop user
+                interfaces, like the new location-based functionalities with
+                Mapbox and Google Places integrations
               </li>
               <li>
-                Collaborated to incorporate administrative web application into
-                existing infrastructure, allowing administrators to manage user
-                base
+                Collaborated remotely with team to build multiple user-facing
+                applications, such as; a business dashboard redesign with
+                in-depth analytics, a responsive product creation page, and an
+                administrative web application enabling website management, user
+                management, and an integration with Google Analytics
               </li>
             </ul>
           </div>
