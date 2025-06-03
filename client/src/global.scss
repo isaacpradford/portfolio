@@ -18,11 +18,11 @@
 }
 
 .b-contact__backdrop {
-  background: url("./assets/IMG_9605.png");
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: url("./assets/IMG_9605.jpg");
+  background-size: contain;
+  background-repeat: repeat-x;
   background-position: bottom;
-  height: 85vh;
+  height: 75vh;
   width: 98vw;
 
   position: absolute;

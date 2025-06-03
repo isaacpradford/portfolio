@@ -479,6 +479,7 @@ header::before {
   width: 100vw;
   height: 760vh;
   z-index: -1;
+  background-color: #fff;
   /* Chrome-specific */
 }
 .b-background__grid {
@@ -486,6 +487,7 @@ header::before {
   width: 100vw;
   height: 100vh;
   background-color: var(--background-color);
+  background: radial-gradient(--background-color, rgba(0, 0, 0, 0));
   background-size: 8vw 8vw;
   background-attachment: fixed;
   background-position: center;
@@ -500,10 +502,8 @@ header::before {
   opacity: 0.3;
   width: 100vw;
   height: 100vh;
-  height: 100%;
   background: radial-gradient(ellipse at bottom, var(--project-color) -50%, transparent 75%);
   filter: contrast(110%) brightness(200%);
-  filter: blur(1px);
 }
 
 .siteload {
@@ -1906,11 +1906,11 @@ circle {
 }
 
 .b-contact__backdrop {
-  background: url("./assets/IMG_9605.png");
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: url("./assets/IMG_9605.jpg");
+  background-size: contain;
+  background-repeat: repeat-x;
   background-position: bottom;
-  height: 85vh;
+  height: 75vh;
   width: 98vw;
   position: absolute;
   top: 5vh;

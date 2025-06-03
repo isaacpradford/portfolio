@@ -24,7 +24,7 @@ const ContactPage = () => {
   const backgroundPositionY = useTransform(
     scrollYProgress,
     [0, 1],
-    ["-100%", "100%"]
+    ["-100%", "120%"]
   );
   const backgroundBlur = useTransform(
     scrollYProgress,
@@ -43,7 +43,8 @@ const ContactPage = () => {
         <motion.div
           className="b-contact__backdrop"
           style={{
-            backgroundPositionY,
+            y: backgroundPositionY,
+            opacity: opacity,
           }}
         />
       )}

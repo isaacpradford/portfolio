@@ -17,7 +17,7 @@ export const ColorProvider = ({ children }) => {
     },
     dark: {
       projectColor: projectColor,
-      backgroundColor: "#fff",
+      backgroundColor: "#000",
     },
   };
 

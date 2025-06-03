@@ -14,12 +14,13 @@ const Header = () => {
 
   // Dark mode context setup
   const { colors, darkMode, toggleDarkMode } = useColor();
+
   useEffect(() => {
     document.documentElement.style.setProperty(
       "--background-color",
       colors.backgroundColor
     );
-  }, [colors]);
+  }, [colors, darkMode]);
 
   const handleNightModeClick = () => {
     toggleDarkMode(); // Toggle dark mode
